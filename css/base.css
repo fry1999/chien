@@ -1,0 +1,239 @@
+html {
+    color: #000;
+    background: #FFF
+}
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td {
+    margin: 0;
+    padding: 0
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+fieldset,img {
+    border: 0
+}
+
+address,caption,cite,code,dfn,em,strong,th,var {
+    font-style: normal;
+    font-weight: normal
+}
+
+ol,ul {
+    list-style: none
+}
+
+caption,th {
+    text-align: left
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-size: 100%;
+    font-weight: normal
+}
+
+q:before,q:after {
+    content: ''
+}
+
+abbr,acronym {
+    border: 0;
+    font-variant: normal
+}
+
+sup {
+    vertical-align: text-top
+}
+
+sub {
+    vertical-align: text-bottom
+}
+
+input,textarea,select {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    /* *font-size: 100%; */
+}
+
+legend {
+    color: #000
+}
+
+#yui3-css-stamp.cssreset {
+    display: none
+}
+
+@page {
+    margin: 12.5mm 9.5mm
+}
+
+html,body {
+    margin: 0 auto;
+    font-family: "Meiryo UI", "メイリオ", Meiryo, sans-serif;
+    background-color: #fff;
+    height: 100%;
+    color: #0B131A;
+    font-size: 14px;
+    line-height: 1.4em
+}
+
+@media print {
+    html,body {
+        height: auto
+    }
+}
+
+@media print {
+    body {
+        padding-top: 0
+    }
+}
+
+h1 {
+    font-size: 22px;
+    line-height: 2em;
+    padding-left: 20px;
+    height: 56px;
+    line-height: 56px;
+    background-color: #E0E0DE
+}
+
+h1>* {
+    vertical-align: middle;
+    margin-right: 8px
+}
+
+h2 {
+    font-size: 20px
+}
+
+h3 {
+    font-size: 16px
+}
+
+a {
+    color: #007AFF;
+    text-decoration: none
+}
+
+a:visited {
+    color: #007AFF;
+    text-decoration: none
+}
+
+a:active {
+    color: #0159B9;
+    text-decoration: underline
+}
+
+a:hover {
+    color: #0094FF;
+    text-decoration: underline
+}
+
+p {
+    font-size: 13px;
+    margin: 8px 0
+}
+
+.htBlock-body {
+    margin-top: -1px;
+    margin-top: 44px;
+    min-height: calc(100vh - 44px - 48px);
+    position: relative;
+    display: inline-block;
+    min-width: 100%
+}
+
+@media (max-width: 786px) {
+    .htBlock-body:not(.specific-dialog_inner_custom):not(.htBlock-body_fill) {
+        width:786px
+    }
+}
+
+@media print {
+    .htBlock-body {
+        width: 100%;
+        margin-top: 0px
+    }
+}
+
+.htBlock-mainContents {
+    padding: 20px;
+    padding-top: 1px;
+    background-color: #fff;
+    display: inline-block;
+    min-width: 100%;
+    box-sizing: border-box
+}
+
+@media print {
+    .htBlock-mainContents {
+        width: 100%;
+        padding: 0
+    }
+}
+
+.htBlock-mainContents h2 {
+    position: relative;
+    font-size: 26px;
+    line-height: 26px;
+    height: 1.4em;
+    padding-top: 16px;
+    padding-bottom: 4px;
+    margin-bottom: 4px;
+    white-space: nowrap
+}
+
+.htBlock-mainContents h2 .htBlock-group {
+    margin-left: 32px
+}
+
+@media print {
+    .htBlock-mainContents h2 .htBlock-group {
+        display: none
+    }
+}
+
+.htBlock-mainContents h2>* {
+    display: inline-block
+}
+
+.htBlock-mainContents h2>script {
+    display: none
+}
+
+.htBlock-mainContents_print {
+    width: calc(100% - 20px);
+    padding: 0 0 0 20px;
+    overflow-x: visible
+}
+
+.htBlock-mainContents h3 {
+    font-size: 14px;
+    font-weight: bold
+}
+
+.htBlock-body_fill {
+    width: 100%;
+    margin-top: 0;
+    min-height: calc(100% - 48px);
+    display: inline-block
+}
+
+.htBlock-body_fill .htBlock-fixedSubHeader--fixed {
+    width: 100%;
+    margin-top: 0
+}
+
+button,input[type="button"],input[type="submit"] {
+    font-family: inherit
+}
+
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6 {
+    mso-number-format: \@
+}
