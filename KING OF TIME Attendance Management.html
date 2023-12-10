@@ -1,0 +1,2028 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)https://s2.ta.kingoftime.jp/admin -->
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style data-styled="active"></style>
+  <link rel="apple-touch-icon" href="https://s2.ta.kingoftime.jp/images/iPhone_home_icon_kot.png">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <meta http-equiv="Expires" content="-1">
+  <meta name="msapplication-config" content="none">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="google-site-verification" content="iezf0UApKmz5LFxwan6O-8_xmc0JhWhW0vVUa39zPZ8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KING OF TIME Attendance Management
+  </title>
+  <link type="text/css" rel="stylesheet" href="asset/design1/js/vender/jquery-ui-1.11.4/jquery-ui.min.css">
+  <link type="text/css" rel="stylesheet" href="asset/design1/css/base.kot.css">
+  <link type="text/css" rel="stylesheet" href="asset/design1/css/block.kot.css">
+  <!--
+UIテンプレート範囲外のスタイル用
+class指定のprefixは「specific-」
+-->
+  <link type="text/css" rel="stylesheet" href="asset/design1/css/specific.kot.css">
+  <script async="" src="/main.js.download" id="techtouch-snippet"></script>
+  <script async="" src="/analytics.js.download" data-karakuri-tracking="krkr-627b0b78360342299b7c75d6"
+    data-customer-name="チャンフォン　ナム" data-customer-email="info@neox-asia.co.jp"></script>
+  <script type="text/javascript" async=""
+    src="./KING OF TIME Attendance Management_files/analytics(1).js.download"></script>
+  <script type="text/javascript" async="" src="./KING OF TIME Attendance Management_files/js"></script>
+  <script type="text/javascript" async="" src="./KING OF TIME Attendance Management_files/js(1)"></script>
+  <script type="text/javascript" async="" src="./KING OF TIME Attendance Management_files/js(2)"></script>
+  <script async="" src="./KING OF TIME Attendance Management_files/gtm.js.download"></script>
+  <script type="text/javascript">
+    var ua = navigator.userAgent;
+    if (ua.match("Trident") || ua.match("MSIE")) {
+      document.write('<link rel="stylesheet" href="asset\/design1\/css\/ie.kot.css">');
+    }
+  </script>F
+  <link type="text/css" rel="stylesheet" href="css/language/en.css">
+  <script src="asset/design1/css/vender/jquery-1.11.3.min.js"></script>
+  <script src="js/kot.js"></script>
+  <script type="text/javascript">
+    var browserType = KOT_GLOBAL.KOT_LIB.getBrowserType();
+    if (browserType <= 110) {
+      document.write('<script src="asset\/design1\/js\/vendor\/flexibility.js"><\/script>');
+    }
+    if (browserType <= 109) {
+      $(document).ready(function () {
+        $(".specific-htBlock-dialog-body").scroll(function () {
+          var pos = $(this).scrollTop();
+          var posPrev = pos;
+          var dialog = this;
+          var id = setInterval(function () {
+            posPrev = pos;
+            pos = $(dialog).scrollTop();
+            if (pos == posPrev) {
+              $(dialog).hide().show();
+              $(dialog).scrollTop(pos);
+              clearInterval(id);
+            }
+          }, 500);
+        });
+      });
+    }
+  </script>
+  <script type="text/javascript">
+    <!--
+    var jsMsgArray = [];
+    jsMsgArray["date_today"]                    = "Appointed day";
+    jsMsgArray["date_next"]                     = "Next day";
+    jsMsgArray["date_prev"]                     = "Previous day";
+    jsMsgArray["kot_ckdbclick"]                 = "Please press the button only once";
+    jsMsgArray["tablesort_linkCell"]            = "Click to sort the category name";
+    jsMsgArray["pagingcontrol_display_confirm"] = "Display may take a while if there are a many display numbers. Proceed?";
+    jsMsgArray["pagingcontrol_confirm_dialog"]  = "If you change before save your changes will not be reflected. Okay to proceed?";
+    jsMsgArray["update_string"]                 = "Update";
+    jsMsgArray["none_string"] = "None";
+    jsMsgArray["exsists_string"] = "Yes";
+    jsMsgArray["network_error_string"] = "Failed to data acquisition";
+    jsMsgArray["click_to_detail"] = "More details";
+    jsMsgArray["validate_string_input_error_message_for_encode"] = "Deprecated characters have been entered.";
+    jsMsgArray["loading_modal_message_default"] = "Please wait a moment...";
+    jsMsgArray["validate_number_input_error_message_upper_bound"] = "Value ​​exceeds upper limit regulation standards";
+    jsMsgArray["sso_confirm_message"] = "The single sign-on to the KING OF TIME series will be disconnected.\n Proceed?";
+    var globalTemp = window.KOT_GLOBAL || {};
+    globalTemp.HT_LIB_I18N = {
+    "htlib_001": "Jan",
+    "htlib_002": "Feb",
+    "htlib_003": "Mar",
+    "htlib_004": "Apr",
+    "htlib_005": "May",
+    "htlib_006": "Jun",
+    "htlib_007": "Jul",
+    "htlib_008": "Aug",
+    "htlib_009": "Sep",
+    "htlib_010": "Oct",
+    "htlib_011": "Nov",
+    "htlib_012": "Dec",
+    "htlib_013": "Sun",
+    "htlib_014": "Mon",
+    "htlib_015": "Tue",
+    "htlib_016": "Wed",
+    "htlib_017": "Thu",
+    "htlib_018": "Fri",
+    "htlib_019": "Sat",
+    "htlib_020": "",
+    "htlib_021": "",
+    "htlib_022": "Click row for action"
+    };
+    window.KOT_GLOBAL = globalTemp;
+    //--->
+  </script>
+  <!-- Data for Google Tag Manager -->
+  <script>
+    dataLayer = [{
+      'pageId': '/top',
+      'adminId': '900231724',
+      'userType': 'admin',
+      'companyId': '900060596'
+    }];
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-WDS55BP');</script>
+  <!-- End Google Tag Manager -->
+
+  <script src="asset/design1/css/vender/intro.js"></script>
+  <link href="asset/design1/css/vender/introjs.css" rel="stylesheet">
+  <script type="text/javascript">
+    //名前空間を定義
+    KOT_GLOBAL = KOT_GLOBAL || {};
+    KOT_GLOBAL.Top = KOT_GLOBAL.Top || {};
+    (function ($, options) {
+      KOT_GLOBAL.Top.init = function () {
+        jQuery.extend(KOT_GLOBAL.Top.settings, options);
+      };
+      //対応が必要な項目の内容を表示する
+      //この関数をvmMainMenu内から呼んでいます
+      KOT_GLOBAL.Top.adjustUnProcessAlert = function (unProcessAlertData) {
+        if (!unProcessAlertData || unProcessAlertData.result != "OK") {
+          setTimeout(function () { $("#un_process_refresh").prop("disabled", false); }, 5000);
+          $("#un_process_alert_last_update_time_area").text("Your session has expired. Please sign in again.");
+          $("#un_process_alert_last_update_time_area").css("text-align", "left");
+          $("#un_process_items_area").text("");
+          return;
+        }
+        for (var i = 0, l = unProcessAlertData.result_list.length; i < l; i++) {
+          //申請、未確定、休暇付与　それぞれ
+          var oneDivision = unProcessAlertData.result_list[i];
+          //対象の機能を見せない設定の場合
+          if (oneDivision.is_visible != "true") {
+            continue;
+          }
+          //最終更新時間を設定
+          $("#un_process_alert_last_update_time").text(oneDivision.search_time);
+          for (var j = 0, m = oneDivision.data_list.length; j < m; j++) {
+            var oneItem = oneDivision.data_list[j];
+            if (oneItem.is_use === "true"
+              && oneItem.is_exsists === "true") {
+              $("#" + oneItem.name).show();
+            } else {
+              $("#" + oneItem.name).hide();
+            }
+          }
+          if (oneDivision.action_name === "check_uncomplete_working") {
+            if (oneDivision.before_data_list
+              && oneDivision.before_data_list.length > 0) {
+              for (var j = 0, m = oneDivision.before_data_list.length; j < m; j++) {
+                var oneItem = oneDivision.before_data_list[j];
+                if (oneItem.is_use === "true"
+                  && oneItem.is_exsists === "true") {
+                  $("#" + oneItem.name).show();
+                } else {
+                  $("#" + oneItem.name).hide();
+                }
+              }
+            }
+            if (oneDivision.company_information
+              && oneDivision.company_information.length > 0) {
+              for (var k = 0, m = oneDivision.company_information.length; k < m; k++) {
+                var oneItem = oneDivision.company_information[k];
+                if (oneItem.is_use === "true"
+                  && oneItem.is_exsists === "true") {
+                  $("#" + oneItem.name).show();
+                } else {
+                  $("#" + oneItem.name).hide();
+                }
+              }
+            }
+          }
+        }
+        setTimeout(function () { $("#un_process_refresh").prop("disabled", false); }, 5000);
+      };
+      $(document).ready(function () {
+        KOT_GLOBAL.Top.init();
+        $("#footer_main_menu").addClass("htBlock-footer_fixed");
+      });
+    })(jQuery);
+    // コーチマークを表示する
+    $(function () {
+      var introDialog;
+      try {
+        if (('localStorage' in window) && (window.localStorage !== null)) {
+          var introStartFlag = localStorage["intro"];
+          if (introStartFlag !== "checked") {
+            setTimeout(function () {
+              var introFlag = localStorage["intro"];
+              introDialog = new HtLib.dialog('#htBlock-dialog-welcome', {
+                yes: function () {
+                  introDialog.close();
+                }
+              });
+              introDialog.show();
+            }, 0);
+          }
+        }
+      } catch (e) {
+      }
+      $(document).click(function () {
+        if (typeof introDialog != "undefined") {
+          introDialog.close();
+        }
+      });
+      // ウェルカムダイアログ内でクリックしても閉じさせないためにイベントの伝播を制御している
+      $('#welcomeDialog').click(function () {
+        event.stopPropagation();
+      });
+      $("#intro_start").click(function () {
+        var intro = introJs();
+        intro.setOption('showStepNumbers', false);
+        intro.setOption('nextLabel', 'Next')
+        intro.setOption('prevLabel', 'Previous')
+        intro.setOption('skipLabel', 'Skip')
+        intro.setOption('doneLabel', 'Start')
+        intro.setOptions({
+          steps: [
+            {
+              element: '#step1',
+              intro: "<b>Menu</b><br><br>To check Attendance data and Schedules, go to [Menu]."
+            },
+            {
+              element: '#step2',
+              intro: "<b>Attention</b><br><br>Attendance errors and Requests from employees are shown here.",
+              position: 'right'
+            },
+            {
+              element: '#step3',
+              intro: "<b>Settings</b><br><br>To create or edit basic data, go to [Settings].",
+              position: 'right'
+            },
+          ]
+        });
+        intro.start();
+        intro.oncomplete(function () {
+          if (('localStorage' in window) && (window.localStorage !== null)) {
+            window.localStorage.setItem("intro", "checked");
+          }
+        });
+      });
+    });
+  </script>
+  <style>
+    .krkr-chat {
+      bottom: 16px;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, .5);
+      display: flex;
+      flex-direction: column;
+      height: 540px;
+      position: fixed;
+      right: 16px;
+      width: 360px;
+      z-index: 99999
+    }
+
+    @media (max-height:540px),
+    (max-width:480px) {
+      .krkr-chat {
+        bottom: 0 !important;
+        height: auto !important;
+        left: 0 !important;
+        right: 0 !important;
+        top: 0 !important;
+        width: auto !important
+      }
+    }
+
+    .krkr-chat__head {
+      align-items: center;
+      background: #eee;
+      box-sizing: border-box;
+      display: flex;
+      height: 32px;
+      justify-content: flex-end;
+      padding: 8px
+    }
+
+    .krkr-chat__body {
+      border: none;
+      display: block;
+      flex: 1;
+      margin: 0;
+      padding: 0;
+      width: 100%
+    }
+
+    .krkr-modern-chat {
+      bottom: 16px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, .1);
+      display: flex;
+      flex-direction: column;
+      height: 667px;
+      position: fixed;
+      right: 16px;
+      width: 376px;
+      z-index: 99999
+    }
+
+    @media (max-height:667px),
+    (max-width:480px) {
+      .krkr-modern-chat {
+        bottom: 0 !important;
+        height: auto !important;
+        left: 0 !important;
+        right: 0 !important;
+        top: 0 !important;
+        width: auto !important
+      }
+    }
+
+    @media (min-width:668px) {
+      .krkr-modern-chat {
+        border-radius: 12px;
+        overflow: hidden
+      }
+    }
+
+    .krkr-modern-chat__head {
+      align-items: center;
+      border: 1px solid #fff;
+      border-radius: 100%;
+      box-sizing: border-box;
+      cursor: pointer;
+      display: flex;
+      height: 20px;
+      justify-content: flex-end;
+      padding: 4px;
+      position: absolute;
+      right: 12px;
+      top: 20px;
+      width: 20px
+    }
+
+    .krkr-modern-chat__body {
+      border: none;
+      display: block;
+      flex: 1;
+      margin: 0;
+      padding: 0;
+      width: 100%
+    }
+
+    .krkr-popup-icon-balloon-close-button {
+      align-items: center;
+      background: transparent;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      height: 36px;
+      justify-content: center;
+      padding: 4px;
+      width: 36px
+    }
+
+    .krkr-popup-icon-balloon-close-button>svg {
+      border-radius: 50%
+    }
+
+    .krkr-popup-icon-balloon-close-button--plain>svg {
+      fill: #a2aeba;
+      background-color: #fff
+    }
+
+    .krkr-popup-icon-balloon-close-button--gray>svg {
+      fill: #fff;
+      background-color: #a2aeba
+    }
+
+    .krkr-popup-icon-balloon-message {
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      display: -webkit-box;
+      font-size: 16px;
+      margin: 0;
+      overflow: hidden;
+      padding: 0
+    }
+
+    .krkr-popup-icon-balloon-message.krkr-popup-icon-balloon-message--long {
+      font-size: 15px
+    }
+
+    .krkr-popup-icon-balloon-message.krkr-popup-icon-balloon-message--xl-long {
+      font-size: 14px
+    }
+
+    @media (max-width:600px) {
+      .krkr-popup-icon-balloon-message {
+        font-size: 14px
+      }
+
+      .krkr-popup-icon-balloon-message.krkr-popup-icon-balloon-message--long {
+        font-size: 13px
+      }
+
+      .krkr-popup-icon-balloon-message.krkr-popup-icon-balloon-message--xl-long {
+        font-size: 12px
+      }
+    }
+
+    .krkr-button.krkr-popup-icon-button {
+      align-items: center;
+      border-radius: 100%;
+      box-sizing: border-box;
+      cursor: pointer;
+      display: flex;
+      height: 60px;
+      justify-content: center;
+      position: static;
+      width: 60px
+    }
+
+    @media (max-width:600px) {
+      .krkr-button.krkr-popup-icon-button {
+        height: 50px;
+        width: 50px
+      }
+    }
+
+    .krkr-button.krkr-popup-icon-button:hover {
+      opacity: .8
+    }
+
+    .krkr-button.krkr-popup-icon-button:active {
+      opacity: .6
+    }
+
+    .krkr-button.krkr-popup-icon-button--default {
+      background-image: linear-gradient(180deg, transparent, rgba(0, 0, 0, .12))
+    }
+
+    .krkr-button.krkr-popup-icon-button--alt {
+      border: 1px solid
+    }
+
+    .krkr-button.krkr-popup-icon-button--shadow {
+      box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, .2)
+    }
+
+    .krkr-button.krkr-popup-icon-button--draggable:hover {
+      cursor: grab
+    }
+
+    .krkr-button.krkr-popup-icon-button--draggable:active {
+      cursor: grabbing
+    }
+
+    .krkr-button .krkr-popup-icon-button__close-button {
+      position: absolute;
+      right: -5px;
+      top: -5px;
+      z-index: 2
+    }
+
+    .krkr-button-img.krkr-popup-icon-button-image {
+      border: none;
+      box-sizing: border-box;
+      cursor: pointer;
+      position: static
+    }
+
+    .krkr-button-img.krkr-popup-icon-button-image img {
+      display: block;
+      height: auto;
+      width: 100%
+    }
+
+    .krkr-button-img.krkr-popup-icon-button-image:hover {
+      opacity: .8
+    }
+
+    .krkr-button-img.krkr-popup-icon-button-image:active {
+      opacity: .6
+    }
+
+    .krkr-button-img.krkr-popup-icon-button-image--circle {
+      border-radius: 100%
+    }
+
+    .krkr-button-img.krkr-popup-icon-button-image--circle img {
+      border-radius: 50%;
+      overflow: hidden
+    }
+
+    .krkr-button-img.krkr-popup-icon-button-image--draggable:hover {
+      cursor: grab
+    }
+
+    .krkr-button-img.krkr-popup-icon-button-image--draggable:active {
+      cursor: grabbing
+    }
+
+    .krkr-button-img .krkr-popup-icon-button-image__close-button {
+      position: absolute;
+      right: -5px;
+      top: -5px;
+      z-index: 2
+    }
+
+    .krkr-popup-icon-close-button {
+      align-items: center;
+      border: none;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+      cursor: pointer;
+      display: flex;
+      height: 24px;
+      justify-content: center;
+      padding: 0;
+      width: 24px
+    }
+
+    .krkr-popup-icon-close-button--plain {
+      fill: #a2aeba;
+      background-color: #fff
+    }
+
+    .krkr-popup-icon-close-button--gray {
+      fill: #fff;
+      background-color: #a2aeba
+    }
+
+    .krkr-popup-icon-wrapper {
+      position: fixed;
+      z-index: 99999
+    }
+
+    .krkr-popup-message-button__dialog {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, .1);
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 30px;
+      width: 100%
+    }
+
+    .krkr-popup-message-button__title-text {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 27px
+    }
+
+    .krkr-popup-message-button__content {
+      padding: 16px 0
+    }
+
+    .krkr-popup-message-button__content-text {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 18px;
+      white-space: pre-wrap;
+      word-break: break-all
+    }
+
+    .krkr-popup-message-button__action-button {
+      background: #242424;
+      border: 1px solid #979797;
+      border-radius: 3px;
+      cursor: pointer;
+      height: 40px;
+      width: 100%
+    }
+
+    .krkr-popup-message-button__action-button-label {
+      align-items: center;
+      color: #fff;
+      display: flex;
+      font-size: 14px;
+      font-weight: 700;
+      justify-content: center
+    }
+
+    .krkr-popup-message-button__close {
+      position: absolute;
+      right: 10px;
+      top: 10px
+    }
+
+    .krkr-popup-message-close-button {
+      align-items: center;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      height: 24px;
+      justify-content: center;
+      padding: 0;
+      width: 24px
+    }
+
+    .krkr-popup-message-close-button--plain {
+      fill: #a2aeba;
+      background-color: #fff
+    }
+
+    .krkr-popup-message-close-button--gray {
+      fill: #fff;
+      background-color: #a2aeba
+    }
+
+    .krkr-popup-message-html__dialog {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .12);
+      box-sizing: border-box;
+      height: 100%;
+      width: 100%
+    }
+
+    .krkr-popup-message-html__close {
+      position: absolute;
+      right: 10px;
+      top: 10px
+    }
+
+    .krkr-popup-message-image__dialog {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .12);
+      box-sizing: border-box;
+      height: 100%;
+      overflow: hidden;
+      width: 100%
+    }
+
+    .krkr-popup-message-image__dialog--clickable {
+      cursor: pointer
+    }
+
+    .krkr-popup-message-image__content-image {
+      display: block;
+      width: 100%
+    }
+
+    .krkr-popup-message-image__close {
+      position: absolute;
+      right: 10px;
+      top: 10px
+    }
+
+    .krkr-popup-message-text__dialog {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .12);
+      box-sizing: border-box;
+      height: 100%;
+      padding: 30px;
+      width: 100%
+    }
+
+    .krkr-popup-message-text__dialog--clickable {
+      cursor: pointer
+    }
+
+    .krkr-popup-message-text__content-text {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 22px;
+      white-space: pre-wrap;
+      word-break: break-all
+    }
+
+    .krkr-popup-message-text__close {
+      position: absolute;
+      right: 10px;
+      top: 10px
+    }
+
+    .krkr-popup-message-wrapper__wrapper {
+      position: fixed;
+      z-index: 99999
+    }
+
+    .krkr-popup-message-wrapper__wrapper--center {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%)
+    }
+
+    .krkr-popup-message-wrapper__backdrop {
+      background-color: rgba(0, 0, 0, .5);
+      height: 100%;
+      left: 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 99998
+    }
+
+    .krkr-popup-v2__icon {
+      transition: all .6s ease;
+      z-index: 99998
+    }
+
+    .krkr-popup-v2__icon--balloon.krkr-popup-v2__icon--left {
+      bottom: 10px;
+      left: 10px;
+      position: absolute
+    }
+
+    .krkr-popup-v2__icon--balloon.krkr-popup-v2__icon--right {
+      bottom: 10px;
+      position: absolute;
+      right: 10px
+    }
+
+    .krkr-popup-v2__balloon {
+      align-items: center;
+      border: none;
+      border-radius: 40px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+      box-sizing: border-box;
+      cursor: pointer;
+      display: flex;
+      height: 80px;
+      max-width: min(100vw - 32px, 360px);
+      transition: all .6s ease;
+      width: 360px
+    }
+
+    @media (max-width:600px) {
+      .krkr-popup-v2__balloon {
+        height: 70px;
+        max-width: min(100vw - 32px, 320px);
+        width: 320px
+      }
+    }
+
+    .krkr-popup-v2__balloon--left {
+      bottom: 0;
+      left: 0;
+      padding: 16px 48px 16px 80px;
+      position: absolute
+    }
+
+    .krkr-popup-v2__balloon--right {
+      bottom: 0;
+      padding: 16px 80px 16px 48px;
+      position: absolute;
+      right: 0
+    }
+
+    .krkr-popup-v2__balloon--draggable:hover {
+      cursor: grab
+    }
+
+    .krkr-popup-v2__balloon--draggable:active {
+      cursor: grabbing
+    }
+
+    .krkr-popup-v2__balloon--hide {
+      bottom: 10px;
+      height: 60px;
+      opacity: 0;
+      padding: 0;
+      position: absolute;
+      right: 10px;
+      visibility: hidden;
+      width: 60px
+    }
+
+    @media (max-width:600px) {
+      .krkr-popup-v2__balloon--hide {
+        height: 50px;
+        width: 50px
+      }
+    }
+
+    .krkr-popup-v2__balloon-close-button--left {
+      position: absolute;
+      right: 6px;
+      top: calc(50% - 18px)
+    }
+
+    .krkr-popup-v2__balloon-close-button--right {
+      left: 6px;
+      position: absolute;
+      top: calc(50% - 18px)
+    }
+
+    .krkr-active {
+      overflow: visible !important
+    }
+
+    @media (max-width:600px) {
+      .krkr-active>body {
+        height: 100%;
+        overflow: hidden;
+        position: fixed;
+        width: 100%
+      }
+    }
+
+    .krkr-iframe {
+      border: none;
+      height: 480px;
+      width: 100%
+    }
+  </style>
+  <meta http-equiv="origin-trial"
+    content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+  <meta http-equiv="origin-trial"
+    content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+  <meta http-equiv="origin-trial"
+    content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+  <style type="text/css">
+    #tudienjp * :not(svg, path) {
+      all: revert
+    }
+
+    #tudienjp svg {
+      width: auto !important
+    }
+
+    #tudienjp {
+      font-size: 18px !important;
+      font-family: Arial, ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic Pro, Osaka, メイリオ, Meiryo, ＭＳ Ｐゴシック, MS PGothic, sans-serif !important;
+      color: #000 !important;
+      line-height: 1.5 !important;
+      text-align: left !important
+    }
+
+    #tudienjp .o-result-item {
+      line-height: 1.5;
+      display: block;
+      margin-right: 0;
+      cursor: pointer
+    }
+
+    #tudienjp .o-result-item:hover {
+      border-color: #c6d6ef !important
+    }
+
+    #tudienjp .o-selected-result {
+      max-height: 300px;
+      overflow-y: scroll
+    }
+
+    #tudienjp .o-selected-result::-webkit-scrollbar {
+      width: 13px
+    }
+
+    #tudienjp .o-selected-result::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      -webkit-box-shadow: inset 3px 0 0 3px #fff;
+      background: rgba(0, 0, 0, .2)
+    }
+
+    #tudienjp .o-pop-nav div {
+      font-size: 14px;
+      padding: 3.2px 8px
+    }
+
+    #tudienjp .o-pop-speak {
+      margin-top: 5px;
+      margin-right: 8px;
+      font-size: 16px;
+      cursor: pointer
+    }
+
+    #tudienjp .o-search-mobile {
+      z-index: 99998;
+      position: absolute;
+      display: none
+    }
+
+    #tudienjp .o-popup-tag {
+      z-index: 99999;
+      position: absolute;
+      display: none;
+      padding: 10px 5px 10px 10px
+    }
+
+    #tudienjp .o-bg-white {
+      background-color: #fff !important
+    }
+
+    #tudienjp .o-border {
+      border: 1px solid #dee2e6 !important
+    }
+
+    #tudienjp .o-rounded {
+      border-radius: 4px !important
+    }
+
+    #tudienjp .o-shadow {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, .15) !important
+    }
+
+    #tudienjp .o-btn-close {
+      box-sizing: content-box;
+      width: 16px;
+      height: 16px;
+      padding: 4px 4px;
+      color: #000;
+      background: transparent url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3E%3C/svg%3E") 50%/16px auto no-repeat;
+      border: 0;
+      border-radius: 4px;
+      opacity: .5;
+      cursor: pointer
+    }
+
+    #tudienjp .o-btn-close:hover {
+      opacity: .75
+    }
+
+    #tudienjp .o-me-1 {
+      margin-right: 4px !important
+    }
+
+    #tudienjp .o-end-0 {
+      right: 0 !important
+    }
+
+    #tudienjp .o-top-0 {
+      top: 0 !important
+    }
+
+    #tudienjp .o-position-absolute {
+      position: absolute !important
+    }
+
+    #tudienjp ul {
+      padding-left: 32px;
+      display: block;
+      list-style-type: disc;
+      -webkit-margin-before: 16px;
+      margin-block-start: 16px;
+      -webkit-margin-after: 16px;
+      margin-block-end: 16px;
+      -webkit-margin-start: 0;
+      margin-inline-start: 0;
+      -webkit-margin-end: 0;
+      margin-inline-end: 0;
+      -webkit-padding-start: 40px;
+      padding-inline-start: 40px
+    }
+
+    #tudienjp .o-pt-1 {
+      padding-top: 4px !important
+    }
+
+    #tudienjp .mark,
+    #tudienjp mark {
+      padding: 0 !important;
+      background-color: #ffffe0 !important
+    }
+
+    #tudienjp .o-mt-1 {
+      margin-top: 4px !important
+    }
+
+    #tudienjp .o-p-2 {
+      padding: 8px !important
+    }
+
+    #tudienjp .o-mb-1 {
+      margin-bottom: 4px !important
+    }
+
+    #tudienjp .o-border-3 {
+      border-width: 3px !important
+    }
+
+    #tudienjp .o-text-secondary {
+      color: #6c757d !important
+    }
+
+    #tudienjp .o-text-primary {
+      cursor: pointer;
+      color: #0d6efd
+    }
+
+    #tudienjp .o-text-primary:hover {
+      text-decoration: underline
+    }
+
+    #tudienjp .o-w-100 {
+      width: 100% !important
+    }
+
+    #tudienjp .o-link-danger {
+      color: #dc3545
+    }
+
+    #tudienjp .o-link-danger:hover {
+      color: #0d6efd
+    }
+
+    #tudienjp .o-link-ah:hover {
+      color: #dc3545
+    }
+
+    #tudienjp .o-text-decoration-none {
+      text-decoration: none !important
+    }
+
+    #tudienjp .o-fs-6,
+    #tudienjp .o-small {
+      font-size: 16px !important
+    }
+
+    #tudienjp .o-ms-1 {
+      margin-left: 4px !important
+    }
+
+    #tudienjp .o-mt-2 {
+      margin-top: 8px !important
+    }
+
+    #tudienjp .o-float-start {
+      float: left !important
+    }
+
+    #tudienjp label {
+      display: inline-block
+    }
+
+    #tudienjp .o-float-end {
+      float: right !important
+    }
+
+    #tudienjp .o-link-secondary {
+      color: #6c757d !important
+    }
+
+    #tudienjp .o-result-item .o-inflect {
+      font-size: 14px;
+      color: #666;
+      overflow: hidden;
+      text-overflow: ellipsis
+    }
+
+    #tudienjp .o-nav-tabs {
+      border-bottom: 1px solid #dee2e6
+    }
+
+    #tudienjp .o-nav {
+      display: flex;
+      flex-wrap: wrap;
+      padding-left: 0;
+      margin-bottom: 0;
+      list-style: none
+    }
+
+    #tudienjp ul {
+      margin-top: 0;
+      margin-bottom: 16px
+    }
+
+    #tudienjp li {
+      display: list-item;
+      text-align: -webkit-match-parent
+    }
+
+    #tudienjp .o-nav-tabs .o-nav-item.show .o-nav-link,
+    #tudienjp .o-nav-tabs .o-nav-link.active {
+      color: #495057;
+      background-color: #fff;
+      border-color: #dee2e6 #dee2e6 #fff
+    }
+
+    #tudienjp .o-nav-link {
+      display: block;
+      padding: 8px 16px;
+      color: #0d6efd;
+      text-decoration: none;
+      transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+      cursor: pointer
+    }
+
+    #tudienjp .o-nav-tabs .o-nav-link {
+      margin-bottom: -1px;
+      background: 0 0;
+      border: 1px solid transparent;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      line-height: 1.5
+    }
+
+    #tudienjp svg:not(:host).o-svg-inline--fa,
+    #tudienjp svg:not(:root).o-svg-inline--fa {
+      overflow: visible;
+      box-sizing: content-box
+    }
+
+    #tudienjp .o-svg-inline--fa {
+      display: inline-block;
+      height: 16px;
+      overflow: visible;
+      vertical-align: -2px
+    }
+
+    #tudienjp .o-form-check {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #212529;
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      box-sizing: border-box;
+      display: block;
+      min-height: 1.5rem;
+      padding-left: 1.5em;
+      margin-bottom: 0
+    }
+
+    #tudienjp .o-form-check-input {
+      box-sizing: border-box;
+      margin: 0;
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      width: 1em;
+      height: 1em;
+      margin-top: .25em;
+      vertical-align: top;
+      background-color: #fff;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-size: contain;
+      border: 1px solid rgba(0, 0, 0, .25);
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      -webkit-print-color-adjust: exact;
+      float: left;
+      margin-left: -1.5em;
+      border-radius: .25em
+    }
+
+    #tudienjp .o-form-check-input:before {
+      content: ""
+    }
+
+    #tudienjp .o-form-check-input:checked[type=checkbox] {
+      background-color: #0d6efd;
+      border-color: #0d6efd;
+      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3 6-6'/%3E%3C/svg%3E")
+    }
+
+    #tudienjp del {
+      color: #6c757d !important
+    }
+  </style>
+  <style id="mttstyle">
+    #mttContainer {
+      left: 0 !important;
+      top: 0 !important;
+      position: fixed !important;
+      z-index: 100000200 !important;
+      width: 1000px !important;
+      margin-left: -500px !important;
+      background-color: #00000000 !important;
+      pointer-events: none !important;
+    }
+
+    .bootstrapiso .tooltip {
+      width: auto !important;
+      height: auto !important;
+      background: transparent !important;
+      border: none !important;
+      border-radius: 0px !important;
+      visibility: visible !important;
+      pointer-events: none !important;
+    }
+
+    .bootstrapiso .tooltip-inner {
+      font-size: 14px !important;
+      max-width: 200px !important;
+      text-align: center !important;
+      backdrop-filter: blur(15px) !important;
+      background-color: #e6f9ff !important;
+      color: #000 !important;
+      border-radius: .25rem !important;
+      pointer-events: none !important;
+    }
+
+    .bootstrapiso .arrow::before {
+      border-top-color: #b3ecff !important;
+      border-bottom-color: #b3ecff !important;
+    }
+  </style>
+</head>
+
+<body id="test">
+  <div class="htBlock-header" id="header_main_menu">
+    <div class="htBlock-header_inner">
+      <div class="htBlock-header_homeLogo">
+        <p>
+          <a href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/top"
+            onclick="return false">
+            <img src="./KING OF TIME Attendance Management_files/header.png">
+          </a>
+        </p>
+      </div>
+      <!-- よく使うメニュー -->
+      <div class="htBlock-header_menuBox">
+        <div class="htBlock-header_menuBox_inner">
+          <ol>
+            <li data-ht-tooltip-header-menu="Daily data">
+              <a
+                href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/working/daily_working_list&amp;reset_selected_date=true&amp;from_link=1&amp;xZL3dy92=4IC5cMSVZpU6rOoJ">
+                <img src="asset/design1/img/templates/day_month_year/size_s/top_menubtn-s_workingedit_10.png">
+              </a>
+            </li>
+            <li data-ht-tooltip-header-menu="Monthly data">
+              <a
+                href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/working/monthly_working_summary&amp;from_link=1&amp;xZL3dy92=4IC5cMSVZpU6rOoJ">
+                <img src="asset/design1/img/templates/day_month_year/size_s/top_menubtn-s_monthly-working-summary_12.png">
+              </a>
+            </li>
+            <li data-ht-tooltip-header-menu="Yearly data">
+              <a
+                href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/working/yearly_working_summary&amp;date_selection_type=6&amp;xZL3dy92=4IC5cMSVZpU6rOoJ">
+                <img src="asset/design1/img/templates/day_month_year/size_s/top_menubtn-s_yearly-working-summary_2023.png">
+              </a>
+            </li>
+            <li data-ht-tooltip-header-menu="Schedule management">
+              <a
+                href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/schedule/monthly_individual_schedule_list&amp;only_show_at_click=true&amp;time_division_flag=0&amp;pattern_name_flag=0&amp;xZL3dy92=4IC5cMSVZpU6rOoJ">
+                <img src="asset/design1/img/templates/logo/kot/top_menubtn-s_indivisual-schedule.png">
+              </a>
+            </li>
+            <li data-ht-tooltip-header-menu="Vacation management">
+              <a
+                href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/setup/day_count_list&amp;xZL3dy92=4IC5cMSVZpU6rOoJ">
+                <img src="asset/design1/img/templates/logo/kot/top_menubtn-s_holiday-list.png">
+              </a>
+            </li>
+            <li data-ht-tooltip-header-menu="Search employees">
+              <a
+                href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/utility/search_employee&amp;xZL3dy92=4IC5cMSVZpU6rOoJ">
+                <img src="asset/design1/img/templates/logo/kot/top_menubtn-s_employee-search.png">
+              </a>
+            </li>
+            <li data-ht-tooltip-header-menu="Export/Import">
+              <a
+                href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/export/select_export_type&amp;xZL3dy92=4IC5cMSVZpU6rOoJ">
+                <img src="asset/design1/img/templates/logo/kot/top_menubtn-s_import-export.png">
+              </a>
+            </li>
+            <li data-ht-tooltip-header-menu="Login permission">
+              <a
+                href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/setup/support_menu_edit&amp;xZL3dy92=4IC5cMSVZpU6rOoJ">
+                <img src="asset/design1/img/templates/logo/kot/top_menubtn-s_login-permission.png">
+              </a>
+            </li>
+          </ol>
+          <div class="htBlock-header_menuBox_buttons" style="display: none;">
+            <div class="htBlock-header_menuBox_buttonLeft"></div>
+            <div class="htBlock-header_menuBox_buttonRight"></div>
+          </div>
+        </div>
+      </div>
+      <div class="htBlock-header_menuButton menu-main" id="step1">
+        <p>
+          <a href="https://s2.ta.kingoftime.jp/admin#">
+            <span>All menu</span>
+          </a>
+        </p>
+      </div>
+      <div class="htBlock-header_spacer"></div>
+      <!-- サービススイッチャーの表示 -->
+      <div class="htBlock-header_userInfo">
+        <div class="htBlock-header_userInfo_inner">
+          <span>
+            <!--<img class="htBlock-header_userInfo_thumb" src="/asset/design1/img/templates/header_user.png">-->
+            <p class="htBlock-header_userInfo_name">&nbsp;admin&nbsp;チャンフォン　ナム</p>
+            <p class="htBlock-header_userInfo_company">&nbsp;fzzhhp&nbsp;ＮｅｏＸ　ＡＳＩＡ株式会社</p>
+          </span>
+        </div>
+      </div>
+      <div class="htBlock-header_logoutButton">
+        <p>
+          <a href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/login/do_logout">
+            <img src="asset/design1/img/templates/header_icon_logout.png">
+            Sign out
+          </a>
+        </p>
+      </div>
+    </div><!-- end class="htBlock-header_inner" -->
+    <div class="htBlock-header_menuBody" style="display:none;">
+      <div class="htBlock-header_menuBody_title">
+        <h2>Menu
+        </h2>
+        <div class="htBlock-header_menuBody_closeButton"></div>
+      </div>
+      <table class="htBlock-header_menuBody_inner">
+        <tbody>
+          <tr>
+            <td>
+              <h3>Work data</h3>
+              <a href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/working/daily_working_list&amp;reset_selected_date=true&amp;from_link=1&amp;xZL3dy92=4IC5cMSVZpU6rOoJ"
+                class="ctcol">Daily data</a>
+              <a href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/working/monthly_working_summary&amp;from_link=1&amp;xZL3dy92=4IC5cMSVZpU6rOoJ"
+                class="ctcol">Monthly data</a>
+              <a href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/working/yearly_working_summary&amp;date_selection_type=6&amp;xZL3dy92=4IC5cMSVZpU6rOoJ"
+                class="ctcol">Yearly data</a>
+              <a href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/working/section_summary_list&amp;select_type=section&amp;from_link=1&amp;xZL3dy92=4IC5cMSVZpU6rOoJ"
+                class="ctcol">Data by divisions and groups</a>
+            </td>
+            <td>
+              <h3>Schedule</h3>
+              <a href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/schedule/monthly_individual_schedule_list&amp;only_show_at_click=true&amp;time_division_flag=0&amp;pattern_name_flag=0&amp;xZL3dy92=4IC5cMSVZpU6rOoJ"
+                class="ctcol">Schedule management</a>
+              <a href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/setup/day_count_list&amp;xZL3dy92=4IC5cMSVZpU6rOoJ"
+                class="ctcol">Vacation management</a>
+            </td>
+            <td>
+              <h3>Confirm</h3>
+              <a href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/working/uncomplete_working_list&amp;error_type=1&amp;xZL3dy92=4IC5cMSVZpU6rOoJ"
+                class="ctcol">Attendance data error</a>
+              <a href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/working/daily_closed_schedule_list&amp;date_selection_type=1&amp;xZL3dy92=4IC5cMSVZpU6rOoJ"
+                class="ctcol">Closing and Attendance confirmation status</a>
+              <a href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/admin/request_list&amp;select_type=now&amp;xZL3dy92=4IC5cMSVZpU6rOoJ"
+                class="ctcol">Request approval</a>
+              <a href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/admin/regulation_violated_limit_overtime&amp;xZL3dy92=4IC5cMSVZpU6rOoJ"
+                class="ctcol">Workstyle reform alert</a>
+            </td>
+            <td>
+              <h3>Others</h3>
+              <a href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/utility/search_employee&amp;xZL3dy92=4IC5cMSVZpU6rOoJ"
+                class="ctcol">Search employees</a>
+              <a href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/export/select_export_type&amp;xZL3dy92=4IC5cMSVZpU6rOoJ"
+                class="ctcol">Export/Import</a>
+              <a href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/admin/admin_message_list&amp;xZL3dy92=4IC5cMSVZpU6rOoJ"
+                class="ctcol">Manage message</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script type="text/javascript"
+      src="asset/design1/js/KOT_ExcelOut.jquery.js"></script>
+    <script type="text/javascript">
+      (function ($) {
+        // 未処理項目アラート
+        // cssの関係上、divタグ内に配置します
+        var currentPageId = "/top";
+        // TOP画面以外はアラート表示をを行わない。
+        if (currentPageId === "/top") {
+          var targetId = "#un_process_items_area";
+          $(document).ready(function () {
+            //カスタムイベント
+            $(document).on("un_process_alert.KOT_EVENT", targetId, function (event, arg1) {
+              var data = JSON.parse(arg1);
+              //TOP画面の対応が必要な項目への操作
+              //top.htmlで実装しています。
+              KOT_GLOBAL.Top.adjustUnProcessAlert(data);
+              //ホームアイコンの操作
+              if (data.result === "OK") {
+                checkUnProcessAlertData(data.result_list);
+              }
+            });
+            //未処理項目取得処理
+            $(targetId).KOT_UnProcessAlert({
+              actionTarget: "/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW",
+              backgroundTarget: "/background/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW",
+              forceRefresh: false
+            });
+            $("#un_process_refresh").click(function () {
+              $("#un_process_refresh").prop("disabled", true);
+              $(targetId).KOT_UnProcessAlert({
+                actionTarget: "/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW",
+                backgroundTarget: "/background/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW",
+                forceRefresh: true
+              });
+            });
+          });
+        }
+        //JSON形式で返されたデータを元に、未処理データが存在するかチェック
+        function checkUnProcessAlertData(resultList) {
+          var exists = false;
+          for (var i = 0, l = resultList.length; i < l; i++) {
+            var oneData = resultList[i];
+            if (oneData.is_visible === "true") {
+              for (var j = 0, m = oneData.data_list.length; j < m; j++) {
+                if (oneData.data_list[j].is_exsists === "true"
+                  && oneData.data_list[j].is_use === "true") {
+                  exists = true;
+                  break;
+                }
+              }
+              if (oneData.before_data_list
+                && oneData.before_data_list.length > 0) {
+                if (oneData.before_data_list[0].is_exsists === "true"
+                  && oneData.before_data_list[0].is_use === "true") {
+                  exists = true;
+                  break;
+                }
+              }
+            }
+          }
+        }
+        // スイッチャーメニューの表示
+      })(jQuery);
+    </script>
+  </div><!-- end htBlock-header -->
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WDS55BP" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div id="welcomeDialog" class="htBlock-body specific-other_6 specific-other_6_custom specific-other_8">
+    <div class="htBlock-dialog htBlock-dialog-welcome specific-js-dialog" id="htBlock-dialog-welcome"
+      style="display: none;">
+      <h2>
+        <img src="asset/design1/img/templates/logo.png">
+      </h2>
+      <div>
+        <h3 class="">
+          Welcome to KING OF TIME Attendance Management
+
+        </h3>
+      </div>
+      <div class="htBlock-dialog_message htBlock-info">
+        This is a brief introduction for all new users
+      </div>
+      <div class="specific-dialogButtons">
+        <button id="intro_start" type="button" class="htBlock-buttonM htBlock-buttonPrimary htBlock-dialog_yes">
+          Next
+        </button>
+      </div>
+    </div>
+    <div class="htBlock-splitView">
+      <div class="htBlock-splitView_menu">
+        <div id="step2" class="htTopLeftColumnBg">
+          <h3 class="htTopTitle">
+            <img src="asset/design1/img/templates/logo/kot/top_icon_side-request_24px.png">
+            <label>
+              Attention
+            </label>
+            <button type="button" class="htBlock-buttonS htBlock-buttonGray htTopTitle__button" id="un_process_refresh">
+              Update
+            </button>
+          </h3>
+          <div class="htBlock-splitView_menu_variableArea htTopLeftColumn">
+            <div style="text-align: left;" id="un_process_alert_last_update_time_area">Your session has expired. Please
+              sign in again.</div>
+            <ol class="specific-menuTodo" id="un_process_items_area"></ol>
+          </div>
+        </div>
+        <div id="step3" class="htTopLeftColumnBg">
+
+          <h3 class="htTopTitle">
+            <img src="asset/design1/img/templates/logo/kot/top_icon_side-setting_24px.png">
+            <label>
+              Settings
+            </label>
+            <button type="button" class="htBlock-buttonS htBlock-buttonGray htTopTitle__button"
+              onclick="location.href=&#39;/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/setup/top&amp;xZL3dy92=4IC5cMSVZpU6rOoJ&#39;">
+              List
+            </button>
+          </h3>
+          <div class="htTopLeftColumn">
+            <ul class="specific-menuConfig">
+              <li>
+                <a
+                  href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/setup/top&amp;xZL3dy92=4IC5cMSVZpU6rOoJ#tab2">Organization</a>
+              </li>
+              <li>
+                <a
+                  href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/setup/top&amp;xZL3dy92=4IC5cMSVZpU6rOoJ#tab3">Admin</a>
+              </li>
+              <li>
+                <a
+                  href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/setup/top&amp;xZL3dy92=4IC5cMSVZpU6rOoJ#tab4">Employee</a>
+              </li>
+              <li>
+                <a
+                  href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/setup/top&amp;xZL3dy92=4IC5cMSVZpU6rOoJ#tab5">Schedule</a>
+              </li>
+              <li>
+                <a
+                  href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/setup/top&amp;xZL3dy92=4IC5cMSVZpU6rOoJ#tab6">View</a>
+              </li>
+              <li>
+                <a
+                  href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/setup/top&amp;xZL3dy92=4IC5cMSVZpU6rOoJ#tab7">Others</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="htBlock-splitView_contents">
+        <div class="htBlock-splitView_contentsInner">
+          <script type="text/javascript">
+            //名前空間を定義
+            KOT_GLOBAL = KOT_GLOBAL || {};
+            KOT_GLOBAL.Top = KOT_GLOBAL.Top || {};
+            KOT_GLOBAL.Top.ChangeDesign = KOT_GLOBAL.Top.ChangeDesign || {};
+            (function (changeDesign, options) {
+              changeDesign.settings = {
+                //旧UIに戻す際にフィードバックを表示するかどうか
+                showRevertFeedBack: false,
+                //新UIを全適用する際にキャンペーンフォームを表示するかどうか
+                showNewUiCampaignForm: false,
+              };
+              changeDesign.flags = {
+                //旧UIのフィードバック入力画面で送信ボタンを押した
+                isRevertOldDesignSendComplete: false,
+                //新UIのキャンペーン情報入力画面で送信ボタンを押した
+                isChangeNewDesignAllSendComplete: false,
+                //デザイン変更処理を行っているかどうか
+                isNowChangingDesign: false
+              };
+              changeDesign.flags = {
+                //旧UIのフィードバック入力画面で送信ボタンを押した
+                isRevertOldDesignSendComplete: false,
+                //新UIのキャンペーン情報入力画面で送信ボタンを押した
+                isChangeNewDesignAllSendComplete: false,
+                //デザイン変更処理を行っているかどうか
+                isNowChangingDesign: false
+              };
+              changeDesign.dialogs = {
+                revertFeedBackDialog: null,
+                newDesignCampaignDialog: null
+              };
+              changeDesign.init = function () {
+                jQuery.extend(changeDesign.settings, options);
+                changeDesign.setEvents();
+              };
+              changeDesign.setEvents = function () {
+                jQuery("#apply_new_desing_all_employee").on("click", function () {
+                  if (changeDesign.settings.showNewUiCampaignForm) {
+                    changeDesign.showNewDesignCampaignDialog();
+                  }
+                  else {
+                    changeDesign.applyNewDesignAll();
+                  }
+                });
+                jQuery("#revert_to_old_design").on("click", function () {
+                  if (changeDesign.settings.showRevertFeedBack) {
+                    changeDesign.showRevertFeedBackDialog();
+                  }
+                  else {
+                    changeDesign.revertToOldDesign();
+                  }
+                });
+                jQuery(document).on("click", ".htBlock-dialog_wrapper", function () {
+                  jQuery("#kot_feedback_on_revert_iframe").attr("src", "");
+                  jQuery("#kot_change_all_new_campaign_iframe").attr("src", "");
+                  //フィード送信後に変更処理を行う前にダイアログを閉じた場合はすぐに変更処理を行う
+                  if (!changeDesign.flags.isNowChangingDesign) {
+                    if (changeDesign.flags.isRevertOldDesignSendComplete) {
+                      changeDesign.revertToOldDesign();
+                    }
+                    if (changeDesign.flags.isChangeNewDesignAllSendComplete) {
+                      changeDesign.applyNewDesignAll();
+                    }
+                  }
+                });
+              };
+              changeDesign.onSubmitRevertOldDesign = function () {
+                changeDesign.flags.isRevertOldDesignSendComplete = true;
+              };
+              changeDesign.onSubmitChangeNewDesignAll = function () {
+                changeDesign.flags.isChangeNewDesignAllSendComplete = true;
+              };
+              changeDesign.applyNewDesignAll = function () {
+                if (changeDesign.dialogs.newDesignCampaignDialog) {
+                  changeDesign.dialogs.newDesignCampaignDialog.hide();
+                }
+                if (changeDesign.flags.isNowChangingDesign) {
+                  //既に変更処理中の場合には何もしない
+                  return;
+                }
+                changeDesign.flags.isNowChangingDesign = true;
+                HtLib.loading.show();
+                jQuery.ajax({
+                  type: "POST",
+                  url: "/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW",
+                  dataType: "json",
+                  data: {
+                    page_id: "/setup/get_json_data",
+                    data_type: "apply_new_desing_all_employee"
+                  },
+                  success: function (jsonData, status, xhr) {
+                    HtLib.loading.hide();
+                    if (jsonData.result === "NG") {
+                      alert("Modification has failed.");
+                    }
+                    else {
+                      var dialog = new HtLib.dialog("#apply_new_desing_all_employee_complete", {
+                        closeByOuter: false,
+                        yes: function (e) { }
+                      });
+                      dialog.show();
+                    }
+                  },
+                  error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    HtLib.loading.hide();
+                    alert("Modification has failed.");
+                  }
+                });
+              };
+              changeDesign.revertToOldDesign = function () {
+                if (changeDesign.dialogs.revertFeedBackDialog) {
+                  changeDesign.dialogs.revertFeedBackDialog.hide();
+                }
+                if (changeDesign.flags.isNowChangingDesign) {
+                  //既に変更処理中の場合には何もしない
+                  return;
+                }
+                changeDesign.flags.isNowChangingDesign = true;
+                HtLib.loading.show();
+                jQuery.ajax({
+                  type: "POST",
+                  url: "/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW",
+                  dataType: "json",
+                  data: {
+                    page_id: "/setup/get_json_data",
+                    data_type: "revert_to_old_design"
+                  },
+                  success: function (jsonData, status, xhr) {
+                    HtLib.loading.hide();
+                    if (jsonData.result === "NG") {
+                      alert("Modification has failed.");
+                    }
+                    else {
+                      var dialog = new HtLib.dialog("#revert_to_old_design_complete", {
+                        closeByOuter: false,
+                        yes: function (e) { }
+                      });
+                      dialog.show();
+                    }
+                  },
+                  error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    HtLib.loading.hide();
+                    alert("Modification has failed.");
+                  }
+                });
+              };
+              changeDesign.showRevertFeedBackDialog = function () {
+                var src = "/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/utility/feedback_on_revert_old_design";
+                jQuery("#kot_feedback_on_revert_iframe").attr("src", src);
+                if (!changeDesign.dialogs.revertFeedBackDialog) {
+                  changeDesign.dialogs.revertFeedBackDialog = new HtLib.dialog('.kot_feedback_on_revert_dialog', { closeByOuter: true });
+                }
+                changeDesign.dialogs.revertFeedBackDialog.show();
+              };
+              changeDesign.showNewDesignCampaignDialog = function () {
+                var src = "/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/utility/campaign_on_change_new_design_all";
+                jQuery("#kot_change_all_new_campaign_iframe").attr("src", src);
+                if (!changeDesign.dialogs.newDesignCampaignDialog) {
+                  changeDesign.dialogs.newDesignCampaignDialog = new HtLib.dialog('.kot_change_all_new_campaign_dialog', { closeByOuter: true });
+                }
+                changeDesign.dialogs.newDesignCampaignDialog.show();
+              };
+            })(KOT_GLOBAL.Top.ChangeDesign, {
+              showRevertFeedBack: false,
+              showNewUiCampaignForm: false
+            });
+            jQuery(document).ready(function () {
+              KOT_GLOBAL.Top.ChangeDesign.init();
+            });
+          </script>
+          <div class="specific-menuBox specific-oftenUse htTopMenu--wrap">
+            <h3 class="htTopTitle">
+              <img src="asset/design1/img/templates/logo/kot/top_icon_menu_favstar_22px.png">
+              Frequently used
+            </h3>
+            <div class="specific-menuBox_contents specific-static_position htTopMenu--wrap--contents">
+              <ul class="specific-menuBox_contentsInner htTopMenu__clearfix">
+                <li class="specific-menuButton specific-menuButton--workingEdit_10">
+                  <a id="daily_working_link"
+                    href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/working/daily_working_list&amp;reset_selected_date=true&amp;from_link=1&amp;xZL3dy92=4IC5cMSVZpU6rOoJ">
+                    <label for="daily_working_link">Daily data</label>
+                  </a>
+                </li>
+                <li class="specific-menuButton specific-menuButton--monthlyWorkingSummary_12">
+                  <a id="montyl_working_summary_link"
+                    href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/working/monthly_working_summary&amp;from_link=1&amp;xZL3dy92=4IC5cMSVZpU6rOoJ">
+                    <label for="montyl_working_summary_link">Monthly data</label>
+                  </a>
+                </li>
+                <li class="specific-menuButton specific-menuButton--yearlyWorkingSummary_2023">
+                  <a id="yearly_working_summary_link"
+                    href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/working/yearly_working_summary&amp;date_selection_type=6&amp;xZL3dy92=4IC5cMSVZpU6rOoJ">
+                    <label for="yearly_working_summary_link">Yearly data</label>
+                  </a>
+                </li>
+                <li class="specific-menuButton specific-menuButton--indivisualSchedule">
+                  <a id="monthly_individual_schedule_link"
+                    href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/schedule/monthly_individual_schedule_list&amp;only_show_at_click=true&amp;time_division_flag=0&amp;pattern_name_flag=0&amp;xZL3dy92=4IC5cMSVZpU6rOoJ">
+                    <label for="monthly_individual_schedule_link">Schedule<br>management</label>
+                  </a>
+                </li>
+                <li class="specific-menuButton specific-menuButton--dayCountList">
+                  <a id="day_count_list_link"
+                    href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/setup/day_count_list&amp;xZL3dy92=4IC5cMSVZpU6rOoJ">
+                    <label for="day_count_list_link">Vacation management</label>
+                  </a>
+                </li>
+                <li class="specific-menuButton specific-menuButton--employeeSearch">
+                  <a id="employee_search_link"
+                    href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/utility/search_employee&amp;xZL3dy92=4IC5cMSVZpU6rOoJ">
+                    <label for="employee_search_link">Search employees</label>
+                  </a>
+                </li>
+                <li class="specific-menuButton specific-menuButton--importExport">
+                  <a id="select_export_type_link"
+                    href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/export/select_export_type&amp;xZL3dy92=4IC5cMSVZpU6rOoJ">
+                    <label for="select_export_type_link">Export<br>Import</label>
+                  </a>
+                </li>
+                <li class="specific-menuButton specific-menuButton--loginPermission">
+                  <a id="menu_support_link"
+                    href="https://s2.ta.kingoftime.jp/admin/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/setup/support_menu_edit&amp;xZL3dy92=4IC5cMSVZpU6rOoJ">
+                    <label for="select_export_type_link">Login permission</label>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!--
+<div class="specific-menuBox specific-recentlyUsed">
+<h3>
+<img src="/asset/design1/img/templates/top_icon_menu_recent_22px.png">
+最近使ったメニュー
+</h3>
+<div class="specific-menuBox_contents">
+<ol class="specific-menuBox_contentsInner">
+<li class="specific-menuButton">
+<a  href="working_info.html">
+</a>
+</li>
+<li class="specific-menuButton">
+<a  href="pattern_a.html">
+</a>
+</li>
+<li class="specific-menuButton">
+<a  href="pattern_c.html">
+</a>
+</li>
+<li class="specific-menuButton">
+<a  href="pattern_d.html">
+</a>
+</li>
+<li class="specific-menuButton">
+<a href="pattern_e.html">
+</a>
+</li>
+<li class="specific-menuButton">
+<a  href="pattern_f.html">
+</a>
+</li>
+</ol>
+</div>
+</div>
+-->
+          <div class="specific-menuBox specific-changeDesing specific-notice_message">
+            <h3 class="htTopTitle"><img src="asset/design1/img/templates/logo/kot/icon__campaign_black.png">
+              Announcement
+            </h3>
+            <ul class="htTopInfo">
+              <li class="htTopInfo--list htTopInfo--list__new">
+                <div class="htTopInfo--list--mainArea">
+                  <p class="htTopInfo--list--mainArea--title">年収の壁・支援強化パッケージの活用ポイントについて解説した労務ブログを更新しました！</p>
+                  <p class="htTopInfo--list--mainArea--text"></p>
+                  <a href="https://www.kingoftime.jp/blog/20231207/" target="_blank"
+                    class="htTopInfo--list--mainArea--link">詳細はこちら</a>
+                </div>
+              </li>
+              <li class="htTopInfo--list">
+                <div class="htTopInfo--list--mainArea">
+                  <p class="htTopInfo--list--mainArea--title">時間外勤務申請のナゼを解決！よくある質問ご紹介～KING OF TIME 11月おすすめ情報～</p>
+                  <p class="htTopInfo--list--mainArea--text">
+                    時間外勤務申請は、利用者数が大変多い機能だけに、さまざまなご質問がよせられています。今回は特によくあるご質問と回答をご紹介いたします。</p>
+                  <a href="https://s2.ta.kingoftime.jp/zendesk/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?return_to=https://support.ta.kingoftime.jp/hc/ja/articles/24526072133401"
+                    target="_blank" class="htTopInfo--list--mainArea--link">詳細はこちら</a>
+                </div>
+              </li>
+              <li class="htTopInfo--list">
+                <div class="htTopInfo--list--mainArea">
+                  <p class="htTopInfo--list--mainArea--title">2024年の祝日を登録しよう！登録方法とエラー時の対処方法</p>
+                  <p class="htTopInfo--list--mainArea--text">
+                    2024年の祝日が登録可能となりました。祝日の設定方法や、年末年始に休業がある場合の設定方法、祝日スケジュールが反映されない場合の対処方法を解説します！</p>
+                  <a href="https://s2.ta.kingoftime.jp/zendesk/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?return_to=https://support.ta.kingoftime.jp/hc/ja/articles/23857011647641"
+                    target="_blank" class="htTopInfo--list--mainArea--link">詳細はこちら</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div><!-- end htBlock-splitView -->
+
+    <div class="htBlock-footer htBlock-footer_fixed" id="footer_main_menu">
+      <div class="htBlock-footer_cart" onclick="KOT_GLOBAL.Parts.VmFooter.cartLogin();">
+        <a href="https://kingoftime.bcart.jp/login_action.php" onclick="return false">
+          <img src="asset/design1/img/templates/logo/kot/footer_icon_cart.png">
+          <span>Cart</span>
+        </a>
+      </div>
+
+      <div class="htBlock-footer_logo">
+        <img src="asset/design1/img/templates/logo/kot/footer.png">
+      </div>
+      <script src="popup.js.download" data-customer-name="チャンフォン　ナム"
+        data-customer-email="info@neox-asia.co.jp"></script>
+      <script type="text/javascript">
+        window.zESettings = {
+          webWidget: {
+            chat: {
+              suppress: false
+            },
+            contactForm: {
+              suppress: false
+            },
+            helpCenter: {
+              suppress: false
+            },
+            talk: {
+              suppress: false
+            },
+            answerBot: {
+              suppress: false
+            }
+          }
+        };
+      </script>
+      <div style="width: 150px;"></div>
+    </div>
+    <script type="text/javascript">
+      //名前空間を定義
+      KOT_GLOBAL = KOT_GLOBAL || {};
+      KOT_GLOBAL.Parts = KOT_GLOBAL.Parts || {};
+      KOT_GLOBAL.Parts.VmFooter = {};
+      (function ($, footer) {
+        footer.data = { id: null, param: null };
+        jQuery.ajax({
+          scriptCharset: 'utf-8',
+          type: 'GET',
+          url: '/background/Rbj42U8FfmoOmv2HlEsL8zswX6RbDYwW?page_id=/utility/get_cart_login_parameter',
+          async: true,
+          cache: false,
+          dataType: 'json'
+        }).success(function (data, status, xhr) {
+          footer.data.id = jQuery.trim(data.id);
+          footer.data.param = jQuery.trim(data.param);
+        }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+        });
+        footer.cartLogin = function () {
+          $('<form/>', { action: "https://kingoftime.bcart.jp/login_action.php", method: 'post', target: 'cartServiceWindow' })
+            .hide()
+            .append($('<input/>', { type: 'hidden', name: 'loginEmail', value: footer.data.id }))
+            .append($('<input/>', { type: 'hidden', name: 'loginPassword', value: footer.data.param }))
+            .appendTo(document.body)
+            .submit()
+            .remove();
+        };
+      })(jQuery, KOT_GLOBAL.Parts.VmFooter);
+    </script>
+    <script>
+      jQuery(".htBlock-adjastableTableF").show();
+      jQuery(".htBlock-hrCalendarTableA").show();
+    </script>
+    <script src="asset/design1/js/vender/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+    <!--<script src="/asset/design1/js/htlib.js?202311211219"></script>-->
+    <script src="asset/design1/js/min/htlib.min.js"></script>
+    <script type="text/javascript">
+      (function ($) {
+        $(document).on('keypress', 'input[type="text"]:not(.specific-allow-submit),input[type="password"]:not(.specific-allow-submit),input[type="number"]:not(.specific-allow-submit)', function (event) {
+          return event.which !== 13;
+        });
+      })(jQuery);
+    </script>
+    <script>
+      !function () {
+        if (window.top !== window.self) return;
+        if ('TechtouchObject' in window && document.querySelector('script#techtouch-snippet')) return;
+        window.TechtouchObject = {
+          organizationUuid: "orga-620458be-3899-d201-1631-3d11b80e5568"
+        };
+        var e = document.createElement("script"); e.async = 1, e.src = "https://apps.techtouch.jp/script/orga-620458be-3899-d201-1631-3d11b80e5568/main.js?projectUuid=proj-62207a02-2834-745a-4d64-8bf05611f7d2"; e.id = "techtouch-snippet";
+        var t = document.getElementsByTagName("script")[0]; t.parentNode.insertBefore(e, t);
+      }()
+    </script>
+  </div><!-- end htBlock-body -->
+
+
+  <div class="htBlock-dialog_wrapper" style="display: none;"></div>
+  <script>if (window.zESettings?.webWidget?.chat?.suppress === true || window.zESettings?.webWidget?.chat?.suppress === undefined) {
+      window.krkrTrack({ name: 'customer-type', value: 'notAdmin' });
+    } else {
+      window.krkrTrack({ name: 'customer-type', value: 'admin' });
+    }</script>
+  <div class="krkr-62a295c1529f9770a2676dc9-62a295c1529f9770a2676dca">
+    <div class="krkr-popup-icon-wrapper"
+      style="right: 50px; bottom: 12px; opacity: 1; visibility: visible; transition: opacity 0.2s ease-in-out 0s, visibility 0.2s ease-in-out 0s, transform 0.2s ease-in-out 0s;">
+      <div
+        class="krkr-button krkr-popup-icon-button krkr-popup-icon-button--default krkr-popup-icon-button--shadow krkr-popup-icon-button--draggable"
+        style="color: rgb(255, 255, 255); background-color: rgb(241, 136, 0);"><svg width="30" height="30"
+          viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M15.0683 0C15.0602 0 15.0442 0 15.02 0C6.8857 0 0.270508 6.61518 0.270508 14.7495C0.270508 18.0692 1.40385 21.2924 3.47763 23.8886L1.33151 28.8801C1.15468 29.2901 1.34759 29.7643 1.74948 29.9331C1.89416 29.9974 2.05492 30.0135 2.20764 29.9894L10.0767 28.6068C11.6522 29.1775 13.308 29.4669 14.9799 29.4589C23.1142 29.4589 29.7294 22.8437 29.7294 14.7093C29.7455 6.59911 23.1785 0.00803789 15.0683 0ZM10.0205 11.7835H14.3609C14.803 11.7835 15.1647 12.1452 15.1647 12.5873C15.1647 13.0294 14.803 13.3911 14.3609 13.3911H10.0205C9.57839 13.3911 9.21669 13.0294 9.21669 12.5873C9.21669 12.1452 9.57839 11.7835 10.0205 11.7835ZM19.9875 17.4101H10.0205C9.57839 17.4101 9.21669 17.0484 9.21669 16.6063C9.21669 16.1642 9.57839 15.8025 10.0205 15.8025H19.9875C20.4296 15.8025 20.7913 16.1642 20.7913 16.6063C20.7913 17.0484 20.4296 17.4101 19.9875 17.4101Z"
+            fill="currentColor"></path>
+        </svg></div>
+    </div>
+  </div>
+  <script>var krkrObserver = new MutationObserver(function callback(mutations) {
+      if (mutations[0].addedNodes[0].childNodes[0].childNodes[0].className === 'krkr-modern-chat__head') {
+        document.getElementsByClassName('krkr-modern-chat__head')[0].addEventListener(
+          'click',
+          function () {
+            sessionStorage.krkrIsOpen = '0'
+          },
+          false
+        )
+      }
+    })
+    krkrObserver.observe(document.getElementsByTagName('body')[0], { childList: true })
+
+    document.getElementsByClassName('krkr-button')[0].addEventListener(
+      'click',
+      function () {
+        sessionStorage.krkrIsOpen = '1'
+      },
+      false
+    )
+
+    if (sessionStorage.krkrIsOpen === '1') {
+      setTimeout(function () {
+        document.getElementsByClassName('krkr-button')[0].click()
+      }, 1000)
+    }
+  </script>
+  <div id="tudienjp">
+    <div class="o-search-mobile" style="top: 0px; left: 0px; display: none;"><svg xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 40 40" version="1.1">
+        <g id="surface1">
+          <path
+            d="M 39.085938 34.664062 L 29.734375 25.3125 C 31.859375 22.15625 32.910156 18.210938 32.347656 14.007812 C 31.390625 6.859375 25.53125 1.039062 18.375 0.132812 C 7.734375 -1.210938 -1.210938 7.734375 0.132812 18.375 C 1.039062 25.535156 6.859375 31.398438 14.007812 32.351562 C 18.210938 32.914062 22.15625 31.863281 25.3125 29.738281 L 34.664062 39.089844 C 35.886719 40.308594 37.863281 40.308594 39.085938 39.089844 C 40.304688 37.867188 40.304688 35.882812 39.085938 34.664062 Z M 6.179688 16.25 C 6.179688 10.734375 10.664062 6.25 16.179688 6.25 C 21.695312 6.25 26.179688 10.734375 26.179688 16.25 C 26.179688 21.765625 21.695312 26.25 16.179688 26.25 C 10.664062 26.25 6.179688 21.765625 6.179688 16.25 Z M 6.179688 16.25 "
+            style="stroke: none; fill-rule: nonzero; fill: rgb(0, 0, 0); fill-opacity: 1;"></path>
+        </g>
+      </svg></div>
+    <div class="o-popup-tag o-bg-white o-border o-rounded o-shadow"
+      style="width: 400px; top: 0px; left: 0px; display: none;">
+      <div><button type="button" aria-label="Close"
+          class="btn-sm o-btn-close o-position-absolute o-top-0 o-end-0 o-mt-1 o-me-1"></button>
+        <ul role="tablist" class="o-nav o-nav-tabs o-pop-nav"><span><svg aria-hidden="true" focusable="false"
+              data-icon="volume-high" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"
+              class="o-pop-speak o-svg-inline--fa">
+              <path fill="currentColor"
+                d="M533.6 32.5C598.5 85.3 640 165.8 640 256s-41.5 170.8-106.4 223.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C557.5 398.2 592 331.2 592 256s-34.5-142.2-88.7-186.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM473.1 107c43.2 35.2 70.9 88.9 70.9 149s-27.7 113.8-70.9 149c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C475.3 341.3 496 301.1 496 256s-20.7-85.3-53.2-111.8c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zm-60.5 74.5C434.1 199.1 448 225.9 448 256s-13.9 56.9-35.4 74.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C393.1 284.4 400 271 400 256s-6.9-28.4-17.7-37.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM301.1 34.8C312.6 40 320 51.4 320 64V448c0 12.6-7.4 24-18.9 29.2s-25 3.1-34.4-5.3L131.8 352H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h67.8L266.7 40.1c9.4-8.4 22.9-10.4 34.4-5.3z">
+              </path>
+            </svg></span>
+          <li role="presentation" class="o-nav-item">
+            <div data-bs-toggle="tab" aria-selected="true" class="o-nav-link active">Từ vựng</div>
+          </li>
+          <li role="presentation" class="o-nav-item">
+            <div data-bs-toggle="tab" aria-selected="false" class="o-nav-link">Hán tự</div>
+          </li>
+          <li role="presentation" class="o-nav-item">
+            <div data-bs-toggle="tab" aria-selected="false" class="o-nav-link">Dịch</div>
+          </li>
+        </ul>
+        <div class="o-selected-result o-pt-1">
+          <div> Đang tìm kiếm ... </div>
+          <div class="o-fs-6 o-mt-2" style="line-height: 1.7;">
+            <div class="o-float-start">
+              <div class="o-form-check"><input type="checkbox" id="flexCheckTudienjpLang"
+                  class="o-form-check-input"><label for="flexCheckTudienjpLang"> Tiếng Anh </label></div>
+            </div>
+            <div class="o-float-end o-me-1"><a href="https://tudienjp.com/" target="_blank"
+                class="o-link-secondary o-text-decoration-none">Từ điển JP</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="tudienjpOff"></div>
+  <div id="mttContainer" class="bootstrapiso notranslate"
+    data-original-title="Chúng tôi đã cập nhật blog lao động của mình để giải thích các điểm cần áp dụng rào cản thu nhập hàng năm và gói tăng cường hỗ trợ!"
+    title="" style="transform: translate(840px, 411px);" dir="ltr"></div>
+  <script charset="utf-8" src="./KING OF TIME Attendance Management_files/content.js.download"></script>
+</body>
+<div id="techtouch-player-snippet"
+  style="-webkit-font-smoothing: antialiased; top: 0px; height: 0px; width: 100%; pointer-events: auto; position: absolute; z-index: 2147483647; font-size: 16px;">
+  <template shadowrootmode="open">
+    <div style="all: initial;"><span><span><span class="StyleProvider__GlobalStyle-sc-17avsy5-0 iUsiaO">
+            <div class="ContainerProvider__ContainerParent-sc-rw1hri-1 ibWpyZ">
+              <div class="ContainerProvider__ContentContainer-sc-rw1hri-0 bqiTwn"></div>
+            </div>
+          </span></span>
+        <style data-styled="active" data-styled-version="5.3.6"></style>
+      </span></div>
+  </template></div>
+
+</html>
