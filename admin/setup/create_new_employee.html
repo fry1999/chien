@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="google" content="notranslate" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="msapplication-config" content="none" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="google-site-verification" content="iezf0UApKmz5LFxwan6O-8_xmc0JhWhW0vVUa39zPZ8" />
+    <!-- Data for Google Tag Manager -->
+    <!-- <script>
+        dataLayer = [{
+            'pageId': '/login/login_form',
+            'adminId': '',
+            'userType': 'unknown',
+            'companyId': ''
+        }];
+    </script> -->
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WDS55BP');</script>
+    <!-- End Google Tag Manager -->
+
+    <link type="text/css" rel="stylesheet" href="../../asset/design1/js/vendor/jquery-ui-1.11.4/jquery-ui.min.css">
+    <link type="text/css" rel="stylesheet" href="../../asset/design1/css/base.kot.css">
+    <link type="text/css" rel="stylesheet" href="../../asset/design1/css/block.kot.css">
+    <!--
+UIテンプレート範囲外のスタイル用
+class指定のprefixは「specific-」
+-->
+    <link type="text/css" rel="stylesheet" href="../../asset/design1/css/specific.kot.css">
+    <!--[if lt IE 10]>
+<link rel="stylesheet" href="/asset/design1/css/ie.kot.css?202311211219">
+<![endif]-->
+    <link type="text/css" rel="stylesheet" href="/css/language/en.css?202311211219">
+    <script TYPE="text/javascript">
+        <!--
+        var jsMsgArray = [];
+        jsMsgArray["date_today"]                    = "Appointed day";
+        jsMsgArray["date_next"]                     = "Next day";
+        jsMsgArray["date_prev"]                     = "Previous day";
+        jsMsgArray["kot_ckdbclick"]                 = "Please press the button only once";
+        jsMsgArray["tablesort_linkCell"]            = "Click to sort the category name";
+        jsMsgArray["pagingcontrol_display_confirm"] = "Display may take a while if there are a many display numbers. Proceed?";
+        jsMsgArray["pagingcontrol_confirm_dialog"]  = "If you change before save your changes will not be reflected. Okay to proceed?";
+        jsMsgArray["update_string"]                 = "Update";
+        jsMsgArray["none_string"] = "None";
+        jsMsgArray["exsists_string"] = "Yes";
+        jsMsgArray["network_error_string"] = "Failed to data acquisition";
+        jsMsgArray["click_to_detail"] = "More details";
+        jsMsgArray["validate_string_input_error_message_for_encode"] = "Deprecated characters have been entered.";
+        jsMsgArray["loading_modal_message_default"] = "Please wait a moment...";
+        //--->
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>KING OF TIME Attendance Management
+    </title>
+    <link rel="apple-touch-icon" href="/images/iPhone_home_icon_kot.png">
+    <script src="/asset/design1/js/vendor/jquery-1.11.3.min.js?202311211219"></script>
+    <script src="/js/kot.js?202311211219"></script>
+    <script type="text/javascript" src="/js/jquery/jquery.kot.translation.js?202311211219"></script>
+    <script type="text/javascript" src="/js/ie11_caution_links.js?202311211219"></script>
+    <script type="text/javascript">
+        (function ($) {
+            $(document).ready(function () {
+                // issue #20886_ログイン画面の連打対応
+                // ログインに失敗した場合ログイン用の入力項目を一定時間無効化する
+                $("#login_id").focus();
+                $("#login_button").on("click", function () {
+                    $("#action_01").click();
+                });
+                $("#login_id").on("keypress", function (event) {
+                    submitAction(event);
+                });
+                $("#login_password").on("keypress", function (event) {
+                    submitAction(event);
+                });
+                translateTimeAndDate(102, "messageDay", "messageTime");
+                addBookmarkLink();
+                if (navigator.userAgent.match(/(msie|trident)/i)) {
+                    // IE11以下の処理 #24058
+                    ie11_link_anchor = "";
+                    if (ie11_nonsupport_link_global != "") {
+                        ie11_link_anchor = '<a href="" id="ie11alert" target="_blank">［Detail］</a>';
+                    }
+                    $('.warning').append('<div class="htBlock-messageBox"><span class="htBlock-warnA">The system will no longer support your current browser (Windows IE) after June 16, 2022.' + ie11_link_anchor + '</span></div>');
+                    $('#ie11alert').attr('href', ie11_nonsupport_link_global);
+                }
+                if (navigator.userAgent.match(/Win(dows )?(NT 5\.1|XP)/)) {
+                    // Windows XP の処理
+                    $('.warning').append('<div class="htBlock-messageBox"><span class="htBlock-warnA">Your OS (Windows XP) is not supported.</span></div>');
+                }
+            });
+        })(jQuery);
+        function submitAction(e) {
+            if (!e) {
+                var e = window.event;
+            }
+            if (e.keyCode === 13) {
+                $("#action_01").click();
+            }
+        }
+        function addBookmarkLink() {
+            var bookmarkArea = $("#bookmark");
+            if (!$(bookmarkArea).attr("id")) return;
+            var isOlderFireFox = false;
+            if (window.sidebar && window.sidebar.addPanel) {
+                //[FireFox lt 23.0]
+                isOlderFireFox = true;
+            }
+            var isIE = false;
+            try {
+                if (window.external && ('AddFavorite' in window.external)) {
+                    isIE = true;
+                }
+            }
+            catch (e) {
+                return;
+            }
+            var bookmarkLink = $("<a>").attr("id", "bookmark_link").text("Add to favorites");
+            if (isOlderFireFox || isIE) {
+                $(bookmarkLink).attr("href", "#");
+                $(bookmarkLink).bind({
+                    click: function () {
+                        if (isIE) {
+                            window.external.AddFavorite(location.href, document.title);
+                        }
+                        else if (isOlderFireFox) {
+                            window.sidebar.addPanel(title, url, "");
+                        }
+                    },
+                    keypress: function () {
+                        if (isIE) {
+                            window.external.AddFavorite(location.href, document.title);
+                        }
+                        else if (isOlderFireFox) {
+                            window.sidebar.addPanel(title, url, "");
+                        }
+                    }
+                });
+                $(bookmarkArea).append(bookmarkLink);
+            }
+            else if (navigator.userAgent.indexOf("Opera") > -1
+                || navigator.userAgent.indexOf("Firefox") > -1) {
+                //[opera lt 15.0] or [FireFox gte 23.0]
+                $(bookmarkLink).attr("rel", "sidebar").attr("href", location.href).attr("title", document.title);
+                $(bookmarkArea).append(bookmarkLink);
+            }
+        }
+    </script>
+    <!--[if lte IE 6]>
+<script type="text/javascript" src="/js/DD_belatedPNG_0.0.8a-min.js?202311211219"></script>
+<script type="text/javascript">
+DD_belatedPNG.fix('img, .png_bg');
+</script>
+<![endif]-->
+    <style type="text/css" media="screen">
+        .oidc-login-space {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WDS55BP" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="htBlock-body specific-other_7 specific-other_7_custom">
+        <div class="specific-main">
+            <div class="specific-loginForm">
+                <div class="specific-loginFormInner">
+                    <img id="logo" src="/asset/design1/img/templates/logo/kot/logo.png" class="specific-kotLogo">
+                    <form action="https://s2.ta.kingoftime.jp/admin" method="post" name="FormName">
+                        <input type="text" class="htBlock-text specific-inputId" placeholder="ID" id="login_id"
+                            name="login_id" onKeyPress="return submitAction(event);">
+                        <input type="password" class="htBlock-text specific-inputPw" placeholder="Password"
+                            id="login_password" name="login_password" onKeyPress="return submitAction(event);">
+                        <p></p>
+                        <input name="page_id" type="hidden" value="/login/login_form">
+                        <input name="page_id" type="hidden" value="/login/login_form">
+                        <input name="action_id" class="action notranslate" type="submit" value="1" id="action_01"
+                            style="display: none;">
+                        <input id="login_button"
+                            class="login_button htBlock-buttonL htBlock-buttonPrimary specific-loginButton"
+                            type="button" value="Sign in">
+                        <div>
+                            <a href="?page_id=/login/saml_login" class="specific-forgotPw">
+                                Go to sign in screen with external ID
+                            </a>
+                        </div>
+                        <a href="?page_id=/login/admin_pass_republish" class="specific-forgotPw save_id">
+                            Forgot your password?
+                        </a>
+                        <div class="warning"></div>
+                        <input name="call_from" type="hidden" value="login_form">
+                    </form>
+                </div>
+                <!--
+<li class="specific-notifies_message">
+<div>
+<p class="specific-notifies_message_main">
+サーバー証明書切り替えによる影響のご案内（2016年3月8日〜）
+</p>
+</div>
+<a href="#">
+詳細
+<img src="img/templates/btn_arrow_2_R.png">
+</a>
+</li>
+-->
+            </div>
+            <div class="specific-banner" align="center">
+            </div>
+        </div>
+        <div class="specific-sslSiteSeal">
+        </div>
+        <div class="specific-copyright" id="copyright">
+            <span>
+                Copyright &copy; 2003-
+                <script
+                    type="text/javascript">myDate = new Date(); myYear = myDate.getFullYear(); document.write(myYear);</script>
+                HumanTechnologies, Inc. All Rights Reserved.
+            </span>
+        </div>
+    </div>
+    <script>
+        !function () {
+            if (window.top !== window.self) return;
+            if ('TechtouchObject' in window && document.querySelector('script#techtouch-snippet')) return;
+            window.TechtouchObject = {
+                organizationUuid: "orga-620458be-3899-d201-1631-3d11b80e5568"
+            };
+            var e = document.createElement("script"); e.async = 1, e.src = "https://apps.techtouch.jp/script/orga-620458be-3899-d201-1631-3d11b80e5568/main.js?projectUuid=proj-62207a02-2834-745a-4d64-8bf05611f7d2"; e.id = "techtouch-snippet";
+            var t = document.getElementsByTagName("script")[0]; t.parentNode.insertBefore(e, t);
+        }()
+    </script>
+</body>
+
+</html>

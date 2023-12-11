@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="apple-touch-icon" href="/images/iPhone_home_icon_kot.png">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta name="msapplication-config" content="none" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="google-site-verification" content="iezf0UApKmz5LFxwan6O-8_xmc0JhWhW0vVUa39zPZ8" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KING OF TIME Attendance Management
+    </title>
+    <link type="text/css" rel="stylesheet" href="../../asset/design1/js/vendor/jquery-ui-1.11.4/jquery-ui.min.css">
+    <link type="text/css" rel="stylesheet" href="../../asset/design1/css/base.kot.css">
+    <link type="text/css" rel="stylesheet" href="../../asset/design1/css/block.kot.css">
+    <!--
+UIテンプレート範囲外のスタイル用
+class指定のprefixは「specific-」
+-->
+    <link type="text/css" rel="stylesheet" href="../../asset/design1/css/specific.kot.css">
+    <script type="text/javascript">
+        var ua = navigator.userAgent;
+        if (ua.match("Trident") || ua.match("MSIE")) {
+            document.write('<link rel="stylesheet" href="\/asset\/design1\/css\/ie.kot.css?202311211217">');
+        }
+    </script>
+    <link type="text/css" rel="stylesheet" href="/css/language/en.css?202311211217">
+    <script src="/asset/design1/js/vendor/jquery-1.11.3.min.js?202311211217"></script>
+    <script src="/js/kot.js?202311211217"></script>
+    <script type="text/javascript">
+        var browserType = KOT_GLOBAL.KOT_LIB.getBrowserType();
+        if (browserType <= 110) {
+            document.write('<script src="\/asset\/design1\/js\/vendor\/flexibility.js?202311211217"><\/script>');
+        }
+        if (browserType <= 109) {
+            $(document).ready(function () {
+                $(".specific-htBlock-dialog-body").scroll(function () {
+                    var pos = $(this).scrollTop();
+                    var posPrev = pos;
+                    var dialog = this;
+                    var id = setInterval(function () {
+                        posPrev = pos;
+                        pos = $(dialog).scrollTop();
+                        if (pos == posPrev) {
+                            $(dialog).hide().show();
+                            $(dialog).scrollTop(pos);
+                            clearInterval(id);
+                        }
+                    }, 500);
+                });
+            });
+        }
+    </script>
+    <script TYPE="text/javascript">
+        <!--
+        var jsMsgArray = [];
+        jsMsgArray["date_today"]                    = "Appointed day";
+        jsMsgArray["date_next"]                     = "Next day";
+        jsMsgArray["date_prev"]                     = "Previous day";
+        jsMsgArray["kot_ckdbclick"]                 = "Please press the button only once";
+        jsMsgArray["tablesort_linkCell"]            = "Click to sort the category name";
+        jsMsgArray["pagingcontrol_display_confirm"] = "Display may take a while if there are a many display numbers. Proceed?";
+        jsMsgArray["pagingcontrol_confirm_dialog"]  = "If you change before save your changes will not be reflected. Okay to proceed?";
+        jsMsgArray["update_string"]                 = "Update";
+        jsMsgArray["none_string"] = "None";
+        jsMsgArray["exsists_string"] = "Yes";
+        jsMsgArray["network_error_string"] = "Failed to data acquisition";
+        jsMsgArray["click_to_detail"] = "More details";
+        jsMsgArray["validate_string_input_error_message_for_encode"] = "Deprecated characters have been entered.";
+        jsMsgArray["loading_modal_message_default"] = "Please wait a moment...";
+        jsMsgArray["validate_number_input_error_message_upper_bound"] = "Value ​​exceeds upper limit regulation standards";
+        jsMsgArray["sso_confirm_message"] = "The single sign-on to the KING OF TIME series will be disconnected.\n Proceed?";
+        var globalTemp = window.KOT_GLOBAL || {};
+        globalTemp.HT_LIB_I18N = {
+        "htlib_001": "Jan",
+        "htlib_002": "Feb",
+        "htlib_003": "Mar",
+        "htlib_004": "Apr",
+        "htlib_005": "May",
+        "htlib_006": "Jun",
+        "htlib_007": "Jul",
+        "htlib_008": "Aug",
+        "htlib_009": "Sep",
+        "htlib_010": "Oct",
+        "htlib_011": "Nov",
+        "htlib_012": "Dec",
+        "htlib_013": "Sun",
+        "htlib_014": "Mon",
+        "htlib_015": "Tue",
+        "htlib_016": "Wed",
+        "htlib_017": "Thu",
+        "htlib_018": "Fri",
+        "htlib_019": "Sat",
+        "htlib_020": "",
+        "htlib_021": "",
+        "htlib_022": "Click row for action"
+        };
+        window.KOT_GLOBAL = globalTemp;
+        //--->
+    </script>
+    <!-- Data for Google Tag Manager -->
+    <script>
+        dataLayer = [{
+            'pageId': '/setup/employee_edit',
+            'adminId': '900231724',
+            'userType': 'admin',
+            'companyId': '900060596'
+        }];
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WDS55BP');</script>
+    <!-- End Google Tag Manager -->
+
+    <script type="text/javascript">
+        $(function () {
+            $('input:radio[name="paid_holiday_days_select_type"]').click(function () {
+                document.getElementById("paid_holiday_days_select_message").innerHTML = '<span class="htBlock-warnB">*Please note that if you change values, an error may occur to 有休 auto calculation result.</span>';
+            });
+            $('input:radio[name="paid_holiday_assign_type"], select[name="paid_holiday_assign_day"], select[name="paid_holiday_assign_month"]').change(function () {
+                document.getElementById("paid_holiday_assign_message").innerHTML = '<span class="htBlock-warnB">*Please note that if you change values, an error may occur to 有休 auto calculation result.</span>';
+            });
+            $("input[name = mail_address]").on("keydown", function (e) {
+                //入力値が「,」「<」の場合は入力をさせない
+                if (e.keyCode == 188) {
+                    return false;
+                }
+            });
+            $("input[name = mail_address]," +
+                "input[name = last_name]," +
+                "input[name = first_name]," +
+                "input[name = last_name_kana]," +
+                "input[name = first_name_kana]," +
+                "input[name = middle_name]").change(function () {
+                    var value = this.value;
+                    this.value = value.replace(/,/g, " ").trim();
+                });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="htBlock-body specific-pattern_a">
+        <div class="htBlock-header" id="header_main_menu">
+            <div class="htBlock-header_inner">
+                <div class="htBlock-header_homeButton">
+                    <p>
+                        <a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/top"></a>
+                    </p>
+                </div>
+                <div class="htBlock-header_backButton  htBlock-header_backButton_en " id="header_menu_back_button">
+                    <p>
+                        <a href="#">
+                            <span>Return</span>
+                        </a>
+                    </p>
+                </div>
+                <!-- よく使うメニュー -->
+                <div class="htBlock-header_menuBox">
+                    <ol>
+                        <li data-ht-tooltip-header-menu="Daily data">
+                            <a
+                                href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/working/daily_working_list&reset_selected_date=true&from_link=1&jsCzQ41T=6zBCxMLxMtMdyNBG">
+                                <img
+                                    src="/asset/design1/img/templates/day_month_year/size-s/top_menubtn-s_workingedit_11.png">
+                            </a>
+                        </li>
+                        <li data-ht-tooltip-header-menu="Monthly data">
+                            <a
+                                href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/working/monthly_working_summary&from_link=1&jsCzQ41T=6zBCxMLxMtMdyNBG">
+                                <img
+                                    src="/asset/design1/img/templates/day_month_year/size-s/top_menubtn-s_monthly-working-summary_12.png">
+                            </a>
+                        </li>
+                        <li data-ht-tooltip-header-menu="Yearly data">
+                            <a
+                                href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/working/yearly_working_summary&date_selection_type=6&jsCzQ41T=6zBCxMLxMtMdyNBG">
+                                <img
+                                    src="/asset/design1/img/templates/day_month_year/size-s/top_menubtn-s_yearly-working-summary_2023.png">
+                            </a>
+                        </li>
+                        <li data-ht-tooltip-header-menu="Schedule management">
+                            <a
+                                href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/schedule/monthly_individual_schedule_list&only_show_at_click=true&time_division_flag=0&pattern_name_flag=0&jsCzQ41T=6zBCxMLxMtMdyNBG">
+                                <img src="/asset/design1/img/templates/top_menubtn-s_indivisual-schedule.png">
+                            </a>
+                        </li>
+                        <li data-ht-tooltip-header-menu="Vacation management">
+                            <a
+                                href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/setup/day_count_list&jsCzQ41T=6zBCxMLxMtMdyNBG">
+                                <img src="/asset/design1/img/templates/top_menubtn-s_holiday-list.png">
+                            </a>
+                        </li>
+                        <li data-ht-tooltip-header-menu="Search employees">
+                            <a
+                                href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/utility/search_employee&jsCzQ41T=6zBCxMLxMtMdyNBG">
+                                <img src="/asset/design1/img/templates/top_menubtn-s_employee-search.png">
+                            </a>
+                        </li>
+                        <li data-ht-tooltip-header-menu="Export/Import">
+                            <a
+                                href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/export/select_export_type&jsCzQ41T=6zBCxMLxMtMdyNBG">
+                                <img src="/asset/design1/img/templates/top_menubtn-s_import-export.png">
+                            </a>
+                        </li>
+                        <li data-ht-tooltip-header-menu="Login permission">
+                            <a
+                                href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/setup/support_menu_edit&jsCzQ41T=6zBCxMLxMtMdyNBG">
+                                <img src="/asset/design1/img/templates/top_menubtn-s_login-permission.png">
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+                <div class="htBlock-header_menuButton menu-main" id="step1">
+                    <p>
+                        <a href="#">
+                            <span>All menu</span>
+                        </a>
+                    </p>
+                </div>
+                <div class="htBlock-header_spacer"></div>
+                <!-- サービススイッチャーの表示 -->
+                <div class="htBlock-header_userInfo">
+                    <div class="htBlock-header_userInfo_inner">
+                        <span>
+                            <!--<img class="htBlock-header_userInfo_thumb" src="/asset/design1/img/templates/header_user.png">-->
+                            <p class="htBlock-header_userInfo_name">&nbsp;admin&nbsp;チャンフォン　ナム</p>
+                            <p class="htBlock-header_userInfo_company">&nbsp;fzzhhp&nbsp;ＮｅｏＸ　ＡＳＩＡ株式会社</p>
+                        </span>
+                    </div>
+                </div>
+                <div class="htBlock-header_logoutButton">
+                    <p>
+                        <a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/login/do_logout">
+                            <img src="/asset/design1/img/templates/header_icon_logout.png">
+                            Sign out
+                        </a>
+                    </p>
+                </div>
+            </div><!-- end class="htBlock-header_inner" -->
+            <div class="htBlock-header_menuBody" style="display:none;">
+                <div class="htBlock-header_menuBody_title">
+                    <h2>Menu
+                    </h2>
+                </div>
+                <table class="htBlock-header_menuBody_inner">
+                    <tr>
+                        <td>
+                            <h3>Work data</h3>
+                            <a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/working/daily_working_list&reset_selected_date=true&from_link=1&jsCzQ41T=6zBCxMLxMtMdyNBG"
+                                class="ctcol">Daily data</a>
+                            <a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/working/monthly_working_summary&from_link=1&jsCzQ41T=6zBCxMLxMtMdyNBG"
+                                class="ctcol">Monthly data</a>
+                            <a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/working/yearly_working_summary&date_selection_type=6&jsCzQ41T=6zBCxMLxMtMdyNBG"
+                                class="ctcol">Yearly data</a>
+                            <a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/working/section_summary_list&select_type=section&from_link=1&jsCzQ41T=6zBCxMLxMtMdyNBG"
+                                class="ctcol">Data by divisions and groups</a>
+                        </td>
+                        <td>
+                            <h3>Schedule</h3>
+                            <a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/schedule/monthly_individual_schedule_list&only_show_at_click=true&time_division_flag=0&pattern_name_flag=0&jsCzQ41T=6zBCxMLxMtMdyNBG"
+                                class="ctcol">Schedule management</a>
+                            <a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/setup/day_count_list&jsCzQ41T=6zBCxMLxMtMdyNBG"
+                                class="ctcol">Vacation management</a>
+                        </td>
+                        <td>
+                            <h3>Confirm</h3>
+                            <a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/working/uncomplete_working_list&error_type=1&jsCzQ41T=6zBCxMLxMtMdyNBG"
+                                class="ctcol">Attendance data error</a>
+                            <a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/working/daily_closed_schedule_list&date_selection_type=1&jsCzQ41T=6zBCxMLxMtMdyNBG"
+                                class="ctcol">Closing and Attendance confirmation status</a>
+                            <a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/admin/request_list&select_type=now&jsCzQ41T=6zBCxMLxMtMdyNBG"
+                                class="ctcol">Request approval</a>
+                            <a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/admin/regulation_violated_limit_overtime&jsCzQ41T=6zBCxMLxMtMdyNBG"
+                                class="ctcol">Workstyle reform alert</a>
+                        </td>
+                        <td>
+                            <h3>Others</h3>
+                            <a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/utility/search_employee&jsCzQ41T=6zBCxMLxMtMdyNBG"
+                                class="ctcol">Search employees</A>
+                            <a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/export/select_export_type&jsCzQ41T=6zBCxMLxMtMdyNBG"
+                                class="ctcol">Export/Import</a>
+                            <a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/admin/admin_message_list&jsCzQ41T=6zBCxMLxMtMdyNBG"
+                                class="ctcol">Manage message</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <script type="text/javascript" src="/asset/design1/js/KOT_UnProcessAlert.jquery.js?202311211217"></script>
+            <script type="text/javascript">
+                (function ($) {
+                    // 未処理項目アラート
+                    // cssの関係上、divタグ内に配置します
+                    var currentPageId = "/setup/employee_edit";
+                    // TOP画面以外はアラート表示をを行わない。
+                    if (currentPageId === "/top") {
+                        var targetId = "#un_process_items_area";
+                        $(document).ready(function () {
+                            //カスタムイベント
+                            $(document).on("un_process_alert.KOT_EVENT", targetId, function (event, arg1) {
+                                var data = JSON.parse(arg1);
+                                //TOP画面の対応が必要な項目への操作
+                                //top.htmlで実装しています。
+                                KOT_GLOBAL.Top.adjustUnProcessAlert(data);
+                                //ホームアイコンの操作
+                                if (data.result === "OK") {
+                                    checkUnProcessAlertData(data.result_list);
+                                }
+                            });
+                            //未処理項目取得処理
+                            $(targetId).KOT_UnProcessAlert({
+                                actionTarget: "/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr",
+                                backgroundTarget: "/background/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr",
+                                forceRefresh: false
+                            });
+                            $("#un_process_refresh").click(function () {
+                                $("#un_process_refresh").prop("disabled", true);
+                                $(targetId).KOT_UnProcessAlert({
+                                    actionTarget: "/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr",
+                                    backgroundTarget: "/background/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr",
+                                    forceRefresh: true
+                                });
+                            });
+                        });
+                    }
+                    //JSON形式で返されたデータを元に、未処理データが存在するかチェック
+                    function checkUnProcessAlertData(resultList) {
+                        var exists = false;
+                        for (var i = 0, l = resultList.length; i < l; i++) {
+                            var oneData = resultList[i];
+                            if (oneData.is_visible === "true") {
+                                for (var j = 0, m = oneData.data_list.length; j < m; j++) {
+                                    if (oneData.data_list[j].is_exsists === "true"
+                                        && oneData.data_list[j].is_use === "true") {
+                                        exists = true;
+                                        break;
+                                    }
+                                }
+                                if (oneData.before_data_list
+                                    && oneData.before_data_list.length > 0) {
+                                    if (oneData.before_data_list[0].is_exsists === "true"
+                                        && oneData.before_data_list[0].is_use === "true") {
+                                        exists = true;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                        $("#header_home_icon").attr("src", "/asset/design1/img/templates/theme/kot/header_icon_home.png");
+                    }
+                    $(document).ready(function () {
+                        $("#header_menu_back_button").on("click", function () {
+                            var buttonType = "button";
+                            if (buttonType === "link") {
+                                location.href = "14";
+                            }
+                            else {
+                                var backButtonSelector = "#14";
+                                if (buttonType === "button") {
+                                    backButtonSelector = "#button_14";
+                                }
+                                $(backButtonSelector).click();
+                            }
+                        });
+                    });
+                    // スイッチャーメニューの表示
+                })(jQuery);
+            </script>
+        </div><!-- end htBlock-header -->
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WDS55BP" height="0" width="0"
+                style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
+        <h1 class="htBlock-pageTitle">
+            <img src="/asset/design1/img/templates/top_menubtn-s_setting.png">
+            <span>
+                Add employee
+            </span>
+            <span>
+            </span>
+        </h1>
+        <form action="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr" method="post" name="employee_edit_form"
+            id="employee_edit_form" onsubmit="return ckdbclick()">
+            <input style="display:none">
+            <input type="password" style="display:none">
+            <div class="htBlock-fixedSubHeader specific-saveToolBar">
+                <span class="entry" style="display:none">
+                    <input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+                    <input name="action_id" type="submit" value="1" id="action_1" style="display: none;">
+                    <button id="button_1" type="button" class=" htBlock-buttonSave   htBlock-buttonM "
+                        onClick="KOT_GLOBAL.KOT_LIB.onClickActionButton('action_1');">
+                        <span>Save</span>
+                    </button>
+                </span>
+                <span class="request" style="display:none">
+                    <input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+                    <input name="action_id" type="submit" value="21" id="action_21" style="display: none;">
+                    <button id="button_21" type="button" class=" htBlock-buttonSave   htBlock-buttonM "
+                        onClick="KOT_GLOBAL.KOT_LIB.onClickActionButton('action_21');">
+                        <span>Registration application</span>
+                    </button>
+                </span>
+                <input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+                <input name="action_id" class="action notranslate" type="submit" value="14" id="action_14"
+                    style="display: none;">
+                <input name="action_button" class="action_button" type="button" value="Return" id="button_14"
+                    style="margin:0px; display:none;" onClick="KOT_GLOBAL.KOT_LIB.onClickActionButton('action_14');">
+            </div>
+            <div class="htBlock-mainContents">
+                <div class="htBlock-foldableSection" data-ht-opt="default:basic">
+                    <h3>
+                        <label>Basic info</label>
+                        <span class="htBlock-foldableSection_toggleButton">
+                            <input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+                            <button type="button" class="htBlock-foldableSection_buttonBasic">Base</button>
+                            <button type="button" class="htBlock-foldableSection_buttonDetail">Detail</button>
+                        </span>
+                    </h3>
+                    <ul>
+                        <li>
+                            <label class="edit"
+                                title="Enter code to identify Employee in 3-10 alphanumerical characters. This code is used for exporting data and accessing the Employee Screen.">Employee
+                                code<span class="htBlock-warnA">(Required)</span>:</label>
+                            <div>
+                                <input class="htBlock-textS"
+                                    title="Enter code to identify Employee in 3-10 alphanumerical characters. This code is used for exporting data and accessing the Employee Screen."
+                                    name="employee_code" type="text" id="employee_code" value="" maxlength="10"
+                                    style="ime-mode: disabled;">
+                                <span class="htBlock-info">* Enter in 3-10 characters.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <label class="edit"
+                                title="Enter name and family name in 40 characters or less each.">Last/First name<span
+                                    class="htBlock-warnA">(Required)</span>:</label>
+                            <div>
+                                <input class="htBlock-textS" name="last_name" type="text" id="last_name"
+                                    placeholder="Last name" value="" maxlength="40">
+                                <input class="htBlock-textS" name="first_name" type="text" id="first_name"
+                                    placeholder="First name" value="" maxlength="40">
+                                <span class="htBlock-info">* Enter in 40 characters or less.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <label class="edit" title="Enter Phonetics for last name within 40 characters.">Last/First
+                                name (Phonetics):</label>
+                            <div>
+                                <input class="htBlock-textS" name="last_name_kana" type="text" id="last_name_kana"
+                                    placeholder="Last name (Phonetics)" value="" maxlength="40">
+                                <input class="htBlock-textS" name="first_name_kana" type="text" id="first_name_kana"
+                                    placeholder="First name (Phonetics)" value="" maxlength="40">
+                                <span class="htBlock-info">* Enter in 40 characters or less.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <label class="edit" title="Set employee email address.">Email address:</label>
+                            <div>
+                                <div>
+                                    <input class="htBlock-textS" name="mail_address" type="text" id="mail_address"
+                                        value="" maxlength="100" style="ime-mode: disabled;">
+                                </div>
+                                <div>
+                                    <input class="htBlock-textS" name="mail_address" type="text"
+                                        id="reserve_mail_address" value="" maxlength="100"
+                                        style="ime-mode: disabled; display:none" disabled="disabled">
+                                </div>
+                                <div>
+                                    <input class="htBlock-checkboxL" type="checkbox" id="add_mailaddress" />
+                                    <label for="add_mailaddress">Register secondary email address</label>
+                                </div>
+                                <input name="dummy" type="text" style="display:none"><!-- オートコンプリート回避用ダミー -->
+                            </div>
+                        </li>
+                        <li>
+                            <label class="edit"
+                                title="Set employee password. password is used for clocking in/out by password, and for signing in to the Employee screen.">Password:</label>
+                            <div>
+                                <div>
+                                    <input type="hidden" name="confirm_timerecorder_id" value="900463197::本社">
+                                    <input type="hidden" name="confirm_timerecorder_id" value="900465623::営業部">
+                                    <input type="hidden" name="confirm_sex_code" value="1::Male">
+                                    <input type="hidden" name="confirm_sex_code" value="2::Female">
+                                    <input name="employee_password" type="hidden" id="password" value="">
+                                    <div>
+                                        No settings
+                                    </div>
+                                    <div>
+                                        <input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+                                        <input name="action_id" type="submit" value="18" id="action_18"
+                                            style="display: none;">
+                                        <button id="button_18" type="button"
+                                            class=" htBlock-buttonNormal   htBlock-buttonS "
+                                            onClick="KOT_GLOBAL.KOT_LIB.onClickActionButton('action_18');">
+                                            <span>Add password</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="htBlock-warnA">* If password is not specified, Employee code will be
+                                        applied as password.</span>
+                                </div>
+                                <input type="hidden" name="allow_password_certification_flag" value="0">
+                            </div>
+                        </li>
+                        <li class="htBlock-foldableSection_detail">
+                            <label></label>
+                            <div>
+                                <hr class="htBlock-horizontalLineA">
+                            </div>
+                        </li>
+                        <li class="htBlock-foldableSection_detail">
+                            <label class="edit"
+                                title="Select gender. It will not be associated with any other data in the system.">Gender:</label>
+                            <div>
+                                <div>
+                                    <input type="radio" id="sex_code_man" name="sex_code" class="htBlock-radioL"
+                                        value="1" checked>
+                                    <label for=sex_code_man>Male</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="sex_code_woman" name="sex_code" class="htBlock-radioL"
+                                        value="2">
+                                    <label for=sex_code_woman>Female</label>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="htBlock-foldableSection_detail">
+                            <label class="edit"
+                                title="Enter date of birth. It will not be associated with any other data in the system.">DOB:</label>
+                            <div>
+                                A.D.
+                                <input class="htBlock-textS" name="birth_date_y" type="text" id="birth_date_y" value=""
+                                    size="4" maxlength="4" style="ime-mode: disabled;">
+                                <span>Yr</span>
+                                <input class="htBlock-textS" name="birth_date_m" type="text" id="birth_date_m" value=""
+                                    size="2" maxlength="2" style="ime-mode: disabled;">
+                                <span>Month</span>
+                                <input class="htBlock-textS" name="birth_date_d" type="text" id="birth_date_d" value=""
+                                    size="2" maxlength="2" style="ime-mode: disabled;">
+                                <span>Day</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div><!-- end  基本情報     htBlock-foldableSection -->
+                <div class="htBlock-foldableSection"
+                    data-ht-opt="default:basic on-basic-func:KOT_GLOBAL.Setup.EmployeeEdit.onEmploymentInfoBasic on-detail-func:KOT_GLOBAL.Setup.EmployeeEdit.onEmploymentInfoDetail">
+                    <h3>
+                        <label>Employment info</label>
+                        <span class="htBlock-foldableSection_toggleButton">
+                            <input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+                            <button type="button" class="htBlock-foldableSection_buttonBasic">Base</button>
+                            <button type="button" class="htBlock-foldableSection_buttonDetail">Detail</button>
+                        </span>
+                    </h3>
+                    <ul>
+                        <li>
+                            <label class="edit" title="Select Division. You can perform settings at "
+                                Divisions".">Division<span class="htBlock-warnA">(Required)</span>:</label>
+                            <div>
+                                <div>
+                                    <select class="htBlock-selectmenuS htBlock-selectmenu-fix-width"
+                                        name="timerecorder_id" id="timerecorder_id"
+                                        onChange="KOT_GLOBAL.Setup.EmployeeEdit.authorityCheck();">
+                                        <option value="">--</option>
+                                        <option value="900463197">
+                                            本社
+                                        </option>
+                                        <option value="900465623">
+                                            営業部
+                                        </option>
+                                    </select>
+                                </div>
+                                <input type="hidden" name="confirm_timerecorder_id" value="900463197::本社">
+                                <input type="hidden" name="confirm_timerecorder_id" value="900465623::営業部">
+                                <input type="hidden" id="section_authority" name="section_authority"
+                                    value="900463197_3">
+                                <input type="hidden" id="section_authority" name="section_authority"
+                                    value="900465623_3">
+                            </div>
+                        </li>
+                        <li>
+                            <label class="edit" title="Select Employee type. You can perform settings from the "
+                                Employee type settings" page.">Employee type<span
+                                    class="htBlock-warnA">(Required)</span>:</label>
+                            <div>
+                                <div>
+                                    <select class="htBlock-selectmenuS htBlock-selectmenu-fix-width"
+                                        name="working_type_id" id="working_type_id"
+                                        onChange="  KOT_GLOBAL.Setup.EmployeeEdit.variationalWorkingCheck(); KOT_GLOBAL.Setup.EmployeeEdit.authorityCheck(); KOT_GLOBAL.Setup.EmployeeEdit.paidHolidayWorkingTypeCheck(); KOT_GLOBAL.Setup.EmployeeEdit.adjustPaidHolidaySettingView()">
+                                        <option value="">Select employee type.</option>
+                                        <option value="900193874">
+                                            1000&nbsp;管理監督者（労働時間のみ集計）
+                                        </option>
+                                        <option value="900193954">
+                                            1001&nbsp;管理監督者（所定時間超過も集計）
+                                        </option>
+                                        <option value="900193955">
+                                            1002&nbsp;管理監督者（その他）
+                                        </option>
+                                        <option value="900193875">
+                                            2000&nbsp;管理職（原則）
+                                        </option>
+                                        <option value="900193956">
+                                            2001&nbsp;管理職（フレックスタイム）
+                                        </option>
+                                        <option value="900194789">
+                                            3000&nbsp;正社員
+                                        </option>
+                                        <option value="900193958">
+                                            4000&nbsp;契約社員
+                                        </option>
+                                        <option value="900193959">
+                                            5000&nbsp;パート・アルバイト
+                                        </option>
+                                        <option value="900193960">
+                                            6000&nbsp;その他
+                                        </option>
+                                    </select>
+                                </div>
+                                <input type="hidden" name="confirm_working_type_id" value="900193874::管理監督者（労働時間のみ集計）">
+                                <input type="hidden" name="confirm_working_type_id" value="900193954::管理監督者（所定時間超過も集計）">
+                                <input type="hidden" name="confirm_working_type_id" value="900193955::管理監督者（その他）">
+                                <input type="hidden" name="confirm_working_type_id" value="900193875::管理職（原則）">
+                                <input type="hidden" name="confirm_working_type_id" value="900193956::管理職（フレックスタイム）">
+                                <input type="hidden" name="confirm_working_type_id" value="900194789::正社員">
+                                <input type="hidden" name="confirm_working_type_id" value="900193958::契約社員">
+                                <input type="hidden" name="confirm_working_type_id" value="900193959::パート・アルバイト">
+                                <input type="hidden" name="confirm_working_type_id" value="900193960::その他">
+                                <input type="hidden" id="workingtype_authority" name="workingtype_authority"
+                                    value="900193874_3">
+                                <input type="hidden" id="workingtype_authority" name="workingtype_authority"
+                                    value="900193954_3">
+                                <input type="hidden" id="workingtype_authority" name="workingtype_authority"
+                                    value="900193955_3">
+                                <input type="hidden" id="workingtype_authority" name="workingtype_authority"
+                                    value="900193875_3">
+                                <input type="hidden" id="workingtype_authority" name="workingtype_authority"
+                                    value="900193956_3">
+                                <input type="hidden" id="workingtype_authority" name="workingtype_authority"
+                                    value="900194789_3">
+                                <input type="hidden" id="workingtype_authority" name="workingtype_authority"
+                                    value="900193958_3">
+                                <input type="hidden" id="workingtype_authority" name="workingtype_authority"
+                                    value="900193959_3">
+                                <input type="hidden" id="workingtype_authority" name="workingtype_authority"
+                                    value="900193960_3">
+                                <input type="hidden" id="variational_working_type" name="variational_working_type"
+                                    value="900193956_0_0_00013_1">
+                                <input type="hidden" id="variational_working_type" name="variational_working_type"
+                                    value="900193958_0_0_00013_1">
+                                <input type="hidden" id="variational_working_type" name="variational_working_type"
+                                    value="900193959_0_0_00013_1">
+                                <input type="hidden" id="variational_working_type" name="variational_working_type"
+                                    value="900193960_0_0_00013_1">
+                            </div>
+                        </li>
+                        <li>
+                            <label class="edit" title="Enter hired date.">Hired date:</label>
+                            <div>
+                                A.D.
+                                <input class="htBlock-textS" name="join_date_y" type="text" id="join_date_y" value=""
+                                    size="4" maxlength="4" style="ime-mode: disabled;">
+                                <span>Yr</span>
+                                <input class="htBlock-textS" name="join_date_m" type="text" id="join_date_m" value=""
+                                    size="2" maxlength="2" style="ime-mode: disabled;">
+                                <span>Month</span>
+                                <input class="htBlock-textS" name="join_date_d" type="text" id="join_date_d" value=""
+                                    size="2" maxlength="2" style="ime-mode: disabled;">
+                                <span>Day</span>
+                            </div>
+                        </li>
+                        <li class="htBlock-foldableSection_detail">
+                            <label></label>
+                            <div>
+                                <hr class="htBlock-horizontalLineA">
+                            </div>
+                        </li>
+                        <li class="htBlock-foldableSection_detail">
+                            <label class="edit"
+                                title="Enter Resignation date. The employee will not be shown at the summary after the specified date (Past data available).">Resignation
+                                date:</label>
+                            <div>
+                                A.D.
+                                <input class="htBlock-textS" name="leave_date_y" type="text" id="leave_date_y" value=""
+                                    size="4" maxlength="4" style="ime-mode: disabled;">
+                                <span>Yr</span>
+                                <input class="htBlock-textS" name="leave_date_m" type="text" id="leave_date_m" value=""
+                                    size="2" maxlength="2" style="ime-mode: disabled;">
+                                <span>Month</span>
+                                <input class="htBlock-textS" name="leave_date_d" type="text" id="leave_date_d" value=""
+                                    size="2" maxlength="2" style="ime-mode: disabled;">
+                                <span>Day</span>
+                                <input type="hidden" name="export_one_employee_id" value="">
+                                <input type="hidden" name="is_limit_unlock" value="1">
+                            </div>
+                        </li>
+                        <li class="htBlock-foldableSection_detail">
+                            <label class="edit">Daily Contract Work Hours:</label>
+                            <div>
+                                <input class="htBlock-textS" type="text" name="all_day_regarding_minute_hour" value=""
+                                    id="all_day_regarding_minute_hour" size="2" maxlength="2">
+                                <span>Hrs.</span>
+                                <input class="htBlock-textS" type="text" name="all_day_regarding_minute_minute" value=""
+                                    id="all_day_regarding_minute_minute" size="2" maxlength="2">
+                                <span>Min.</span>
+                            </div>
+                        </li>
+                        <li class="htBlock-foldableSection_detail">
+                            <label class="edit"
+                                title="The value is used as the calculation standard for 有休 entitlement (number of days granted).">
+                                Wk. contract work (days):
+                            </label>
+                            <div>
+                                <select class="htBlock-selectmenuS" name="contract_workdays_of_week"
+                                    id="contract_workdays_of_week">
+                                    <option value="">--</option>
+                                    <option value="1">
+                                        1 day(s) contract
+                                    </option>
+                                    <option value="2">
+                                        2 day(s) contract
+                                    </option>
+                                    <option value="3">
+                                        3 day(s) contract
+                                    </option>
+                                    <option value="4">
+                                        4 day(s) contract
+                                    </option>
+                                    <option value="5" selected>
+                                        5 day(s) contract
+                                    </option>
+                                </select>
+                            </div>
+                        </li>
+                        <li class="htBlock-foldableSection_detail">
+                            <label class="edit"
+                                title="Configure settings for Discretionary Overtime of the Month.">Discretionary
+                                Overtime of the Month:</label>
+                            <div>
+                                <input type="text" class="htBlock-textS" name="monthly_regarding_overtime_minute_hour"
+                                    value="" id="monthly_regarding_overtime_minute_hour" size="2" maxlength="2">
+                                <span>Hrs.</span>
+                                <input type="text" class="htBlock-textS" name="monthly_regarding_overtime_minute_minute"
+                                    value="" id="monthly_regarding_overtime_minute_minute" size="2" maxlength="2">
+                                <span>Min.</span>
+                            </div>
+                        </li>
+                        <li id="variational_working_monthly" class="htBlock-foldableSection_detail">
+                            <label class="edit"
+                                title="Set a base time for variable working hours (by month) for each employee.">
+                                Base Time for Variable Working Hours (Monthly):
+                            </label>
+                            <div>
+                                <input class="htBlock-textS" type="text" name="variational_working_amount_hour_monthly"
+                                    value="" size="2" maxlength="4">
+                                <span>Hrs.</span>
+                                <input class="htBlock-textS" type="text"
+                                    name="variational_working_amount_minute_monthly" value="" size="2" maxlength="2">
+                                <span>min(s) over will be considered as overtime</span>
+                                <div id="variational_entry_monthly">
+                                    <span id="variational_days_edit">
+                                        <input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+                                        <input name="action_id" type="submit" value="13" id="action_13"
+                                            style="display: none;">
+                                        <button id="button_13" type="button"
+                                            class=" htBlock-buttonNormal   htBlock-buttonS "
+                                            onClick="KOT_GLOBAL.KOT_LIB.onClickActionButton('action_13');">
+                                            <span>Standard (hrs) settings per month</span>
+                                        </button>
+                                    </span>
+                                    <span class="htBlock-info">*Basic value if the monthly standard (hrs) per month
+                                        isn't set</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li id="variational_working_weekly" class="htBlock-foldableSection_detail">
+                            <label class="edit"
+                                title="Set a base time for variable working hours (by week) for each employee.">
+                                Base Time for Variable Working Hours (Weekly):
+                            </label>
+                            <div>
+                                <span id="span_weekly_variational_working_amount">
+                                    <input class="htBlock-textS" type="text"
+                                        name="variational_working_amount_hour_weekly" value="" size="2" maxlength="4">
+                                    <span>Hrs.</span>
+                                    <input class="htBlock-textS" type="text"
+                                        name="variational_working_amount_minute_weekly" value="" size="2" maxlength="2">
+                                    <span>Min.</span>
+                                </span>
+                                <span id="span_weekly_amount_or_schedule">
+                                    または
+                                </span>
+                                <span id="span_weekly_variational_working_schedule">
+                                    Schedule time
+                                </span>
+                                <span id="span_weekly_variational_working_count">
+                                    was exceeded, then count them as overtime.
+                                </span>
+                                <div id="weekly_variational_working_priority_schedule">
+                                    If Scheduled hours is less than Criterion Time, regard hours exceeding Schedule Time
+                                    as Overtime.
+                                </div>
+                                <div id="weekly_variational_working_priority_amount">
+                                    If Scheduled hours is less than Criterion Time, regard hours exceeding Criterion
+                                    Time as Overtime.
+                                </div>
+                                <div id="variational_entry_weekly">
+                                    <span id="employee_weekly_variational_working_amount_edit">
+                                        <input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+                                        <input name="action_id" type="submit" value="27" id="action_27"
+                                            style="display: none;">
+                                        <button id="button_27" type="button"
+                                            class=" htBlock-buttonNormal   htBlock-buttonS "
+                                            onClick="KOT_GLOBAL.KOT_LIB.onClickActionButton('action_27');">
+                                            <span>Setting for standard hour per week</span>
+                                        </button>
+                                    </span>
+                                    <span class="htBlock-info">*Base value for when no standard hour per week has been
+                                        set.</span>
+                                </div>
+                            </div>
+                        </li>
+                        <input name="request_from_page_id" type="hidden" value="/setup/employee_edit">
+                        <li class="htBlock-foldableSection_detail">
+                            <label class="edit"
+                                title="If there are administration codes besides Employee codes, enter code in 50 alphanumeric characters or less. You can export this code through Custom export feature.">Other
+                                employee admin code 1:</label>
+                            <div>
+                                <input class="htBlock-textS" name="free_code1" type="text" id="free_code1" value=""
+                                    maxlength="50">
+                            </div>
+                        </li>
+                        <li class="htBlock-foldableSection_detail">
+                            <label class="edit"
+                                title="If there are administration codes besides Employee codes, enter code in 50 alphanumeric characters or less. You can export this code through Custom export feature.">Other
+                                employee admin code 2:</label>
+                            <div>
+                                <input class="htBlock-textS" name="free_code2" type="text" id="free_code2" value=""
+                                    maxlength="50">
+                            </div>
+                        </li>
+                    </ul>
+                </div><!-- end  雇用情報 htBlock-foldableSection -->
+                <div class="htBlock-foldableSection" data-ht-opt="default:opened">
+                    <h3>
+                        <span class="htBlock-foldableSection_icon htBlock-foldableSection_icon--open"></span>
+                        <label>Time recorder info</label>
+                    </h3>
+                    <ul>
+                        <li>
+                            <label class="edit">Personal Time Recorder button:</label>
+                            <div>
+                                <input type="radio" id="transition_to_recorder_button_display"
+                                    name="transition_to_recorder_button" class="htBlock-radioL" value="1">
+                                <label for=transition_to_recorder_button_display>Display</label>
+                                <input type="radio" id="transition_to_recorder_button_display_none"
+                                    name="transition_to_recorder_button" class="htBlock-radioL" value="0" checked>
+                                <label for=transition_to_recorder_button_display_none>Do not display</label>
+                            </div>
+                        </li>
+                        <li id="attendable_timerecorder">
+                            <label class="edit" title="Display status available for Time-record for Employee.">Division
+                                available for Time record:</label>
+                            <div>
+                                None
+                                <div>
+                                    <input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+                                    <input name="action_id" type="submit" value="12" id="action_12"
+                                        style="display: none;">
+                                    <button id="button_12" type="button"
+                                        class=" htBlock-buttonNormal   htBlock-buttonS "
+                                        onClick="KOT_GLOBAL.KOT_LIB.onClickActionButton('action_12');">
+                                        <span>Edit</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="specific-bottomSaveButton">
+                    <input name="page_id" type="hidden" value="/setup/employee_edit">
+                    <input name="employee_id" type="hidden" id="employee_id" value="">
+                    <input name="selected_employee_id" type="hidden" id="selected_employee_id" value="">
+                    <input name="sort_order" type="hidden" value="">
+                    <input name="avatar_path" type="hidden" value="">
+                    <input name="create_date" type="hidden" id="create_date" value="">
+                    <input type="hidden" name="employee_timerecorder_id" id="employee_timerecorder_id" value="">
+                    <span class="entry" style="display:none">
+                        <input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+                        <input name="action_id" type="submit" value="1" id="action_1" style="display: none;">
+                        <button id="button_1" type="button" class=" htBlock-buttonSave   htBlock-buttonM "
+                            onClick="KOT_GLOBAL.KOT_LIB.onClickActionButton('action_1');">
+                            <span>Save</span>
+                        </button>
+                    </span>
+                    <span class="request" style="display:none">
+                        <input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+                        <input name="action_id" type="submit" value="21" id="action_21" style="display: none;">
+                        <button id="button_21" type="button" class=" htBlock-buttonSave   htBlock-buttonM "
+                            onClick="KOT_GLOBAL.KOT_LIB.onClickActionButton('action_21');">
+                            <span>Registration application</span>
+                        </button>
+                        <input name="is_regist_request" id="is_regist_request" type="hidden" value="1">
+                    </span>
+                    <input type="hidden" name="is_new_edit" value="1">
+                    <input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+                    <input name="action_id" class="action notranslate" type="submit" value="14" id="action_14"
+                        style="display: none;">
+                    <input name="action_button" class="action_button" type="button" value="Return" id="button_14"
+                        style="margin:0px; display:none;"
+                        onClick="KOT_GLOBAL.KOT_LIB.onClickActionButton('action_14');">
+                </div>
+            </div>
+        </form>
+        <div class="htBlock-footer" id="footer_main_menu">
+            <div class="htBlock-footer_cart" onclick="KOT_GLOBAL.Parts.VmFooter.cartLogin();">
+                <a href="https://kingoftime.bcart.jp/login_action.php" onclick="return false">
+                    <img src="/asset/design1/img/templates/footer_icon_cart.png">
+                    <span>Cart</span>
+                </a>
+            </div>
+
+            <div class="htBlock-footer_logo">
+                <img src="/asset/design1/img/templates/logo/kot/footer.png">
+            </div>
+            <script src="https://kingoftime.karakuri.ai/api/chats/popup.js?0" data-customer-name="チャンフォン　ナム"
+                data-customer-email="info@neox-asia.co.jp"></script>
+            <script type="text/javascript">
+                window.zESettings = {
+                    webWidget: {
+                        chat: {
+                            suppress: false
+                        },
+                        contactForm: {
+                            suppress: false
+                        },
+                        helpCenter: {
+                            suppress: false
+                        },
+                        talk: {
+                            suppress: false
+                        },
+                        answerBot: {
+                            suppress: false
+                        }
+                    }
+                };
+            </script>
+            <div style="width: 150px;"></div>
+        </div>
+        <script type="text/javascript">
+            //名前空間を定義
+            KOT_GLOBAL = KOT_GLOBAL || {};
+            KOT_GLOBAL.Parts = KOT_GLOBAL.Parts || {};
+            KOT_GLOBAL.Parts.VmFooter = {};
+            (function ($, footer) {
+                footer.data = { id: null, param: null };
+                jQuery.ajax({
+                    scriptCharset: 'utf-8',
+                    type: 'GET',
+                    url: '/background/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/utility/get_cart_login_parameter',
+                    async: true,
+                    cache: false,
+                    dataType: 'json'
+                }).success(function (data, status, xhr) {
+                    footer.data.id = jQuery.trim(data.id);
+                    footer.data.param = jQuery.trim(data.param);
+                }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+                });
+                footer.cartLogin = function () {
+                    $('<form/>', { action: "https://kingoftime.bcart.jp/login_action.php", method: 'post', target: 'cartServiceWindow' })
+                        .hide()
+                        .append($('<input/>', { type: 'hidden', name: 'loginEmail', value: footer.data.id }))
+                        .append($('<input/>', { type: 'hidden', name: 'loginPassword', value: footer.data.param }))
+                        .appendTo(document.body)
+                        .submit()
+                        .remove();
+                };
+            })(jQuery, KOT_GLOBAL.Parts.VmFooter);
+        </script>
+        <script>
+            jQuery(".htBlock-adjastableTableF").show();
+            jQuery(".htBlock-hrCalendarTableA").show();
+        </script>
+        <script src="/asset/design1/js/vendor/jquery-ui-1.11.4/jquery-ui.min.js?202311211217"></script>
+        <!--<script src="/asset/design1/js/htlib.js?202311211217"></script>-->
+        <script src="/asset/design1/js/min/htlib.min.js?202311211217"></script>
+        <script type="text/javascript">
+            (function ($) {
+                $(document).on('keypress', 'input[type="text"]:not(.specific-allow-submit),input[type="password"]:not(.specific-allow-submit),input[type="number"]:not(.specific-allow-submit)', function (event) {
+                    return event.which !== 13;
+                });
+            })(jQuery);
+        </script>
+        <script>
+            !function () {
+                if (window.top !== window.self) return;
+                if ('TechtouchObject' in window && document.querySelector('script#techtouch-snippet')) return;
+                window.TechtouchObject = {
+                    organizationUuid: "orga-620458be-3899-d201-1631-3d11b80e5568"
+                };
+                var e = document.createElement("script"); e.async = 1, e.src = "https://apps.techtouch.jp/script/orga-620458be-3899-d201-1631-3d11b80e5568/main.js?projectUuid=proj-62207a02-2834-745a-4d64-8bf05611f7d2"; e.id = "techtouch-snippet";
+                var t = document.getElementsByTagName("script")[0]; t.parentNode.insertBefore(e, t);
+            }()
+        </script>
+    </div><!-- end htBlock-body -->
+    <script type="text/javascript">
+        function setDisplay(element, isShow) {
+            if (isShow) {
+                element.show();
+                element.removeClass("htBlock-foldableSection_detail_excluded");
+            }
+            else {
+                element.hide();
+                element.addClass("htBlock-foldableSection_detail_excluded");
+            }
+        }
+        //設定値などにより処理を分ける場合のオプション
+        var settingFlags = {
+            sectionAndWorkingTypeFromHidden: false,
+            useFrisoku: false,
+            useNotCalculateVariational: false,
+            useVariationalWorkingFlag: false
+        };
+        settingFlags.useVariationalWorkingFlag = true;
+        //名前空間を定義
+        KOT_GLOBAL = KOT_GLOBAL || {};
+        KOT_GLOBAL.Setup = KOT_GLOBAL.Setup || {};
+        KOT_GLOBAL.Setup.EmployeeEdit = {};
+        (function ($, employeeEdit, options) {
+            employeeEdit.settings = {
+                sectionAndWorkingTypeFromHidden: false,
+                useFrisoku: false,
+                useNotCalculateVariational: false,
+                useVariationalWorkingFlag: false
+            };
+            //実際の設定値を利用する
+            jQuery.extend(employeeEdit.settings, options);
+            //データ
+            employeeEdit.data = {
+                //休暇付与条件マップ　あとで初期化
+                paidHolidayAssignConfigMap: {}
+            };
+            //表示状態
+            employeeEdit.viewState = {
+                //雇用区分欄が詳細かどうか
+                showEmploymentInfoDetail: false
+            };
+            //初期化処理
+            employeeEdit.init = function () {
+                employeeEdit.setEvent();
+                if (employeeEdit.settings.useFrisoku) {
+                    employeeEdit.frisokuCheck();
+                }
+                if (employeeEdit.settings.useVariationalWorkingFlag) {
+                    employeeEdit.variationalWorkingCheck();
+                }
+                employeeEdit.authorityCheck();
+                employeeEdit.showAddress();
+            };
+            //チェックボックスがチェックされているときは、アドレス入力用のテキストフィールドを表示する
+            employeeEdit.showAddress = function () {
+                var isChecked = $("#add_mailaddress").prop("checked");
+                $("#reserve_mail_address").toggle(isChecked);
+                if ($("#reserve_mail_address").is(':visible')) {
+                    $("#reserve_mail_address").prop("disabled", false);
+                }
+                else {
+                    $("#reserve_mail_address").prop("disabled", true);
+                }
+            }
+            //イベントのセット
+            employeeEdit.setEvent = function () {
+                $("#add_mailaddress").bind("click", function () {
+                    employeeEdit.showAddress();
+                });
+            };
+            //雇用区分エリアが基本状態になる際に実行される
+            employeeEdit.onEmploymentInfoBasic = function () {
+                employeeEdit.viewState.showEmploymentInfoDetail = false;
+            };
+            //雇用区分エリアが詳細状態になる際に実行される
+            employeeEdit.onEmploymentInfoDetail = function () {
+                employeeEdit.viewState.showEmploymentInfoDetail = true;
+                // #8421
+                //雇用区分などの選択状態によって<li>ごと動的に表示/非表示を切り替えるような設定は
+                //基本　選択時に表示状態にするとずれが発生してしまう。
+                //その為、詳細状態にした際に再度表示する処理を実行する
+                employeeEdit.adjustPaidHolidaySettingView();
+            };
+            employeeEdit.adjustPaidHolidaySettingView = function () {
+                var selectedWorkingType = document.getElementById("working_type_id");
+                const useNewCalculation = true;
+                if ((!selectedWorkingType.value && !employeeEdit.exsistEmployeeCheck()) && employeeEdit.viewState.showEmploymentInfoDetail) {
+                    if (useNewCalculation) {
+                        setDisplay(jQuery("#assign_paid_holiday_setting_li"), false);
+                    }
+                    setDisplay(jQuery("#paid_holiday_setting_li1"), false);
+                    setDisplay(jQuery("#paid_holiday_setting_li2"), false);
+                    return;
+                }
+                if (employeeEdit.viewState.showEmploymentInfoDetail) {
+                    if (useNewCalculation) {
+                        setDisplay(jQuery("#assign_paid_holiday_setting_li"), true);
+                    }
+                    setDisplay(jQuery("#paid_holiday_setting_li1"), true);
+                    setDisplay(jQuery("#paid_holiday_setting_li2"), true);
+                }
+            };
+            employeeEdit.paidHolidayWorkingTypeCheck = function () {
+                var selectedWorkingType = document.getElementById("working_type_id");
+                var selectedWorkingTypeId;
+                if (employeeEdit.settings.sectionAndWorkingTypeFromHidden) {
+                    selectedWorkingTypeId = selectedWorkingType.value;
+                }
+                else {
+                    if (employeeEdit.exsistEmployeeCheck()) {
+                        selectedWorkingTypeId = selectedWorkingType.value;
+                    }
+                    else {
+                        selectedWorkingTypeId = selectedWorkingType.options[selectedWorkingType.selectedIndex].value;
+                    }
+                }
+                var paidHolidayAssignConfig = KOT_GLOBAL.Setup.EmployeeEdit.data.paidHolidayAssignConfigMap[selectedWorkingTypeId];
+                jQuery("#paid_holiday_assign_type_0").prop("checked", true);
+                jQuery("#paid_holiday_days_select_type_0").prop("checked", true);
+                jQuery("#paid_holiday_assign_type_0").prop("disabled", false);
+                jQuery("#paid_holiday_assign_type_1").prop("disabled", false);
+                jQuery("#paid_holiday_assign_type_2").prop("disabled", false);
+                jQuery("#paid_holiday_assign_type_span_1").css("color", "#000000");
+                jQuery("#paid_holiday_assign_type_span_2").css("color", "#000000");
+                jQuery("#paid_holiday_days_select_type_0").prop("disabled", false);
+                jQuery("#paid_holiday_days_select_type_1").prop("disabled", false);
+                jQuery("#paid_holiday_days_select_type_2").prop("disabled", false);
+                jQuery("#paid_holiday_days_select_type_span_1").css("color", "#000000");
+                jQuery("#paid_holiday_days_select_type_span_2").css("color", "#000000");
+                if (paidHolidayAssignConfig) {
+                    jQuery("#paid_holiday_assign_type_" + paidHolidayAssignConfig.paidHolidayAssignType).prop("disabled", true);
+                    jQuery("#paid_holiday_assign_type_span_" + paidHolidayAssignConfig.paidHolidayAssignType).css("color", "#999999");
+                    jQuery("#paid_holiday_days_select_type_" + paidHolidayAssignConfig.paidHolidayDaysSelectType).prop("disabled", true);
+                    jQuery("#paid_holiday_days_select_type_span_" + paidHolidayAssignConfig.paidHolidayDaysSelectType).css("color", "#999999");
+                    jQuery("#paid_holiday_assign_month").val("");
+                    jQuery("#paid_holiday_assign_day").val("");
+                    jQuery("#paid_holiday_assign_month option").css("color", "#000000");
+                    jQuery("#paid_holiday_assign_month option").css("background-color", "#FFFFEE");
+                    jQuery("#paid_holiday_assign_day option").css("color", "#000000");
+                    jQuery("#paid_holiday_assign_day option").css("background-color", "#FFFFEE");
+                    if (paidHolidayAssignConfig.paidHolidayAssignMonth) {
+                        jQuery("#paid_holiday_assign_month option").eq(paidHolidayAssignConfig.paidHolidayAssignMonth).css("color", "graytext");
+                        jQuery("#paid_holiday_assign_month option").eq(paidHolidayAssignConfig.paidHolidayAssignMonth).css("background-color", "#cccccc");
+                    }
+                    if (paidHolidayAssignConfig.paidHolidayAssignDay) {
+                        jQuery("#paid_holiday_assign_day option").eq(paidHolidayAssignConfig.paidHolidayAssignDay).css("color", "graytext");
+                        jQuery("#paid_holiday_assign_day option").eq(paidHolidayAssignConfig.paidHolidayAssignDay).css("background-color", "#cccccc");
+                    }
+                }
+            };
+            employeeEdit.authorityCheck = function () {
+                var selectedSection = document.getElementById("timerecorder_id");
+                var selectedWorkingType = document.getElementById("working_type_id");
+                var selectedSectionId = "";
+                var selectedWorkingTypeId = "";
+                if (employeeEdit.settings.sectionAndWorkingTypeFromHidden) {
+                    selectedSectionId = selectedSection.value;
+                    selectedWorkingTypeId = selectedWorkingType.value;
+                }
+                else {
+                    if (employeeEdit.exsistEmployeeCheck()) {
+                        selectedSectionId = selectedSection.value;
+                        selectedWorkingTypeId = selectedWorkingType.value;
+                    }
+                    else {
+                        selectedSectionId = selectedSection.options[selectedSection.selectedIndex].value;
+                        selectedWorkingTypeId = selectedWorkingType.options[selectedWorkingType.selectedIndex].value;
+                    }
+                }
+                var entryButton = jQuery(".entry");
+                var requestButton = jQuery(".request");
+                var requestFlag = document.getElementById("is_regist_request");
+                var attendableTimerecorder = document.getElementById("attendable_timerecorder");
+                var assignEmployeeGroup = $(".assignEmployeeGroup");
+                var variationalWorkingMonthlyEdit = document.getElementById("variational_working_monthly");
+                var variationalDaysEdit = document.getElementById("variational_days_edit");
+                var variationalWorkingWeeklyEdit = document.getElementById("variational_working_weekly");
+                var employeeWeeklyVariationalWorkingAmountEdit = document.getElementById("employee_weekly_variational_working_amount_edit");
+                if (selectedSectionId == "" || selectedWorkingTypeId == "") {
+                    entryButton.hide();
+                    requestButton.hide();
+                    if (!employeeEdit.exsistEmployeeCheck()) {
+                        attendableTimerecorder.style.display = "none";
+                        assignEmployeeGroup.hide();
+                        if (variationalDaysEdit != null) {
+                            setDisplay($(variationalWorkingMonthlyEdit), false);
+                        }
+                        if (employeeWeeklyVariationalWorkingAmountEdit != null) {
+                            setDisplay($(variationalWorkingWeeklyEdit), false);
+                        }
+                    }
+                    requestFlag.value = 0;
+                }
+                else {
+                    var employeeTimerecorder = document.getElementById("employee_timerecorder_id");
+                    employeeTimerecorder.value = selectedSectionId;
+                    var sectionAuthorityArray = document.getElementsByName("section_authority");
+                    var workingTypeAuthorityArray = document.getElementsByName("workingtype_authority");
+                    var selectedSectionAuthority = "";
+                    var selectedWorkingTypeAuthority = "";
+                    if (sectionAuthorityArray == null || sectionAuthorityArray.length == 0 ||
+                        workingTypeAuthorityArray == null || workingTypeAuthorityArray.length == 0) {
+                        if (!employeeEdit.exsistEmployeeCheck()) {
+                            attendableTimerecorder.style.display = "none";
+                            assignEmployeeGroup.hide();
+                            if (variationalWorkingMonthlyEdit != null) {
+                                variationalDaysEdit.style.display = "none";
+                            }
+                            if (employeeWeeklyVariationalWorkingAmountEdit != null) {
+                                setDisplay($(variationalWorkingWeeklyEdit), false);
+                            }
+                        }
+                        requestFlag.value = 0;
+                    }
+                    else {
+                        for (i = 0; i < sectionAuthorityArray.length; i++) {
+                            var sectionAuthority = sectionAuthorityArray[i];
+                            if (sectionAuthority.value.indexOf(selectedSectionId + "_") == 0) {
+                                selectedSectionAuthority = sectionAuthority.value.slice(-1);
+                                break;
+                            }
+                        }
+                        for (i = 0; i < workingTypeAuthorityArray.length; i++) {
+                            var workingTypeAuthority = workingTypeAuthorityArray[i];
+                            if (workingTypeAuthority.value.indexOf(selectedWorkingTypeId + "_") == 0) {
+                                selectedWorkingTypeAuthority = workingTypeAuthority.value.slice(-1);
+                                break;
+                            }
+                        }
+                        if (selectedSectionAuthority == 3 && selectedWorkingTypeAuthority == 3) {
+                            entryButton.show();
+                            requestButton.hide();
+                            if (!employeeEdit.exsistEmployeeCheck()) {
+                                attendableTimerecorder.style.display = "";
+                                assignEmployeeGroup.show();
+                                if (variationalWorkingMonthlyEdit != null && variationalWorkingMonthlyEdit.style.display == "") {
+                                    if (variationalDaysEdit != null) {
+                                        variationalDaysEdit.style.display = "";
+                                    }
+                                }
+                                if (variationalWorkingWeeklyEdit != null && variationalWorkingWeeklyEdit.style.display == "") {
+                                    if (employeeWeeklyVariationalWorkingAmountEdit != null) {
+                                        employeeWeeklyVariationalWorkingAmountEdit.style.display = "";
+                                    }
+                                }
+                            }
+                            requestFlag.value = 0;
+                        }
+                        else if ((selectedSectionAuthority == 3 && selectedWorkingTypeAuthority == 2) ||
+                            (selectedSectionAuthority == 2 && selectedWorkingTypeAuthority == 3) ||
+                            (selectedSectionAuthority == 2 && selectedWorkingTypeAuthority == 2)) {
+                            if (!employeeEdit.exsistEmployeeCheck()) {
+                                entryButton.hide();
+                                requestButton.show();
+                                attendableTimerecorder.style.display = "none";
+                                assignEmployeeGroup.hide();
+                                if (variationalDaysEdit != null) {
+                                    variationalDaysEdit.style.display = "none";
+                                }
+                                if (employeeWeeklyVariationalWorkingAmountEdit != null) {
+                                    employeeWeeklyVariationalWorkingAmountEdit.style.display = "none";
+                                }
+                                requestFlag.value = 1;
+                            }
+                            else {
+                                entryButton.hide();
+                                requestButton.hide();
+                                if (!employeeEdit.exsistEmployeeCheck()) {
+                                    attendableTimerecorder.style.display = "none";
+                                    assignEmployeeGroup.hide();
+                                    if (variationalDaysEdit != null) {
+                                        variationalDaysEdit.style.display = "none";
+                                    }
+                                    if (employeeWeeklyVariationalWorkingAmountEdit != null) {
+                                        employeeWeeklyVariationalWorkingAmountEdit.style.display = "none";
+                                    }
+                                }
+                                requestFlag.value = 0;
+                            }
+                        }
+                        else {
+                            entryButton.hide();
+                            requestButton.hide();
+                            if (!employeeEdit.exsistEmployeeCheck()) {
+                                attendableTimerecorder.style.display = "none";
+                                assignEmployeeGroup.hide();
+                                if (variationalDaysEdit != null) {
+                                    variationalDaysEdit.style.display = "none";
+                                }
+                                if (employeeWeeklyVariationalWorkingAmountEdit != null) {
+                                    employeeWeeklyVariationalWorkingAmountEdit.style.display = "none";
+                                }
+                            }
+                            requestFlag.value = 0;
+                        }
+                    }
+                }
+            };
+            employeeEdit.frisokuCheck = function () {
+                var selectedWorkingType = document.getElementById("working_type_id");
+                var selectedWorkingTypeId = "";
+                if (employeeEdit.settings.sectionAndWorkingTypeFromHidden) {
+                    selectedWorkingTypeId = selectedWorkingType.value;
+                }
+                else {
+                    if (employeeEdit.exsistEmployeeCheck()) {
+                        selectedWorkingTypeId = selectedWorkingType.value;
+                    }
+                    else {
+                        selectedWorkingTypeId = selectedWorkingType.options[selectedWorkingType.selectedIndex].value;
+                    }
+                }
+                var frisokuNoTitle = document.getElementById("free_code1_label");
+                var frisokuNoContent = document.getElementById("free_code1_div");
+                var title = "Furisoku No";
+                var content = "<input name=\"free_code1\" type=\"text\" id=\"free_code1\" value=\"\" size=\"\" maxlength=\"10\" style=\"ime-mode: disabled;\" disabled><font color=\"#ff4500\" size=\"1\"> You can't edit Employee Types that don't integrate with Furisoku.</font>";
+                var orgFrisokuNo = document.getElementById("free_code1");
+                var frisokuNoValue = orgFrisokuNo.value;
+                if (selectedWorkingTypeId == "") {
+                }
+                else {
+                    var frisokuFlagArray = document.getElementsByName("frisoku_flag");
+                    if (frisokuFlagArray == null || frisokuFlagArray.length == 0) {
+                    }
+                    else {
+                        var frisokuFlag = "";
+                        for (i = 0; i < frisokuFlagArray.length; i++) {
+                            var frisokuObj = frisokuFlagArray[i];
+                            if (frisokuObj.value.indexOf(selectedWorkingTypeId + "_") == 0) {
+                                frisokuFlag = frisokuObj.value.slice(-1);
+                                break;
+                            }
+                        }
+                        if (frisokuFlag == 1) {
+                            orgFrisokuNo.disabled = "";
+                            title = "Furisoku No<span class=\"htBlock-warnB\">*</span>";
+                            content = "<input name=\"free_code1\"class=\"htBlock-textS\"  type=\"text\" id=\"free_code1\" value=\"\" size=\"\" maxlength=\"10\" style=\"ime-mode: disabled;\">";
+                        }
+                    }
+                }
+                frisokuNoTitle.innerHTML = title;
+                frisokuNoContent.innerHTML = content;
+                var newFrisokuNo = document.getElementById("free_code1");
+                newFrisokuNo.value = frisokuNoValue;
+            };
+            employeeEdit.variationalWorkingCheck = function () {
+                var selectedWorkingType = $('#working_type_id');
+                var selectedWorkingTypeId = "";
+                if (employeeEdit.settings.sectionAndWorkingTypeFromHidden) {
+                    selectedWorkingTypeId = selectedWorkingType.val();
+                }
+                else {
+                    if (employeeEdit.exsistEmployeeCheck()) {
+                        selectedWorkingTypeId = selectedWorkingType.val();
+                    }
+                    else {
+                        selectedWorkingTypeId = selectedWorkingType.val();
+                    }
+                }
+                var variationalWorkingMonthly = $('#variational_working_monthly');
+                var variationalEntryMonthly = $('#variational_entry_monthly');
+                var variationalWorkingWeekly = $('#variational_working_weekly');
+                var variationalEntryWeekly = $('#variational_entry_weekly');
+                if (selectedWorkingTypeId == "") {
+                    setDisplay(variationalWorkingMonthly, false);
+                    variationalEntryMonthly.hide();
+                    setDisplay(variationalWorkingWeekly, false);
+                    variationalEntryWeekly.hide();
+                }
+                else {
+                    var variationalWorkingTypeArray = $('input[name="variational_working_type"]');
+                    if (variationalWorkingTypeArray == null || variationalWorkingTypeArray.size == 0) {
+                        setDisplay(variationalWorkingMonthly, false);
+                        variationalEntryMonthly.hide();
+                        variationalEntryMonthly.hide();
+                        setDisplay(variationalWorkingWeekly, false);
+                    }
+                    else {
+                        var variationalType = "00000";
+                        var weeklyVariationalWorkingPriority = "0";
+                        var showVariationalWorkingSetting = "1";
+                        if (employeeEdit.settings.useNotCalculateVariational) {
+                            variationalType = "00006";
+                        }
+                        else {
+                            for (i = 0; i < variationalWorkingTypeArray.length; i++) {
+                                var variationalWorkingType = variationalWorkingTypeArray[i];
+                                if (variationalWorkingType.value.indexOf(selectedWorkingTypeId + "_") == 0) {
+                                    variationalType = variationalWorkingType.value.slice(-7, -2);
+                                    weeklyVariationalWorkingPriority = variationalWorkingType.value.slice(-11, -10);
+                                    showVariationalWorkingSetting = variationalWorkingType.value.slice(-1);
+                                    break;
+                                }
+                            }
+                        }
+                        var variationalMonthlyType = variationalType.slice(-1); if (variationalMonthlyType != 0) {
+                            if (!variationalWorkingMonthly[0]) {
+                                setDisplay(variationalWorkingMonthly, true);
+                                if (variationalMonthlyType != 1) {
+                                    setDisplay(variationalWorkingMonthly, true);
+                                } else {
+                                    setDisplay(variationalWorkingMonthly, false);
+                                }
+                            }
+                        } else {
+                            setDisplay(variationalWorkingMonthly, false);
+                            variationalEntryMonthly.hide();
+                        }
+                        var variationalWeeklyAmountType = variationalType.slice(-2, -1); var variationalWeeklyScheduleType = variationalType.slice(-3, -2); var variationalYearlyAmountType = variationalType.slice(-5, -4); if (((variationalWeeklyAmountType > 0) || (variationalWeeklyScheduleType > 0)) && variationalYearlyAmountType == 0) {
+                            var spanWeeklyVariationalWorkingAmount = $('#span_weekly_variational_working_amount');
+                            var spanWeeklyAmountOrSchedule = $('#span_weekly_amount_or_schedule');
+                            var spanWeeklyVariationalWorkingSchedule = $('#span_weekly_variational_working_schedule');
+                            var spanWeeklyVariationalWorkingCount = $('#span_weekly_variational_working_count');
+                            setDisplay(variationalWorkingWeekly, true);
+                            if (!employeeEdit.exsistEmployeeCheck()) {
+                                setDisplay(variationalWorkingWeekly, false);
+                            }
+                            if (variationalWeeklyAmountType > 0) {
+                                spanWeeklyVariationalWorkingAmount.show();
+                            } else {
+                                spanWeeklyVariationalWorkingAmount.hide();
+                            }
+                            if ((variationalWeeklyAmountType > 0) && (variationalWeeklyScheduleType > 0)) {
+                                spanWeeklyAmountOrSchedule.show();
+                            } else {
+                                spanWeeklyAmountOrSchedule.hide();
+                            }
+                            if (variationalWeeklyScheduleType > 0) {
+                                spanWeeklyVariationalWorkingSchedule.show();
+                            } else {
+                                spanWeeklyVariationalWorkingSchedule.hide();
+                            }
+                            spanWeeklyVariationalWorkingCount.show();
+                            var weeklyVariationalWorkingPriorityAmount = $('#weekly_variational_working_priority_amount');
+                            var weeklyVariationalWorkingPrioritySchedule = $('#weekly_variational_working_priority_schedule');
+                            if ((variationalWeeklyAmountType > 0) && (variationalWeeklyScheduleType > 0)) {
+                                if (weeklyVariationalWorkingPriority > 0) {
+                                    weeklyVariationalWorkingPriorityAmount.show();
+                                    weeklyVariationalWorkingPrioritySchedule.hide();
+                                } else {
+                                    weeklyVariationalWorkingPriorityAmount.hide();
+                                    weeklyVariationalWorkingPrioritySchedule.show();
+                                }
+                            } else {
+                                weeklyVariationalWorkingPriorityAmount.hide();
+                                weeklyVariationalWorkingPrioritySchedule.hide();
+                            }
+                            if (variationalWeeklyAmountType == 3) {
+                                variationalEntryWeekly.show();
+                            } else {
+                                variationalEntryWeekly.hide();
+                            }
+                        } else {
+                            setDisplay(variationalWorkingWeekly, false);
+                        }
+                        if (showVariationalWorkingSetting == 0) {
+                            setDisplay(variationalWorkingMonthly, false);
+                            variationalEntryMonthly.hide();
+                            setDisplay(variationalWorkingWeekly, false);
+                            variationalEntryWeekly.hide();
+                        }
+                    }
+                }
+            };
+            employeeEdit.exsistEmployeeCheck = function () {
+                var employeeId = document.getElementById("employee_id").value;
+                if (employeeId != null && employeeId != "") {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            };
+        })(jQuery, KOT_GLOBAL.Setup.EmployeeEdit, settingFlags);
+        KOT_GLOBAL.Setup.EmployeeEdit.data.paidHolidayAssignConfigMap["900193874"] = { paidHolidayAssignType: "1", paidHolidayAssignMonth: "", paidHolidayAssignDay: "", paidHolidayDaysSelectType: "2", isSetting: "1" };
+        KOT_GLOBAL.Setup.EmployeeEdit.data.paidHolidayAssignConfigMap["900193954"] = { paidHolidayAssignType: "1", paidHolidayAssignMonth: "", paidHolidayAssignDay: "", paidHolidayDaysSelectType: "2", isSetting: "1" };
+        KOT_GLOBAL.Setup.EmployeeEdit.data.paidHolidayAssignConfigMap["900193955"] = { paidHolidayAssignType: "1", paidHolidayAssignMonth: "", paidHolidayAssignDay: "", paidHolidayDaysSelectType: "2", isSetting: "1" };
+        KOT_GLOBAL.Setup.EmployeeEdit.data.paidHolidayAssignConfigMap["900193875"] = { paidHolidayAssignType: "1", paidHolidayAssignMonth: "", paidHolidayAssignDay: "", paidHolidayDaysSelectType: "2", isSetting: "1" };
+        KOT_GLOBAL.Setup.EmployeeEdit.data.paidHolidayAssignConfigMap["900193956"] = { paidHolidayAssignType: "1", paidHolidayAssignMonth: "", paidHolidayAssignDay: "", paidHolidayDaysSelectType: "2", isSetting: "1" };
+        KOT_GLOBAL.Setup.EmployeeEdit.data.paidHolidayAssignConfigMap["900194789"] = { paidHolidayAssignType: "", paidHolidayAssignMonth: "", paidHolidayAssignDay: "", paidHolidayDaysSelectType: "", isSetting: "1" };
+        KOT_GLOBAL.Setup.EmployeeEdit.data.paidHolidayAssignConfigMap["900193958"] = { paidHolidayAssignType: "1", paidHolidayAssignMonth: "", paidHolidayAssignDay: "", paidHolidayDaysSelectType: "2", isSetting: "1" };
+        KOT_GLOBAL.Setup.EmployeeEdit.data.paidHolidayAssignConfigMap["900193959"] = { paidHolidayAssignType: "1", paidHolidayAssignMonth: "", paidHolidayAssignDay: "", paidHolidayDaysSelectType: "2", isSetting: "1" };
+        KOT_GLOBAL.Setup.EmployeeEdit.data.paidHolidayAssignConfigMap["900193960"] = { paidHolidayAssignType: "", paidHolidayAssignMonth: "", paidHolidayAssignDay: "", paidHolidayDaysSelectType: "", isSetting: "1" };
+        $(function () {
+            $(document).ready(function () {
+                KOT_GLOBAL.Setup.EmployeeEdit.init();
+                if (submitButtonArray && submitButtonArray.length > 0) {
+                    timerId = setTimeout('timewaitWithButton(\'\', 0, 1, 1)', 0);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
