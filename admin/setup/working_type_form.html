@@ -1,0 +1,2097 @@
+
+ 
+
+
+                     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="apple-touch-icon" href="/images/iPhone_home_icon_kot.png">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<meta name="msapplication-config" content="none"/>
+<meta name="robots" content="noindex,nofollow" />
+<meta name="google-site-verification" content="iezf0UApKmz5LFxwan6O-8_xmc0JhWhW0vVUa39zPZ8" />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KING OF TIME Attendance Management
+</title>
+<link type="text/css" rel="stylesheet" href="../../asset/design1/js/vendor/jquery-ui-1.11.4/jquery-ui.min.css">
+<link type="text/css" rel="stylesheet" href="../../asset/design1/css/base.kot.css">
+<link type="text/css" rel="stylesheet" href="../../asset/design1/css/block.kot.css">
+<!--
+UIテンプレート範囲外のスタイル用
+class指定のprefixは「specific-」
+-->
+<link type="text/css" rel="stylesheet" href="../../asset/design1/css/specific.kot.css">
+<script type="text/javascript">
+var ua = navigator.userAgent;
+if(ua.match("Trident") || ua.match("MSIE") ){
+document.write('<link rel="stylesheet" href="\/asset\/design1\/css\/ie.kot.css?202311211217">');
+}
+</script>
+<link type="text/css" rel="stylesheet" href="/css/language/en.css?202311211217">
+<script src="/asset/design1/js/vendor/jquery-1.11.3.min.js?202311211217"></script>
+<script src="/js/kot.js?202311211217"></script>
+<script type="text/javascript">
+var browserType = KOT_GLOBAL.KOT_LIB.getBrowserType();
+if(browserType <= 110){
+document.write('<script src="\/asset\/design1\/js\/vendor\/flexibility.js?202311211217"><\/script>');
+}
+if(browserType <= 109){
+$(document).ready(function() {
+$(".specific-htBlock-dialog-body").scroll(function() {
+var pos = $(this).scrollTop();
+var posPrev = pos;
+var dialog = this;
+var id = setInterval(function(){
+posPrev = pos;
+pos = $(dialog).scrollTop();
+if(pos == posPrev){
+$(dialog).hide().show();
+$(dialog).scrollTop(pos);
+clearInterval(id);
+}
+},500);
+});
+});
+}
+</script>
+<script TYPE="text/javascript">
+<!--
+var jsMsgArray = [];
+jsMsgArray["date_today"]                    = "Appointed day";
+jsMsgArray["date_next"]                     = "Next day";
+jsMsgArray["date_prev"]                     = "Previous day";
+jsMsgArray["kot_ckdbclick"]                 = "Please press the button only once";
+jsMsgArray["tablesort_linkCell"]            = "Click to sort the category name";
+jsMsgArray["pagingcontrol_display_confirm"] = "Display may take a while if there are a many display numbers. Proceed?";
+jsMsgArray["pagingcontrol_confirm_dialog"]  = "If you change before save your changes will not be reflected. Okay to proceed?";
+jsMsgArray["update_string"]                 = "Update";
+jsMsgArray["none_string"] = "None";
+jsMsgArray["exsists_string"] = "Yes";
+jsMsgArray["network_error_string"] = "Failed to data acquisition";
+jsMsgArray["click_to_detail"] = "More details";
+jsMsgArray["validate_string_input_error_message_for_encode"] = "Deprecated characters have been entered.";
+jsMsgArray["loading_modal_message_default"] = "Please wait a moment...";
+jsMsgArray["validate_number_input_error_message_upper_bound"] = "Value ​​exceeds upper limit regulation standards";
+jsMsgArray["sso_confirm_message"] = "The single sign-on to the KING OF TIME series will be disconnected.\n Proceed?";
+var globalTemp = window.KOT_GLOBAL || {};
+globalTemp.HT_LIB_I18N = {
+"htlib_001": "Jan",
+"htlib_002": "Feb",
+"htlib_003": "Mar",
+"htlib_004": "Apr",
+"htlib_005": "May",
+"htlib_006": "Jun",
+"htlib_007": "Jul",
+"htlib_008": "Aug",
+"htlib_009": "Sep",
+"htlib_010": "Oct",
+"htlib_011": "Nov",
+"htlib_012": "Dec",
+"htlib_013": "Sun",
+"htlib_014": "Mon",
+"htlib_015": "Tue",
+"htlib_016": "Wed",
+"htlib_017": "Thu",
+"htlib_018": "Fri",
+"htlib_019": "Sat",
+"htlib_020": "",
+"htlib_021": "",
+"htlib_022": "Click row for action"
+};
+window.KOT_GLOBAL = globalTemp;
+//--->
+</script>
+<!-- Data for Google Tag Manager -->
+<script>
+dataLayer = [{
+'pageId' : '/setup/workingtype_edit',
+'adminId': '900231724',
+'userType': 'admin',
+'companyId': '900060596'
+}];
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WDS55BP');</script>
+<!-- End Google Tag Manager -->
+
+   <div class="htBlock-dialog specific-js-dialog priority_dialog"  id="priority_dialog" style="display:none;">
+<iframe id="priority_iframe" class="specific-dialog-outer-page-content specific-dialog-outer-page-content-sizeS" src="" frameborder="0"></iframe>
+</div>
+<script type="text/javascript">
+//名前空間を定義
+KOT_GLOBAL                           = KOT_GLOBAL || {};
+KOT_GLOBAL.Setup                     = KOT_GLOBAL.Setup || {};
+KOT_GLOBAL.Setup.WorkingTypeEdit     = {};
+(function(workingTypeEdit, $) {
+//初期化
+workingTypeEdit.init = function() {
+// 「早出(所定外)を残業計算に含める」チェックボックスの状態を設定
+workingTypeEdit.setEarlyExtraWorkIncludeOvertimeFlagCondition();
+// 「残業上限時間において早出を先に減算する」チェックボックスの状態を設定
+workingTypeEdit.setEarlyExtraWorkPrioritizeOvertimeLimitFlagCondition();
+workingTypeEdit.lessOvertimeWorkFlagChoice();
+workingtypeEdit.changeWeeklyOvertimeWorkStartMinuteFlag();
+workingtypeEdit.controlWorkingHoursSystem();
+workingtypeEdit.changeYearlyWorkingStartMonth();
+$('#warning_comment_premium_overtime_target_type').hide();
+changeTextPremiumPriority(true);
+};
+workingTypeEdit.enabledElement = function(elements) {
+$(elements).find('.disabled_color').prop('disabled', false);
+$(elements).find('*').removeClass('disabled_color');
+$(elements).prop('disabled', false);
+$(elements).removeClass('disabled_color');
+};
+workingTypeEdit.disabledElement = function(elements) {
+$(elements).addClass('disabled_color'); // refer to kot.css
+$(elements).prop('disabled', true);
+$(elements).find('*').addClass('disabled_color');
+$(elements).find('.disabled_color').prop('disabled', true);
+};
+// 「早出(所定外)を残業計算に含める」チェックボックスの状態を設定
+workingTypeEdit.setEarlyExtraWorkIncludeOvertimeFlagCondition = function (){
+// 「所定外労働時間割当種別」が、「1:そのまま所定外として扱う」 かつ
+// 「早出の際の残業起算時刻」が、「1:出勤予定時刻とする」 の場合
+// に「早出(所定外)を残業計算に含める」をチェックできるようにする
+if(document.form1.extra_working_assignment_type != null && document.form1.early_extra_work_include_overtime_flag != null) {
+if (document.form1.extra_working_assignment_type.value == 1 &&
+document.form1.slide_overwork_starttime_flag.value == 1) {
+document.form1.early_extra_work_include_overtime_flag.disabled = false;
+} else {
+document.form1.early_extra_work_include_overtime_flag.disabled = true;
+}
+}
+};
+// 「残業上限時間において早出を先に減算する」チェックボックスの状態を設定
+workingTypeEdit.setEarlyExtraWorkPrioritizeOvertimeLimitFlagCondition = function () {
+};
+workingTypeEdit.lessOvertimeWorkFlagChoice = function() {
+var messageBoxObject0 = document.getElementById("less_overtime_work_flag_0_choice");
+var messageBoxObject1 = document.getElementById("less_overtime_work_flag_1_choice");
+var lessOvertimeWorkFlag0 = document.getElementById("less_overtime_work_flag_0");
+var lessOvertimeWorkFlag1 = document.getElementById("less_overtime_work_flag_1");
+var lessOvertimeWorkFlagArea = document.getElementById("less_overtime_work_flag_area");
+if(!lessOvertimeWorkFlagArea) {
+return;
+}
+if (document.getElementById("variational_overtime_work_flag") != null && document.getElementById("variational_overtime_work_flag").checked
+&& document.getElementById("overtime_work_start_flag") != null && document.getElementById("overtime_work_start_flag").checked) {
+var hour = document.form1.overtime_work_start_hour;
+var minute = document.form1.overtime_work_start_minute;
+if ((hour != null && hour.value > 0) || (minute != null && minute.value > 0)) {
+lessOvertimeWorkFlagArea.style.display = "";
+// 年単位ではない場合
+if (document.form1.is_use_variational_yearly.value != 1) {
+lessOvertimeWorkFlag0.disabled = false;
+lessOvertimeWorkFlag1.disabled = false;
+}
+messageBoxObject0.innerHTML =
+`If the schedule is under {hour.value} hrs ${minute.value}, count excess hours as overtime` + '<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + `If the schedule exceeds ${hour.value} hrs ${minute.value} min, count ${hour.value} hrs ${minute.value} min as overtime`;
+messageBoxObject1.innerHTML =
+`If the schedule is under ${hour.value} hrs ${minute.value} min, count ${hour.value} hrs ${minute.value} min as overtime` + '<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + `If the schedule exceeds ${hour.value} hrs ${minute.value} min, count excess hours as overtime`;
+} else {
+lessOvertimeWorkFlag0.disabled = true;
+lessOvertimeWorkFlag1.disabled = true;
+lessOvertimeWorkFlagArea.style.display = "none";
+}
+}
+else {
+lessOvertimeWorkFlag0.disabled = true;
+lessOvertimeWorkFlag1.disabled = true;
+lessOvertimeWorkFlagArea.style.display = "none";
+}
+};
+})(KOT_GLOBAL.Setup.WorkingTypeEdit, jQuery);
+// セレクトボックスIDの接尾辞
+var selectBoxSuffix = "_unit";
+// チェックボックスIDの接尾辞
+var checkBoxSuffix = "_round_out";
+// 月次/日次勤務集計丸め単位の各項目IDから_unitを抜いたもの
+var roundUnitAry = [
+["fixed_work_summary", "extra_work_summary", "overtime_work_summary",
+"night_work_summary", "night_extra_work_summary", "night_overtime_work_summary",
+"holiday_work_summary", "holiday_extra_work_summary", "holiday_overtime_work_summary",
+"holiday_night_work_summary", "holiday_night_overtime_work_summary",
+"total_break_summary", "late_summary", "early_leave_summary",
+"time_division_1_summary", "time_division_2_summary", "time_division_3_summary",
+"time_division_4_summary", "time_division_5_summary", "time_division_6_summary",
+"time_division_7_summary", "time_division_8_summary", "out_of_division_summary"
+],
+["fixed_work_minute", "extra_work_minute", "overtime_work_minute",
+"night_work_minute", "night_extra_work_minute", "night_overtime_work_minute",
+"holiday_work_minute", "holiday_extra_work_minute", "holiday_overtime_work_minute",
+"holiday_night_work_minute", "holiday_night_overtime_work_minute",
+"total_break_minute", "late_minute", "early_leave_minute",
+"time_division_1_minute", "time_division_2_minute", "time_division_3_minute",
+"time_division_4_minute", "time_division_5_minute", "time_division_6_minute",
+"time_division_7_minute", "time_division_8_minute", "out_of_division_minute"
+]
+];
+// 月次/日次集計の総休憩、遅刻、早退の各項目セレクトボックス/チェックボックスIDから_round_out / _unitを抜いた配列
+var initChkOnAry = [
+["total_break_summary", "late_summary", "early_leave_summary"],
+["total_break_minute", "late_minute", "early_leave_minute"]
+];
+var workingtypeEdit = workingtypeEdit || {};
+workingtypeEdit.controlWorkingHoursSystem = function() {
+var workingHoursSystem = $('input:radio[name="working_hours_system"]:checked').val();
+var variationalStandardType = $('input:radio[name="variational_standard_type"]:checked').val();
+if (workingHoursSystem == 0) {
+$('#use_setting_variation_working').hide();
+$('#view_setting_variation_working_detail').hide();
+} else {
+$('#use_setting_variation_working').show();
+$('#view_setting_variation_working_detail').show();
+if (variationalStandardType == 2) {
+$('#use_variational_yearly').show();
+} else {
+$('#use_variational_yearly').hide();
+}
+if ($('#is_show_only').val() == 1) {
+$('#variational_standard_type_1').prop('disabled', true);
+$('#variational_standard_type_2').prop('disabled', true);
+$('#variational_standard_type_3').prop('disabled', true);
+}
+}
+$('#night_work_start_time').prop('disabled', false);
+$('#night_work_end_time').prop('disabled', false);
+$('#night_working_assignment_type').prop('disabled', false);
+$('#overtime_work_start_flag').prop('disabled', false);
+$('#variational_overtime_work_flag').prop('disabled', false);
+var parallelEls = $('#overtime_work_start_flag').parent().find(':not(#overtime_work_start_flag):not(label)');
+if ($('#overtime_work_start_flag').prop('checked')) {
+parallelEls.prop('disabled', false);
+parallelEls.removeClass('disabled_color');
+} else {
+parallelEls.prop('disabled', true);
+parallelEls.addClass('disabled_color');
+}
+KOT_GLOBAL.Setup.WorkingTypeEdit.lessOvertimeWorkFlagChoice();
+$('#weekly_overtime_work_start_minute_flag').prop('disabled', false);
+$('#show_message_for_weekly_overtime_work_start').hide();
+$('.show_message_for_use_variational_working').hide();
+$('#deemed_work_include_overtime_flag').prop('disabled', false);
+if ($('#use_variation_working_flag').val() == 1 && workingHoursSystem == 1) {
+if (variationalStandardType != 0) {
+setNightWorkTimeDefault();
+setOvertimeWorkDefault(variationalStandardType);
+$('#weekly_overtime_work_start_minute_flag').prop('checked', false);
+$('#weekly_overtime_work_start_minute_flag').prop('disabled', true);
+var parallelEls = $('#weekly_overtime_work_start_minute_flag').parent().find(':not(#weekly_overtime_work_start_minute_flag):not(label)');
+parallelEls.prop('disabled', true);
+parallelEls.addClass('disabled_color');
+$('#weekly_overtime_work_start_hour').val('');
+$('#weekly_overtime_work_start_minute').val('');
+$('#show_message_for_weekly_overtime_work_start').show();
+$('.show_message_for_use_variational_working').show();
+$('#deemed_work_include_overtime_flag').val('0');
+$('#deemed_work_include_overtime_flag').prop('disabled', true);
+} else {
+if($('#is_use_variational_yearly').val() == 1) {
+setOvertimeWorkDefault(variationalStandardType);
+}
+if($('#is_edit_weekly_overtime_work').val() == 0) {
+$('#weekly_overtime_work_start_minute_flag').prop('checked', false);
+$('#weekly_overtime_work_start_minute_flag').prop('disabled', true);
+var parallelEls = $('#weekly_overtime_work_start_minute_flag').parent().find(':not(#weekly_overtime_work_start_minute_flag):not(label)');
+parallelEls.prop('disabled', true);
+parallelEls.addClass('disabled_color');
+$('#weekly_overtime_work_start_hour').val('');
+$('#weekly_overtime_work_start_minute').val('');
+$('#show_message_for_weekly_overtime_work_start').show();
+}
+}
+}
+};
+workingtypeEdit.changeOvertimeWorkStartHourFlag = function() {
+var parallelEls = $("#overtime_work_start_flag").parent().find(":not(#overtime_work_start_flag):not(label)");
+if ($("#overtime_work_start_flag").prop("checked")) {
+parallelEls.prop("disabled", false);
+parallelEls.removeClass("disabled_color");
+} else {
+parallelEls.prop("disabled", true);
+parallelEls.addClass("disabled_color");
+}
+};
+workingtypeEdit.changeWeeklyOvertimeWorkStartMinuteFlag = function() {
+var parallelEls = $("#weekly_overtime_work_start_minute_flag").parent().find(":not(#weekly_overtime_work_start_minute_flag):not(label)");
+if ($("#weekly_overtime_work_start_minute_flag").prop("checked")) {
+parallelEls.prop("disabled", false);
+parallelEls.removeClass("disabled_color");
+} else {
+parallelEls.prop("disabled", true);
+parallelEls.addClass("disabled_color");
+}
+};
+workingtypeEdit.changeYearlyWorkingStartMonth = function() {
+if ($('#use_variation_working_flag').val() != 1 || $('#is_show_only').val() == 1) return;
+var alertMessageForYearlyStartMonth = document.getElementById("alert_message_for_yearly_start_month");
+var org_yearly_start_month = $('#org_yearly_working_start_month').val();
+var yearly_start_month = $('#yearly_working_start_month').val();
+if (yearly_start_month && !isNaN(parseInt(org_yearly_start_month)) && yearly_start_month != org_yearly_start_month) {
+alertMessageForYearlyStartMonth.innerHTML = "<span class='htBlock-warnB'>Changing the starting month will affect the calculation of past attendance data. This is because it also changes the yearly variable working hours period.</span>";
+} else {
+alertMessageForYearlyStartMonth.innerHTML = "";
+}
+if (yearly_start_month) {
+KOT_GLOBAL.Setup.WorkingTypeEdit.enabledElement($('#yearly_variational_working_setting'));
+} else {
+KOT_GLOBAL.Setup.WorkingTypeEdit.disabledElement($('#yearly_variational_working_setting'));
+}
+};
+// 以下のルールに基づきチェックボックスのON/OFFを制御する：
+// 1:総休憩、遅刻、早退のチェックボックスON
+// 2:上記1以外の項目はチェックボックスOFF
+// @param currSelObj 値が変更されたセレクトボックスで、かつ選択値が"--"の要素
+function setCheckBoxValueDefault(currSelObj) {
+// roundUnitAry/initChkOnAry内の要素と比較するため、接尾辞を削除する
+var objId = currSelObj.id.split(/(_unit|_round_out)/)[0];
+if (-1 != initChkOnAry[0].indexOf(objId) || -1 != initChkOnAry[1].indexOf(objId)) {
+currSelObj.checked = true;
+}
+else if (-1 != roundUnitAry[0].indexOf(objId) || -1 != roundUnitAry[1].indexOf(objId)) {
+currSelObj.checked = false;
+}
+}
+// 画面表示時、月次/日次集計のチェックボックスをデフォルト値に設定する
+function initCheckBoxValue() {
+// #5450 月次/日次集計の総休憩、遅刻、早退は初期値をチェックONとする（#1515にて切り上げ計算を用いているため）
+for (var i = 0; i < initChkOnAry.length; i++) {
+for (var j = 0; j < initChkOnAry[i].length; j++) {
+var currSel = $("#" + initChkOnAry[i][j] + selectBoxSuffix);
+var currChk = $("#" + initChkOnAry[i][j] + checkBoxSuffix);
+// 総休憩、遅刻、早退の値が無指定ならチェックボックスON
+if (currSel.val() == "") {
+currChk.prop('checked', true);
+}
+}
+}
+// #5450 月次/日次集計の丸め単位で各選択項目が"--"の場合にチェックボックスをdisabledにする
+for (var i = 0; i < roundUnitAry.length; i++) {
+for (var j = 0; j < roundUnitAry[i].length; j++) {
+var currSel = $("#" + roundUnitAry[i][j] + selectBoxSuffix);
+var currChk = $("#" + roundUnitAry[i][j] + checkBoxSuffix);
+if (currSel.val() == "") {
+currChk.prop('disabled', true);
+}
+}
+}
+}
+var defaultCloseDay =  null ;
+function messageCloseDay(closeDay) {
+if (defaultCloseDay != null) {
+var messageBoxObject = document.getElementById("close_day_message");
+if (defaultCloseDay != closeDay) {
+messageBoxObject.innerHTML = '<span class="htBlock-warnB">* When you change the closing date, the past calculations will be displayed, based on the new closing date.<br>* Carryover vacations remaining need re-calculation when changing settings related to Fiscal Year range. (Clicking the [Save] button will automatically recalculate relevant data. This may take some time.)</span>';
+} else {
+messageBoxObject.innerHTML = '';
+}
+}
+}
+var defaultSelectType  =  0;
+var defaultAssignType  =  0;
+var defaultAssignMonth =  0;
+var defaultAssignDate  =  0;
+var saveAssignType     = defaultAssignType;
+var currentAssignType  = defaultAssignType;
+var saveAssignMonth    = defaultAssignMonth;
+var saveAssignDate     = defaultAssignDate;
+function messagepaidHolidayAssignType(assignType) {
+var messageBoxObject = document.getElementById("paid_holiday_assign_message");
+if (assignType != 0) {
+currentAssignType = assignType;
+}
+else {
+assignType = 0;
+//assignType = currentAssignType;
+}
+var monthObject = document.getElementById("paid_holiday_assign_month");
+var dateObject  = document.getElementById("paid_holiday_assign_day");
+var spanObject = document.getElementById("paid_holiday_assign_span");
+var oneYearFlagObject = document.getElementById("paid_holiday_assign_one_year_flag");
+if (currentAssignType == 1) {
+monthObject.disabled = "true";
+dateObject.disabled  = "true";
+if(oneYearFlagObject){
+oneYearFlagObject.disabled = "";
+}
+}
+else {
+monthObject.disabled = "";
+dateObject.disabled  = "";
+if (oneYearFlagObject) {
+oneYearFlagObject.disabled = "true";
+}
+}
+if (defaultAssignType != 0) {
+if(saveAssignType != assignType ||
+saveAssignMonth != monthObject.options[monthObject.selectedIndex].value ||
+saveAssignDate  != dateObject.options[dateObject.selectedIndex].value
+) {
+messageBoxObject.innerHTML = '<span class="htBlock-warnB">*Please note that if you change values, an error may occur to 有休 auto calculation result.</span>';
+}
+else {
+messageBoxObject.innerHTML = '';
+}
+}
+}
+$(function() {
+$( 'input:radio[name="paid_holiday_days_select_type"]' ).click( function() {
+if(defaultSelectType != 0){
+document.getElementById("paid_holiday_days_select_message").innerHTML = '<span class="htBlock-warnB">*Please note that if you change values, an error may occur to 有休 auto calculation result.</span>';
+}else{
+document.getElementById("paid_holiday_days_select_message").innerHTML = '';
+}
+});
+$('input:radio[name="working_hours_system"]').click( function() {
+workingtypeEdit.controlWorkingHoursSystem();
+});
+$('input:radio[name="variational_standard_type"]').click( function() {
+workingtypeEdit.controlWorkingHoursSystem();
+});
+});
+function enableObject() {
+$('input, select').prop('disabled', false);
+return ckdbclick();
+}
+function checkMinuteUnit(selectedMinuteUnitValue, roundUpObjectId) {
+if (selectedMinuteUnitValue.length > 1 && parseInt(selectedMinuteUnitValue) == 99) {
+var roundUpObject = document.getElementById(roundUpObjectId);
+if (roundUpObject != null ) {
+roundUpObject.checked = false;
+}
+}
+// #5450 セレクトボックス選択値が--なら対応するチェックボックスをdisabledにする
+var roundUpObject = document.getElementById(roundUpObjectId);
+if (roundUpObject != null) {
+roundUpObject.disabled = (selectedMinuteUnitValue == "");
+// 総休憩、遅刻、早退の3項目をcheckBox:trueに、その他をfalseにする
+if (selectedMinuteUnitValue == "") {
+setCheckBoxValueDefault(roundUpObject);
+}
+}
+}
+// 深夜勤務時間の時刻デフォルトを表示する
+function setNightWorkTimeDefault() {
+$('#night_work_start_time').prop('disabled', true);
+$('#night_work_end_time').prop('disabled', true);
+$('#night_work_start_time_hour').val('22');
+$('#night_work_start_time_minute').val('00');
+$('#night_work_start_time').val('22:00');
+$('#night_work_end_time_hour').val('05');
+$('#night_work_end_time_minute').val('00');
+$('#night_work_end_time').val('05:00');
+$('#night_working_assignment_type').prop('disabled', true);
+$('#night_working_assignment_type').val('1');
+}
+// 残業開始時間の時刻デフォルトを表示する
+function setOvertimeWorkDefault(variationalStandardType) {
+$('#overtime_work_start_flag').prop('checked', true);
+$('#overtime_work_start_flag').prop('disabled', true);
+$('#overtime_work_start_hour').prop('disabled', true);
+$('#overtime_work_start_minute').prop('disabled', true);
+// 手動設定は残業開始時間の「時」「分」を設定可能
+if (variationalStandardType == 0) {
+$('#overtime_work_start_hour').prop('disabled', false);
+$('#overtime_work_start_minute').prop('disabled', false);
+$('#overtime_work_start_hour').val('8');
+$('#overtime_work_start_minute').val('0');
+} else {
+$('#overtime_work_start_hour').val('8');
+$('#overtime_work_start_minute').val('0');
+}
+$('#variational_overtime_work_flag').prop('checked', true);
+$('#variational_overtime_work_flag').prop('disabled', true);
+if($('#extra_working_assignment_type').val() == 3) {
+$('#extra_working_assignment_type').val('1')
+}
+$('#less_overtime_work_flag_1').prop('checked', true);
+KOT_GLOBAL.Setup.WorkingTypeEdit.lessOvertimeWorkFlagChoice();
+$('#less_overtime_work_flag_0').prop('disabled', true);
+$('#less_overtime_work_flag_1').prop('disabled', true);
+controlNotificationVariationalOvertimeWork();
+}
+// 「スケジュール時間を超過した勤務については、残業としてカウントする」を選択する旨の通知を表示する
+function controlNotificationVariationalOvertimeWork() {
+var alertMessageForCheckbox = '<span class="htBlock-warnB">When this item is selected, you cannot not choose [set as overtime (hrs)] for Extra Hours Work allocation type.</span>';
+var alertMessageForSelect = '[Set as overtime (hrs)] cannot be selected because<br>[count after scheduled work (hrs) as overtime] is already selected.';
+var alertMessageForCheckboxAlreadyExist = 'You cannot select this item because [set as overtime (hrs)] for Extra Hours Work allocation type has been selected.';
+var alertMessageForSelectAlreadyExist = 'If you select [set as overtime (hrs)], you cannot select<br>[count after scheduled work (hrs) as overtime]';
+if ($('#variational_overtime_work_flag').prop('checked')) {
+//所定外労働時間割当種別の「残業時間にする」を選べないようにする
+if (navigator.userAgent.indexOf('MSIE 6') > 0 || navigator.userAgent.indexOf('MSIE 7') > 0) {
+$('#option_overtime').addClass('disableOption');
+} else {
+$('#option_overtime').get(0).disabled = true;
+}
+$('#variational_overtime_work_config_combi_message').html(alertMessageForCheckbox);
+$('#confirm_extra_working_assignment_type_config_combi_message').html(alertMessageForSelect);
+if ($('#extra_working_assignment_type').val() == 3) {
+$('#extra_working_assignment_type').val(1)
+}
+} else {
+//「残業時間にする」のdisabeleを外す
+if (navigator.userAgent.indexOf('MSIE 6') > 0 || navigator.userAgent.indexOf('MSIE 7') > 0) {
+$('#option_overtime').removeClass('disableOption');
+} else {
+$('#option_overtime').get(0).disabled = false;
+}
+$('#variational_overtime_work_config_combi_message').html('');
+$('#confirm_extra_working_assignment_type_config_combi_message').html('');
+//既存機能配慮 既に「残業時間にする」が選択されていた場合は、チェックボックスをdisabledにする
+if ($('#extra_working_assignment_type').val() == 3) {
+$('#variational_overtime_work_flag').prop('disabled', true);
+$('#variational_overtime_work_config_combi_message').html(alertMessageForCheckboxAlreadyExist);
+$('#confirm_extra_working_assignment_type_config_combi_message').html(alertMessageForSelectAlreadyExist);
+}
+}
+}
+// 「割増し対象項目」の値が選択された時の動作
+function displayWarningItemSubjectToPremium(objSelectItem) {
+if (objSelectItem.value == 4) {
+$('#warning_comment_premium_overtime_target_type').show();
+changeTextPremiumPriority();
+} else {
+$('#warning_comment_premium_overtime_target_type').hide();
+changeTextPremiumPriority(false);
+}
+}
+// 「割増し優先順位」の表示文言を変更
+function changeTextPremiumPriority(isDefaultPremiumOvertimeType = true) {
+if (isDefaultPremiumOvertimeType) {
+$('#priority_overtime').text("Handle overtime work (non-legal holiday) as bonus wage overtime preferentially.");
+} else {
+$('#priority_overtime').text("Overtime (Fixed Non-legal) is prioritized for bonus wage overtime.");
+}
+}
+$(document).ready(
+function() {
+$("#button_01").click(function(){
+HtLib.loading.show();
+});
+var initializedFlag = false;
+$(document).on('blur', '.contract_hour_of_day', function() {
+var amount = 0;
+var hour = $("#all_day_regarding_minute_hour").val();
+var minute = $("#all_day_regarding_minute_minute").val();
+if (hour && (hour == parseInt(hour, 10))) {
+amount += parseInt(hour, 10) * 60;
+}
+if (minute && (minute == parseInt(minute, 10))) {
+amount += parseInt(minute, 10);
+}
+$("#all_day_regarding_minute").val(amount);
+if(!initializedFlag) {
+initializedFlag = true;
+var defaultHour = "$contractHour";
+var defaultMinute = "$contractMinute";
+if (defaultHour !== $("#all_day_regarding_minute_hour").val() || defaultMinute !== $("#all_day_regarding_minute_minute").val()) {
+$('#message_contract_hour').get(0).innerHTML = '<span class="htBlock-warnB">* Changes to the daily contract hours setting may cause changes to the number of remaining vacations if there are any hourly vacations taken in the past.</span>';
+}
+else {
+$('#message_contract_hour').get(0).innerHTML = '';
+}
+setTimeout(function(){initializedFlag = false;}, 1000);
+}
+});
+$(document).on("change", ".schedule_time_value", function(){
+//最後が数値で終わっている
+var REG = /[0-9]$/;
+var id = $(this).attr("id");
+var suffix = "";
+if(REG.test(id)) {
+suffix = id.split("_").pop();
+var idArray = id.split("_");
+idArray.pop();
+id = idArray.join("_");
+}
+var hourId = id + "_hour";
+var minuteId = id + "_minute";
+if(suffix) {
+hourId = hourId + suffix;
+minuteId = minuteId + suffix;
+}
+var hourElement, minuteElement;
+hourElement = $("#" + hourId);
+minuteElement = $("#" + minuteId);
+var time = $(this).val()
+var convert = KOT_GLOBAL.KOT_LIB.TimeValue.timeToHourMinute(time);
+hourElement.val(convert.hour);
+minuteElement.val(convert.minute);
+});
+// 総休憩、遅刻、早退の3項目をcheckBox:trueにする
+// チェックボックス操作後の値をvalueMapOnloadに設定するためこのタイミングで呼び出す
+initCheckBoxValue();
+//設定の組み合わせチェック
+var alertMessageForCheckboxNotUseSelsct = "When this item is selected, you cannot not choose [set as overtime (hrs)] for Extra Hours Work allocation type.";
+var alertMessageForSelectNotUseSelsct = "[Set as overtime (hrs)] cannot be selected because<br>[count after scheduled work (hrs) as overtime] is already selected.";
+var alertMessageForCheckboxNotUseCheckbox = "You cannot select this item because [set as overtime (hrs)] for Extra Hours Work allocation type has been selected.";
+var alertMessageForSelectNotUseCheckbox = "If you select [set as overtime (hrs)], you cannot select<br>[count after scheduled work (hrs) as overtime]";
+if(($('#variational_overtime_work_flag').prop("checked")) && ($('#extra_working_assignment_type').val() == 3)){
+//制御対象の組み合わせだが、既存企業への配慮のためエラーメッセージは出さないが、セレクトボックスの制御は行う
+if (navigator.userAgent.indexOf('MSIE 6') > 0 || navigator.userAgent.indexOf('MSIE 7') > 0) {
+$('#option_overtime').addClass("disableOption");
+} else {
+$('#option_overtime').get(0).disabled = true;
+}
+} else if($('#variational_overtime_work_flag').prop("checked")){
+//チェックボックスにチェックが入っているので、セレクトボックスの選択欄を制御
+if (navigator.userAgent.indexOf('MSIE 6') > 0 || navigator.userAgent.indexOf('MSIE 7') > 0) {
+$('#option_overtime').addClass("disableOption");
+} else {
+$('#option_overtime').get(0).disabled = true;
+}
+$('#variational_overtime_work_config_combi_message').html(alertMessageForCheckboxNotUseSelsct);
+$('#confirm_extra_working_assignment_type_config_combi_message').html(alertMessageForSelectNotUseSelsct);
+} else if ($('#extra_working_assignment_type').val() == 3) {
+$('#variational_overtime_work_flag').prop("disabled",true);
+$('#variational_overtime_work_config_combi_message').html(alertMessageForCheckboxNotUseCheckbox);
+$('#confirm_extra_working_assignment_type_config_combi_message').html(alertMessageForSelectNotUseCheckbox);
+}
+if(submitButtonArray && submitButtonArray.length > 0) {
+timerId = setTimeout('timewaitWithButton(\'\', 0, 1, 1)', 0);
+}
+workingtypeEdit.changeOvertimeWorkStartHourFlag();
+KOT_GLOBAL.Setup.WorkingTypeEdit.init();
+}
+);
+$(
+function() {
+$('#variational_overtime_work_flag').on("click",
+function() {
+controlNotificationVariationalOvertimeWork();
+}
+);
+$('#extra_working_assignment_type').on("change",
+function() {
+var alertMessageForCheckbox = "You cannot select this item because [set as overtime (hrs)] for Extra Hours Work allocation type has been selected.";
+var alertMessageForSelect = "If you select [set as overtime (hrs)], you cannot select<br>[count after scheduled work (hrs) as overtime]";
+var alertMessageForCheckboxAlreadyExist = "When this item is selected, you cannot not choose [set as overtime (hrs)] for Extra Hours Work allocation type.";
+var alertMessageForSelectAlreadyExist = "[Set as overtime (hrs)] cannot be selected because<br>[count after scheduled work (hrs) as overtime] is already selected.";
+if ($('#extra_working_assignment_type').val() == 3) {
+if ($('#option_overtime').attr("class") == "disableOption") {
+$('#extra_working_assignment_type').val(1);
+} else {
+//スケジュール時間を超過した勤務については、残業としてカウントする のチェックを外し、disableにする
+$('#variational_overtime_work_flag').prop("checked", false);
+$('#variational_overtime_work_flag').prop("disabled", true);
+$('#variational_overtime_work_config_combi_message').html(alertMessageForCheckbox);
+$('#confirm_extra_working_assignment_type_config_combi_message').html(alertMessageForSelect);
+}
+} else {
+$('#variational_overtime_work_flag').prop("disabled", false);
+$('#variational_overtime_work_config_combi_message').html("");
+$('#confirm_extra_working_assignment_type_config_combi_message').html("");
+if($('#variational_overtime_work_flag').prop("checked")) {
+//もともと、チェックボックスにチェックが入っていた場合(既存企業)、エラーメッセージを出力
+$('#variational_overtime_work_config_combi_message').html(alertMessageForCheckboxAlreadyExist);
+$('#confirm_extra_working_assignment_type_config_combi_message').html(alertMessageForSelectAlreadyExist);
+}
+}
+var workingHoursSystem = $('input:radio[name="working_hours_system"]:checked').val();
+var variationalStandardType = $('input:radio[name="variational_standard_type"]:checked').val();
+if($('#use_variation_working_flag').val() == 1 && workingHoursSystem == 1 &&
+(variationalStandardType != 0 || $('#is_use_variational_yearly').val() == 1)) {
+$('#variational_overtime_work_flag').prop('disabled', true);
+}
+}
+);
+$("#overtime_work_start_flag").on("click", workingtypeEdit.changeOvertimeWorkStartHourFlag);
+$("#weekly_overtime_work_start_minute_flag").on("click", workingtypeEdit.changeWeeklyOvertimeWorkStartMinuteFlag);
+var priorityDialog;
+$(document).on("click", "#priority_break_subtraction_button", function() {
+var src = "?page_id=/setup/priority_break_subtraction_setting&jsCzQ41T=6zBCxMLxMtMdyNBG&from_link=1&session_flag=1&called_page_id=/setup/workingtype_edit&year=${selected_year}&month=${selected_month}&day=${selected_day}";
+$("#priority_iframe").attr("src", src);
+if(!priorityDialog) {
+priorityDialog = new HtLib.dialog('.priority_dialog', { closeByOuter: true });
+}
+priorityDialog.show();
+});
+$('#yearly_working_start_month').on("change", workingtypeEdit.changeYearlyWorkingStartMonth);
+if(submitButtonArray && submitButtonArray.length > 0) {
+timerId = setTimeout('timewaitWithButton(\'\', 0, 1, 1)', 0);
+}
+}
+);
+</script>
+</head>
+<body>
+<div class="htBlock-body specific-pattern_a specific-pattern_a_custom">
+<div class="htBlock-header" id="header_main_menu">
+<div class="htBlock-header_inner">
+<div class="htBlock-header_homeButton">
+<p>
+<a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/top"></a>
+</p>
+</div>
+<div class="htBlock-header_backButton  htBlock-header_backButton_en " id="header_menu_back_button">
+<p>
+<a href="#">
+<span>Return</span>
+</a>
+</p>
+</div>
+<!-- よく使うメニュー -->
+<div class="htBlock-header_menuBox">
+<ol>
+<li data-ht-tooltip-header-menu="Daily data">
+<a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/working/daily_working_list&reset_selected_date=true&from_link=1&jsCzQ41T=6zBCxMLxMtMdyNBG">
+<img src="/asset/design1/img/templates/day_month_year/size-s/top_menubtn-s_workingedit_11.png">
+</a>
+</li>
+<li data-ht-tooltip-header-menu="Monthly data">
+<a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/working/monthly_working_summary&from_link=1&jsCzQ41T=6zBCxMLxMtMdyNBG">
+<img src="/asset/design1/img/templates/day_month_year/size-s/top_menubtn-s_monthly-working-summary_12.png">
+</a>
+</li>
+<li data-ht-tooltip-header-menu="Yearly data">
+<a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/working/yearly_working_summary&date_selection_type=6&jsCzQ41T=6zBCxMLxMtMdyNBG">
+<img src="/asset/design1/img/templates/day_month_year/size-s/top_menubtn-s_yearly-working-summary_2023.png">
+</a>
+</li>
+<li data-ht-tooltip-header-menu="Schedule management">
+<a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/schedule/monthly_individual_schedule_list&only_show_at_click=true&time_division_flag=0&pattern_name_flag=0&jsCzQ41T=6zBCxMLxMtMdyNBG">
+<img src="/asset/design1/img/templates/top_menubtn-s_indivisual-schedule.png">
+</a>
+</li>
+<li data-ht-tooltip-header-menu="Vacation management">
+<a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/setup/day_count_list&jsCzQ41T=6zBCxMLxMtMdyNBG">
+<img src="/asset/design1/img/templates/top_menubtn-s_holiday-list.png">
+</a>
+</li>
+<li data-ht-tooltip-header-menu="Search employees">
+<a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/utility/search_employee&jsCzQ41T=6zBCxMLxMtMdyNBG">
+<img src="/asset/design1/img/templates/top_menubtn-s_employee-search.png">
+</a>
+</li>
+<li data-ht-tooltip-header-menu="Export/Import">
+<a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/export/select_export_type&jsCzQ41T=6zBCxMLxMtMdyNBG">
+<img src="/asset/design1/img/templates/top_menubtn-s_import-export.png">
+</a>
+</li>
+<li data-ht-tooltip-header-menu="Login permission">
+<a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/setup/support_menu_edit&jsCzQ41T=6zBCxMLxMtMdyNBG">
+<img src="/asset/design1/img/templates/top_menubtn-s_login-permission.png">
+</a>
+</li>
+</ol>
+</div>
+<div class="htBlock-header_menuButton menu-main" id="step1">
+<p>
+<a href="#">
+<span>All menu</span>
+</a>
+</p>
+</div>
+<div class="htBlock-header_spacer"></div>
+<!-- サービススイッチャーの表示 -->
+<div class="htBlock-header_userInfo">
+<div class="htBlock-header_userInfo_inner">
+<span>
+<!--<img class="htBlock-header_userInfo_thumb" src="/asset/design1/img/templates/header_user.png">-->
+<p class="htBlock-header_userInfo_name">&nbsp;admin&nbsp;チャンフォン　ナム</p>
+<p class="htBlock-header_userInfo_company">&nbsp;fzzhhp&nbsp;ＮｅｏＸ　ＡＳＩＡ株式会社</p>
+</span>
+</div>
+</div>
+<div class="htBlock-header_logoutButton" >
+<p>
+<a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/login/do_logout">
+<img src="/asset/design1/img/templates/header_icon_logout.png">
+Sign out
+</a>
+</p>
+</div>
+</div><!-- end class="htBlock-header_inner" -->
+<div class="htBlock-header_menuBody" style="display:none;">
+<div class="htBlock-header_menuBody_title">
+<h2>Menu
+</h2>
+</div>
+<table class="htBlock-header_menuBody_inner">
+<tr>
+<td>
+<h3>Work data</h3>
+<a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/working/daily_working_list&reset_selected_date=true&from_link=1&jsCzQ41T=6zBCxMLxMtMdyNBG" class="ctcol">Daily data</a>
+<a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/working/monthly_working_summary&from_link=1&jsCzQ41T=6zBCxMLxMtMdyNBG" class="ctcol">Monthly data</a>
+<a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/working/yearly_working_summary&date_selection_type=6&jsCzQ41T=6zBCxMLxMtMdyNBG" class="ctcol">Yearly data</a>
+<a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/working/section_summary_list&select_type=section&from_link=1&jsCzQ41T=6zBCxMLxMtMdyNBG" class="ctcol">Data by divisions and groups</a>
+</td>
+<td>
+<h3>Schedule</h3>
+<a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/schedule/monthly_individual_schedule_list&only_show_at_click=true&time_division_flag=0&pattern_name_flag=0&jsCzQ41T=6zBCxMLxMtMdyNBG" class="ctcol">Schedule management</a>
+<a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/setup/day_count_list&jsCzQ41T=6zBCxMLxMtMdyNBG" class="ctcol">Vacation management</a>
+</td>
+<td>
+<h3>Confirm</h3>
+<a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/working/uncomplete_working_list&error_type=1&jsCzQ41T=6zBCxMLxMtMdyNBG" class="ctcol">Attendance data error</a>
+<a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/working/daily_closed_schedule_list&date_selection_type=1&jsCzQ41T=6zBCxMLxMtMdyNBG" class="ctcol">Closing and Attendance confirmation status</a>
+<a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/admin/request_list&select_type=now&jsCzQ41T=6zBCxMLxMtMdyNBG" class="ctcol">Request approval</a>
+<a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/admin/regulation_violated_limit_overtime&jsCzQ41T=6zBCxMLxMtMdyNBG" class="ctcol">Workstyle reform alert</a>
+</td>
+<td>
+<h3>Others</h3>
+<a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/utility/search_employee&jsCzQ41T=6zBCxMLxMtMdyNBG" class="ctcol">Search employees</A>
+<a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/export/select_export_type&jsCzQ41T=6zBCxMLxMtMdyNBG" class="ctcol">Export/Import</a>
+<a href="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/admin/admin_message_list&jsCzQ41T=6zBCxMLxMtMdyNBG" class="ctcol">Manage message</a>
+ </td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" src="/asset/design1/js/KOT_UnProcessAlert.jquery.js?202311211217"></script>
+<script type="text/javascript">
+(function($){
+// 未処理項目アラート
+// cssの関係上、divタグ内に配置します
+var currentPageId = "/setup/workingtype_edit";
+// TOP画面以外はアラート表示をを行わない。
+if(currentPageId === "/top") {
+var targetId = "#un_process_items_area";
+$(document).ready(function(){
+//カスタムイベント
+$(document).on("un_process_alert.KOT_EVENT", targetId, function(event, arg1) {
+var data = JSON.parse(arg1);
+//TOP画面の対応が必要な項目への操作
+//top.htmlで実装しています。
+KOT_GLOBAL.Top.adjustUnProcessAlert(data);
+//ホームアイコンの操作
+if(data.result === "OK") {
+checkUnProcessAlertData(data.result_list);
+}
+});
+//未処理項目取得処理
+$(targetId).KOT_UnProcessAlert({
+actionTarget : "/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr",
+backgroundTarget : "/background/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr",
+forceRefresh : false
+});
+$("#un_process_refresh").click(function(){
+$("#un_process_refresh").prop("disabled", true);
+$(targetId).KOT_UnProcessAlert({
+actionTarget : "/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr",
+backgroundTarget : "/background/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr",
+forceRefresh : true
+});
+});
+});
+}
+//JSON形式で返されたデータを元に、未処理データが存在するかチェック
+function checkUnProcessAlertData(resultList) {
+var exists = false;
+for(var i =0,l=resultList.length; i < l; i++) {
+var oneData = resultList[i];
+if(oneData.is_visible === "true") {
+for(var j=0,m=oneData.data_list.length; j < m; j++) {
+if(oneData.data_list[j].is_exsists === "true"
+&& oneData.data_list[j].is_use === "true") {
+exists = true;
+break;
+}
+}
+if(oneData.before_data_list
+&& oneData.before_data_list.length > 0) {
+if(oneData.before_data_list[0].is_exsists === "true"
+&& oneData.before_data_list[0].is_use === "true") {
+exists = true;
+break;
+}
+}
+}
+}
+$("#header_home_icon").attr("src","/asset/design1/img/templates/theme/kot/header_icon_home.png");
+}
+$(document).ready(function(){
+$("#header_menu_back_button").on("click", function() {
+var buttonType = "button";
+if(buttonType === "link") {
+location.href = "09";
+}
+else {
+var backButtonSelector = "#09";
+if(buttonType === "button") {
+backButtonSelector = "#button_09";
+}
+$(backButtonSelector).click();
+}
+});
+});
+// スイッチャーメニューの表示
+})(jQuery);
+</script>
+</div><!-- end htBlock-header -->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WDS55BP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<h1 class="htBlock-pageTitle">
+<img src="/asset/design1/img/templates/top_menubtn-s_setting.png">
+<span>
+Add employee type
+</span>
+<span>
+</span>
+</h1>
+<form name="form1" method="post" action="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr" onSubmit="return enableObject();">
+<div class="htBlock-fixedSubHeader specific-saveToolBar">
+<input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+<input name="action_id" type="submit" value="1" id="action_01" style="display: none;">
+<button id="button_01" type="button" class=" htBlock-buttonSave   htBlock-buttonM " onClick="KOT_GLOBAL.KOT_LIB.onClickActionButton('action_01');">
+<span>Save</span>
+</button>
+<input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+<input name="action_id" class="action notranslate" type="submit" value="9" id="action_09" style="display: none;">
+<input name="action_button" class="action_button" type="button" value=" Return" id="button_09" style="margin:0px; display:none;" onClick="KOT_GLOBAL.KOT_LIB.onClickActionButton('action_09');">
+</div><!-- htBlock-fixedSubHeader -->
+<div class="htBlock-mainContents">
+<div class="htBlock-foldableSection" data-ht-opt="default:basic">
+<h3>
+<label>Basic info</label>
+<span class="htBlock-foldableSection_toggleButton">
+<input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+<button type="button" class="htBlock-foldableSection_buttonBasic">Base</button>
+<button type="button" class="htBlock-foldableSection_buttonDetail">Detail</button>
+</span>
+</h3>
+<ul>
+<li>
+<label class="edit" title="Enter in 10 characters or less. Employee type codes are used at Custom export, etc.">Employee type code<span class="htBlock-warnA">(Required)</span>:</label>
+<div>
+<input class="htBlock-textS" name="working_type_code" type="text" id="working_type_code" value="" maxlength="10" style="ime-mode: disabled;">
+<span class="htBlock-info">* Enter in 10 characters or less.</span>
+</div>
+</li>
+<li>
+<label class="edit" title="Enter Employee type name in 100 characters or less.
+">Employee type name<span class="htBlock-warnA">(Required)</span>:</label>
+<div>
+<input class="htBlock-textS" name="workingtype_name" type="text" id="workingtype_name" value="" size="40" maxlength="100">
+<span class="htBlock-info">*In 100 characters or less</span>
+</div>
+</li>
+<li>
+<label class="edit" title="Enter the Closing day for this Employee type. The Closing day is applied to export range of various data.">Closing day<span class="htBlock-warnA">(Required)</span>:</label>
+<div>
+<select class="htBlock-selectmenuS" name="close_day" id="close_day" >
+<option value=""  selected >Not selected</option>
+<option value="1" >1</option>
+<option value="2" >2</option>
+<option value="3" >3</option>
+<option value="4" >4</option>
+<option value="5" >5</option>
+<option value="6" >6</option>
+<option value="7" >7</option>
+<option value="8" >8</option>
+<option value="9" >9</option>
+<option value="10" >10</option>
+<option value="11" >11</option>
+<option value="12" >12</option>
+<option value="13" >13</option>
+<option value="14" >14</option>
+<option value="15" >15</option>
+<option value="16" >16</option>
+<option value="17" >17</option>
+<option value="18" >18</option>
+<option value="19" >19</option>
+<option value="20" >20</option>
+<option value="21" >21</option>
+<option value="22" >22</option>
+<option value="23" >23</option>
+<option value="24" >24</option>
+<option value="25" >25</option>
+<option value="26" >26</option>
+<option value="27" >27</option>
+<option value="28" >28</option>
+<option value="29" >29</option>
+<option value="30" >30</option>
+<option value="31" >Month-end</option>
+</select>
+<input type="hidden" name="confirm_close_day" value="31:Month-end">
+Day
+<div>
+<span id="close_day_message" class="htBlock-warnB"></span>
+</div>
+</div>
+</li>
+<li class="htBlock-foldableSection_detail">
+<label></label>
+<div>
+<hr class="htBlock-horizontalLineA">
+</div>
+</li>
+<li class="htBlock-foldableSection_detail">
+<label title="Specify daily contract hours." class="edit">Daily Contract Work Hours:</label>
+<div>
+<input type="text" class="htBlock-textS contract_hour_of_day" name="all_day_regarding_minute_hour"   value=""    id="all_day_regarding_minute_hour" size="2" maxlength="2"><span>Hrs.</span>
+<input type="text" class="htBlock-textS contract_hour_of_day" name="all_day_regarding_minute_minute" value="" id="all_day_regarding_minute_minute" size="2" maxlength="2"><span>Min.</span>
+<input type="hidden" name="all_day_regarding_minute" id="all_day_regarding_minute" value="">
+<div>
+<span id="message_contract_hour" class="htBlock-warnB"></span>
+</div>
+</div>
+</li>
+<input type="hidden" name="week_working_contracted_minute_hour" value="" id="week_working_contracted_minute_hour" >
+<input type="hidden" name="week_working_contracted_minute_minute" value="" id="week_working_contracted_minute_minute" >
+<li class="htBlock-foldableSection_detail">
+<label class="edit" title="Configure settings for Discretionary Overtime of the Month.">Discretionary Overtime of the Month:</label>
+<div>
+<input type="text" class="htBlock-textS" name="monthly_regarding_overtime_minute_hour" value="" id="monthly_regarding_overtime_minute_hour" size="2" maxlength="2">Hrs.
+<input type="text" class="htBlock-textS" name="monthly_regarding_overtime_minute_minute" value="" id="monthly_regarding_overtime_minute_minute" size="2" maxlength="2">Min.
+</div>
+</li>
+<li class="htBlock-foldableSection_detail">
+<label class="edit" title="Set the closing date of a week when aggregate the attendance information per week.">Wk. closing date:</label>
+<div>
+<select class="htBlock-selectmenuS" name="variational_working_endday_for_week" id="variational_working_endday_for_week">
+<option value="1" >Sunday</option>
+<option value="2" >Monday</option>
+<option value="3" >Tuesday</option>
+<option value="4" >Wednesday</option>
+<option value="5" >Thursday</option>
+<option value="6" >Friday</option>
+<option value="7"  selected >Saturday</option>
+</select>
+<input type="hidden" name="confirm_variational_working_endday_for_week" value="1:Sunday">
+<input type="hidden" name="confirm_variational_working_endday_for_week" value="2:Monday">
+<input type="hidden" name="confirm_variational_working_endday_for_week" value="3:Tuesday">
+<input type="hidden" name="confirm_variational_working_endday_for_week" value="4:Wednesday">
+<input type="hidden" name="confirm_variational_working_endday_for_week" value="5:Thursday">
+<input type="hidden" name="confirm_variational_working_endday_for_week" value="6:Friday">
+<input type="hidden" name="confirm_variational_working_endday_for_week" value="7:Saturday">
+</div>
+</li>
+<li class="htBlock-foldableSection_detail">
+<label class="edit" title="Configure the Language settings for this Employee type. The setting will be applied to corresponding employee pages and Time Recorder screens.">Display language:</label>
+<div>
+<select class="htBlock-selectmenuS" name="locale_code_id">
+<option value="">Follow browser settings (Accept-Language)</option>
+<option value="0"  selected >Apply option settings</option>
+<option value="-1" >Follow division settings</option>
+<option value="1" >Japanese</option>
+<option value="2" >English</option>
+<option value="3" >Thai (Machine Translation)</option>
+<option value="5" >Traditional Chinese (Auto-translated)</option>
+<option value="6" >Vietnamese (Auto-translated)</option>
+</select>
+</div>
+</li>
+</ul><!-- end 基本情報 -->
+</div><!-- htBlock-foldableSection -->
+<div class="htBlock-foldableSection">
+<h3>
+<label>Workstyle</label>
+<span class="htBlock-foldableSection_toggleButton">
+</span>
+</h3>
+<ul>
+<li>
+<label class="edit" title="Specify whether or not to use the variable working hours system by working hours setting.">Work (hrs):</label>
+<div>
+<input type="radio" id="working_hours_system_1" name="working_hours_system" class="htBlock-radioL"  checked  value="0">
+<label for="working_hours_system_1">Regular working hours system</label>
+</div>
+<div>
+<input type="radio" id="working_hours_system_2" name="working_hours_system" class="htBlock-radioL"  value="1">
+<label for="working_hours_system_2">Variable working hours system</label>
+<div style="display: inline" id="view_setting_variation_working_detail">
+<input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+<input name="action_id" type="submit" value="3" id="action_03" style="display: none;">
+<button id="button_03" type="button" class=" htBlock-buttonNormal   htBlock-buttonS " onClick="KOT_GLOBAL.KOT_LIB.onClickActionButton('action_03');">
+<span>Variable Working Hours Setting</span>
+</button>
+</div>
+<input type="hidden" name="is_show_only" id="is_show_only"  value="0"  >
+</div>
+</li>
+<li class="specific-valiational_custom" id="use_setting_variation_working">
+<div>
+<div>
+<input type="radio" id="variational_standard_type_1" name="variational_standard_type" class="htBlock-radioL"  value="1">
+<label for="variational_standard_type_1">Variable working hours per month</label>
+</div>
+<div>
+<input type="radio" id="variational_standard_type_2" name="variational_standard_type" class="htBlock-radioL"  value="2">
+<label for="variational_standard_type_2">Variable working hours per year</label>
+</div>
+<div class="specific-valiational_custom" id="use_variational_yearly">
+<div>
+<label class="edit">Starting month:</label>
+<select name="yearly_working_start_month" id="yearly_working_start_month" class="htBlock-selectmenuS">
+<option value=""  selected ></option>
+<option value="1" >1</option>
+<option value="2" >2</option>
+<option value="3" >3</option>
+<option value="4" >4</option>
+<option value="5" >5</option>
+<option value="6" >6</option>
+<option value="7" >7</option>
+<option value="8" >8</option>
+<option value="9" >9</option>
+<option value="10" >10</option>
+<option value="11" >11</option>
+<option value="12" >12</option>
+</select>
+Month<div id="alert_message_for_yearly_start_month"></div>
+</div>
+<div id="yearly_variational_working_setting">
+<label class="edit">Monthly working hours:</label>
+<input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+<input name="action_id" type="submit" value="11" id="action_11" style="display: none;">
+<button id="button_11" type="button" class=" htBlock-buttonNormal   htBlock-buttonS " onClick="KOT_GLOBAL.KOT_LIB.onClickActionButton('action_11');">
+<span>Monthly working hours setting</span>
+</button>
+</div>
+</div>
+<div>
+<input type="radio" id="variational_standard_type_3" name="variational_standard_type" class="htBlock-radioL"  checked  value="0">
+<label for="variational_standard_type_3">Manual setting (Flextime, etc.)</label>
+</div>
+</div>
+</li>
+</ul><!-- end 働き方 -->
+</div><!-- htBlock-foldableSection -->
+<div class="htBlock-foldableSection" data-ht-opt="default:basic">
+<h3>
+<label>Break-related</label>
+<span class="htBlock-foldableSection_toggleButton">
+<input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+<button type="button" class="htBlock-foldableSection_buttonBasic">Base</button>
+<button type="button" class="htBlock-foldableSection_buttonDetail">Detail</button>
+</span>
+</h3>
+<ul>
+<li>
+<label class="edit" title="Time-record break is break (hrs) calculated based on time-record by users. Here, you can set whether to allow time-record break.">Break time-record:</label>
+<div>
+<input type="hidden" name="confirm_allow_free_break_flag" value="1:Approve">
+<input type="hidden" name="confirm_allow_free_break_flag" value="2:Do not approve">
+<select class="htBlock-selectmenuS" name="allow_free_break_flag" id="allow_free_break_flag">
+<option value="1" selected>Approve (default)</option>
+<option value="2">Do not approve</option>
+</select>
+</div>
+</li>
+<li>
+<label class="edit" title="Set a certain vacation hours to be grant for a certain work hours.">Break (hrs) 1:</label>
+<div>
+<div>
+<input name="breaktime_interval1" type="text" class="htBlock-textS" id="breaktime_interval1" value=""  size="4"  maxlength="4" onchange="KOT_GLOBAL.KOT_LIB.enableNumeric(this)">
+<span>Minute work</span>
+<input name="breaktime_amount1" type="text" class="htBlock-textS" id="breaktime_interval1" value="" size="3"  maxlength="3" onchange="KOT_GLOBAL.KOT_LIB.enableNumeric(this)">
+<span>minute of break is obtained automatically</span>
+<input name="exist_flag1" type="hidden" id="exist_flag1" value="1">
+</div>
+</div>
+</li>
+<li>
+<label class="edit" title="Set a certain vacation hours to be grant for a certain work hours.">Break (hrs) 2:</label>
+<div>
+<div>
+<input name="breaktime_interval2" type="text" class="htBlock-textS" id="breaktime_interval2" value=""  size="4"  maxlength="4" onchange="KOT_GLOBAL.KOT_LIB.enableNumeric(this)">
+<span>Minute work</span>
+<input name="breaktime_amount2" type="text" class="htBlock-textS" id="breaktime_interval2" value="" size="3"  maxlength="3" onchange="KOT_GLOBAL.KOT_LIB.enableNumeric(this)">
+<span>minute of break is obtained automatically</span>
+<input name="exist_flag2" type="hidden" id="exist_flag2" value="1">
+</div>
+</div>
+</li>
+<li>
+<label class="edit" title="Set a certain vacation hours to be grant for a certain work hours.">Break (hrs) 3:</label>
+<div>
+<div>
+<input name="breaktime_interval3" type="text" class="htBlock-textS" id="breaktime_interval3" value=""  size="4"  maxlength="4" onchange="KOT_GLOBAL.KOT_LIB.enableNumeric(this)">
+<span>Minute work</span>
+<input name="breaktime_amount3" type="text" class="htBlock-textS" id="breaktime_interval3" value="" size="3"  maxlength="3" onchange="KOT_GLOBAL.KOT_LIB.enableNumeric(this)">
+<span>minute of break is obtained automatically</span>
+<input name="exist_flag3" type="hidden" id="exist_flag3" value="1">
+</div>
+<div>
+<input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+<input name="action_id" type="submit" value="2" id="action_02" style="display: none;">
+<button id="button_02" type="button" class=" htBlock-buttonNormal   htBlock-buttonS " onClick="KOT_GLOBAL.KOT_LIB.onClickActionButton('action_02');">
+<span>Add break</span>
+</button>
+</div>
+</div>
+</li>
+<li class="htBlock-foldableSection_detail">
+<label></label>
+<div>
+<hr class="htBlock-horizontalLineA">
+</div>
+</li>
+<li class="htBlock-foldableSection_detail">
+<label class="edit" title="Decide which attendance to subtract "Break" (Employee type) and "Break schedule" (Schedules) from preferably.">Priority of Employee type break to subtract from:</label>
+<div>
+<span id="view_prioritize_break_subtraction">Fixed &gt; Extra Hours &gt; Fixed Late-night hours &gt; Extra Late-night Hours</span>
+<input type="hidden"  name="prioritize_break_subtraction_code" id="prioritize_break_subtraction_code" value="0">
+<input type="hidden"  name="prioritize_break_subtraction_code_for_pop" id="prioritize_break_subtraction_code_for_pop" value="4321">
+<input type="button" id="priority_break_subtraction_button" name="action_id" type="button" class="htBlock-buttonNormal htBlock-buttonS" value="Priority order settings">
+</div>
+</li>
+<li class="htBlock-foldableSection_detail">
+<label class="edit" title="Set the operation for when time-record break/auto break settings are obtained at the same time.">Priority order of break (hrs):</label>
+<div>
+<span>When time-record break/auto break settings are obtained at the same time.</span>
+<input type="hidden" name="confirm_prioritize_stamp_rest_flag" value="0:Auto detection (default)">
+<input type="hidden" name="confirm_prioritize_stamp_rest_flag" value="1:Prioritize time-record break">
+<input type="hidden" name="confirm_prioritize_stamp_rest_flag" value="2:Sum up each break type">
+<select class="htBlock-selectmenuS" name="prioritize_stamp_rest_flag" id="prioritize_stamp_rest_flag">
+<option value="0" >Auto detection (default)</option>
+<option value="1" >Prioritize time-record break</option>
+<option value="2" >Sum up each break type</option>
+</select>
+</div>
+</li>
+</ul><!-- end 休憩関連 -->
+</div><!-- htBlock-foldableSection -->
+<div class="htBlock-foldableSection" data-ht-opt="default:basic">
+<h3>
+<label>Late night work</label>
+<span class="htBlock-foldableSection_toggleButton">
+<input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+<button type="button" class="htBlock-foldableSection_buttonBasic">Base</button>
+<button type="button" class="htBlock-foldableSection_buttonDetail">Detail</button>
+</span>
+</h3>
+<ul>
+<li>
+<label class="edit" title="Work during this time is classified as Night work (usually between 22:00-5:00).">Late night work (hrs) slot<span class="htBlock-warnA">(Required)</span>:</label>
+<div>
+<input class="htBlock-textS" name="night_work_start_time_hour" id="night_work_start_time_hour" type="hidden" value="22"  size="2" maxlength="2">
+<input class="htBlock-textS" name="night_work_start_time_minute" id="night_work_start_time_minute" type="hidden" value="00"  size="2" maxlength="2">
+<input class="htBlock-timeS schedule_time_value" id="night_work_start_time" placeholder="hhmm" name="night_work_start_time" type="text" value="22:00" style="ime-mode: disabled;">
+～
+<input class="htBlock-time" name="night_work_end_time_hour" id="night_work_end_time_hour" type="hidden" value="05"  size="2" maxlength="2">
+<input class="htBlock-time" name="night_work_end_time_minute" id="night_work_end_time_minute" type="hidden" value="00"  size="2" maxlength="2">
+<input class="htBlock-timeS schedule_time_value" id="night_work_end_time" placeholder="hhmm" name="night_work_end_time" type="text" value="05:00" style="ime-mode: disabled;">
+<input type="hidden" name="night_work_end_time_day_interval" value="" />
+<div class="show_message_for_use_variational_working">
+<span class='htBlock-warnB'>The recommend variable working hours setting is enabled. You cannot edit this item.</span>
+</div>
+</div>
+</li>
+<li class="htBlock-foldableSection_detail">
+<label></label>
+<div>
+<hr class="htBlock-horizontalLineA">
+</div>
+</li>
+<li class="htBlock-foldableSection_detail">
+<label class="edit" title="Specify Late-night Extra Hours output method.">Late-night Extra Hours Classification:</label>
+<div>
+<div>
+<span>Regard Late-night Extra Hours as</span>
+<input type="hidden" name="confirm_night_working_assignment_type" value="1:Extra Late-night Hours">
+<input type="hidden" name="confirm_night_working_assignment_type" value="2:Set as late night overtime (hrs)">
+<select class="htBlock-selectmenuS" name="night_working_assignment_type" id="night_working_assignment_type"
+onchange="KOT_GLOBAL.Setup.WorkingTypeEdit.setEarlyExtraWorkPrioritizeOvertimeLimitFlagCondition();">
+<option value="1" >Extra Late-night Hours</option>
+<option value="3" >Treat as assigned hour as Fixed late-night hours</option>
+<option value="2"  >Set as late night overtime (hrs)</option>
+</select>
+<div class="show_message_for_use_variational_working">
+<span class='htBlock-warnB'>The recommend variable working hours setting is enabled. You cannot edit this item.</span>
+</div>
+</div>
+</div>
+</li>
+</ul><!-- end 深夜労働 -->
+</div><!-- htBlock-foldableSection -->
+<div class="htBlock-foldableSection" data-ht-opt="default:basic">
+<h3>
+<label>Calculate day's overtime work</label>
+<span class="htBlock-foldableSection_toggleButton">
+<input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+<button type="button" class="htBlock-foldableSection_buttonBasic">Base</button>
+<button type="button" class="htBlock-foldableSection_buttonDetail">Detail</button>
+</span>
+</h3>
+<ul>
+<li>
+<label class="edit" title="If you work beyond this time your work hours will be counted as overtime.">Overtime start time:</label>
+<div class="overtime_aggregation_of_days">
+<div>
+<input type="checkbox" class="htBlock-checkboxL htBlock-checkboxL--only" name="overtime_work_start_flag" id="overtime_work_start_flag" value="1"  checked  onclick="KOT_GLOBAL.Setup.WorkingTypeEdit.lessOvertimeWorkFlagChoice();">
+<label for="overtime_work_start_flag"></label>
+<input class="htBlock-textS" name="overtime_work_start_hour" id="overtime_work_start_hour" type="text" value="8" maxlength="2"  size="2" onblur="KOT_GLOBAL.Setup.WorkingTypeEdit.lessOvertimeWorkFlagChoice();">
+<span>Hrs.</span>
+<input class="htBlock-textS" name="overtime_work_start_minute" id="overtime_work_start_minute" type="text" value="0" maxlength="2"  size="2" onblur="KOT_GLOBAL.Setup.WorkingTypeEdit.lessOvertimeWorkFlagChoice();">
+<span>Min. excess work will be counted as overtime.</span>
+<div class="show_message_for_use_variational_working">
+<span class='htBlock-warnB'>The recommend variable working hours setting is enabled. You cannot edit this item.</span>
+</div>
+</div>
+<div>
+<input type="hidden" name="confirm_variational_overtime_work_flag" value="1:Valid">
+<input type="hidden" name="confirm_variational_overtime_work_flag" value="0:N/A">
+<input class="htBlock-checkboxL" type="checkbox" name="variational_overtime_work_flag" id="variational_overtime_work_flag" value="1"  onclick="KOT_GLOBAL.Setup.WorkingTypeEdit.lessOvertimeWorkFlagChoice();">
+<label for="variational_overtime_work_flag">Work hours that exceed the scheduled time will be counted as overtime.</label>
+<div id="less_overtime_work_flag_area">
+<div>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<label>
+<input class="normal" type="radio" name="less_overtime_work_flag" id="less_overtime_work_flag_0" value="0"  checked >
+<span id="less_overtime_work_flag_0_choice"></span>
+</label>
+</div>
+<div>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<label>
+<input class="normal" type="radio" name="less_overtime_work_flag" id="less_overtime_work_flag_1" value="1" >
+<span id="less_overtime_work_flag_1_choice"></span>
+</label>
+</div>
+</div>
+<div id="variational_overtime_message"></div>
+<span class="note htBlock-warnB" id="variational_overtime_work_config_combi_message"></span>
+<div class="show_message_for_use_variational_working">
+<span class='htBlock-warnB'>The recommend variable working hours setting is enabled. You cannot edit this item.</span>
+</div>
+</div>
+</div>
+</li>
+<li class="htBlock-foldableSection_detail">
+<label></label>
+<div>
+<hr class="htBlock-horizontalLineA">
+</div>
+</li>
+<input type="hidden" name="default_over_time_limit" value=$workingTypeDTO.getDefaultOvertimeLimit().intValue()>
+<li class="htBlock-foldableSection_detail">
+<label class="edit" title="Set whether to apply the overtime (cumulative) start time as schedule start time when early-in overtime occurred.">Overtime (cumulative) time for early-in:</label>
+<div>
+<input type="hidden" name="confirm_slide_overwork_starttime_flag" value="1:Set as clock-in schedule time">
+<input type="hidden" name="confirm_slide_overwork_starttime_flag" value="0:Treat as clock-in time-record">
+<select class="htBlock-selectmenuS" name="slide_overwork_starttime_flag" id="slide_overwork_starttime_flag"
+onchange="KOT_GLOBAL.Setup.WorkingTypeEdit.setEarlyExtraWorkIncludeOvertimeFlagCondition(); KOT_GLOBAL.Setup.WorkingTypeEdit.setEarlyExtraWorkPrioritizeOvertimeLimitFlagCondition();">
+<option value="1">Set as clock-in schedule time</option>
+<option value="0"  selected >Treat as clock-in time-record</option>
+</select>
+<div>
+<input type="checkbox" id="early_extra_work_include_overtime_flag" name="early_extra_work_include_overtime_flag" class="htBlock-checkboxL"
+ value="1"
+onClick="KOT_GLOBAL.Setup.WorkingTypeEdit.setEarlyExtraWorkPrioritizeOvertimeLimitFlagCondition();">
+<label for="early_extra_work_include_overtime_flag">Include early-in (Extra Hours) in overtime calculation</label>
+<input type="hidden" name="confirm_early_extra_work_include_overtime_flag" value="1:Include">
+</div>
+</div>
+</li>
+<li class="htBlock-foldableSection_detail">
+<label class="edit" title="Settings to determine whether to start overtime when the schedule begins when an employee is late.">Overtime (cumulative) time when late-in:</label>
+<div>
+<input type="hidden" name="confirm_slide_overwork_starttime_for_late_flag" value="1:Set as clock-in schedule time">
+<input type="hidden" name="confirm_slide_overwork_starttime_for_late_flag" value="0:Treat as clock-in time-record">
+<select class="htBlock-selectmenuS" name="slide_overwork_starttime_for_late_flag" id="slide_overwork_starttime_for_late_flag">
+<option value="1">Set as clock-in schedule time</option>
+<option value="0"  selected >Treat as clock-in time-record</option>
+</select>
+</div>
+</li>
+<li  class="htBlock-foldableSection_detail">
+<label class="edit" title="Work hours exceeding this time are regarded as Extra Hours Work. However, Overtime and Night work are calculated individually and will not be counted as Extra Hours Work.">Extra Hours Work start time:</label>
+<div>
+<input name="extra_work_start_hour" class="htBlock-textS" id="extra_work_start_hour" type="text" value="0" size="2" maxlength="2">
+Hrs.
+<input name="extra_work_start_minute" class="htBlock-textS" id="extra_work_start_minute" type="text" value="0" size="2" maxlength="2">
+minute over work hours will be counted as Extra Hours
+</div>
+</li>
+<li class="htBlock-foldableSection_detail">
+<label class="edit" title="Set how to output Extra Hours Work (before/after Fixed work hours which is not a legal overtime.)">Extra Hours Work allocation type:</label>
+<div>
+<div>
+<span>
+Regard Extra Daytime Work Hours as
+</span>
+<input type="hidden" name="confirm_extra_working_assignment_type" value="1:Extra Hours">
+<input type="hidden" name="confirm_extra_working_assignment_type" value="2:Fixed">
+<input type="hidden" name="confirm_extra_working_assignment_type" value="3:Overtime">
+<select class="htBlock-selectmenuS" name="extra_working_assignment_type" id="extra_working_assignment_type"
+onchange="KOT_GLOBAL.Setup.WorkingTypeEdit.setEarlyExtraWorkIncludeOvertimeFlagCondition(); KOT_GLOBAL.Setup.WorkingTypeEdit.setEarlyExtraWorkPrioritizeOvertimeLimitFlagCondition();">
+<option value="1" id="option_extra_working">Extra Hours</option>
+<option value="2" id="option_fixed_working">Fixed</option>
+<option value="3" id="option_overtime" >Overtime</option>
+</select>
+<div class="note" align="left" id="confirm_extra_working_assignment_type_config_combi_message"></div>
+</div>
+</div>
+</li>
+</ul><!-- end 日の時間外集計-->
+</div><!-- htBlock-foldableSection -->
+<div class="htBlock-foldableSection">
+<h3>
+<label>Weekly Overtime Total</label>
+<span class="htBlock-foldableSection_toggleButton">
+</span>
+</h3>
+<ul>
+<li>
+<label class="edit" title="The system will count the hours exceeding this amount as overtime.">Weekly Total [ Weekly legal working hours:</label>
+<div>
+<input type="checkbox" class="htBlock-checkboxL htBlock-checkboxL--only" name="weekly_overtime_work_start_minute_flag" id="weekly_overtime_work_start_minute_flag" value="1"  checked >
+<label for="weekly_overtime_work_start_minute_flag"></label>
+<input class="htBlock-textS" name="weekly_overtime_work_start_hour" id="weekly_overtime_work_start_hour" type="text" value="40" maxlength="2"  size="2">
+<span>Hrs.</span>
+<input class="htBlock-textS" name="weekly_overtime_work_start_minute" id="weekly_overtime_work_start_minute" type="text" value="0" maxlength="2"  size="2">
+<span>min(s) over will be considered as overtime</span>
+</div>
+<div id="show_message_for_weekly_overtime_work_start">
+<span class='htBlock-warnB'>The Variable Working Hours setting is active. You cannot select this item.</span>
+</div>
+</li>
+</ul>
+</div>
+<div class="htBlock-foldableSection" data-ht-opt="default:detail">
+<h3>
+<label>Monthly overtime work summary</label>
+<span class="htBlock-foldableSection_toggleButton">
+</span>
+</h3>
+<ul>
+<li class="htBlock-foldableSection_detail">
+<label class="edit" title="Set bonus wage overtime.">Bonus wage overtime:</label>
+<div>
+<div>
+<label class="htBlock-info">Bonus wage start time:</label>
+<span>Bonus wage overtime</span>
+<input class="htBlock-textS" name="premium_overtime1_start_minutes" id="premium_overtime1_start_minutes" type="text" value=""  size="2" maxlength="2">
+<span>Hrs.</span>
+</div>
+<div>
+<label class="htBlock-info">Bonus wage priority order:</label>
+<input type="hidden" name="confirm_priority_of_premium_overtime" value="0:Night overtime > Overtime">
+<input type="hidden" name="confirm_priority_of_premium_overtime" value="1:Overtime work > Night overtime work">
+<select class="htBlock-selectmenuS" name="priority_of_premium_overtime" id="priority_of_premium_overtime">
+<option value="0" selected >Late night overtime (non-legal time-off late night) is prioritized for bonus wage overtime (default)</option>
+<option value="1" id="priority_overtime" >Overtime (Fixed Non-legal) is prioritized for bonus wage overtime.</option>
+</select>
+</div>
+</div>
+</li>
+</ul><!-- end 月の時間外集計 -->
+</div><!-- htBlock-foldableSection -->
+<div class="htBlock-foldableSection" data-ht-opt="default:basic">
+<h3>
+<label>Schedule</label>
+<span class="htBlock-foldableSection_toggleButton">
+<input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+<button type="button" class="htBlock-foldableSection_buttonBasic">Base</button>
+<button type="button" class="htBlock-foldableSection_buttonDetail">Detail</button>
+</span>
+</h3>
+<ul>
+<li>
+<label class="edit" title="Create future schedule by applying Auto schedule settings. Schedules can be registered up to the number of days specified, starting from this day. Registration takes place during night-time.">Days to apply Auto schedule:</label>
+<div>
+<span>Everyday</span>
+<input class="htBlock-textS" type='text' id='clone_schedule_after_day' name='clone_schedule_after_day' value='7' size="2"  maxlength='2'>
+<span>Auto-schedule up to specified number of days *1-62</span>
+</div>
+</li>
+<li>
+<label class="edit" title="As for Early-ins (early comings), decide whether to regard work exceeding scheduled work hours as work hours. Even if "Don't regard as work time" is selected, Overtime work is still valid if "Work start" time is set.">Handling of work before clock-in schedule:</label>
+<div>
+<input type="hidden" name="confirm_use_shift_extra_early_working" value="1:Treat as attendance hours">
+<input type="hidden" name="confirm_use_shift_extra_early_working" value="0:Do not treat as attendance hours">
+<input class="htBlock-radioL" type="radio" id= "use_shift_extra_early_working_yes" name="use_shift_extra_early_working"  checked  value="1">
+<label for="use_shift_extra_early_working_yes">Treat as attendance hours</label>
+<input class="htBlock-radioL" type="radio" id="use_shift_extra_early_working_no" name="use_shift_extra_early_working"  value="0">
+<label for="use_shift_extra_early_working_no">Do not treat as attendance hours</label>
+</div>
+</li>
+<li>
+<label class="edit" title="As for Overtime work, decide whether to regard work exceeding the scheduled work hours as work hours. Even if "Don't regard as work time" is selected, Overtime work is still valid if "Work end" time is set.">Handling of work time after Clock-out schedule:</label>
+<div>
+<input type="hidden" name="confirm_use_shift_extra_working" value="1:Treat as attendance hours">
+<input type="hidden" name="confirm_use_shift_extra_working" value="0:Do not treat as attendance hours">
+<input class="htBlock-radioL" type="radio" id="use_shift_extra_working_yes" name="use_shift_extra_working"  checked  value="1">
+<label for="use_shift_extra_working_yes">Treat as attendance hours</label>
+<input class="htBlock-radioL" type="radio" id="use_shift_extra_working_no" name="use_shift_extra_working"  value="0">
+<label for="use_shift_extra_working_no">Do not treat as attendance hours</label>
+</div>
+</li>
+<li class="htBlock-foldableSection_detail">
+<label></label>
+<div>
+<hr class="htBlock-horizontalLineA">
+</div>
+</li>
+<li class="htBlock-foldableSection_detail">
+<label class="edit" title="Set whether to treat the clock-in as a late-in if the clock-in time was exactly the same as the scheduled clock-in time.">Handling of clock-ins <br>coinciding with scheduled time:</label>
+<input type="hidden" name="confirm_repudiate_just_minute_flag" value="0:Treat as correct time-record">
+<input type="hidden" name="confirm_repudiate_just_minute_flag" value="1:Treat as late-in time-record">
+<div>
+<select class="htBlock-selectmenuS" name="repudiate_basetime_flag" id="repudiate_basetime_flag">
+<option value="0">Treat as correct time-record</option>
+<option value="1" >Treat as late-in time-record</option>
+</select>
+</div>
+</li>
+</ul><!-- end スケジュール -->
+</div><!-- htBlock-foldableSection -->
+<input type="hidden" name="goout_type_code" value=$workingTypeDTO.getGooutTypeCode()>
+<input type="hidden" name="use_schedule_edit_method_flag" value="0">
+<div class="htBlock-foldableSection" data-ht-opt="default:basic">
+<h3>
+<label>Vacation-related</label>
+<span class="htBlock-foldableSection_toggleButton">
+<input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+<button type="button" class="htBlock-foldableSection_buttonBasic">Base</button>
+<button type="button" class="htBlock-foldableSection_buttonDetail">Detail</button>
+</span>
+</h3>
+<ul>
+<li>
+<label>
+有休 grant:
+</label>
+<div>
+<input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+<input name="action_id" type="submit" value="10" id="action_10" style="display: none;">
+<button id="button_10" type="button" class=" htBlock-buttonNormal   htBlock-buttonS " onClick="KOT_GLOBAL.KOT_LIB.onClickActionButton('action_10');">
+<span>Paid Vacation -related Settings</span>
+</button>
+</div>
+</li>
+<li class="htBlock-foldableSection_detail">
+<label></label>
+<div>
+<hr class="htBlock-horizontalLineA">
+</div>
+</li>
+<li class="htBlock-foldableSection_detail">
+<label class="edit" title="Specifiy how many hours to obtain per vacation (Vacation obtain unit).">unit for vacation (by hour):</label>
+<div>
+<div>
+<label class="htBlock-info">有休:</label>
+<select class="htBlock-selectmenuS" id="time_unit_holiday_span1" name="time_unit_holiday_span1">
+<option value="60"  selected >1 Hrs.</option>
+<option value="120" >2 Hrs.</option>
+<option value="180" >3 Hrs.</option>
+<option value="240" >4 Hrs.</option>
+</select>
+</div>
+<div>
+<label class="htBlock-info">代休:</label>
+<select class="htBlock-selectmenuS" id="time_unit_holiday_span2" name="time_unit_holiday_span2">
+<option value="1" >1 Min.</option>
+<option value="15" >15 Min.</option>
+<option value="30" >30 Min.</option>
+<option value="60"  selected >1 Hrs.</option>
+<option value="120" >2 Hrs.</option>
+<option value="180" >3 Hrs.</option>
+<option value="240" >4 Hrs.</option>
+</select>
+</div>
+<div>
+<label class="htBlock-info">欠勤:</label>
+<select class="htBlock-selectmenuS" id="time_unit_holiday_span3" name="time_unit_holiday_span3">
+<option value="1" >1 Min.</option>
+<option value="15" >15 Min.</option>
+<option value="30" >30 Min.</option>
+<option value="60"  selected >1 Hrs.</option>
+<option value="120" >2 Hrs.</option>
+<option value="180" >3 Hrs.</option>
+<option value="240" >4 Hrs.</option>
+</select>
+</div>
+<div>
+<label class="htBlock-info">子の看護休暇:</label>
+<select class="htBlock-selectmenuS" id="time_unit_holiday_span4" name="time_unit_holiday_span4">
+<option value="1" >1 Min.</option>
+<option value="15" >15 Min.</option>
+<option value="30" >30 Min.</option>
+<option value="60"  selected >1 Hrs.</option>
+<option value="120" >2 Hrs.</option>
+<option value="180" >3 Hrs.</option>
+<option value="240" >4 Hrs.</option>
+</select>
+</div>
+<div>
+<label class="htBlock-info">介護休暇:</label>
+<select class="htBlock-selectmenuS" id="time_unit_holiday_span5" name="time_unit_holiday_span5">
+<option value="1" >1 Min.</option>
+<option value="15" >15 Min.</option>
+<option value="30" >30 Min.</option>
+<option value="60"  selected >1 Hrs.</option>
+<option value="120" >2 Hrs.</option>
+<option value="180" >3 Hrs.</option>
+<option value="240" >4 Hrs.</option>
+</select>
+</div>
+<div>
+<label class="htBlock-info">産前産後休業:</label>
+<select class="htBlock-selectmenuS" id="time_unit_holiday_span6" name="time_unit_holiday_span6">
+<option value="1" >1 Min.</option>
+<option value="15" >15 Min.</option>
+<option value="30" >30 Min.</option>
+<option value="60"  selected >1 Hrs.</option>
+<option value="120" >2 Hrs.</option>
+<option value="180" >3 Hrs.</option>
+<option value="240" >4 Hrs.</option>
+</select>
+</div>
+<div>
+<label class="htBlock-info">育児休業:</label>
+<select class="htBlock-selectmenuS" id="time_unit_holiday_span7" name="time_unit_holiday_span7">
+<option value="1" >1 Min.</option>
+<option value="15" >15 Min.</option>
+<option value="30" >30 Min.</option>
+<option value="60"  selected >1 Hrs.</option>
+<option value="120" >2 Hrs.</option>
+<option value="180" >3 Hrs.</option>
+<option value="240" >4 Hrs.</option>
+</select>
+</div>
+<div>
+<label class="htBlock-info">介護休業:</label>
+<select class="htBlock-selectmenuS" id="time_unit_holiday_span8" name="time_unit_holiday_span8">
+<option value="1" >1 Min.</option>
+<option value="15" >15 Min.</option>
+<option value="30" >30 Min.</option>
+<option value="60"  selected >1 Hrs.</option>
+<option value="120" >2 Hrs.</option>
+<option value="180" >3 Hrs.</option>
+<option value="240" >4 Hrs.</option>
+</select>
+</div>
+<div>
+<label class="htBlock-info">労災休業:</label>
+<select class="htBlock-selectmenuS" id="time_unit_holiday_span9" name="time_unit_holiday_span9">
+<option value="1" >1 Min.</option>
+<option value="15" >15 Min.</option>
+<option value="30" >30 Min.</option>
+<option value="60"  selected >1 Hrs.</option>
+<option value="120" >2 Hrs.</option>
+<option value="180" >3 Hrs.</option>
+<option value="240" >4 Hrs.</option>
+</select>
+</div>
+<div>
+<label class="htBlock-info">公休:</label>
+<select class="htBlock-selectmenuS" id="time_unit_holiday_span10" name="time_unit_holiday_span10">
+<option value="1" >1 Min.</option>
+<option value="15" >15 Min.</option>
+<option value="30" >30 Min.</option>
+<option value="60"  selected >1 Hrs.</option>
+<option value="120" >2 Hrs.</option>
+<option value="180" >3 Hrs.</option>
+<option value="240" >4 Hrs.</option>
+</select>
+</div>
+<div>
+<label class="htBlock-info">夏季休暇:</label>
+<select class="htBlock-selectmenuS" id="time_unit_holiday_span11" name="time_unit_holiday_span11">
+<option value="1" >1 Min.</option>
+<option value="15" >15 Min.</option>
+<option value="30" >30 Min.</option>
+<option value="60"  selected >1 Hrs.</option>
+<option value="120" >2 Hrs.</option>
+<option value="180" >3 Hrs.</option>
+<option value="240" >4 Hrs.</option>
+</select>
+</div>
+</div>
+</li>
+<li class="htBlock-foldableSection_detail">
+<label class="edit" title="Decide whether to add up Discretionary time and Hourly vacation to Work time. They will be added up if checked Vacation type is half-day or hourly vacation.">Addtion to Fixed time when obtaining half-day or hourly vacation:</label>
+<div>
+<div>
+<input type="checkbox" class="htBlock-checkboxL" id="time_unit_holiday_append_flag1" name="time_unit_holiday_append_flag1"  value="1">
+<label for="time_unit_holiday_append_flag1">有休</label>
+</div>
+<div>
+<input type="checkbox" class="htBlock-checkboxL" id="time_unit_holiday_append_flag2" name="time_unit_holiday_append_flag2"  value="1">
+<label for="time_unit_holiday_append_flag2">代休</label>
+</div>
+<div>
+<input type="checkbox" class="htBlock-checkboxL" id="time_unit_holiday_append_flag3" name="time_unit_holiday_append_flag3"  value="1">
+<label for="time_unit_holiday_append_flag3">欠勤</label>
+</div>
+<div>
+<input type="checkbox" class="htBlock-checkboxL" id="time_unit_holiday_append_flag4" name="time_unit_holiday_append_flag4"  value="1">
+<label for="time_unit_holiday_append_flag4">子の看護休暇</label>
+</div>
+<div>
+<input type="checkbox" class="htBlock-checkboxL" id="time_unit_holiday_append_flag5" name="time_unit_holiday_append_flag5"  value="1">
+<label for="time_unit_holiday_append_flag5">介護休暇</label>
+</div>
+<div>
+<input type="checkbox" class="htBlock-checkboxL" id="time_unit_holiday_append_flag6" name="time_unit_holiday_append_flag6"  value="1">
+<label for="time_unit_holiday_append_flag6">産前産後休業</label>
+</div>
+<div>
+<input type="checkbox" class="htBlock-checkboxL" id="time_unit_holiday_append_flag7" name="time_unit_holiday_append_flag7"  value="1">
+<label for="time_unit_holiday_append_flag7">育児休業</label>
+</div>
+<div>
+<input type="checkbox" class="htBlock-checkboxL" id="time_unit_holiday_append_flag8" name="time_unit_holiday_append_flag8"  value="1">
+<label for="time_unit_holiday_append_flag8">介護休業</label>
+</div>
+<div>
+<input type="checkbox" class="htBlock-checkboxL" id="time_unit_holiday_append_flag9" name="time_unit_holiday_append_flag9"  value="1">
+<label for="time_unit_holiday_append_flag9">労災休業</label>
+</div>
+<div>
+<input type="checkbox" class="htBlock-checkboxL" id="time_unit_holiday_append_flag10" name="time_unit_holiday_append_flag10"  value="1">
+<label for="time_unit_holiday_append_flag10">公休</label>
+</div>
+<div>
+<input type="checkbox" class="htBlock-checkboxL" id="time_unit_holiday_append_flag11" name="time_unit_holiday_append_flag11"  value="1">
+<label for="time_unit_holiday_append_flag11">夏季休暇</label>
+</div>
+</div>
+</li>
+<li class="htBlock-foldableSection_detail">
+<label class="edit" title="Set whether to calculate the vacation discretionary (hrs) which has been already added to assinged (hrs).">How to Handle Vacation Hours:</label>
+<div>
+Include Vacation Hours in Extra Hours and Overtime calculation?
+<input type="hidden" name="confirm_deemed_work_include_overtime_flag" value="0:Do not include">
+<input type="hidden" name="confirm_deemed_work_include_overtime_flag" value="1:Include (Don’t count as Extra Hours and Overtime)">
+<input type="hidden" name="confirm_deemed_work_include_overtime_flag" value="2:Include (Count as Extra Hours and Overtime)">
+<select class="htBlock-selectmenuS" name="deemed_work_include_overtime_flag" id="deemed_work_include_overtime_flag">
+<option value="0">Do not include</option>
+<option value="1" >Include (Don’t count as Extra Hours and Overtime)</option>
+<option value="2" >Include (Count as Extra Hours and Overtime)</option>
+</select>
+<div class="show_message_for_use_variational_working">
+<span class='htBlock-warnB'>The recommend variable working hours setting is enabled. You cannot edit this item.</span>
+</div>
+</div>
+</li>
+<li class="htBlock-foldableSection_detail">
+<label class="edit" title="Decide whether to increase Day count on Working days on holiday.">Increase/Decrease of 代休 vacations when Working days on holiday is taken.:</label>
+<div>
+<div>
+<input type="radio" class="htBlock-radioL" id="compensation_flag_follow" name="compensation_flag" value="-1"  checked >
+<label for="compensation_flag_follow">Inherit vacation type settings</label>
+</div>
+<div>
+<input type="radio" class="htBlock-radioL" id="compensation_flag_up" name="compensation_flag" value="1" >
+<label for="compensation_flag_up">Increase by time-off clock-in</label>
+</div>
+<div>
+<input type="text" class="htBlock-textS" id="half_compensasion_work_hour" name="half_compensasion_work_hour" value=""  size="2" maxlength="2">
+<span>Hrs.</span>
+<input type="text" class="htBlock-textS" id="half_compensasion_work_minute" name="half_compensasion_work_minute" value=""  size="2" maxlength="2">
+<span>Min.</span>
+and more work will be grant for a half-day<br>
+<input type="text" class="htBlock-textS" id="full_compensasion_work_hour"   name="full_compensasion_work_hour"   value="" size="2"  maxlength="2">
+<span>Hrs.</span>
+<input type="text" class="htBlock-textS" id="full_compensasion_work_minute" name="full_compensasion_work_minute" value="" size="2" maxlength="2">
+<span>Min.
+and more (work) will be grant for 1 day</span>
+</div>
+<div>
+<input type="radio" class="htBlock-radioL" id="compensation_flag_no" name="compensation_flag" value="0" >
+<label for="compensation_flag_no">Do not increase/decrease</label>
+</div>
+</div>
+</li>
+<li class="htBlock-foldableSection_detail">
+<label class="edit" title="Specify the Discretionary Holiday Work Hours calculation method.">Discretionary Holiday Work Hours Setting:</label>
+<div>
+<div>
+<label class="htBlock-info">有休:</label>
+<select class="htBlock-selectmenuS" id="regarding_work_minute_calculation_flag1" name="regarding_work_minute_calculation_flag1">
+<option value=""  selected >Follow Vacation Type settings (default)</option>
+<option value="0" >Don’t calculate Discretionary Holiday Work Hours</option>
+<option value="1" >Calculate Discretionary Holiday Work Hours</option>
+<option value="2" >Only perform calculations for each vacation type</option>
+</select>
+</div>
+<div>
+<label class="htBlock-info">代休:</label>
+<select class="htBlock-selectmenuS" id="regarding_work_minute_calculation_flag2" name="regarding_work_minute_calculation_flag2">
+<option value=""  selected >Follow Vacation Type settings (default)</option>
+<option value="0" >Don’t calculate Discretionary Holiday Work Hours</option>
+<option value="1" >Calculate Discretionary Holiday Work Hours</option>
+<option value="2" >Only perform calculations for each vacation type</option>
+</select>
+</div>
+<div>
+<label class="htBlock-info">欠勤:</label>
+<select class="htBlock-selectmenuS" id="regarding_work_minute_calculation_flag3" name="regarding_work_minute_calculation_flag3">
+<option value=""  selected >Follow Vacation Type settings (default)</option>
+<option value="0" >Don’t calculate Discretionary Holiday Work Hours</option>
+<option value="1" >Calculate Discretionary Holiday Work Hours</option>
+<option value="2" >Only perform calculations for each vacation type</option>
+</select>
+</div>
+<div>
+<label class="htBlock-info">子の看護休暇:</label>
+<select class="htBlock-selectmenuS" id="regarding_work_minute_calculation_flag4" name="regarding_work_minute_calculation_flag4">
+<option value=""  selected >Follow Vacation Type settings (default)</option>
+<option value="0" >Don’t calculate Discretionary Holiday Work Hours</option>
+<option value="1" >Calculate Discretionary Holiday Work Hours</option>
+<option value="2" >Only perform calculations for each vacation type</option>
+</select>
+</div>
+<div>
+<label class="htBlock-info">介護休暇:</label>
+<select class="htBlock-selectmenuS" id="regarding_work_minute_calculation_flag5" name="regarding_work_minute_calculation_flag5">
+<option value=""  selected >Follow Vacation Type settings (default)</option>
+<option value="0" >Don’t calculate Discretionary Holiday Work Hours</option>
+<option value="1" >Calculate Discretionary Holiday Work Hours</option>
+<option value="2" >Only perform calculations for each vacation type</option>
+</select>
+</div>
+<div>
+<label class="htBlock-info">産前産後休業:</label>
+<select class="htBlock-selectmenuS" id="regarding_work_minute_calculation_flag6" name="regarding_work_minute_calculation_flag6">
+<option value=""  selected >Follow Vacation Type settings (default)</option>
+<option value="0" >Don’t calculate Discretionary Holiday Work Hours</option>
+<option value="1" >Calculate Discretionary Holiday Work Hours</option>
+<option value="2" >Only perform calculations for each vacation type</option>
+</select>
+</div>
+<div>
+<label class="htBlock-info">育児休業:</label>
+<select class="htBlock-selectmenuS" id="regarding_work_minute_calculation_flag7" name="regarding_work_minute_calculation_flag7">
+<option value=""  selected >Follow Vacation Type settings (default)</option>
+<option value="0" >Don’t calculate Discretionary Holiday Work Hours</option>
+<option value="1" >Calculate Discretionary Holiday Work Hours</option>
+<option value="2" >Only perform calculations for each vacation type</option>
+</select>
+</div>
+<div>
+<label class="htBlock-info">介護休業:</label>
+<select class="htBlock-selectmenuS" id="regarding_work_minute_calculation_flag8" name="regarding_work_minute_calculation_flag8">
+<option value=""  selected >Follow Vacation Type settings (default)</option>
+<option value="0" >Don’t calculate Discretionary Holiday Work Hours</option>
+<option value="1" >Calculate Discretionary Holiday Work Hours</option>
+<option value="2" >Only perform calculations for each vacation type</option>
+</select>
+</div>
+<div>
+<label class="htBlock-info">労災休業:</label>
+<select class="htBlock-selectmenuS" id="regarding_work_minute_calculation_flag9" name="regarding_work_minute_calculation_flag9">
+<option value=""  selected >Follow Vacation Type settings (default)</option>
+<option value="0" >Don’t calculate Discretionary Holiday Work Hours</option>
+<option value="1" >Calculate Discretionary Holiday Work Hours</option>
+<option value="2" >Only perform calculations for each vacation type</option>
+</select>
+</div>
+<div>
+<label class="htBlock-info">公休:</label>
+<select class="htBlock-selectmenuS" id="regarding_work_minute_calculation_flag10" name="regarding_work_minute_calculation_flag10">
+<option value=""  selected >Follow Vacation Type settings (default)</option>
+<option value="0" >Don’t calculate Discretionary Holiday Work Hours</option>
+<option value="1" >Calculate Discretionary Holiday Work Hours</option>
+<option value="2" >Only perform calculations for each vacation type</option>
+</select>
+</div>
+<div>
+<label class="htBlock-info">夏季休暇:</label>
+<select class="htBlock-selectmenuS" id="regarding_work_minute_calculation_flag11" name="regarding_work_minute_calculation_flag11">
+<option value=""  selected >Follow Vacation Type settings (default)</option>
+<option value="0" >Don’t calculate Discretionary Holiday Work Hours</option>
+<option value="1" >Calculate Discretionary Holiday Work Hours</option>
+<option value="2" >Only perform calculations for each vacation type</option>
+</select>
+</div>
+</div>
+</li>
+</ul><!-- end 休暇関連-->
+</div><!-- htBlock-foldableSection -->
+<div class="htBlock-foldableSection">
+<h3>
+<span class="htBlock-foldableSection_icon htBlock-foldableSection_icon--close"></span>
+<label>Advanced features</label>
+</h3>
+<ul>
+<li>
+<label title="Decide whether to allow employees to edit Attendance data." class="edit">Time-record edit by employee:</label>
+<div>
+Edit time-record by employee:
+<select class="htBlock-selectmenuS" name="allow_working_edit_by_employee_flag">
+<option value="0" >Do not approve</option>
+<option value="1" >Approve</option>
+</select>
+<input type="hidden" name="confirm_allow_working_edit_by_employee_flag" value="0:Do not approve">
+<input type="hidden" name="confirm_allow_working_edit_by_employee_flag" value="1:Approve">
+<div>
+<span class="htBlock-warnB">*Not compatible with mobile browser.</span>
+</div>
+</div>
+</li>
+<li>
+<label class="edit" title="Decide whether to regard as attendance data error if overlapping time record exists on discretionary working day ("Direct-visit", "Direct-return", or "Direct visit & return" pattern applied).">Detect Attendance data error at Discretionary work:</label>
+<div>
+<input type="hidden" name="confirm_use_uncomplete_judgement_flag" value="1:Detect attendance data error">
+<input type="hidden"  name="confirm_use_uncomplete_judgement_flag" value="0:Don't detect attendance data error">
+<input type="radio" class="htBlock-radioL" id="use_uncomplete_judgement_flag_yes" name="use_uncomplete_judgement_flag"  checked  value="1">
+<label for="use_uncomplete_judgement_flag_yes">Detect attendance data error</label>
+<input type="radio" class="htBlock-radioL" id="use_uncomplete_judgement_flag_no" name="use_uncomplete_judgement_flag"  value="0">
+<label for="use_uncomplete_judgement_flag_no">Don't detect attendance data error</label>
+</div>
+</li>
+<li>
+<label class="edit" title="Select PDF time card export layout at Time card.">Time Card output format:</label>
+<div>
+<select class="htBlock-selectmenuS" name="pdf_timecard_exporter_id">
+<option value=""  selected >Follow the Time Card output setting</option>
+<option value="900095713" >勤怠通常出力</option>
+</select>
+</div>
+</li>
+<input type="hidden" name="enable_schedule_round_and_limit_flag" value="$workingTypeDTO.getEnableScheduleRoundAndLimitFlag()">
+</ul><!-- end 拡張機能 -->
+</div><!-- htBlock-foldableSection -->
+<div class="specific-bottomSaveButton_double">
+<input name="request_from_page_id" type="hidden" value="/setup/workingtype_edit">
+<input name="page_id" type="hidden" value="/setup/workingtype_edit">
+<input name="selected_workingtype_id" type="hidden" id="selected_workingtype_id" value="">
+<input name="org_yearly_working_start_month" type="hidden" id="org_yearly_working_start_month" value="$workingTypeDTO.getYearlyVariationalStartOfMonth()">
+<input name="sort_order" type="hidden" id="sort_order" value="">
+<input name="break_column_num" type="hidden" id="break_column_num" value="3">
+<input type="hidden" name="use_variation_working_flag" id="use_variation_working_flag" value="1">
+<input name="is_use_variational_yearly" id="is_use_variational_yearly" type="hidden" value="0">
+<input name="is_edit_weekly_overtime_work" id="is_edit_weekly_overtime_work" type="hidden" value="1">
+<input name="calculate_varational_depending_on_working_type_flag" id="calculate_varational_depending_on_working_type_flag" type="hidden" value="1">
+<input name="data_required_from_db" type="hidden" value="1">
+<input name="extra_work_start_hour" id="extra_work_start_hour" type="hidden" value="0">
+<input name="extra_work_start_minute" id="extra_work_start_minute" type="hidden" value="0">
+<input type="hidden" name="is_new_edit" value="1">
+<input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+<input name="action_id" type="submit" value="1" id="action_01" style="display: none;">
+<button id="button_01" type="button" class=" htBlock-buttonSave   htBlock-buttonM " onClick="KOT_GLOBAL.KOT_LIB.onClickActionButton('action_01');">
+<span>Save</span>
+</button>
+<input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+<input name="action_id" class="action notranslate" type="submit" value="9" id="action_09" style="display: none;">
+<input name="action_button" class="action_button" type="button" value=" Return" id="button_09" style="margin:0px; display:none;" onClick="KOT_GLOBAL.KOT_LIB.onClickActionButton('action_09');">
+</div>
+</div><!-- htBlock-mainContents -->
+</form>
+<div class="htBlock-footer" id="footer_main_menu">
+<div class="htBlock-footer_cart" onclick="KOT_GLOBAL.Parts.VmFooter.cartLogin();">
+<a href="https://kingoftime.bcart.jp/login_action.php" onclick="return false">
+<img src="/asset/design1/img/templates/footer_icon_cart.png">
+<span>Cart</span>
+</a>
+</div>
+
+<div class="htBlock-footer_logo">
+<img src="/asset/design1/img/templates/logo/kot/footer.png" >
+</div>
+<script src="https://kingoftime.karakuri.ai/api/chats/popup.js?0" data-customer-name="チャンフォン　ナム" data-customer-email="info@neox-asia.co.jp"></script>
+<script type="text/javascript">
+window.zESettings = {
+webWidget: {
+chat: {
+suppress: false
+},
+contactForm: {
+suppress: false
+},
+helpCenter: {
+suppress: false
+},
+talk: {
+suppress: false
+},
+answerBot: {
+suppress: false
+}
+}
+};
+</script>
+<div style="width: 150px;"></div> </div>
+<script type="text/javascript">
+//名前空間を定義
+KOT_GLOBAL                           = KOT_GLOBAL || {};
+KOT_GLOBAL.Parts                     = KOT_GLOBAL.Parts || {};
+KOT_GLOBAL.Parts.VmFooter            = {};
+(function($, footer){
+footer.data = { id : null, param : null };
+jQuery.ajax({
+scriptCharset : 'utf-8',
+type     : 'GET',
+url      : '/background/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr?page_id=/utility/get_cart_login_parameter',
+async    : true,
+cache    : false,
+dataType : 'json'
+}).success(function(data, status, xhr){
+footer.data.id    = jQuery.trim(data.id);
+footer.data.param = jQuery.trim(data.param);
+}).error(function(XMLHttpRequest, textStatus, errorThrown){
+});
+footer.cartLogin = function() {
+$('<form/>', {action: "https://kingoftime.bcart.jp/login_action.php", method: 'post', target: 'cartServiceWindow'})
+.hide()
+.append($('<input/>', {type: 'hidden', name: 'loginEmail',    value: footer.data.id}))
+.append($('<input/>', {type: 'hidden', name: 'loginPassword', value: footer.data.param}))
+.appendTo(document.body)
+.submit()
+.remove();
+};
+})(jQuery, KOT_GLOBAL.Parts.VmFooter);
+</script>
+<script>
+jQuery(".htBlock-adjastableTableF").show();
+jQuery(".htBlock-hrCalendarTableA").show();
+</script>
+<script src="/asset/design1/js/vendor/jquery-ui-1.11.4/jquery-ui.min.js?202311211217"></script>
+<!--<script src="/asset/design1/js/htlib.js?202311211217"></script>-->
+<script src="/asset/design1/js/min/htlib.min.js?202311211217"></script>
+<script type="text/javascript">
+(function($){
+$(document).on('keypress', 'input[type="text"]:not(.specific-allow-submit),input[type="password"]:not(.specific-allow-submit),input[type="number"]:not(.specific-allow-submit)', function(event) {
+return event.which !== 13;
+});
+})(jQuery);
+</script>
+<script>
+!function () {
+if (window.top !== window.self) return;
+if ('TechtouchObject' in window && document.querySelector('script#techtouch-snippet')) return;
+window.TechtouchObject = {
+organizationUuid: "orga-620458be-3899-d201-1631-3d11b80e5568"
+};
+var e = document.createElement("script"); e.async = 1, e.src = "https://apps.techtouch.jp/script/orga-620458be-3899-d201-1631-3d11b80e5568/main.js?projectUuid=proj-62207a02-2834-745a-4d64-8bf05611f7d2"; e.id = "techtouch-snippet";
+var t = document.getElementsByTagName("script")[0]; t.parentNode.insertBefore(e, t);
+}()
+</script>
+</div><!-- htBlock-body -->
+</body>
+</html>

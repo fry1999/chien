@@ -1,9 +1,731 @@
-<a href="#">
-    <img src="./asset/design1/img/templates/header_icon_logout.png">
-    Sign out
-  </a>
-
-  <a href="#">
-    <img src="./asset/design1/img/templates/header_Hamburger.png">
-    Menu
-  </a>
+<div class="htBlock-mainContents">
+  <h2>
+    <span>&nbsp;</span>
+    <div class="htBlock-group specific-button_selectDate"></div>
+  </h2>
+  <div class="htBlock-box">
+    <div class="specific-table">
+      <div class="htBlock-toolbar">
+        <div>
+          <form name="form2" method="post" action="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr"
+            onsubmit="return ckdbclick()">
+            <input name="is_new_edit" type="hidden" value="1">
+            <input name="page_id" type="hidden" id="page_id" value="/setup/workingtype_list">
+            <input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+            <input name="action_id" type="submit" value="1" id="action_01" style="display: none;">
+            <button id="button_01" type="button" class=" htBlock-buttonSave   htBlock-buttonM "
+              onclick="KOT_GLOBAL.KOT_LIB.onClickActionButton('action_01');">
+              <img src="/asset/design1/img/templates/btn_icon_add.png">
+              <span>Create New</span>
+            </button>
+            <input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+            <input name="action_id" type="submit" value="5" id="action_05" style="display: none;">
+            <button id="button_05" type="button" class=" htBlock-buttonPrimary   htBlock-buttonM "
+              onclick="KOT_GLOBAL.KOT_LIB.onClickActionButton('action_05');">
+              <span>Display order settings</span>
+            </button>
+            <script type="text/javascript" src="/asset/design1/js/KOT_ExcelOut.jquery.js?202311211217"></script>
+            <script type="text/javascript">
+              jQuery(document).ready(function () {
+                jQuery("#excel_out_button").KOT_ExcelOut({
+                  backgroundTarget: "/background/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr",
+                  currentPageId: "/setup/workingtype_list",
+                  companyId: "900060596",
+                  administratorId: "900231724",
+                  employeeId: "",
+                  removeTargetSelector: ["#header_main_menu", "#footer_main_menu"],
+                  numberToString: "0",
+                  messages: {
+                    loading: "Processing...",
+                    download: "Download",
+                    error: "Error has occured"
+                  }
+                });
+              });
+            </script>
+            <button id="excel_out_button" type="button" class="htBlock-buttonM htBlock-buttonExcel">
+              Excel output
+            </button><a style="display: none;"></a>
+          </form>
+        </div>
+        <div></div>
+      </div>
+      <div class="htBlock-adjastableTableF" style="display: block;">
+        <div class="htBlock-adjastableTableF_inner">
+          <table>
+            <thead>
+              <tr>
+                <th class="specific_no htBlock-adjastableTableF_actionRow htBlock-adjastableTableF_sortDisabled"
+                  data-ht-sort-type="int" data-ht-sort-index="LIST_DISPLAY_ITEM_0">
+                  <p>No.</p>
+                </th>
+                <th class="case specific_code htBlock-adjastableTableF_actionRow htBlock-adjastableTableF_sortDisabled"
+                  data-ht-sort-type="string" data-ht-sort-index="LIST_DISPLAY_ITEM_1">
+                  <p>
+                    Employee type code
+                  </p>
+                </th>
+                <th class="case specific_name htBlock-adjastableTableF_actionRow htBlock-adjastableTableF_sortDisabled"
+                  data-ht-sort-type="string" data-ht-sort-index="LIST_DISPLAY_ITEM_2">
+                  <p>
+                    Employee type name
+                  </p>
+                </th>
+                <th class="htBlock-adjastableTableF_actionRow">
+                  <p>Edit</p>
+                </th>
+                <th class="htBlock-adjastableTableF_actionRow">
+                  <p>Delete</p>
+                </th>
+                <th class="num specific_date  htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string"
+                  data-ht-sort-index="LIST_DISPLAY_ITEM_3">
+                  <p>
+                    Closing day
+                  </p>
+                </th>
+                <th class="case specific_name  htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string"
+                  data-ht-sort-index="LIST_DISPLAY_ITEM_4">
+                  <p>
+                    Overtime<br>work start
+                  </p>
+                </th>
+                <th class="case specific_time  htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string"
+                  data-ht-sort-index="LIST_DISPLAY_ITEM_5">
+                  <p>
+                    Late night<br>work time slot
+                  </p>
+                </th>
+                <th class="case specific_close_status  htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string"
+                  data-ht-sort-index="LIST_DISPLAY_ITEM_6">
+                  <p>
+                    Break time-record
+                  </p>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="specific-align_center" data-ht-sort-index="LIST_DISPLAY_ITEM_0">
+                  <p>1</p>
+                </td>
+                <td data-ht-identity-cell="specific-sidemenu_code" data-ht-sort-index="LIST_DISPLAY_ITEM_1">
+                  <p class="specific-align_left">
+                    1000
+                  </p>
+                </td>
+                <td data-ht-identity-cell="specific-sidemenu_name" data-ht-sort-index="LIST_DISPLAY_ITEM_2">
+                  <p class="specific-align_left">
+                    管理監督者（労働時間のみ集計）
+                  </p>
+                </td>
+                <td class="htBlock-adjastableTableF_actionRow">
+                  <form style="display: inline;" name="form1_900193874" method="post"
+                    action="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr" onsubmit="return ckdbclick()">
+                    <p>
+                      <input name="page_id" type="hidden" id="page_id" value="/setup/workingtype_list">
+                      <input name="selected_workingtype_id" type="hidden" id="selected_workingtype_id"
+                        value="900193874">
+                      <input name="data_required_from_db" type="hidden" value="1">
+                      <input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+                      <button class="htBlock-buttonEdit htBlock-buttonEdit_fill" id="button_02900193874"></button>
+                      <input name="action_id" type="hidden" value="2" id="action_02900193874">
+                    </p>
+                  </form>
+                </td>
+                <td class="htBlock-adjastableTableF_actionRow">
+                  <form style="display: inline;" name="form1" method="post"
+                    action="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr" onsubmit="return ckdbclick()">
+                    <p>
+                      <input name="page_id" type="hidden" id="page_id" value="/setup/workingtype_list">
+                      <input name="selected_workingtype_id" type="hidden" id="selected_workingtype_id"
+                        value="900193874">
+                      <input name="data_required_from_db" type="hidden" value="1">
+                      <input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+                      <button class="htBlock-buttonTrash htBlock-buttonTrash_fill" id="button_04900193874"></button>
+                      <input name="action_id" type="hidden" value="4" id="action_04900193874">
+                    </p>
+                  </form>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_3">
+                  <p class="specific-align_left">
+                    31 D
+                  </p>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_4">
+                  <p class="specific-align_left">
+                  </p>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_5">
+                  <p class="specific-align_left">
+                    22:00 - Next 05:00
+                  </p>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_6">
+                  <p class="specific-align_left">
+                    Approve
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td class="specific-align_center" data-ht-sort-index="LIST_DISPLAY_ITEM_0">
+                  <p>2</p>
+                </td>
+                <td data-ht-identity-cell="specific-sidemenu_code" data-ht-sort-index="LIST_DISPLAY_ITEM_1">
+                  <p class="specific-align_left">
+                    1001
+                  </p>
+                </td>
+                <td data-ht-identity-cell="specific-sidemenu_name" data-ht-sort-index="LIST_DISPLAY_ITEM_2">
+                  <p class="specific-align_left">
+                    管理監督者（所定時間超過も集計）
+                  </p>
+                </td>
+                <td class="htBlock-adjastableTableF_actionRow">
+                  <form style="display: inline;" name="form1_900193954" method="post"
+                    action="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr" onsubmit="return ckdbclick()">
+                    <p>
+                      <input name="page_id" type="hidden" id="page_id" value="/setup/workingtype_list">
+                      <input name="selected_workingtype_id" type="hidden" id="selected_workingtype_id"
+                        value="900193954">
+                      <input name="data_required_from_db" type="hidden" value="1">
+                      <input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+                      <button class="htBlock-buttonEdit htBlock-buttonEdit_fill" id="button_02900193954"></button>
+                      <input name="action_id" type="hidden" value="2" id="action_02900193954">
+                    </p>
+                  </form>
+                </td>
+                <td class="htBlock-adjastableTableF_actionRow">
+                  <form style="display: inline;" name="form1" method="post"
+                    action="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr" onsubmit="return ckdbclick()">
+                    <p>
+                      <input name="page_id" type="hidden" id="page_id" value="/setup/workingtype_list">
+                      <input name="selected_workingtype_id" type="hidden" id="selected_workingtype_id"
+                        value="900193954">
+                      <input name="data_required_from_db" type="hidden" value="1">
+                      <input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+                      <button class="htBlock-buttonTrash htBlock-buttonTrash_fill" id="button_04900193954"></button>
+                      <input name="action_id" type="hidden" value="4" id="action_04900193954">
+                    </p>
+                  </form>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_3">
+                  <p class="specific-align_left">
+                    31 D
+                  </p>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_4">
+                  <p class="specific-align_left">
+                  </p>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_5">
+                  <p class="specific-align_left">
+                    22:00 - Next 05:00
+                  </p>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_6">
+                  <p class="specific-align_left">
+                    Approve
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td class="specific-align_center" data-ht-sort-index="LIST_DISPLAY_ITEM_0">
+                  <p>3</p>
+                </td>
+                <td data-ht-identity-cell="specific-sidemenu_code" data-ht-sort-index="LIST_DISPLAY_ITEM_1">
+                  <p class="specific-align_left">
+                    1002
+                  </p>
+                </td>
+                <td data-ht-identity-cell="specific-sidemenu_name" data-ht-sort-index="LIST_DISPLAY_ITEM_2">
+                  <p class="specific-align_left">
+                    管理監督者（その他）
+                  </p>
+                </td>
+                <td class="htBlock-adjastableTableF_actionRow">
+                  <form style="display: inline;" name="form1_900193955" method="post"
+                    action="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr" onsubmit="return ckdbclick()">
+                    <p>
+                      <input name="page_id" type="hidden" id="page_id" value="/setup/workingtype_list">
+                      <input name="selected_workingtype_id" type="hidden" id="selected_workingtype_id"
+                        value="900193955">
+                      <input name="data_required_from_db" type="hidden" value="1">
+                      <input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+                      <button class="htBlock-buttonEdit htBlock-buttonEdit_fill" id="button_02900193955"></button>
+                      <input name="action_id" type="hidden" value="2" id="action_02900193955">
+                    </p>
+                  </form>
+                </td>
+                <td class="htBlock-adjastableTableF_actionRow">
+                  <form style="display: inline;" name="form1" method="post"
+                    action="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr" onsubmit="return ckdbclick()">
+                    <p>
+                      <input name="page_id" type="hidden" id="page_id" value="/setup/workingtype_list">
+                      <input name="selected_workingtype_id" type="hidden" id="selected_workingtype_id"
+                        value="900193955">
+                      <input name="data_required_from_db" type="hidden" value="1">
+                      <input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+                      <button class="htBlock-buttonTrash htBlock-buttonTrash_fill" id="button_04900193955"></button>
+                      <input name="action_id" type="hidden" value="4" id="action_04900193955">
+                    </p>
+                  </form>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_3">
+                  <p class="specific-align_left">
+                    31 D
+                  </p>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_4">
+                  <p class="specific-align_left">
+                  </p>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_5">
+                  <p class="specific-align_left">
+                    22:00 - Next 05:00
+                  </p>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_6">
+                  <p class="specific-align_left">
+                    Approve
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td class="specific-align_center" data-ht-sort-index="LIST_DISPLAY_ITEM_0">
+                  <p>4</p>
+                </td>
+                <td data-ht-identity-cell="specific-sidemenu_code" data-ht-sort-index="LIST_DISPLAY_ITEM_1">
+                  <p class="specific-align_left">
+                    2000
+                  </p>
+                </td>
+                <td data-ht-identity-cell="specific-sidemenu_name" data-ht-sort-index="LIST_DISPLAY_ITEM_2">
+                  <p class="specific-align_left">
+                    管理職（原則）
+                  </p>
+                </td>
+                <td class="htBlock-adjastableTableF_actionRow">
+                  <form style="display: inline;" name="form1_900193875" method="post"
+                    action="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr" onsubmit="return ckdbclick()">
+                    <p>
+                      <input name="page_id" type="hidden" id="page_id" value="/setup/workingtype_list">
+                      <input name="selected_workingtype_id" type="hidden" id="selected_workingtype_id"
+                        value="900193875">
+                      <input name="data_required_from_db" type="hidden" value="1">
+                      <input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+                      <button class="htBlock-buttonEdit htBlock-buttonEdit_fill" id="button_02900193875"></button>
+                      <input name="action_id" type="hidden" value="2" id="action_02900193875">
+                    </p>
+                  </form>
+                </td>
+                <td class="htBlock-adjastableTableF_actionRow">
+                  <form style="display: inline;" name="form1" method="post"
+                    action="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr" onsubmit="return ckdbclick()">
+                    <p>
+                      <input name="page_id" type="hidden" id="page_id" value="/setup/workingtype_list">
+                      <input name="selected_workingtype_id" type="hidden" id="selected_workingtype_id"
+                        value="900193875">
+                      <input name="data_required_from_db" type="hidden" value="1">
+                      <input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+                      <button class="htBlock-buttonTrash htBlock-buttonTrash_fill" id="button_04900193875"></button>
+                      <input name="action_id" type="hidden" value="4" id="action_04900193875">
+                    </p>
+                  </form>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_3">
+                  <p class="specific-align_left">
+                    31 D
+                  </p>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_4">
+                  <p class="specific-align_left">
+                    8 hrs0 Min
+                  </p>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_5">
+                  <p class="specific-align_left">
+                    22:00 - Next 05:00
+                  </p>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_6">
+                  <p class="specific-align_left">
+                    Approve
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td class="specific-align_center" data-ht-sort-index="LIST_DISPLAY_ITEM_0">
+                  <p>5</p>
+                </td>
+                <td data-ht-identity-cell="specific-sidemenu_code" data-ht-sort-index="LIST_DISPLAY_ITEM_1">
+                  <p class="specific-align_left">
+                    2001
+                  </p>
+                </td>
+                <td data-ht-identity-cell="specific-sidemenu_name" data-ht-sort-index="LIST_DISPLAY_ITEM_2">
+                  <p class="specific-align_left">
+                    管理職（フレックスタイム）
+                  </p>
+                </td>
+                <td class="htBlock-adjastableTableF_actionRow">
+                  <form style="display: inline;" name="form1_900193956" method="post"
+                    action="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr" onsubmit="return ckdbclick()">
+                    <p>
+                      <input name="page_id" type="hidden" id="page_id" value="/setup/workingtype_list">
+                      <input name="selected_workingtype_id" type="hidden" id="selected_workingtype_id"
+                        value="900193956">
+                      <input name="data_required_from_db" type="hidden" value="1">
+                      <input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+                      <button class="htBlock-buttonEdit htBlock-buttonEdit_fill" id="button_02900193956"></button>
+                      <input name="action_id" type="hidden" value="2" id="action_02900193956">
+                    </p>
+                  </form>
+                </td>
+                <td class="htBlock-adjastableTableF_actionRow">
+                  <form style="display: inline;" name="form1" method="post"
+                    action="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr" onsubmit="return ckdbclick()">
+                    <p>
+                      <input name="page_id" type="hidden" id="page_id" value="/setup/workingtype_list">
+                      <input name="selected_workingtype_id" type="hidden" id="selected_workingtype_id"
+                        value="900193956">
+                      <input name="data_required_from_db" type="hidden" value="1">
+                      <input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+                      <button class="htBlock-buttonTrash htBlock-buttonTrash_fill" id="button_04900193956"></button>
+                      <input name="action_id" type="hidden" value="4" id="action_04900193956">
+                    </p>
+                  </form>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_3">
+                  <p class="specific-align_left">
+                    31 D
+                  </p>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_4">
+                  <p class="specific-align_left">
+                    8 hrs0 Min
+                  </p>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_5">
+                  <p class="specific-align_left">
+                    22:00 - Next 05:00
+                  </p>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_6">
+                  <p class="specific-align_left">
+                    Approve
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td class="specific-align_center" data-ht-sort-index="LIST_DISPLAY_ITEM_0">
+                  <p>6</p>
+                </td>
+                <td data-ht-identity-cell="specific-sidemenu_code" data-ht-sort-index="LIST_DISPLAY_ITEM_1">
+                  <p class="specific-align_left">
+                    3000
+                  </p>
+                </td>
+                <td data-ht-identity-cell="specific-sidemenu_name" data-ht-sort-index="LIST_DISPLAY_ITEM_2">
+                  <p class="specific-align_left">
+                    正社員
+                  </p>
+                </td>
+                <td class="htBlock-adjastableTableF_actionRow">
+                  <form style="display: inline;" name="form1_900194789" method="post"
+                    action="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr" onsubmit="return ckdbclick()">
+                    <p>
+                      <input name="page_id" type="hidden" id="page_id" value="/setup/workingtype_list">
+                      <input name="selected_workingtype_id" type="hidden" id="selected_workingtype_id"
+                        value="900194789">
+                      <input name="data_required_from_db" type="hidden" value="1">
+                      <input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+                      <button class="htBlock-buttonEdit htBlock-buttonEdit_fill" id="button_02900194789"></button>
+                      <input name="action_id" type="hidden" value="2" id="action_02900194789">
+                    </p>
+                  </form>
+                </td>
+                <td class="htBlock-adjastableTableF_actionRow">
+                  <form style="display: inline;" name="form1" method="post"
+                    action="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr" onsubmit="return ckdbclick()">
+                    <p>
+                      <input name="page_id" type="hidden" id="page_id" value="/setup/workingtype_list">
+                      <input name="selected_workingtype_id" type="hidden" id="selected_workingtype_id"
+                        value="900194789">
+                      <input name="data_required_from_db" type="hidden" value="1">
+                      <input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+                      <button class="htBlock-buttonTrash htBlock-buttonTrash_fill" id="button_04900194789"></button>
+                      <input name="action_id" type="hidden" value="4" id="action_04900194789">
+                    </p>
+                  </form>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_3">
+                  <p class="specific-align_left">
+                    31 D
+                  </p>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_4">
+                  <p class="specific-align_left">
+                    8 hrs0 Min
+                  </p>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_5">
+                  <p class="specific-align_left">
+                    22:00 - Next 05:00
+                  </p>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_6">
+                  <p class="specific-align_left">
+                    Approve
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td class="specific-align_center" data-ht-sort-index="LIST_DISPLAY_ITEM_0">
+                  <p>7</p>
+                </td>
+                <td data-ht-identity-cell="specific-sidemenu_code" data-ht-sort-index="LIST_DISPLAY_ITEM_1">
+                  <p class="specific-align_left">
+                    4000
+                  </p>
+                </td>
+                <td data-ht-identity-cell="specific-sidemenu_name" data-ht-sort-index="LIST_DISPLAY_ITEM_2">
+                  <p class="specific-align_left">
+                    契約社員
+                  </p>
+                </td>
+                <td class="htBlock-adjastableTableF_actionRow">
+                  <form style="display: inline;" name="form1_900193958" method="post"
+                    action="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr" onsubmit="return ckdbclick()">
+                    <p>
+                      <input name="page_id" type="hidden" id="page_id" value="/setup/workingtype_list">
+                      <input name="selected_workingtype_id" type="hidden" id="selected_workingtype_id"
+                        value="900193958">
+                      <input name="data_required_from_db" type="hidden" value="1">
+                      <input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+                      <button class="htBlock-buttonEdit htBlock-buttonEdit_fill" id="button_02900193958"></button>
+                      <input name="action_id" type="hidden" value="2" id="action_02900193958">
+                    </p>
+                  </form>
+                </td>
+                <td class="htBlock-adjastableTableF_actionRow">
+                  <form style="display: inline;" name="form1" method="post"
+                    action="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr" onsubmit="return ckdbclick()">
+                    <p>
+                      <input name="page_id" type="hidden" id="page_id" value="/setup/workingtype_list">
+                      <input name="selected_workingtype_id" type="hidden" id="selected_workingtype_id"
+                        value="900193958">
+                      <input name="data_required_from_db" type="hidden" value="1">
+                      <input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+                      <button class="htBlock-buttonTrash htBlock-buttonTrash_fill" id="button_04900193958"></button>
+                      <input name="action_id" type="hidden" value="4" id="action_04900193958">
+                    </p>
+                  </form>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_3">
+                  <p class="specific-align_left">
+                    31 D
+                  </p>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_4">
+                  <p class="specific-align_left">
+                    8 hrs0 Min
+                  </p>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_5">
+                  <p class="specific-align_left">
+                    22:00 - Next 05:00
+                  </p>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_6">
+                  <p class="specific-align_left">
+                    Approve
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td class="specific-align_center" data-ht-sort-index="LIST_DISPLAY_ITEM_0">
+                  <p>8</p>
+                </td>
+                <td data-ht-identity-cell="specific-sidemenu_code" data-ht-sort-index="LIST_DISPLAY_ITEM_1">
+                  <p class="specific-align_left">
+                    5000
+                  </p>
+                </td>
+                <td data-ht-identity-cell="specific-sidemenu_name" data-ht-sort-index="LIST_DISPLAY_ITEM_2">
+                  <p class="specific-align_left">
+                    パート・アルバイト
+                  </p>
+                </td>
+                <td class="htBlock-adjastableTableF_actionRow">
+                  <form style="display: inline;" name="form1_900193959" method="post"
+                    action="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr" onsubmit="return ckdbclick()">
+                    <p>
+                      <input name="page_id" type="hidden" id="page_id" value="/setup/workingtype_list">
+                      <input name="selected_workingtype_id" type="hidden" id="selected_workingtype_id"
+                        value="900193959">
+                      <input name="data_required_from_db" type="hidden" value="1">
+                      <input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+                      <button class="htBlock-buttonEdit htBlock-buttonEdit_fill" id="button_02900193959"></button>
+                      <input name="action_id" type="hidden" value="2" id="action_02900193959">
+                    </p>
+                  </form>
+                </td>
+                <td class="htBlock-adjastableTableF_actionRow">
+                  <form style="display: inline;" name="form1" method="post"
+                    action="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr" onsubmit="return ckdbclick()">
+                    <p>
+                      <input name="page_id" type="hidden" id="page_id" value="/setup/workingtype_list">
+                      <input name="selected_workingtype_id" type="hidden" id="selected_workingtype_id"
+                        value="900193959">
+                      <input name="data_required_from_db" type="hidden" value="1">
+                      <input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+                      <button class="htBlock-buttonTrash htBlock-buttonTrash_fill" id="button_04900193959"></button>
+                      <input name="action_id" type="hidden" value="4" id="action_04900193959">
+                    </p>
+                  </form>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_3">
+                  <p class="specific-align_left">
+                    31 D
+                  </p>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_4">
+                  <p class="specific-align_left">
+                    8 hrs0 Min
+                  </p>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_5">
+                  <p class="specific-align_left">
+                    22:00 - Next 05:00
+                  </p>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_6">
+                  <p class="specific-align_left">
+                    Approve
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td class="specific-align_center" data-ht-sort-index="LIST_DISPLAY_ITEM_0">
+                  <p>9</p>
+                </td>
+                <td data-ht-identity-cell="specific-sidemenu_code" data-ht-sort-index="LIST_DISPLAY_ITEM_1">
+                  <p class="specific-align_left">
+                    6000
+                  </p>
+                </td>
+                <td data-ht-identity-cell="specific-sidemenu_name" data-ht-sort-index="LIST_DISPLAY_ITEM_2">
+                  <p class="specific-align_left">
+                    その他
+                  </p>
+                </td>
+                <td class="htBlock-adjastableTableF_actionRow">
+                  <form style="display: inline;" name="form1_900193960" method="post"
+                    action="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr" onsubmit="return ckdbclick()">
+                    <p>
+                      <input name="page_id" type="hidden" id="page_id" value="/setup/workingtype_list">
+                      <input name="selected_workingtype_id" type="hidden" id="selected_workingtype_id"
+                        value="900193960">
+                      <input name="data_required_from_db" type="hidden" value="1">
+                      <input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+                      <button class="htBlock-buttonEdit htBlock-buttonEdit_fill" id="button_02900193960"></button>
+                      <input name="action_id" type="hidden" value="2" id="action_02900193960">
+                    </p>
+                  </form>
+                </td>
+                <td class="htBlock-adjastableTableF_actionRow">
+                  <form style="display: inline;" name="form1" method="post"
+                    action="/admin/CCo5qDty3ZgDk5dCmazTVieRa6zwIcDr" onsubmit="return ckdbclick()">
+                    <p>
+                      <input name="page_id" type="hidden" id="page_id" value="/setup/workingtype_list">
+                      <input name="selected_workingtype_id" type="hidden" id="selected_workingtype_id"
+                        value="900193960">
+                      <input name="data_required_from_db" type="hidden" value="1">
+                      <input name="jsCzQ41T" type="hidden" value="6zBCxMLxMtMdyNBG">
+                      <button class="htBlock-buttonTrash htBlock-buttonTrash_fill" id="button_04900193960"></button>
+                      <input name="action_id" type="hidden" value="4" id="action_04900193960">
+                    </p>
+                  </form>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_3">
+                  <p class="specific-align_left">
+                    31 D
+                  </p>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_4">
+                  <p class="specific-align_left">
+                    8 hrs0 Min
+                  </p>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_5">
+                  <p class="specific-align_left">
+                    22:00 - Next 05:00
+                  </p>
+                </td>
+                <td data-ht-sort-index="LIST_DISPLAY_ITEM_6">
+                  <p class="specific-align_left">
+                    Approve
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div><!-- end htBlock-adjastableTableF -->
+        <div class="htBlock-adjastableTableF_fixedHeader" style="display: none; width: 833px;">
+          <table>
+            <thead>
+              <tr>
+                <th class="specific_no htBlock-adjastableTableF_actionRow htBlock-adjastableTableF_sortDisabled"
+                  data-ht-sort-type="int" data-ht-sort-index="LIST_DISPLAY_ITEM_0" width="25" style="width: 25px;">
+                  <p>No.</p>
+                </th>
+                <th class="case specific_code htBlock-adjastableTableF_actionRow htBlock-adjastableTableF_sortDisabled"
+                  data-ht-sort-type="string" data-ht-sort-index="LIST_DISPLAY_ITEM_1" width="127" style="width: 127px;">
+                  <p>
+                    Employee type code
+                  </p>
+                </th>
+                <th class="case specific_name htBlock-adjastableTableF_actionRow htBlock-adjastableTableF_sortDisabled"
+                  data-ht-sort-type="string" data-ht-sort-index="LIST_DISPLAY_ITEM_2" width="191" style="width: 191px;">
+                  <p>
+                    Employee type name
+                  </p>
+                </th>
+                <th class="htBlock-adjastableTableF_actionRow" width="28" style="width: 28px;">
+                  <p>Edit</p>
+                </th>
+                <th class="htBlock-adjastableTableF_actionRow" width="43" style="width: 43px;">
+                  <p>Delete</p>
+                </th>
+                <th class="num specific_date  htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string"
+                  data-ht-sort-index="LIST_DISPLAY_ITEM_3" width="75" style="width: 75px;">
+                  <p>
+                    Closing day
+                  </p>
+                </th>
+                <th class="case specific_name  htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string"
+                  data-ht-sort-index="LIST_DISPLAY_ITEM_4" width="67" style="width: 67px;">
+                  <p>
+                    Overtime<br>work start
+                  </p>
+                </th>
+                <th class="case specific_time  htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string"
+                  data-ht-sort-index="LIST_DISPLAY_ITEM_5" width="98" style="width: 98px;">
+                  <p>
+                    Late night<br>work time slot
+                  </p>
+                </th>
+                <th class="case specific_close_status  htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string"
+                  data-ht-sort-index="LIST_DISPLAY_ITEM_6" width="115" style="width: 115px;">
+                  <p>
+                    Break time-record
+                  </p>
+                </th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div><!-- end htBlock-adjastableTableF_inner -->
+    </div><!-- end specific-table -->
+  </div>
+</div>
