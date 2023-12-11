@@ -1,0 +1,663 @@
+
+ 
+
+
+                     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="apple-touch-icon" href="/images/iPhone_home_icon_kot.png">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<meta name="msapplication-config" content="none"/>
+<meta name="robots" content="noindex,nofollow" />
+<meta name="google-site-verification" content="iezf0UApKmz5LFxwan6O-8_xmc0JhWhW0vVUa39zPZ8" />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KING OF TIME Attendance Management
+</title>
+<link type="text/css" rel="stylesheet" href="../../asset/design1/js/vendor/jquery-ui-1.11.4/jquery-ui.min.css">
+<link type="text/css" rel="stylesheet" href="../../asset/design1/css/base.kot.css">
+<link type="text/css" rel="stylesheet" href="../../asset/design1/css/block.kot.css">
+<!--
+UIテンプレート範囲外のスタイル用
+class指定のprefixは「specific-」
+-->
+<link type="text/css" rel="stylesheet" href="../../asset/design1/css/specific.kot.css">
+<script type="text/javascript">
+var ua = navigator.userAgent;
+if(ua.match("Trident") || ua.match("MSIE") ){
+document.write('<link rel="stylesheet" href="\/asset\/design1\/css\/ie.kot.css?202311211217">');
+}
+</script>
+<link type="text/css" rel="stylesheet" href="/css/language/en.css?202311211217">
+<script src="/asset/design1/js/vendor/jquery-1.11.3.min.js?202311211217"></script>
+<script src="/js/kot.js?202311211217"></script>
+<script type="text/javascript">
+var browserType = KOT_GLOBAL.KOT_LIB.getBrowserType();
+if(browserType <= 110){
+document.write('<script src="\/asset\/design1\/js\/vendor\/flexibility.js?202311211217"><\/script>');
+}
+if(browserType <= 109){
+$(document).ready(function() {
+$(".specific-htBlock-dialog-body").scroll(function() {
+var pos = $(this).scrollTop();
+var posPrev = pos;
+var dialog = this;
+var id = setInterval(function(){
+posPrev = pos;
+pos = $(dialog).scrollTop();
+if(pos == posPrev){
+$(dialog).hide().show();
+$(dialog).scrollTop(pos);
+clearInterval(id);
+}
+},500);
+});
+});
+}
+</script>
+<script TYPE="text/javascript">
+<!--
+var jsMsgArray = [];
+jsMsgArray["date_today"]                    = "Appointed day";
+jsMsgArray["date_next"]                     = "Next day";
+jsMsgArray["date_prev"]                     = "Previous day";
+jsMsgArray["kot_ckdbclick"]                 = "Please press the button only once";
+jsMsgArray["tablesort_linkCell"]            = "Click to sort the category name";
+jsMsgArray["pagingcontrol_display_confirm"] = "Display may take a while if there are a many display numbers. Proceed?";
+jsMsgArray["pagingcontrol_confirm_dialog"]  = "If you change before save your changes will not be reflected. Okay to proceed?";
+jsMsgArray["update_string"]                 = "Update";
+jsMsgArray["none_string"] = "None";
+jsMsgArray["exsists_string"] = "Yes";
+jsMsgArray["network_error_string"] = "Failed to data acquisition";
+jsMsgArray["click_to_detail"] = "More details";
+jsMsgArray["validate_string_input_error_message_for_encode"] = "Deprecated characters have been entered.";
+jsMsgArray["loading_modal_message_default"] = "Please wait a moment...";
+jsMsgArray["validate_number_input_error_message_upper_bound"] = "Value ​​exceeds upper limit regulation standards";
+jsMsgArray["sso_confirm_message"] = "The single sign-on to the KING OF TIME series will be disconnected.\n Proceed?";
+var globalTemp = window.KOT_GLOBAL || {};
+globalTemp.HT_LIB_I18N = {
+"htlib_001": "Jan",
+"htlib_002": "Feb",
+"htlib_003": "Mar",
+"htlib_004": "Apr",
+"htlib_005": "May",
+"htlib_006": "Jun",
+"htlib_007": "Jul",
+"htlib_008": "Aug",
+"htlib_009": "Sep",
+"htlib_010": "Oct",
+"htlib_011": "Nov",
+"htlib_012": "Dec",
+"htlib_013": "Sun",
+"htlib_014": "Mon",
+"htlib_015": "Tue",
+"htlib_016": "Wed",
+"htlib_017": "Thu",
+"htlib_018": "Fri",
+"htlib_019": "Sat",
+"htlib_020": "",
+"htlib_021": "",
+"htlib_022": "Click row for action"
+};
+window.KOT_GLOBAL = globalTemp;
+//--->
+</script>
+<script type="text/javascript" src="/js/jquery/jquery.kot.getlistconditionchecker.js?202311211217"></script>
+<!-- Data for Google Tag Manager -->
+<script>
+dataLayer = [{
+'pageId' : '/setup/deleted_employee_list',
+'adminId': '900231724',
+'userType': 'admin',
+'companyId': '900060596'
+}];
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WDS55BP');</script>
+<!-- End Google Tag Manager -->
+
+<script type="text/javascript" src="/js/jquery/jquery.kot.pagingcontrol.js?202311211217"></script>
+<script language="javascript">
+$(document).ready(function(){
+submitButtonArray = new Array("display_button");
+$("#for_get_list_condition_table").getListConditionChecker({useFlexSelect :  false });
+if(submitButtonArray && submitButtonArray.length > 0) {
+timerId = setTimeout('timewaitWithButton(\'\', 0, 1, 1)', 0);
+}
+});
+</script>
+</head>
+<body>
+<div class="htBlock-body specific-working_info specific-pattern_f specific-working_info_test">
+<div class="htBlock-header" id="header_main_menu">
+<div class="htBlock-header_inner">
+<div class="htBlock-header_homeButton">
+<p>
+<a href="/admin/C5QWAxKGHG5F0FWN4SfliSVHdG7zdOXU?page_id=/top"></a>
+</p>
+</div>
+<div class="htBlock-header_backButton   htBlock-header_backButton_en  htBlock-header_backButton--disabled">
+<p>
+<a href="#" onClick="return false;">
+<span>Return</span>
+</a>
+</p>
+</div>
+<!-- よく使うメニュー -->
+<div class="htBlock-header_menuBox">
+<ol>
+<li data-ht-tooltip-header-menu="Daily data">
+<a href="/admin/C5QWAxKGHG5F0FWN4SfliSVHdG7zdOXU?page_id=/working/daily_working_list&reset_selected_date=true&from_link=1&qT1zvpKi=tMn5jTgyRpsoifBg">
+<img src="/asset/design1/img/templates/day_month_year/size-s/top_menubtn-s_workingedit_11.png">
+</a>
+</li>
+<li data-ht-tooltip-header-menu="Monthly data">
+<a href="/admin/C5QWAxKGHG5F0FWN4SfliSVHdG7zdOXU?page_id=/working/monthly_working_summary&from_link=1&qT1zvpKi=tMn5jTgyRpsoifBg">
+<img src="/asset/design1/img/templates/day_month_year/size-s/top_menubtn-s_monthly-working-summary_12.png">
+</a>
+</li>
+<li data-ht-tooltip-header-menu="Yearly data">
+<a href="/admin/C5QWAxKGHG5F0FWN4SfliSVHdG7zdOXU?page_id=/working/yearly_working_summary&date_selection_type=6&qT1zvpKi=tMn5jTgyRpsoifBg">
+<img src="/asset/design1/img/templates/day_month_year/size-s/top_menubtn-s_yearly-working-summary_2023.png">
+</a>
+</li>
+<li data-ht-tooltip-header-menu="Schedule management">
+<a href="/admin/C5QWAxKGHG5F0FWN4SfliSVHdG7zdOXU?page_id=/schedule/monthly_individual_schedule_list&only_show_at_click=true&time_division_flag=0&pattern_name_flag=0&qT1zvpKi=tMn5jTgyRpsoifBg">
+<img src="/asset/design1/img/templates/top_menubtn-s_indivisual-schedule.png">
+</a>
+</li>
+<li data-ht-tooltip-header-menu="Vacation management">
+<a href="/admin/C5QWAxKGHG5F0FWN4SfliSVHdG7zdOXU?page_id=/setup/day_count_list&qT1zvpKi=tMn5jTgyRpsoifBg">
+<img src="/asset/design1/img/templates/top_menubtn-s_holiday-list.png">
+</a>
+</li>
+<li data-ht-tooltip-header-menu="Search employees">
+<a href="/admin/C5QWAxKGHG5F0FWN4SfliSVHdG7zdOXU?page_id=/utility/search_employee&qT1zvpKi=tMn5jTgyRpsoifBg">
+<img src="/asset/design1/img/templates/top_menubtn-s_employee-search.png">
+</a>
+</li>
+<li data-ht-tooltip-header-menu="Export/Import">
+<a href="/admin/C5QWAxKGHG5F0FWN4SfliSVHdG7zdOXU?page_id=/export/select_export_type&qT1zvpKi=tMn5jTgyRpsoifBg">
+<img src="/asset/design1/img/templates/top_menubtn-s_import-export.png">
+</a>
+</li>
+<li data-ht-tooltip-header-menu="Login permission">
+<a href="/admin/C5QWAxKGHG5F0FWN4SfliSVHdG7zdOXU?page_id=/setup/support_menu_edit&qT1zvpKi=tMn5jTgyRpsoifBg">
+<img src="/asset/design1/img/templates/top_menubtn-s_login-permission.png">
+</a>
+</li>
+</ol>
+</div>
+<div class="htBlock-header_menuButton menu-main" id="step1">
+<p>
+<a href="#">
+<span>All menu</span>
+</a>
+</p>
+</div>
+<div class="htBlock-header_spacer"></div>
+<!-- サービススイッチャーの表示 -->
+<div class="htBlock-header_userInfo">
+<div class="htBlock-header_userInfo_inner">
+<span>
+<!--<img class="htBlock-header_userInfo_thumb" src="/asset/design1/img/templates/header_user.png">-->
+<p class="htBlock-header_userInfo_name">&nbsp;admin&nbsp;チャンフォン　ナム</p>
+<p class="htBlock-header_userInfo_company">&nbsp;fzzhhp&nbsp;ＮｅｏＸ　ＡＳＩＡ株式会社</p>
+</span>
+</div>
+</div>
+<div class="htBlock-header_logoutButton" >
+<p>
+<a href="/admin/C5QWAxKGHG5F0FWN4SfliSVHdG7zdOXU?page_id=/login/do_logout">
+<img src="/asset/design1/img/templates/header_icon_logout.png">
+Sign out
+</a>
+</p>
+</div>
+</div><!-- end class="htBlock-header_inner" -->
+<div class="htBlock-header_menuBody" style="display:none;">
+<div class="htBlock-header_menuBody_title">
+<h2>Menu
+</h2>
+</div>
+<table class="htBlock-header_menuBody_inner">
+<tr>
+<td>
+<h3>Work data</h3>
+<a href="/admin/C5QWAxKGHG5F0FWN4SfliSVHdG7zdOXU?page_id=/working/daily_working_list&reset_selected_date=true&from_link=1&qT1zvpKi=tMn5jTgyRpsoifBg" class="ctcol">Daily data</a>
+<a href="/admin/C5QWAxKGHG5F0FWN4SfliSVHdG7zdOXU?page_id=/working/monthly_working_summary&from_link=1&qT1zvpKi=tMn5jTgyRpsoifBg" class="ctcol">Monthly data</a>
+<a href="/admin/C5QWAxKGHG5F0FWN4SfliSVHdG7zdOXU?page_id=/working/yearly_working_summary&date_selection_type=6&qT1zvpKi=tMn5jTgyRpsoifBg" class="ctcol">Yearly data</a>
+<a href="/admin/C5QWAxKGHG5F0FWN4SfliSVHdG7zdOXU?page_id=/working/section_summary_list&select_type=section&from_link=1&qT1zvpKi=tMn5jTgyRpsoifBg" class="ctcol">Data by divisions and groups</a>
+</td>
+<td>
+<h3>Schedule</h3>
+<a href="/admin/C5QWAxKGHG5F0FWN4SfliSVHdG7zdOXU?page_id=/schedule/monthly_individual_schedule_list&only_show_at_click=true&time_division_flag=0&pattern_name_flag=0&qT1zvpKi=tMn5jTgyRpsoifBg" class="ctcol">Schedule management</a>
+<a href="/admin/C5QWAxKGHG5F0FWN4SfliSVHdG7zdOXU?page_id=/setup/day_count_list&qT1zvpKi=tMn5jTgyRpsoifBg" class="ctcol">Vacation management</a>
+</td>
+<td>
+<h3>Confirm</h3>
+<a href="/admin/C5QWAxKGHG5F0FWN4SfliSVHdG7zdOXU?page_id=/working/uncomplete_working_list&error_type=1&qT1zvpKi=tMn5jTgyRpsoifBg" class="ctcol">Attendance data error</a>
+<a href="/admin/C5QWAxKGHG5F0FWN4SfliSVHdG7zdOXU?page_id=/working/daily_closed_schedule_list&date_selection_type=1&qT1zvpKi=tMn5jTgyRpsoifBg" class="ctcol">Closing and Attendance confirmation status</a>
+<a href="/admin/C5QWAxKGHG5F0FWN4SfliSVHdG7zdOXU?page_id=/admin/request_list&select_type=now&qT1zvpKi=tMn5jTgyRpsoifBg" class="ctcol">Request approval</a>
+<a href="/admin/C5QWAxKGHG5F0FWN4SfliSVHdG7zdOXU?page_id=/admin/regulation_violated_limit_overtime&qT1zvpKi=tMn5jTgyRpsoifBg" class="ctcol">Workstyle reform alert</a>
+</td>
+<td>
+<h3>Others</h3>
+<a href="/admin/C5QWAxKGHG5F0FWN4SfliSVHdG7zdOXU?page_id=/utility/search_employee&qT1zvpKi=tMn5jTgyRpsoifBg" class="ctcol">Search employees</A>
+<a href="/admin/C5QWAxKGHG5F0FWN4SfliSVHdG7zdOXU?page_id=/export/select_export_type&qT1zvpKi=tMn5jTgyRpsoifBg" class="ctcol">Export/Import</a>
+<a href="/admin/C5QWAxKGHG5F0FWN4SfliSVHdG7zdOXU?page_id=/admin/admin_message_list&qT1zvpKi=tMn5jTgyRpsoifBg" class="ctcol">Manage message</a>
+ </td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" src="/asset/design1/js/KOT_UnProcessAlert.jquery.js?202311211217"></script>
+<script type="text/javascript">
+(function($){
+// 未処理項目アラート
+// cssの関係上、divタグ内に配置します
+var currentPageId = "/setup/deleted_employee_list";
+// TOP画面以外はアラート表示をを行わない。
+if(currentPageId === "/top") {
+var targetId = "#un_process_items_area";
+$(document).ready(function(){
+//カスタムイベント
+$(document).on("un_process_alert.KOT_EVENT", targetId, function(event, arg1) {
+var data = JSON.parse(arg1);
+//TOP画面の対応が必要な項目への操作
+//top.htmlで実装しています。
+KOT_GLOBAL.Top.adjustUnProcessAlert(data);
+//ホームアイコンの操作
+if(data.result === "OK") {
+checkUnProcessAlertData(data.result_list);
+}
+});
+//未処理項目取得処理
+$(targetId).KOT_UnProcessAlert({
+actionTarget : "/admin/C5QWAxKGHG5F0FWN4SfliSVHdG7zdOXU",
+backgroundTarget : "/background/C5QWAxKGHG5F0FWN4SfliSVHdG7zdOXU",
+forceRefresh : false
+});
+$("#un_process_refresh").click(function(){
+$("#un_process_refresh").prop("disabled", true);
+$(targetId).KOT_UnProcessAlert({
+actionTarget : "/admin/C5QWAxKGHG5F0FWN4SfliSVHdG7zdOXU",
+backgroundTarget : "/background/C5QWAxKGHG5F0FWN4SfliSVHdG7zdOXU",
+forceRefresh : true
+});
+});
+});
+}
+//JSON形式で返されたデータを元に、未処理データが存在するかチェック
+function checkUnProcessAlertData(resultList) {
+var exists = false;
+for(var i =0,l=resultList.length; i < l; i++) {
+var oneData = resultList[i];
+if(oneData.is_visible === "true") {
+for(var j=0,m=oneData.data_list.length; j < m; j++) {
+if(oneData.data_list[j].is_exsists === "true"
+&& oneData.data_list[j].is_use === "true") {
+exists = true;
+break;
+}
+}
+if(oneData.before_data_list
+&& oneData.before_data_list.length > 0) {
+if(oneData.before_data_list[0].is_exsists === "true"
+&& oneData.before_data_list[0].is_use === "true") {
+exists = true;
+break;
+}
+}
+}
+}
+$("#header_home_icon").attr("src","/asset/design1/img/templates/theme/kot/header_icon_home.png");
+}
+// スイッチャーメニューの表示
+})(jQuery);
+</script>
+</div><!-- end htBlock-header -->
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WDS55BP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<h1 class="htBlock-pageTitle">
+<img src="/asset/design1/img/templates/top_menubtn-s_setting.png">
+<span>
+Deleted employee
+</span>
+<span>
+</span>
+</h1>
+<form name="form" method="post" action="/admin/C5QWAxKGHG5F0FWN4SfliSVHdG7zdOXU" onsubmit="return ckdbclick()">
+<div class="htBlock-headerPanel" data-ht-open id="for_get_list_condition_table">
+<h3>Specify display condition</h3>
+<div class="htBlock-headerPanel_content">
+<div class="htBlock-headerPanel_content_input">
+<div class="htBlock-headerPanel_content_row">
+<label>Number of items displayed:</label>
+<p>
+<select name="display_limit" id="display_limit" class=" for_get_list_condition  htBlock-selectmenu">
+<option value="100" selected>100 case(s)</option>
+<option value="200">200 case(s)</option>
+<option value="300">300 case(s)</option>
+<option value="500">500 case(s)</option>
+<option value="0">All</option>
+</select>
+</p>
+</div>
+</div>
+<div class="htBlock-headerPanel_content_submit">
+<input name="qT1zvpKi" type="hidden" value="tMn5jTgyRpsoifBg">
+<input type="submit" id="display_button" class="htBlock-buttonM htBlock-buttonPrimary specific-show" value="View">
+</div>
+</div>
+<input name="page_id" type="hidden" value="/setup/deleted_employee_list">
+<input name="selected_section_id" type="hidden" name="0">
+<input name="selected_working_type_id" type="hidden" name="0">
+<input name="selected_employee_group_id" type="hidden" name="">
+</div>
+</form>
+<div class="htBlock-mainContents">
+<h2>
+<span>&nbsp;</span>
+<div class="htBlock-group specific-button_selectDate"></div>
+</h2>
+<div class="htBlock-box">
+<h4 class="htBlock-box_subTitle">Select reinstating employee(s).</h4>
+<div class="htBlock-adjastableTableF">
+<div class="htBlock-adjastableTableF_inner">
+<table class="specific-table">
+<thead>
+<tr>
+<th data-ht-sort-type="int" data-ht-sort-index="NO" class="specific_no htBlock-adjastableTableF_actionRow"><p>No.</p></th>
+<th data-ht-sort-type="string" data-ht-sort-index="LIST_DISPLAY_ITEM_1" class="htBlock-adjastableTableF_actionRow">
+<p>
+Division
+</p>
+</th>
+<th data-ht-sort-type="string" data-ht-sort-index="LIST_DISPLAY_ITEM_2" class="htBlock-adjastableTableF_actionRow">
+<p>
+Employee type
+</p>
+</th>
+<th data-ht-sort-type="string" data-ht-sort-index="LIST_DISPLAY_ITEM_3" class="htBlock-adjastableTableF_actionRow">
+<p>
+Employee<br>code
+</p>
+</th>
+<th data-ht-sort-type="string" data-ht-sort-index="LIST_DISPLAY_ITEM_4" class="htBlock-adjastableTableF_actionRow">
+<p>
+Name
+</p>
+</th>
+<th class="htBlock-adjastableTableF_actionRow"><p>Data recovery</p></th>
+<th data-ht-sort-type="string" data-ht-sort-index="LIST_DISPLAY_ITEM_5" class="">
+<p>
+Sign-in ID
+</p>
+</th>
+<th data-ht-sort-type="string" data-ht-sort-index="LIST_DISPLAY_ITEM_6" class="">
+<p>
+Hired<br>date
+</p>
+</th>
+<th data-ht-sort-type="string" data-ht-sort-index="LIST_DISPLAY_ITEM_7" class="">
+<p>
+Email address
+</p>
+</th>
+<th data-ht-sort-type="string" data-ht-sort-index="LIST_DISPLAY_ITEM_8" class="">
+<p>
+Password<br>last updated
+</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-ht-sort-index="NO" class="leave specific-align_center">1</td>
+<td class="leave" data-ht-sort-index="LIST_DISPLAY_ITEM_1">
+<p class="specific-align_left">
+1001 営業部
+</p>
+</td>
+<td class="leave" data-ht-sort-index="LIST_DISPLAY_ITEM_2">
+<p class="specific-align_left">
+3000 正社員
+</p>
+</td>
+<td class="leave" data-ht-sort-index="LIST_DISPLAY_ITEM_3">
+<p class="specific-align_left">
+101
+</p>
+</td>
+<td class="leave" data-ht-sort-index="LIST_DISPLAY_ITEM_4">
+<p class="specific-align_left">
+mai le
+</p>
+</td>
+<td class="htBlock-adjastableTableF_actionRow">
+<form name="form1" method="post" action="/admin/C5QWAxKGHG5F0FWN4SfliSVHdG7zdOXU" onsubmit="return ckdbclick()">
+<p>
+<input name="page_id" type="hidden" id="page_id" value="/setup/deleted_employee_list">
+<input name="selected_employee_id" type="hidden" id="selected_employee_id" value="902295954">
+<input name="qT1zvpKi" type="hidden" value="tMn5jTgyRpsoifBg">
+<input name="action_id" type="submit" value="1" id="action_01_902295954" style="display: none;">
+<button id="button_01_902295954" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="KOT_GLOBAL.KOT_LIB.onClickActionButton('action_01_902295954');">
+<span>Data recovery</span>
+</button>
+</p>
+</form>
+</td>
+<td class="leave" data-ht-sort-index="LIST_DISPLAY_ITEM_5">
+<p class="specific-align_left">
+fzzhhp3101
+</p>
+</td>
+<td class="leave" data-ht-sort-index="LIST_DISPLAY_ITEM_6">
+<p class="specific-align_left">
+Yr. 2023, Mo. 10, Dy. 01
+</p>
+</td>
+<td class="leave" data-ht-sort-index="LIST_DISPLAY_ITEM_7">
+<p class="specific-align_left">
+maimitdev@gmail.com,maithile28@gmail.com
+</p>
+</td>
+<td class="leave" data-ht-sort-index="LIST_DISPLAY_ITEM_8">
+<p class="specific-align_left">
+</p>
+</td>
+</tr>
+<tr>
+<td data-ht-sort-index="NO" class="leave specific-align_center">2</td>
+<td class="leave" data-ht-sort-index="LIST_DISPLAY_ITEM_1">
+<p class="specific-align_left">
+1001 営業部
+</p>
+</td>
+<td class="leave" data-ht-sort-index="LIST_DISPLAY_ITEM_2">
+<p class="specific-align_left">
+3000 正社員
+</p>
+</td>
+<td class="leave" data-ht-sort-index="LIST_DISPLAY_ITEM_3">
+<p class="specific-align_left">
+102
+</p>
+</td>
+<td class="leave" data-ht-sort-index="LIST_DISPLAY_ITEM_4">
+<p class="specific-align_left">
+mit mai
+</p>
+</td>
+<td class="htBlock-adjastableTableF_actionRow">
+<form name="form1" method="post" action="/admin/C5QWAxKGHG5F0FWN4SfliSVHdG7zdOXU" onsubmit="return ckdbclick()">
+<p>
+<input name="page_id" type="hidden" id="page_id" value="/setup/deleted_employee_list">
+<input name="selected_employee_id" type="hidden" id="selected_employee_id" value="902296160">
+<input name="qT1zvpKi" type="hidden" value="tMn5jTgyRpsoifBg">
+<input name="action_id" type="submit" value="1" id="action_01_902296160" style="display: none;">
+<button id="button_01_902296160" type="button" class=" htBlock-buttonPrimaryOut   htBlock-buttonS " onClick="KOT_GLOBAL.KOT_LIB.onClickActionButton('action_01_902296160');">
+<span>Data recovery</span>
+</button>
+</p>
+</form>
+</td>
+<td class="leave" data-ht-sort-index="LIST_DISPLAY_ITEM_5">
+<p class="specific-align_left">
+fzzhhp3102
+</p>
+</td>
+<td class="leave" data-ht-sort-index="LIST_DISPLAY_ITEM_6">
+<p class="specific-align_left">
+Yr. 2023, Mo. 11, Dy. 01
+</p>
+</td>
+<td class="leave" data-ht-sort-index="LIST_DISPLAY_ITEM_7">
+<p class="specific-align_left">
+maimitdev@gmail.com
+</p>
+</td>
+<td class="leave" data-ht-sort-index="LIST_DISPLAY_ITEM_8">
+<p class="specific-align_left">
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+  </div>
+</div><!-- htBlock-mainContents -->
+<div class="htBlock-footer" id="footer_main_menu">
+<div class="htBlock-footer_cart" onclick="KOT_GLOBAL.Parts.VmFooter.cartLogin();">
+<a href="https://kingoftime.bcart.jp/login_action.php" onclick="return false">
+<img src="/asset/design1/img/templates/footer_icon_cart.png">
+<span>Cart</span>
+</a>
+</div>
+
+<div class="htBlock-footer_logo">
+<img src="/asset/design1/img/templates/logo/kot/footer.png" >
+</div>
+<script src="https://kingoftime.karakuri.ai/api/chats/popup.js?0" data-customer-name="チャンフォン　ナム" data-customer-email="info@neox-asia.co.jp"></script>
+<script type="text/javascript">
+window.zESettings = {
+webWidget: {
+chat: {
+suppress: false
+},
+contactForm: {
+suppress: false
+},
+helpCenter: {
+suppress: false
+},
+talk: {
+suppress: false
+},
+answerBot: {
+suppress: false
+}
+}
+};
+</script>
+<div style="width: 150px;"></div> </div>
+<script type="text/javascript">
+//名前空間を定義
+KOT_GLOBAL                           = KOT_GLOBAL || {};
+KOT_GLOBAL.Parts                     = KOT_GLOBAL.Parts || {};
+KOT_GLOBAL.Parts.VmFooter            = {};
+(function($, footer){
+footer.data = { id : null, param : null };
+jQuery.ajax({
+scriptCharset : 'utf-8',
+type     : 'GET',
+url      : '/background/C5QWAxKGHG5F0FWN4SfliSVHdG7zdOXU?page_id=/utility/get_cart_login_parameter',
+async    : true,
+cache    : false,
+dataType : 'json'
+}).success(function(data, status, xhr){
+footer.data.id    = jQuery.trim(data.id);
+footer.data.param = jQuery.trim(data.param);
+}).error(function(XMLHttpRequest, textStatus, errorThrown){
+});
+footer.cartLogin = function() {
+$('<form/>', {action: "https://kingoftime.bcart.jp/login_action.php", method: 'post', target: 'cartServiceWindow'})
+.hide()
+.append($('<input/>', {type: 'hidden', name: 'loginEmail',    value: footer.data.id}))
+.append($('<input/>', {type: 'hidden', name: 'loginPassword', value: footer.data.param}))
+.appendTo(document.body)
+.submit()
+.remove();
+};
+})(jQuery, KOT_GLOBAL.Parts.VmFooter);
+</script>
+<script>
+jQuery(".htBlock-adjastableTableF").show();
+jQuery(".htBlock-hrCalendarTableA").show();
+</script>
+<script src="/asset/design1/js/vendor/jquery-ui-1.11.4/jquery-ui.min.js?202311211217"></script>
+<!--<script src="/asset/design1/js/htlib.js?202311211217"></script>-->
+<script src="/asset/design1/js/min/htlib.min.js?202311211217"></script>
+<script type="text/javascript">
+(function($){
+$(document).on('keypress', 'input[type="text"]:not(.specific-allow-submit),input[type="password"]:not(.specific-allow-submit),input[type="number"]:not(.specific-allow-submit)', function(event) {
+return event.which !== 13;
+});
+})(jQuery);
+</script>
+<script>
+!function () {
+if (window.top !== window.self) return;
+if ('TechtouchObject' in window && document.querySelector('script#techtouch-snippet')) return;
+window.TechtouchObject = {
+organizationUuid: "orga-620458be-3899-d201-1631-3d11b80e5568"
+};
+var e = document.createElement("script"); e.async = 1, e.src = "https://apps.techtouch.jp/script/orga-620458be-3899-d201-1631-3d11b80e5568/main.js?projectUuid=proj-62207a02-2834-745a-4d64-8bf05611f7d2"; e.id = "techtouch-snippet";
+var t = document.getElementsByTagName("script")[0]; t.parentNode.insertBefore(e, t);
+}()
+</script>
+</div><!-- end htBlock-body -->
+</body>
+</html>
