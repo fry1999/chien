@@ -555,9 +555,1306 @@ $("#display_button").click();
 <li class="htBlock-tab_item--custom "><a  href='?page_id=/working/daily_working_list_custom&from_link=1&IlyMXYO0=qGTvRAR11fewDufs' ><p>Normal</p><label>Custom</label></a></li>
 </ul>
 <div id="tab-1" class="htBlock-tab_content specific-tab">
-<div class="htBlock-tab_empty">
-<p>Please specify employee filter condition first</p>
+<div class="specific-table">
+<div class="htBlock-toolbar">
+<div>
+<form action="/admin/n4KHetq9VctVEkKkUl2e7DX0icoI8WkN" method="post" name="funcForm" onsubmit="return ckdbclick()">
+<input name="IlyMXYO0" type="hidden" value="qGTvRAR11fewDufs">
+<input name="action_id" type="submit" value="3" id="action_03" style="display: none;">
+<button id="button_03" type="button" class=" htBlock-buttonPrimary   htBlock-buttonM " onClick="KOT_GLOBAL.KOT_LIB.onClickActionButton('action_03');">
+<span>Close attendance(s)</span>
+</button>
+<input name="IlyMXYO0" type="hidden" value="qGTvRAR11fewDufs">
+<input name="action_id" type="submit" value="4" id="action_04" style="display: none;">
+<button id="button_04" type="button" class=" htBlock-buttonPrimary   htBlock-buttonM " onClick="KOT_GLOBAL.KOT_LIB.onClickActionButton('action_04');">
+<span>Cancel closing attendance(s)</span>
+</button>
+<input name="page_id" type="hidden" value="/working/daily_working_list">
+<input name="selected_section_id" type="hidden" value="0">
+<input name="selected_working_type_id" type="hidden" value="0">
+<input type="hidden" name="selected_duplicate_section_id_list" value="900463197,900465623">
+<input type="hidden" name="selected_duplicate_working_type_id_list" value="900193874,900193954,900193955,900197606,900193875,900193956,900194789,900193958,900193959,900193960">
+<input name="date_selection_type" type= "hidden" value="2">
+<input name="year" type="hidden" value="2023">
+<input name="month" type="hidden" value="12">
+<input name="day" type="hidden" value="12">
+<input name="end_year" type="hidden" value="2023">
+<input name="end_month" type="hidden" value="12">
+<input name="end_day" type="hidden" value="12">
+<script type="text/javascript" src="/asset/design1/js/KOT_ExcelOut.jquery.js?202311211219"></script>
+<script type="text/javascript">
+jQuery(document).ready(function(){
+jQuery("#excel_out_button").KOT_ExcelOut({
+backgroundTarget : "/background/n4KHetq9VctVEkKkUl2e7DX0icoI8WkN",
+currentPageId : "/working/daily_working_list",
+companyId : "900060596",
+administratorId : "900231724",
+employeeId : "",
+removeTargetSelector : ["#header_main_menu", "#footer_main_menu"],
+numberToString : "0",
+messages: {
+loading: "Processing...",
+download: "Download",
+error: "Error has occured"
+}
+});
+});
+</script>
+<button id="excel_out_button" type="button" class="htBlock-buttonM htBlock-buttonExcel" >
+Excel output
+</button>
+</form>
 </div>
+<div></div>
+</div><!-- end htBlock-toolbar -->
+<div class="htBlock-adjastableTableF">
+<div class="htBlock-adjastableTableF_inner">
+<table>
+<thead>
+<tr>
+<th rowspan="$rowSpan" class="htBlock-adjastableTableF_actionRow specific_no" data-ht-sort-type="int" data-ht-sort-index="NO"><p>No.</p></th>
+<th rowspan="$rowSpan" class="htBlock-adjastableTableF_actionRow specific_name" data-ht-sort-type="string" data-ht-sort-index="SECTION_NAME"><p>Division</p></th>
+<th rowspan="$rowSpan" class="htBlock-adjastableTableF_actionRow specific_name" data-ht-sort-type="string" data-ht-sort-index="WORKING_TYPE_NAME"><p>Employee<br>type</p></th>
+<th rowspan="$rowSpan" class="htBlock-adjastableTableF_actionRow specific_name employee_name" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_NAME"><p>Name</p></th>
+<th rowspan="$rowSpan" class="htBlock-adjastableTableF_actionRow"><p>Time<br>card</p></th>
+<th rowspan="$rowSpan" class="htBlock-adjastableTableF_actionRow"><p>Edit</p></th>
+<th rowspan="$rowSpan" class="specific_close_status"><p>Closed</p></th>
+<th rowspan="$rowSpan" data-ht-sort-type="string" data-ht-sort-index="SCHEDULE"><p>Schedule</p></th>
+<th rowspan="$rowSpan" data-ht-sort-type="string" data-ht-sort-index="WORK_DAY_TYPE"><p>Workday<br>type</p></th>
+<th rowspan="$rowSpan" class="specific_record" data-ht-sort-type="string" data-ht-sort-index="START_TIMERECORD"><p>Clock-in</p></th>
+<th rowspan="$rowSpan" class="specific_record" data-ht-sort-type="string" data-ht-sort-index="END_TIMERECORD"><p>Clock-out</p></th>
+<th rowspan="$rowSpan" class="specific_record" data-ht-sort-type="string" data-ht-sort-index="REST_START_TIMERECORD"><p>Start break</p></th>
+<th rowspan="$rowSpan" class="specific_record" data-ht-sort-type="string" data-ht-sort-index="REST_END_TIMERECORD"><p>End break</p></th>
+<th rowspan="$rowSpan" class="specific_time" data-ht-sort-type="float" data-ht-sort-index="FIXED_WORK_MINUTE"><p>Fixed</p></th>
+<th rowspan="$rowSpan" class="specific_time" data-ht-sort-type="float" data-ht-sort-index="EXTRA_WORK_MINUTE"><p>Extra Hours</p></th>
+<th rowspan="$rowSpan" class="specific_time" data-ht-sort-type="float" data-ht-sort-index="OVERTIME_WORK_MINUTE"><p>Overtime</p></th>
+<th rowspan="$rowSpan" class="specific_time" data-ht-sort-type="float" data-ht-sort-index="NIGHT_WORK_MINUTE"><p>Fixed<br>late night hours</p></th>
+<th rowspan="$rowSpan" class="specific_time" data-ht-sort-type="float" data-ht-sort-index="NIGHT_EXTRA_WORK_MINUTE"><p>Extra Hours<br>late night hours</p></th>
+<th rowspan="$rowSpan" class="specific_time" data-ht-sort-type="float" data-ht-sort-index="NIGHT_OVERTIME_WORK_MINUTE"><p>Late night<br>overtime</p></th>
+<th rowspan="$rowSpan" class="specific_time" data-ht-sort-type="float" data-ht-sort-index="HOLIDAY_FIXED_WORK_MINUTE"><p>Fixed<br>Holiday</p></th>
+<th rowspan="$rowSpan" class="specific_time" data-ht-sort-type="float" data-ht-sort-index="HOLIDAY_EXTRA_WORK_MINUTE"><p>Extra Hours<br>Holiday</p></th>
+<th rowspan="$rowSpan" class="specific_time" data-ht-sort-type="float" data-ht-sort-index="HOLIDAY_OVERTIME_WORK_MINUTE"><p>Time-off<br>overtime</p></th>
+<th rowspan="$rowSpan" class="specific_time" data-ht-sort-type="float" data-ht-sort-index="HOLIDAY_NIGHT_WORK_MINUTE"><p>Fixed<br>Late-night hours<br>on holiday</p></th>
+<th rowspan="$rowSpan" class="specific_time" data-ht-sort-type="float" data-ht-sort-index="HOLIDAY_NIGHT_EXTRA_WORK_MINUTE"><p>Extra Hours<br>Late-night hours<br>on holiday</p></th>
+<th rowspan="$rowSpan" class="specific_time" data-ht-sort-type="float" data-ht-sort-index="HOLIDAY_NIGHT_OVERTIME_WORK_MINUTE"><p>Night overtime<br>work on holidays</p></th>
+<th rowspan="$rowSpan" class="specific_time" data-ht-sort-type="float" data-ht-sort-index="LATE_MINUTE"><p>Late-in</p></th>
+<th rowspan="$rowSpan" class="specific_time" data-ht-sort-type="float" data-ht-sort-index="EARLY_LEAVE_MINUTE"><p>Early-out</p></th>
+<th rowspan="$rowSpan" class="specific_time" data-ht-sort-type="float" data-ht-sort-index="REST_MINUTE"><p>Break</p></th>
+<th rowspan="$rowSpan" class="specific_time" data-ht-sort-type="float" data-ht-sort-index="ALL_WORK_MINUTE"><p>Work<br>total</p></th>
+<th rowspan="$rowSpan" class="specific-table_about" data-ht-sort-type="string" data-ht-sort-index="REMARK"><p>Note</p></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="list specific-align_center" data-ht-sort-index="NO"><p>1</p></td>
+<td class="list specific-align_left" data-ht-sort-index="SECTION_NAME">
+<p>
+1000&nbsp;本社
+</p>
+</td>
+<td class="list specific-align_left" data-ht-sort-index="WORKING_TYPE_NAME">
+<p>
+1000&nbsp;管理監督者（労働時間のみ集計）
+</p>
+</td>
+<td class="list specific-align_left employee_name" data-ht-sort-index="EMPLOYEE_NAME">
+<p>
+<span id="employee_902317966">
+123456789&nbsp;tai shang hao
+</span>
+</p>
+</td>
+<td class="htBlock-adjastableTableF_actionRow">
+<form action="/admin/n4KHetq9VctVEkKkUl2e7DX0icoI8WkN" method="post" name="myForm_2_902317966" onsubmit="return ckdbclick()">
+<p>
+<input name="working_date" type="hidden" value="20231212">
+<input name="page_id" type="hidden" value="/working/daily_working_list">
+<input name="year" type="hidden" value="2023">
+<input name="month" type="hidden" value="12">
+<input name="day" type="hidden" value="12">
+<input name="employee_id" type="hidden" value="902317966">
+<input name="IlyMXYO0" type="hidden" value="qGTvRAR11fewDufs" >
+<button class="htBlock-buttonTimecard htBlock-buttonTimecard_fill" id="button_2_902317966"></button>
+<input name="action_id" type="hidden" value="2" id="action_2_902317966">
+<input name="section_id" type="hidden" value="900463197">
+<input name="schedule_section_id" type="hidden" value="$schedule.getDTO().getSectionId()">
+<input name="date_selection_type" type="hidden" value="1">
+<input name="schedule_id" type="hidden" value="$schedule.getDTO().getScheduleId()">
+<input name="schedule_date" type="hidden" value="$schedule.getDTO().getWorkingDate()">
+</p>
+</form>
+</td>
+<td class="htBlock-adjastableTableF_actionRow">
+<form action="/admin/n4KHetq9VctVEkKkUl2e7DX0icoI8WkN" method="post" name="myForm_1_902317966" onsubmit="return ckdbclick()">
+<p>
+<input name="working_date" type="hidden" value="20231212">
+<input name="page_id" type="hidden" value="/working/daily_working_list">
+<input name="year" type="hidden" value="2023">
+<input name="month" type="hidden" value="12">
+<input name="day" type="hidden" value="12">
+<input name="employee_id" type="hidden" value="902317966">
+<input name="section_id" type="hidden" value="900463197">
+<input name="schedule_section_id" type="hidden" value="$schedule.getDTO().getSectionId()">
+<input name="date_selection_type" type="hidden" value="1">
+<span id="edit_000_false_902317966" >
+<input name="IlyMXYO0" type="hidden" value="qGTvRAR11fewDufs" >
+<button class="htBlock-buttonEdit htBlock-buttonEdit_fill" id="button_1_902317966"></button>
+<input name="action_id" type="hidden" value="1" id="action_1_902317966">
+</span>
+<input name="schedule_id" type="hidden" value="$schedule.getDTO().getScheduleId()">
+<input name="schedule_date" type="hidden" value="$schedule.getDTO().getWorkingDate()">
+</p>
+</form>
+</td>
+<td class="list close_status specific-align_center">
+<p>
+<span id="closestatus_000_false_902317966" >
+ <img src="/asset/design1/img/templates/ic_check_part_off.png" class="specific-status_close" style="width:16px; height:16px;" alt="N/A">
+ </span>
+</p>
+</td>
+<td class="list schedule  specific-align_left" data-ht-sort-index="SCHEDULE">
+<p>
+</p>
+</td>
+<td class="list  work_day_type specific-align_left" data-ht-sort-index="WORK_DAY_TYPE">
+<p>
+</p>
+</td>
+<td class="list start_end_timerecord specific-align_left" data-ht-sort-index="START_TIMERECORD">
+<p>
+</p>
+</td>
+<td class="list start_end_timerecord specific-align_left" data-ht-sort-index="END_TIMERECORD">
+<p>
+</p>
+</td>
+<td class="list rest_timerecord specific-align_left" data-ht-sort-index="REST_START_TIMERECORD">
+<p>
+</p>
+</td>
+<td class="list rest_timerecord specific-align_left" data-ht-sort-index="REST_END_TIMERECORD">
+<p>
+</p>
+</td>
+<td class="list fixed_work specific-align_right"  data-ht-sort-index="FIXED_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list extra_work specific-align_right"  data-ht-sort-index="EXTRA_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list overtime_work specific-align_right"  data-ht-sort-index="OVERTIME_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list night_work specific-align_right"  data-ht-sort-index="NIGHT_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list night_extra_work specific-align_right"  data-ht-sort-index="NIGHT_EXTRA_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list night_overtime_work specific-align_right"  data-ht-sort-index="NIGHT_OVERTIME_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_fixed_work specific-align_right"  data-ht-sort-index="HOLIDAY_FIXED_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_extra_work specific-align_right"  data-ht-sort-index="HOLIDAY_EXTRA_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_overtime_work specific-align_right"  data-ht-sort-index="HOLIDAY_OVERTIME_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_night_work specific-align_right"  data-ht-sort-index="HOLIDAY_NIGHT_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_night_extra_work specific-align_right"  data-ht-sort-index="HOLIDAY_NIGHT_EXTRA_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_night_overtime_work specific-align_right"  data-ht-sort-index="HOLIDAY_NIGHT_OVERTIME_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list late_early_leave_time specific-align_right"  data-ht-sort-index="LATE_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list late_early_leave_time specific-align_right"  data-ht-sort-index="EARLY_LEAVE_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list rest_time specific-align_right"  data-ht-sort-index="REST_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list all_work_time specific-align_right"  data-ht-sort-index="ALL_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list remark specific-align_left" data-ht-sort-index="REMARK">
+<p>
+
+</p>
+</td>
+</tr>
+ 
+<tr>
+<td class="list specific-align_center" data-ht-sort-index="NO"><p>2</p></td>
+<td class="list specific-align_left" data-ht-sort-index="SECTION_NAME">
+<p>
+1001&nbsp;営業部
+</p>
+</td>
+<td class="list specific-align_left" data-ht-sort-index="WORKING_TYPE_NAME">
+<p>
+3000&nbsp;正社員
+</p>
+</td>
+<td class="list specific-align_left employee_name" data-ht-sort-index="EMPLOYEE_NAME">
+<p>
+<span id="employee_902296172">
+101&nbsp;mit mai
+</span>
+</p>
+</td>
+<td class="htBlock-adjastableTableF_actionRow">
+<form action="/admin/n4KHetq9VctVEkKkUl2e7DX0icoI8WkN" method="post" name="myForm_2_902296172" onsubmit="return ckdbclick()">
+<p>
+<input name="working_date" type="hidden" value="20231212">
+<input name="page_id" type="hidden" value="/working/daily_working_list">
+<input name="year" type="hidden" value="2023">
+<input name="month" type="hidden" value="12">
+<input name="day" type="hidden" value="12">
+<input name="employee_id" type="hidden" value="902296172">
+<input name="IlyMXYO0" type="hidden" value="qGTvRAR11fewDufs" >
+<button class="htBlock-buttonTimecard htBlock-buttonTimecard_fill" id="button_2_902296172"></button>
+<input name="action_id" type="hidden" value="2" id="action_2_902296172">
+<input name="section_id" type="hidden" value="900465623">
+<input name="schedule_section_id" type="hidden" value="$schedule.getDTO().getSectionId()">
+<input name="date_selection_type" type="hidden" value="1">
+<input name="schedule_id" type="hidden" value="$schedule.getDTO().getScheduleId()">
+<input name="schedule_date" type="hidden" value="$schedule.getDTO().getWorkingDate()">
+</p>
+</form>
+</td>
+<td class="htBlock-adjastableTableF_actionRow">
+<form action="/admin/n4KHetq9VctVEkKkUl2e7DX0icoI8WkN" method="post" name="myForm_1_902296172" onsubmit="return ckdbclick()">
+<p>
+<input name="working_date" type="hidden" value="20231212">
+<input name="page_id" type="hidden" value="/working/daily_working_list">
+<input name="year" type="hidden" value="2023">
+<input name="month" type="hidden" value="12">
+<input name="day" type="hidden" value="12">
+<input name="employee_id" type="hidden" value="902296172">
+<input name="section_id" type="hidden" value="900465623">
+<input name="schedule_section_id" type="hidden" value="$schedule.getDTO().getSectionId()">
+<input name="date_selection_type" type="hidden" value="1">
+<span id="edit_000_false_902296172" >
+<input name="IlyMXYO0" type="hidden" value="qGTvRAR11fewDufs" >
+<button class="htBlock-buttonEdit htBlock-buttonEdit_fill" id="button_1_902296172"></button>
+<input name="action_id" type="hidden" value="1" id="action_1_902296172">
+</span>
+<input name="schedule_id" type="hidden" value="$schedule.getDTO().getScheduleId()">
+<input name="schedule_date" type="hidden" value="$schedule.getDTO().getWorkingDate()">
+</p>
+</form>
+</td>
+<td class="list close_status specific-align_center">
+<p>
+<span id="closestatus_000_false_902296172" >
+ <img src="/asset/design1/img/templates/ic_check_part_off.png" class="specific-status_close" style="width:16px; height:16px;" alt="N/A">
+ </span>
+</p>
+</td>
+<td class="list schedule  specific-align_left" data-ht-sort-index="SCHEDULE">
+<p>
+</p>
+</td>
+<td class="list  work_day_type specific-align_left" data-ht-sort-index="WORK_DAY_TYPE">
+<p>
+</p>
+</td>
+<td class="list start_end_timerecord specific-align_left" data-ht-sort-index="START_TIMERECORD">
+<p>
+</p>
+</td>
+<td class="list start_end_timerecord specific-align_left" data-ht-sort-index="END_TIMERECORD">
+<p>
+</p>
+</td>
+<td class="list rest_timerecord specific-align_left" data-ht-sort-index="REST_START_TIMERECORD">
+<p>
+</p>
+</td>
+<td class="list rest_timerecord specific-align_left" data-ht-sort-index="REST_END_TIMERECORD">
+<p>
+</p>
+</td>
+<td class="list fixed_work specific-align_right"  data-ht-sort-index="FIXED_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list extra_work specific-align_right"  data-ht-sort-index="EXTRA_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list overtime_work specific-align_right"  data-ht-sort-index="OVERTIME_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list night_work specific-align_right"  data-ht-sort-index="NIGHT_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list night_extra_work specific-align_right"  data-ht-sort-index="NIGHT_EXTRA_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list night_overtime_work specific-align_right"  data-ht-sort-index="NIGHT_OVERTIME_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_fixed_work specific-align_right"  data-ht-sort-index="HOLIDAY_FIXED_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_extra_work specific-align_right"  data-ht-sort-index="HOLIDAY_EXTRA_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_overtime_work specific-align_right"  data-ht-sort-index="HOLIDAY_OVERTIME_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_night_work specific-align_right"  data-ht-sort-index="HOLIDAY_NIGHT_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_night_extra_work specific-align_right"  data-ht-sort-index="HOLIDAY_NIGHT_EXTRA_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_night_overtime_work specific-align_right"  data-ht-sort-index="HOLIDAY_NIGHT_OVERTIME_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list late_early_leave_time specific-align_right"  data-ht-sort-index="LATE_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list late_early_leave_time specific-align_right"  data-ht-sort-index="EARLY_LEAVE_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list rest_time specific-align_right"  data-ht-sort-index="REST_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list all_work_time specific-align_right"  data-ht-sort-index="ALL_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list remark specific-align_left" data-ht-sort-index="REMARK">
+<p>
+
+</p>
+</td>
+</tr>
+ 
+<tr>
+<td class="list specific-align_center" data-ht-sort-index="NO"><p>3</p></td>
+<td class="list specific-align_left" data-ht-sort-index="SECTION_NAME">
+<p>
+1001&nbsp;営業部
+</p>
+</td>
+<td class="list specific-align_left" data-ht-sort-index="WORKING_TYPE_NAME">
+<p>
+3000&nbsp;正社員
+</p>
+</td>
+<td class="list specific-align_left employee_name" data-ht-sort-index="EMPLOYEE_NAME">
+<p>
+<span id="employee_902295954">
+1023&nbsp;mai le
+</span>
+</p>
+</td>
+<td class="htBlock-adjastableTableF_actionRow">
+<form action="/admin/n4KHetq9VctVEkKkUl2e7DX0icoI8WkN" method="post" name="myForm_2_902295954" onsubmit="return ckdbclick()">
+<p>
+<input name="working_date" type="hidden" value="20231212">
+<input name="page_id" type="hidden" value="/working/daily_working_list">
+<input name="year" type="hidden" value="2023">
+<input name="month" type="hidden" value="12">
+<input name="day" type="hidden" value="12">
+<input name="employee_id" type="hidden" value="902295954">
+<input name="IlyMXYO0" type="hidden" value="qGTvRAR11fewDufs" >
+<button class="htBlock-buttonTimecard htBlock-buttonTimecard_fill" id="button_2_902295954"></button>
+<input name="action_id" type="hidden" value="2" id="action_2_902295954">
+<input name="section_id" type="hidden" value="900465623">
+<input name="schedule_section_id" type="hidden" value="$schedule.getDTO().getSectionId()">
+<input name="date_selection_type" type="hidden" value="1">
+<input name="schedule_id" type="hidden" value="$schedule.getDTO().getScheduleId()">
+<input name="schedule_date" type="hidden" value="$schedule.getDTO().getWorkingDate()">
+</p>
+</form>
+</td>
+<td class="htBlock-adjastableTableF_actionRow">
+<form action="/admin/n4KHetq9VctVEkKkUl2e7DX0icoI8WkN" method="post" name="myForm_1_902295954" onsubmit="return ckdbclick()">
+<p>
+<input name="working_date" type="hidden" value="20231212">
+<input name="page_id" type="hidden" value="/working/daily_working_list">
+<input name="year" type="hidden" value="2023">
+<input name="month" type="hidden" value="12">
+<input name="day" type="hidden" value="12">
+<input name="employee_id" type="hidden" value="902295954">
+<input name="section_id" type="hidden" value="900465623">
+<input name="schedule_section_id" type="hidden" value="$schedule.getDTO().getSectionId()">
+<input name="date_selection_type" type="hidden" value="1">
+<span id="edit_000_false_902295954" >
+<input name="IlyMXYO0" type="hidden" value="qGTvRAR11fewDufs" >
+<button class="htBlock-buttonEdit htBlock-buttonEdit_fill" id="button_1_902295954"></button>
+<input name="action_id" type="hidden" value="1" id="action_1_902295954">
+</span>
+<input name="schedule_id" type="hidden" value="$schedule.getDTO().getScheduleId()">
+<input name="schedule_date" type="hidden" value="$schedule.getDTO().getWorkingDate()">
+</p>
+</form>
+</td>
+<td class="list close_status specific-align_center">
+<p>
+<span id="closestatus_000_false_902295954" >
+ <img src="/asset/design1/img/templates/ic_check_part_off.png" class="specific-status_close" style="width:16px; height:16px;" alt="N/A">
+ </span>
+</p>
+</td>
+<td class="list schedule  specific-align_left" data-ht-sort-index="SCHEDULE">
+<p>
+</p>
+</td>
+<td class="list  work_day_type specific-align_left" data-ht-sort-index="WORK_DAY_TYPE">
+<p>
+</p>
+</td>
+<td class="list start_end_timerecord specific-align_left" data-ht-sort-index="START_TIMERECORD">
+<p>
+</p>
+</td>
+<td class="list start_end_timerecord specific-align_left" data-ht-sort-index="END_TIMERECORD">
+<p>
+</p>
+</td>
+<td class="list rest_timerecord specific-align_left" data-ht-sort-index="REST_START_TIMERECORD">
+<p>
+</p>
+</td>
+<td class="list rest_timerecord specific-align_left" data-ht-sort-index="REST_END_TIMERECORD">
+<p>
+</p>
+</td>
+<td class="list fixed_work specific-align_right"  data-ht-sort-index="FIXED_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list extra_work specific-align_right"  data-ht-sort-index="EXTRA_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list overtime_work specific-align_right"  data-ht-sort-index="OVERTIME_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list night_work specific-align_right"  data-ht-sort-index="NIGHT_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list night_extra_work specific-align_right"  data-ht-sort-index="NIGHT_EXTRA_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list night_overtime_work specific-align_right"  data-ht-sort-index="NIGHT_OVERTIME_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_fixed_work specific-align_right"  data-ht-sort-index="HOLIDAY_FIXED_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_extra_work specific-align_right"  data-ht-sort-index="HOLIDAY_EXTRA_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_overtime_work specific-align_right"  data-ht-sort-index="HOLIDAY_OVERTIME_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_night_work specific-align_right"  data-ht-sort-index="HOLIDAY_NIGHT_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_night_extra_work specific-align_right"  data-ht-sort-index="HOLIDAY_NIGHT_EXTRA_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_night_overtime_work specific-align_right"  data-ht-sort-index="HOLIDAY_NIGHT_OVERTIME_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list late_early_leave_time specific-align_right"  data-ht-sort-index="LATE_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list late_early_leave_time specific-align_right"  data-ht-sort-index="EARLY_LEAVE_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list rest_time specific-align_right"  data-ht-sort-index="REST_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list all_work_time specific-align_right"  data-ht-sort-index="ALL_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list remark specific-align_left" data-ht-sort-index="REMARK">
+<p>
+
+</p>
+</td>
+</tr>
+ 
+<tr>
+<td class="list specific-align_center" data-ht-sort-index="NO"><p>4</p></td>
+<td class="list specific-align_left" data-ht-sort-index="SECTION_NAME">
+<p>
+1001&nbsp;営業部
+</p>
+</td>
+<td class="list specific-align_left" data-ht-sort-index="WORKING_TYPE_NAME">
+<p>
+3000&nbsp;正社員
+</p>
+</td>
+<td class="list specific-align_left employee_name" data-ht-sort-index="EMPLOYEE_NAME">
+<p>
+<span id="employee_902299435">
+103&nbsp;le mai
+</span>
+</p>
+</td>
+<td class="htBlock-adjastableTableF_actionRow">
+<form action="/admin/n4KHetq9VctVEkKkUl2e7DX0icoI8WkN" method="post" name="myForm_2_902299435" onsubmit="return ckdbclick()">
+<p>
+<input name="working_date" type="hidden" value="20231212">
+<input name="page_id" type="hidden" value="/working/daily_working_list">
+<input name="year" type="hidden" value="2023">
+<input name="month" type="hidden" value="12">
+<input name="day" type="hidden" value="12">
+<input name="employee_id" type="hidden" value="902299435">
+<input name="IlyMXYO0" type="hidden" value="qGTvRAR11fewDufs" >
+<button class="htBlock-buttonTimecard htBlock-buttonTimecard_fill" id="button_2_902299435"></button>
+<input name="action_id" type="hidden" value="2" id="action_2_902299435">
+<input name="section_id" type="hidden" value="900465623">
+<input name="schedule_section_id" type="hidden" value="$schedule.getDTO().getSectionId()">
+<input name="date_selection_type" type="hidden" value="1">
+<input name="schedule_id" type="hidden" value="$schedule.getDTO().getScheduleId()">
+<input name="schedule_date" type="hidden" value="$schedule.getDTO().getWorkingDate()">
+</p>
+</form>
+</td>
+<td class="htBlock-adjastableTableF_actionRow">
+<form action="/admin/n4KHetq9VctVEkKkUl2e7DX0icoI8WkN" method="post" name="myForm_1_902299435" onsubmit="return ckdbclick()">
+<p>
+<input name="working_date" type="hidden" value="20231212">
+<input name="page_id" type="hidden" value="/working/daily_working_list">
+<input name="year" type="hidden" value="2023">
+<input name="month" type="hidden" value="12">
+<input name="day" type="hidden" value="12">
+<input name="employee_id" type="hidden" value="902299435">
+<input name="section_id" type="hidden" value="900465623">
+<input name="schedule_section_id" type="hidden" value="$schedule.getDTO().getSectionId()">
+<input name="date_selection_type" type="hidden" value="1">
+<span id="edit_000_false_902299435" >
+<input name="IlyMXYO0" type="hidden" value="qGTvRAR11fewDufs" >
+<button class="htBlock-buttonEdit htBlock-buttonEdit_fill" id="button_1_902299435"></button>
+<input name="action_id" type="hidden" value="1" id="action_1_902299435">
+</span>
+<input name="schedule_id" type="hidden" value="$schedule.getDTO().getScheduleId()">
+<input name="schedule_date" type="hidden" value="$schedule.getDTO().getWorkingDate()">
+</p>
+</form>
+</td>
+<td class="list close_status specific-align_center">
+<p>
+<span id="closestatus_000_false_902299435" >
+ <img src="/asset/design1/img/templates/ic_check_part_off.png" class="specific-status_close" style="width:16px; height:16px;" alt="N/A">
+ </span>
+</p>
+</td>
+<td class="list schedule  specific-align_left" data-ht-sort-index="SCHEDULE">
+<p>
+</p>
+</td>
+<td class="list  work_day_type specific-align_left" data-ht-sort-index="WORK_DAY_TYPE">
+<p>
+</p>
+</td>
+<td class="list start_end_timerecord specific-align_left" data-ht-sort-index="START_TIMERECORD">
+<p>
+</p>
+</td>
+<td class="list start_end_timerecord specific-align_left" data-ht-sort-index="END_TIMERECORD">
+<p>
+</p>
+</td>
+<td class="list rest_timerecord specific-align_left" data-ht-sort-index="REST_START_TIMERECORD">
+<p>
+</p>
+</td>
+<td class="list rest_timerecord specific-align_left" data-ht-sort-index="REST_END_TIMERECORD">
+<p>
+</p>
+</td>
+<td class="list fixed_work specific-align_right"  data-ht-sort-index="FIXED_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list extra_work specific-align_right"  data-ht-sort-index="EXTRA_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list overtime_work specific-align_right"  data-ht-sort-index="OVERTIME_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list night_work specific-align_right"  data-ht-sort-index="NIGHT_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list night_extra_work specific-align_right"  data-ht-sort-index="NIGHT_EXTRA_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list night_overtime_work specific-align_right"  data-ht-sort-index="NIGHT_OVERTIME_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_fixed_work specific-align_right"  data-ht-sort-index="HOLIDAY_FIXED_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_extra_work specific-align_right"  data-ht-sort-index="HOLIDAY_EXTRA_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_overtime_work specific-align_right"  data-ht-sort-index="HOLIDAY_OVERTIME_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_night_work specific-align_right"  data-ht-sort-index="HOLIDAY_NIGHT_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_night_extra_work specific-align_right"  data-ht-sort-index="HOLIDAY_NIGHT_EXTRA_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_night_overtime_work specific-align_right"  data-ht-sort-index="HOLIDAY_NIGHT_OVERTIME_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list late_early_leave_time specific-align_right"  data-ht-sort-index="LATE_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list late_early_leave_time specific-align_right"  data-ht-sort-index="EARLY_LEAVE_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list rest_time specific-align_right"  data-ht-sort-index="REST_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list all_work_time specific-align_right"  data-ht-sort-index="ALL_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list remark specific-align_left" data-ht-sort-index="REMARK">
+<p>
+
+</p>
+</td>
+</tr>
+ 
+<tr>
+<td class="list specific-align_center" data-ht-sort-index="NO"><p>5</p></td>
+<td class="list specific-align_left" data-ht-sort-index="SECTION_NAME">
+<p>
+1001&nbsp;営業部
+</p>
+</td>
+<td class="list specific-align_left" data-ht-sort-index="WORKING_TYPE_NAME">
+<p>
+3000&nbsp;正社員
+</p>
+</td>
+<td class="list specific-align_left employee_name" data-ht-sort-index="EMPLOYEE_NAME">
+<p>
+<span id="employee_902314456">
+104&nbsp;Ngoc Mai
+</span>
+</p>
+</td>
+<td class="htBlock-adjastableTableF_actionRow">
+<form action="/admin/n4KHetq9VctVEkKkUl2e7DX0icoI8WkN" method="post" name="myForm_2_902314456" onsubmit="return ckdbclick()">
+<p>
+<input name="working_date" type="hidden" value="20231212">
+<input name="page_id" type="hidden" value="/working/daily_working_list">
+<input name="year" type="hidden" value="2023">
+<input name="month" type="hidden" value="12">
+<input name="day" type="hidden" value="12">
+<input name="employee_id" type="hidden" value="902314456">
+<input name="IlyMXYO0" type="hidden" value="qGTvRAR11fewDufs" >
+<button class="htBlock-buttonTimecard htBlock-buttonTimecard_fill" id="button_2_902314456"></button>
+<input name="action_id" type="hidden" value="2" id="action_2_902314456">
+<input name="section_id" type="hidden" value="900465623">
+<input name="schedule_section_id" type="hidden" value="$schedule.getDTO().getSectionId()">
+<input name="date_selection_type" type="hidden" value="1">
+<input name="schedule_id" type="hidden" value="$schedule.getDTO().getScheduleId()">
+<input name="schedule_date" type="hidden" value="$schedule.getDTO().getWorkingDate()">
+</p>
+</form>
+</td>
+<td class="htBlock-adjastableTableF_actionRow">
+<form action="/admin/n4KHetq9VctVEkKkUl2e7DX0icoI8WkN" method="post" name="myForm_1_902314456" onsubmit="return ckdbclick()">
+<p>
+<input name="working_date" type="hidden" value="20231212">
+<input name="page_id" type="hidden" value="/working/daily_working_list">
+<input name="year" type="hidden" value="2023">
+<input name="month" type="hidden" value="12">
+<input name="day" type="hidden" value="12">
+<input name="employee_id" type="hidden" value="902314456">
+<input name="section_id" type="hidden" value="900465623">
+<input name="schedule_section_id" type="hidden" value="$schedule.getDTO().getSectionId()">
+<input name="date_selection_type" type="hidden" value="1">
+<span id="edit_000_false_902314456" >
+<input name="IlyMXYO0" type="hidden" value="qGTvRAR11fewDufs" >
+<button class="htBlock-buttonEdit htBlock-buttonEdit_fill" id="button_1_902314456"></button>
+<input name="action_id" type="hidden" value="1" id="action_1_902314456">
+</span>
+<input name="schedule_id" type="hidden" value="$schedule.getDTO().getScheduleId()">
+<input name="schedule_date" type="hidden" value="$schedule.getDTO().getWorkingDate()">
+</p>
+</form>
+</td>
+<td class="list close_status specific-align_center">
+<p>
+<span id="closestatus_000_false_902314456" >
+ <img src="/asset/design1/img/templates/ic_check_part_off.png" class="specific-status_close" style="width:16px; height:16px;" alt="N/A">
+ </span>
+</p>
+</td>
+<td class="list schedule  specific-align_left" data-ht-sort-index="SCHEDULE">
+<p>
+</p>
+</td>
+<td class="list  work_day_type specific-align_left" data-ht-sort-index="WORK_DAY_TYPE">
+<p>
+</p>
+</td>
+<td class="list start_end_timerecord specific-align_left" data-ht-sort-index="START_TIMERECORD">
+<p>
+</p>
+</td>
+<td class="list start_end_timerecord specific-align_left" data-ht-sort-index="END_TIMERECORD">
+<p>
+</p>
+</td>
+<td class="list rest_timerecord specific-align_left" data-ht-sort-index="REST_START_TIMERECORD">
+<p>
+</p>
+</td>
+<td class="list rest_timerecord specific-align_left" data-ht-sort-index="REST_END_TIMERECORD">
+<p>
+</p>
+</td>
+<td class="list fixed_work specific-align_right"  data-ht-sort-index="FIXED_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list extra_work specific-align_right"  data-ht-sort-index="EXTRA_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list overtime_work specific-align_right"  data-ht-sort-index="OVERTIME_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list night_work specific-align_right"  data-ht-sort-index="NIGHT_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list night_extra_work specific-align_right"  data-ht-sort-index="NIGHT_EXTRA_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list night_overtime_work specific-align_right"  data-ht-sort-index="NIGHT_OVERTIME_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_fixed_work specific-align_right"  data-ht-sort-index="HOLIDAY_FIXED_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_extra_work specific-align_right"  data-ht-sort-index="HOLIDAY_EXTRA_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_overtime_work specific-align_right"  data-ht-sort-index="HOLIDAY_OVERTIME_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_night_work specific-align_right"  data-ht-sort-index="HOLIDAY_NIGHT_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_night_extra_work specific-align_right"  data-ht-sort-index="HOLIDAY_NIGHT_EXTRA_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_night_overtime_work specific-align_right"  data-ht-sort-index="HOLIDAY_NIGHT_OVERTIME_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list late_early_leave_time specific-align_right"  data-ht-sort-index="LATE_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list late_early_leave_time specific-align_right"  data-ht-sort-index="EARLY_LEAVE_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list rest_time specific-align_right"  data-ht-sort-index="REST_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list all_work_time specific-align_right"  data-ht-sort-index="ALL_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list remark specific-align_left" data-ht-sort-index="REMARK">
+<p>
+
+</p>
+</td>
+</tr>
+ 
+<tr>
+<td class="list specific-align_center" data-ht-sort-index="NO"><p>6</p></td>
+<td class="list specific-align_left" data-ht-sort-index="SECTION_NAME">
+<p>
+1001&nbsp;営業部
+</p>
+</td>
+<td class="list specific-align_left" data-ht-sort-index="WORKING_TYPE_NAME">
+<p>
+6000&nbsp;その他
+</p>
+</td>
+<td class="list specific-align_left employee_name" data-ht-sort-index="EMPLOYEE_NAME">
+<p>
+<span id="employee_902317980">
+987654321&nbsp;shang hen tai
+</span>
+</p>
+</td>
+<td class="htBlock-adjastableTableF_actionRow">
+<form action="/admin/n4KHetq9VctVEkKkUl2e7DX0icoI8WkN" method="post" name="myForm_2_902317980" onsubmit="return ckdbclick()">
+<p>
+<input name="working_date" type="hidden" value="20231212">
+<input name="page_id" type="hidden" value="/working/daily_working_list">
+<input name="year" type="hidden" value="2023">
+<input name="month" type="hidden" value="12">
+<input name="day" type="hidden" value="12">
+<input name="employee_id" type="hidden" value="902317980">
+<input name="IlyMXYO0" type="hidden" value="qGTvRAR11fewDufs" >
+<button class="htBlock-buttonTimecard htBlock-buttonTimecard_fill" id="button_2_902317980"></button>
+<input name="action_id" type="hidden" value="2" id="action_2_902317980">
+<input name="section_id" type="hidden" value="900465623">
+<input name="schedule_section_id" type="hidden" value="$schedule.getDTO().getSectionId()">
+<input name="date_selection_type" type="hidden" value="1">
+<input name="schedule_id" type="hidden" value="$schedule.getDTO().getScheduleId()">
+<input name="schedule_date" type="hidden" value="$schedule.getDTO().getWorkingDate()">
+</p>
+</form>
+</td>
+<td class="htBlock-adjastableTableF_actionRow">
+<form action="/admin/n4KHetq9VctVEkKkUl2e7DX0icoI8WkN" method="post" name="myForm_1_902317980" onsubmit="return ckdbclick()">
+<p>
+<input name="working_date" type="hidden" value="20231212">
+<input name="page_id" type="hidden" value="/working/daily_working_list">
+<input name="year" type="hidden" value="2023">
+<input name="month" type="hidden" value="12">
+<input name="day" type="hidden" value="12">
+<input name="employee_id" type="hidden" value="902317980">
+<input name="section_id" type="hidden" value="900465623">
+<input name="schedule_section_id" type="hidden" value="$schedule.getDTO().getSectionId()">
+<input name="date_selection_type" type="hidden" value="1">
+<span id="edit_000_false_902317980" >
+<input name="IlyMXYO0" type="hidden" value="qGTvRAR11fewDufs" >
+<button class="htBlock-buttonEdit htBlock-buttonEdit_fill" id="button_1_902317980"></button>
+<input name="action_id" type="hidden" value="1" id="action_1_902317980">
+</span>
+<input name="schedule_id" type="hidden" value="$schedule.getDTO().getScheduleId()">
+<input name="schedule_date" type="hidden" value="$schedule.getDTO().getWorkingDate()">
+</p>
+</form>
+</td>
+<td class="list close_status specific-align_center">
+<p>
+<span id="closestatus_000_false_902317980" >
+ <img src="/asset/design1/img/templates/ic_check_part_off.png" class="specific-status_close" style="width:16px; height:16px;" alt="N/A">
+ </span>
+</p>
+</td>
+<td class="list schedule  specific-align_left" data-ht-sort-index="SCHEDULE">
+<p>
+</p>
+</td>
+<td class="list  work_day_type specific-align_left" data-ht-sort-index="WORK_DAY_TYPE">
+<p>
+</p>
+</td>
+<td class="list start_end_timerecord specific-align_left" data-ht-sort-index="START_TIMERECORD">
+<p>
+</p>
+</td>
+<td class="list start_end_timerecord specific-align_left" data-ht-sort-index="END_TIMERECORD">
+<p>
+</p>
+</td>
+<td class="list rest_timerecord specific-align_left" data-ht-sort-index="REST_START_TIMERECORD">
+<p>
+</p>
+</td>
+<td class="list rest_timerecord specific-align_left" data-ht-sort-index="REST_END_TIMERECORD">
+<p>
+</p>
+</td>
+<td class="list fixed_work specific-align_right"  data-ht-sort-index="FIXED_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list extra_work specific-align_right"  data-ht-sort-index="EXTRA_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list overtime_work specific-align_right"  data-ht-sort-index="OVERTIME_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list night_work specific-align_right"  data-ht-sort-index="NIGHT_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list night_extra_work specific-align_right"  data-ht-sort-index="NIGHT_EXTRA_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list night_overtime_work specific-align_right"  data-ht-sort-index="NIGHT_OVERTIME_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_fixed_work specific-align_right"  data-ht-sort-index="HOLIDAY_FIXED_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_extra_work specific-align_right"  data-ht-sort-index="HOLIDAY_EXTRA_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_overtime_work specific-align_right"  data-ht-sort-index="HOLIDAY_OVERTIME_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_night_work specific-align_right"  data-ht-sort-index="HOLIDAY_NIGHT_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_night_extra_work specific-align_right"  data-ht-sort-index="HOLIDAY_NIGHT_EXTRA_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list holiday_night_overtime_work specific-align_right"  data-ht-sort-index="HOLIDAY_NIGHT_OVERTIME_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list late_early_leave_time specific-align_right"  data-ht-sort-index="LATE_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list late_early_leave_time specific-align_right"  data-ht-sort-index="EARLY_LEAVE_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list rest_time specific-align_right"  data-ht-sort-index="REST_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list all_work_time specific-align_right"  data-ht-sort-index="ALL_WORK_MINUTE">
+<p>
+
+&nbsp;
+</p>
+</td>
+<td class="list remark specific-align_left" data-ht-sort-index="REMARK">
+<p>
+
+</p>
+</td>
+</tr>
+ 
+  
+</tbody>
+<tfoot>
+<tr>
+<td><p></p></td>
+<td></td>
+<td><p></p></td>
+<td class="specific-align_left employee_name"><p></p></td> 
+<td><p></p></td>
+<td><p>Total</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td class="start_end_timerecord specific-align_left"><p>Clock-on employee 0</p></td>
+<td class="start_end_timerecord specific-align_left"><p>Clock-out: Employee(s) 0</p></td>
+<td class="rest_timerecord specific-align_left"><p>Start break 0</p></td>
+<td class="rest_timerecord specific-align_left"><p>End break 0</p></td>
+<td class="fixed_work specific-align_right" ><p></p></td>
+<td class="extra_work specific-align_right" ><p></p></td>
+<td class="overtime_work specific-align_right" ><p></p></td>
+<td class="night_work specific-align_right" ><p></p></td>
+<td class="night_extra_work specific-align_right" ><p></p></td>
+<td class="night_overtime_work specific-align_right" ><p></p></td>
+<td class="holiday_fixed_work specific-align_right" ><p></p></td>
+<td class="holiday_extra_work specific-align_right" ><p></p></td>
+<td class="holiday_overtime_work specific-align_right" ><p></p></td>
+<td class="holiday_night_work specific-align_right" ><p></p></td>
+<td class="holiday_night_extra_work specific-align_right" ><p></p></td>
+<td class="holiday_night_overtime_work specific-align_right" ><p></p></td>
+<td class="late_early_leave_time specific-align_right" ><p></p></td>
+<td class="late_early_leave_time specific-align_right" ><p></p></td>
+<td class="rest_time specific-align_right" ><p></p></td>
+<td class="all_work_time specific-align_right"><p></p></td>
+<td class="remark"><p></p></td>
+</tr>
+</tfoot>
+</table>
+</div><!-- end class="htBlock-adjastableTableF_inner" -->
+</div><!-- end class="htBlock-adjastableTableF" -->
+</div><!-- end specific-table -->
    </div>
 </div>
 </div>
