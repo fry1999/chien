@@ -88,9 +88,6 @@ clearInterval(id);
 });
 }
 </script>
-<script>
-KOT_GLOBAL.KOT_LIB.blockDbClick({debug:false, showAlert:false});
-</script>
 <script TYPE="text/javascript">
 <!--
 var jsMsgArray = [];
@@ -110,21 +107,6 @@ jsMsgArray["validate_string_input_error_message_for_encode"] = "Deprecated chara
 jsMsgArray["loading_modal_message_default"] = "Please wait a moment...";
 jsMsgArray["validate_number_input_error_message_upper_bound"] = "Value ​​exceeds upper limit regulation standards";
 jsMsgArray["sso_confirm_message"] = "The single sign-on to the KING OF TIME series will be disconnected.\n Proceed?";
-jsMsgArray["employee_recording_msg_confirm"]           = " process can be executed?";
-jsMsgArray["employee_recording_msg_complete_process"]  = " 's process has completed.";
-jsMsgArray["employee_recording_msg_common_error"]      = "An error has occurred while processing time-record.";
-jsMsgArray["employee_recording_title_confirm"]         = "Confirm";
-jsMsgArray["employee_recording_title_complete"]        = "Complete";
-jsMsgArray["employee_recording_title_error"]           = "Error";
-jsMsgArray["employee_recording_button_text_yes"]       = "Yes";
-jsMsgArray["employee_recording_button_text_no"]        = "No";
-jsMsgArray["employee_recording_button_text_close"]     = "Close";
-jsMsgArray["employee_recording_type_workin"]           = "Clock-in";
-jsMsgArray["employee_recording_type_workout"]          = "Clock-out";
-jsMsgArray["employee_recording_type_breakin"]          = "Start break";
-jsMsgArray["employee_recording_type_breakout"]         = "End break";
-jsMsgArray["employee_recording_type_outout"]           = "Start outing";
-jsMsgArray["employee_recording_type_outin"]            = "End outing";
 var globalTemp = window.KOT_GLOBAL || {};
 globalTemp.HT_LIB_I18N = {
 "htlib_001": "Jan",
@@ -156,7 +138,7 @@ window.KOT_GLOBAL = globalTemp;
 <!-- Data for Google Tag Manager -->
 <script>
 dataLayer = [{
-'pageId' : '/employee/confirm_delete_request',
+'pageId' : '/working/confirm_working_status',
 'adminId': '',
 'userType': 'employee',
 'companyId': '900060596'
@@ -258,73 +240,56 @@ $(backButtonSelector).click();
 </script>
 </div><!-- end htBlock-header -->
 <h1 class="htBlock-pageTitle">
-<img src="/asset/design1/img/templates/top_menubtn-s_request-list.png">
 <span>
-Confirm cancellation request
+Confirm processed attendance
 </span>
 <span>
 </span>
 </h1>
 <div class="htBlock-mainContents">
-<p>
-Are you sure you want to cancel this request?
-</p>
+<p>Make attendances within the following period as confirmed.</p>
+<form name="form1" method="post" action="/admin/GbnjOTAKYNHQeNVZmwLhOq1RH0ix3jBp" onsubmit="return ckdbclick()">
+<input name="page_id" type="hidden" value="/working/confirm_working_status">
 <div class="htBlock-normalTable">
-<table>
-<thead>
-<tr>
-<th>Request date</th>
-<th>Request type</th>
-<th>Applicable day</th>
-<th>Last person to update</th>
-<th>Current respondent</th>
-<th>Approval status</th>
-<th>Approved/Rejected date</th>
-<th>Request message</th>
-<th>Admin comment</th>
-</tr>
-</thead>
+<table class="specific-table_500">
 <tbody>
 <tr>
-<td>2023/12/12(Tue)</td>
+<th>Applicable employee</th>
 <td>
-Schedule request
+103&nbsp;le mai
 </td>
-<td>2023/12/02(Sat)</td>
-<td>
-</td>
-<td>
-チャンフォン　ナム<br>
-</td>
-<td
->
-Ongoing
-</td>
-<td>
-
-</td>
-<td>sfdfsfdf</td>
-<td></td>
 </tr>
+<tr>
+<th> Applicable period</th>
+<td>
+2024/01/01(Mon) ~ 2024/01/31(Wed)
+</td>
+</tr>
+<!--202006_C07-->
+<tr><th>Hours in Office</th><td>0.00</td></tr>
+<tr><th>Overall Working Hours</th><td>0.00</td></tr>
+<tr><th>Break (hrs)</th><td>0.00</td></tr>
+<!--202006_C07-->
 </tbody>
 </table>
-</div><!-- end htBlock-normalTable-->
+</div>
 <div class="specific-buttonset">
-<form name="form1" method="post" action="/admin/GbnjOTAKYNHQeNVZmwLhOq1RH0ix3jBp">
-<input name="page_id" type="hidden" id="page_id" value="/employee/confirm_delete_request">
-<input name="selected_employee_id" type="hidden" id="selected_employee_id" value="902299435">
-<input name="employee_id" type="hidden" id="employee_id" value="902299435">
-<input name="request_id" type="hidden" id="request_id" value="90000126875289">
 <input name="d2cxfYcf" type="hidden" value="yKwkf9xfvr9d1mMV">
 <input name="action_id" type="submit" value="1" id="action_01" style="display: none;">
-<button id="button_01" type="button" class=" htBlock-buttonWarnAOut   htBlock-buttonM " onClick="KOT_GLOBAL.KOT_LIB.onClickActionButton('action_01');">
-<span>Run</span>
+<button id="button_01" type="button" class=" htBlock-buttonPrimary   htBlock-buttonM " onClick="KOT_GLOBAL.KOT_LIB.onClickActionButton('action_01');">
+<span>Regard as confirmed</span>
 </button>
 <input name="d2cxfYcf" type="hidden" value="yKwkf9xfvr9d1mMV">
 <input name="action_id" class="action notranslate" type="submit" value="2" id="action_02" style="display: none;">
 <input name="action_button" class="action_button" type="button" value="Return" id="button_02" style="margin:0px; display:none;" onClick="KOT_GLOBAL.KOT_LIB.onClickActionButton('action_02');">
-</form>
 </div>
+<input name="employee_id" type="hidden" value="902299435">
+<input name="selected_year" type="hidden" value="2024">
+<input name="selected_month" type="hidden" value="01">
+<input name="close_start_date" type="hidden" value="20240101">
+<input name="update_key" type="hidden" value="0.9735994338074091">
+<input name="close_end_date" type="hidden" value="20240131">
+</form>
 </div><!-- htBlock-mainContents -->
 <div class="htBlock-footer" id="footer_main_menu">
 
