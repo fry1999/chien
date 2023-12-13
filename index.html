@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0302)https://s2.ta.kingoftime.jp/admin/NanTJL0P7ELgPrvFlcqqHSyPKRdKBA61?page_id=/working/monthly_confirmation_working_employee&dBws72k4=5uGyCn2sn4wUVsCy&selected_section_id=$section_dto.getSectionId()&selected_working_type_id=$selected_working_type_id&selected_start_date=20231201&selected_end_date=20231231 -->
+<!-- saved from url=(0066)https://s2.ta.kingoftime.jp/admin/NanTJL0P7ELgPrvFlcqqHSyPKRdKBA61 -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="apple-touch-icon" href="https://s2.ta.kingoftime.jp/images/iPhone_home_icon_kot.png">
 <meta http-equiv="Pragma" content="no-cache">
@@ -55,6 +55,9 @@ clearInterval(id);
 });
 }
 </script>
+<script>
+KOT_GLOBAL.KOT_LIB.blockDbClick({debug:false, showAlert:false});
+</script>
 <script type="text/javascript">
 <!--
 var jsMsgArray = [];
@@ -74,6 +77,21 @@ jsMsgArray["validate_string_input_error_message_for_encode"] = "Deprecated chara
 jsMsgArray["loading_modal_message_default"] = "Please wait a moment...";
 jsMsgArray["validate_number_input_error_message_upper_bound"] = "Value ​​exceeds upper limit regulation standards";
 jsMsgArray["sso_confirm_message"] = "The single sign-on to the KING OF TIME series will be disconnected.\n Proceed?";
+jsMsgArray["employee_recording_msg_confirm"]           = " process can be executed?";
+jsMsgArray["employee_recording_msg_complete_process"]  = " 's process has completed.";
+jsMsgArray["employee_recording_msg_common_error"]      = "An error has occurred while processing time-record.";
+jsMsgArray["employee_recording_title_confirm"]         = "Confirm";
+jsMsgArray["employee_recording_title_complete"]        = "Complete";
+jsMsgArray["employee_recording_title_error"]           = "Error";
+jsMsgArray["employee_recording_button_text_yes"]       = "Yes";
+jsMsgArray["employee_recording_button_text_no"]        = "No";
+jsMsgArray["employee_recording_button_text_close"]     = "Close";
+jsMsgArray["employee_recording_type_workin"]           = "Clock-in";
+jsMsgArray["employee_recording_type_workout"]          = "Clock-out";
+jsMsgArray["employee_recording_type_breakin"]          = "Start break";
+jsMsgArray["employee_recording_type_breakout"]         = "End break";
+jsMsgArray["employee_recording_type_outout"]           = "Start outing";
+jsMsgArray["employee_recording_type_outin"]            = "End outing";
 var globalTemp = window.KOT_GLOBAL || {};
 globalTemp.HT_LIB_I18N = {
 "htlib_001": "Jan",
@@ -105,7 +123,7 @@ window.KOT_GLOBAL = globalTemp;
 <!-- Data for Google Tag Manager -->
 <script>
 dataLayer = [{
-'pageId' : '/working/monthly_confirmation_working_employee',
+'pageId' : '/employee/request_list',
 'adminId': '',
 'userType': 'employee',
 'companyId': '900060596'
@@ -155,66 +173,603 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     </style></head>
 <body>
-<div class="htBlock-body htBlock-body_fill specific-working_info specific-pattern_e specific-pattern_k specific-working_info_test">
-<div class="htBlock-header-for-window">
-<h1 class="htBlock-pageTitle">
+<div class="htBlock-body specific-working_info specific-working_info_test">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WDS55BP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="htBlock-header" id="header_main_menu">
+<div class="htBlock-header_inner">
+<div class="htBlock-header_menuButton htBlock-header_menuButtonImg-for-employee menu-main">
+<p>
+<a href="https://s2.ta.kingoftime.jp/admin/NanTJL0P7ELgPrvFlcqqHSyPKRdKBA61#">
+<img src="./KING OF TIME Attendance Management_files/header_Hamburger.png">
+Menu
+</a>
+</p>
+</div>
+<div class="htBlock-header_spacer">
+</div>
+<div class="htBlock-header_userInfo">
+<div class="htBlock-header_userInfo_inner">
 <span>
-Attendance confirmation status
+<!--<img class="htBlock-header_userInfo_thumb" src="/asset/design1/img/templates/header_user.png">-->
+<p class="htBlock-header_userInfo_name">
+&nbsp;103 le mai
+</p>
+<p class="htBlock-header_userInfo_company">&nbsp;fzzhhp&nbsp;ＮｅｏＸ　ＡＳＩＡ株式会社</p>
+</span>
+</div>
+</div>
+<div class="htBlock-header_logoutButton" onclick="location.href=&#39;/admin/NanTJL0P7ELgPrvFlcqqHSyPKRdKBA61?page_id=/login/do_logout&#39;">
+<p>
+<a href="https://s2.ta.kingoftime.jp/admin/NanTJL0P7ELgPrvFlcqqHSyPKRdKBA61#">
+<img src="./KING OF TIME Attendance Management_files/header_icon_logout.png">
+Sign out
+</a>
+</p>
+</div>
+</div><!-- end class="htBlock-header_inner" -->
+<div class="htBlock-header_menuBody" style="display:none;">
+<div class="htBlock-header_menuBody_title">
+<h2>Menu
+</h2>
+<div class="htBlock-header_menuBody_closeButton"></div></div>
+<table class="htBlock-header_menuBody_inner">
+<tbody><tr>
+<td>
+<h3>Work data</h3>
+<a href="https://s2.ta.kingoftime.jp/admin/NanTJL0P7ELgPrvFlcqqHSyPKRdKBA61?page_id=/working/monthly_individual_working_list&amp;dBws72k4=5uGyCn2sn4wUVsCy">Time Card</a>
+</td>
+<td>
+<h3>Others</h3>
+<a href="https://s2.ta.kingoftime.jp/admin/NanTJL0P7ELgPrvFlcqqHSyPKRdKBA61?page_id=/employee/request_list&amp;employee_id=902299435&amp;dBws72k4=5uGyCn2sn4wUVsCy">Request log (60 days)</a>
+<a href="https://s2.ta.kingoftime.jp/admin/NanTJL0P7ELgPrvFlcqqHSyPKRdKBA61?page_id=/employee/change_password">Change password</a>
+<a href="https://s2.ta.kingoftime.jp/independent/recorder2/personal" target="_blank">My Recorder</a>
+</td>
+</tr>
+</tbody></table>
+</div>
+<script type="text/javascript">
+(function($){
+})(jQuery);
+</script>
+</div><!-- end htBlock-header -->
+<h1 class="htBlock-pageTitle">
+<img src="./KING OF TIME Attendance Management_files/top_menubtn-s_request-list.png">
+<span>
+Request log (60 days)
 </span>
 <span>
 </span>
 </h1>
-</div>
 <div class="htBlock-mainContents">
 <h2>
 <span>&nbsp;</span>
 <div class="htBlock-group specific-button_selectDate"></div>
 </h2>
 <div class="htBlock-box">
+<h4 class="htBlock-box_subTitle">Schedule request list</h4>
 <div class="htBlock-adjastableTableF" style="display: block;">
 <div class="htBlock-adjastableTableF_inner">
 <table>
 <thead>
 <tr>
-<th class="specific_date htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="LIST_DISPLAY_ITEM_1"><p>Attendance confirmed</p></th>
-<th class="specific_date htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="LIST_DISPLAY_ITEM_2"><p>Attendance confirmation undone</p></th>
-<th class="specific_name htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="LIST_DISPLAY_ITEM_3"><p>Attendance confirmation undone by</p></th>
+<th class="htBlock-adjastableTableF_actionRow case specific_date htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_DATE"><p>Request<br>date</p></th>
+<th class="htBlock-adjastableTableF_actionRow case specific_name htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_USER"><p>Applicant</p></th>
+<th class="htBlock-adjastableTableF_actionRow case"><p>Cancel</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ORIGINAL_CONTENT"><p>Schedule<br>on file</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_CONTENT"><p>Schedule<br>to be requested</p></th>
+<th class="case specific_date htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_TARGET_DATE"><p>Applicable day</p></th>
+<th class="case specific_name htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_SECTION_NAME"><p>Request<br>Attending<br>location</p></th>
+<th class="case specific_name htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_LAST_UPDATE_ADMIN"><p>Last<br>updated by</p></th>
+<th class="case specific_name htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_CURRENT_APPROVE_ADMIN"><p>Current representative</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_STATUS"><p>Approval<br>status</p></th>
+<th class="case specific_date htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_DATE"><p>Approve/Reject<br>date</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_MESSAGE"><p>Request<br>message</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ADMIN_COMMENT"><p>Admin's<br>comment</p></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td data-ht-sort-index="LIST_DISPLAY_ITEM_1"><p>2023/11/29 17:29</p></td>
-<td data-ht-sort-index="LIST_DISPLAY_ITEM_2"><p>2023/11/29 17:29</p></td>
-<td data-ht-sort-index="LIST_DISPLAY_ITEM_3"><p>le mai
-</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_DATE"><p>2023/12/12 21:13</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_USER"><p>le mai</p></td>
+<td class="htBlock-adjastableTableF_actionRow">
+<form name="form" method="post" action="https://s2.ta.kingoftime.jp/admin/NanTJL0P7ELgPrvFlcqqHSyPKRdKBA61">
+<p>
+<input name="dBws72k4" type="hidden" value="5uGyCn2sn4wUVsCy">
+<input name="action_id" type="submit" value="1" id="action_0190000126875288" style="display: none;">
+<button id="button_0190000126875288" type="button" class=" htBlock-buttonWarnAOut   htBlock-buttonS " onclick="KOT_GLOBAL.KOT_LIB.onClickActionButton(&#39;action_0190000126875288&#39;);">
+<span>Cancel submission</span>
+</button>
+<input name="page_id" type="hidden" value="/employee/request_list">
+<input name="request_id" type="hidden" value="90000126875288">
+</p>
+</form>
+</td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ORIGINAL_CONTENT"><p></p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_CONTENT">
+<p>
+通常勤務
+ (Vacation 代休)
+<br>Workday type: Legal time-off
+</p>
+</td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_TARGET_DATE"><p>2023/12/01(Fri)</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_SECTION_NAME"><p>営業部</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_LAST_UPDATE_ADMIN">
+<p>
+</p>
+</td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_CURRENT_APPROVE_ADMIN">
+<p>
+チャンフォン　ナム<br>
+</p>
+</td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_STATUS">
+<p>
+Ongoing
+</p>
+</td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_DATE"><p></p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_MESSAGE"><p>xcvvxv</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ADMIN_COMMENT"><p></p></td>
 </tr>
 <tr>
-<td data-ht-sort-index="LIST_DISPLAY_ITEM_1"><p>2023/11/29 17:50</p></td>
-<td data-ht-sort-index="LIST_DISPLAY_ITEM_2"><p>2023/11/29 17:52</p></td>
-<td data-ht-sort-index="LIST_DISPLAY_ITEM_3"><p>le mai
-</p></td>
-</tr>
-<tr>
-<td data-ht-sort-index="LIST_DISPLAY_ITEM_1"><p>2023/11/29 17:53</p></td>
-<td data-ht-sort-index="LIST_DISPLAY_ITEM_2"><p>2023/12/01 11:05</p></td>
-<td data-ht-sort-index="LIST_DISPLAY_ITEM_3"><p>le mai
-</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_DATE"><p>2023/12/01 15:33</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_USER"><p>le mai</p></td>
+<td class="htBlock-adjastableTableF_actionRow">
+<form name="form" method="post" action="https://s2.ta.kingoftime.jp/admin/NanTJL0P7ELgPrvFlcqqHSyPKRdKBA61">
+<p>
+</p>
+</form>
+</td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ORIGINAL_CONTENT"><p></p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_CONTENT">
+<p>
+通常勤務
+   
+
+(Normal work)
+<br>Workday type: Weekday
+</p>
+</td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_TARGET_DATE"><p>2023/11/02(Thu)</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_SECTION_NAME"><p>営業部</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_LAST_UPDATE_ADMIN">
+<p>
+チャンフォン　ナム
+</p>
+</td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_CURRENT_APPROVE_ADMIN">
+<p>
+None
+</p>
+</td>
+<td class="approved" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_STATUS">
+<p>
+Approved
+</p>
+</td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_DATE"><p>2023/12/01 15:34</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_MESSAGE"><p>fghjm</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ADMIN_COMMENT"><p></p></td>
 </tr>
 </tbody>
 </table>
-</div><!-- end class="htBlock-adjastableTableF_inner" -->
-<div class="htBlock-adjastableTableF_fixedHeader" style="display: none; width: 1324px;"><table><thead>
+</div>
+<div class="htBlock-adjastableTableF_fixedHeader" style="width: 1261px; display: none;"><table style="margin-left: 0px;"><thead>
 <tr>
-<th class="specific_date htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="LIST_DISPLAY_ITEM_1" width="140" style="width: 140px;"><p>Attendance confirmed</p></th>
-<th class="specific_date htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="LIST_DISPLAY_ITEM_2" width="207" style="width: 207px;"><p>Attendance confirmation undone</p></th>
-<th class="specific_name htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="LIST_DISPLAY_ITEM_3" width="226" style="width: 226px;"><p>Attendance confirmation undone by</p></th>
+<th class="htBlock-adjastableTableF_actionRow case specific_date htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_DATE" width="95" style="width: 95px;"><p>Request<br>date</p></th>
+<th class="htBlock-adjastableTableF_actionRow case specific_name htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_USER" width="63" style="width: 63px;"><p>Applicant</p></th>
+<th class="htBlock-adjastableTableF_actionRow case" width="110" style="width: 110px;"><p>Cancel</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ORIGINAL_CONTENT" width="59" style="width: 59px;"><p>Schedule<br>on file</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_CONTENT" width="155" style="width: 155px;"><p>Schedule<br>to be requested</p></th>
+<th class="case specific_date htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_TARGET_DATE" width="94" style="width: 94px;"><p>Applicable day</p></th>
+<th class="case specific_name htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_SECTION_NAME" width="66" style="width: 66px;"><p>Request<br>Attending<br>location</p></th>
+<th class="case specific_name htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_LAST_UPDATE_ADMIN" width="81" style="width: 81px;"><p>Last<br>updated by</p></th>
+<th class="case specific_name htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_CURRENT_APPROVE_ADMIN" width="142" style="width: 142px;"><p>Current representative</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_STATUS" width="60" style="width: 60px;"><p>Approval<br>status</p></th>
+<th class="case specific_date htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_DATE" width="99" style="width: 99px;"><p>Approve/Reject<br>date</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_MESSAGE" width="56" style="width: 56px;"><p>Request<br>message</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ADMIN_COMMENT" width="62" style="width: 62px;"><p>Admin's<br>comment</p></th>
 </tr>
-</thead></table></div></div><!-- end class="htBlock-adjastableTableF" -->
-</div><!-- end class="htBlock-box" -->
-<div class="specific-footerbutton">
-<button type="button" onclick="javascript:window.close()" class="htBlock-buttonM htBlock-buttonNormal">Close</button>
+</thead></table></div></div>
+<h4 class="htBlock-box_subTitle">Time-record request list</h4>
+<div class="htBlock-adjastableTableF" style="display: block;">
+<div class="htBlock-adjastableTableF_inner">
+<table>
+<thead>
+<tr>
+<th class="htBlock-adjastableTableF_actionRow case specific_date htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_DATE"><p>Request<br>date</p></th>
+<th class="htBlock-adjastableTableF_actionRow case specific_name htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_USER"><p>Applicant</p></th>
+<th class="htBlock-adjastableTableF_actionRow case"><p>Cancel</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ORIGINAL_CONTENT"><p>Time-record<br>on file</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_CONTENT"><p>Time-record<br>to be requested</p></th>
+<th class="case specific_date htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_TARGET_DATE"><p>Applicable day</p></th>
+<th class="case specific_name htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_SECTION_NAME"><p>Request<br>Time recording<br>location</p></th>
+<th class="case specific_name htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_LAST_UPDATE_ADMIN"><p>Last<br>updated by</p></th>
+<th class="case specific_name htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_CURRENT_APPROVE_ADMIN"><p>Current representative</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_STATUS"><p>Approval<br>status</p></th>
+<th class="case specific_date htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_DATE"><p>Approve/Reject<br>date</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_MESSAGE"><p>Request<br>message</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ADMIN_COMMENT"><p>Admin's<br>comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_DATE"><p>2023/12/01 15:35</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_USER"><p>le mai</p></td>
+<td class="htBlock-adjastableTableF_actionRow">
+<form name="form" method="post" action="https://s2.ta.kingoftime.jp/admin/NanTJL0P7ELgPrvFlcqqHSyPKRdKBA61">
+<p>
+</p>
+</form>
+</td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ORIGINAL_CONTENT"><p>--</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_CONTENT"><p>2023/11/02(Thu) 13:00 (End break)</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_TARGET_DATE"><p>2023/11/02(Thu)</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_SECTION_NAME"><p>営業部</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_LAST_UPDATE_ADMIN">
+<p>
+チャンフォン　ナム
+</p>
+</td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_CURRENT_APPROVE_ADMIN">
+<p>
+None
+</p>
+</td>
+<td class="rejected" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_STATUS">
+<p>
+Reject
+</p>
+</td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_DATE"><p>2023/12/01 15:36</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_MESSAGE"><p>hj</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ADMIN_COMMENT"><p>no no </p></td>
+</tr>
+<tr>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_DATE"><p>2023/12/01 15:35</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_USER"><p>le mai</p></td>
+<td class="htBlock-adjastableTableF_actionRow">
+<form name="form" method="post" action="https://s2.ta.kingoftime.jp/admin/NanTJL0P7ELgPrvFlcqqHSyPKRdKBA61">
+<p>
+</p>
+</form>
+</td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ORIGINAL_CONTENT"><p>--</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_CONTENT"><p>2023/11/02(Thu) 09:00 (Clock-in)</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_TARGET_DATE"><p>2023/11/02(Thu)</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_SECTION_NAME"><p>営業部</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_LAST_UPDATE_ADMIN">
+<p>
+チャンフォン　ナム
+</p>
+</td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_CURRENT_APPROVE_ADMIN">
+<p>
+None
+</p>
+</td>
+<td class="approved" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_STATUS">
+<p>
+Approved
+</p>
+</td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_DATE"><p>2023/12/01 15:36</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_MESSAGE"><p>fghj</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ADMIN_COMMENT"><p></p></td>
+</tr>
+<tr>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_DATE"><p>2023/12/01 15:35</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_USER"><p>le mai</p></td>
+<td class="htBlock-adjastableTableF_actionRow">
+<form name="form" method="post" action="https://s2.ta.kingoftime.jp/admin/NanTJL0P7ELgPrvFlcqqHSyPKRdKBA61">
+<p>
+</p>
+</form>
+</td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ORIGINAL_CONTENT"><p>--</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_CONTENT"><p>2023/11/02(Thu) 12:00 (Start break)</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_TARGET_DATE"><p>2023/11/02(Thu)</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_SECTION_NAME"><p>営業部</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_LAST_UPDATE_ADMIN">
+<p>
+チャンフォン　ナム
+</p>
+</td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_CURRENT_APPROVE_ADMIN">
+<p>
+None
+</p>
+</td>
+<td class="approved" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_STATUS">
+<p>
+Approved
+</p>
+</td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_DATE"><p>2023/12/01 15:36</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_MESSAGE"><p>ghj</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ADMIN_COMMENT"><p></p></td>
+</tr>
+<tr>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_DATE"><p>2023/12/01 15:35</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_USER"><p>le mai</p></td>
+<td class="htBlock-adjastableTableF_actionRow">
+<form name="form" method="post" action="https://s2.ta.kingoftime.jp/admin/NanTJL0P7ELgPrvFlcqqHSyPKRdKBA61">
+<p>
+</p>
+</form>
+</td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ORIGINAL_CONTENT"><p>--</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_CONTENT"><p>2023/11/02(Thu) 18:00 (Clock-out)</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_TARGET_DATE"><p>2023/11/02(Thu)</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_SECTION_NAME"><p>営業部</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_LAST_UPDATE_ADMIN">
+<p>
+チャンフォン　ナム
+</p>
+</td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_CURRENT_APPROVE_ADMIN">
+<p>
+None
+</p>
+</td>
+<td class="rejected" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_STATUS">
+<p>
+Reject
+</p>
+</td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_DATE"><p>2023/12/01 15:36</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_MESSAGE"><p>hj</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ADMIN_COMMENT"><p></p></td>
+</tr>
+<tr>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_DATE"><p>2023/12/01 15:22</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_USER"><p>le mai</p></td>
+<td class="htBlock-adjastableTableF_actionRow">
+<form name="form" method="post" action="https://s2.ta.kingoftime.jp/admin/NanTJL0P7ELgPrvFlcqqHSyPKRdKBA61">
+<p>
+</p>
+</form>
+</td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ORIGINAL_CONTENT"><p>--</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_CONTENT"><p>2023/11/01(Wed) 10:00 (Clock-in)</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_TARGET_DATE"><p>2023/11/01(Wed)</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_SECTION_NAME"><p>営業部</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_LAST_UPDATE_ADMIN">
+<p>
+チャンフォン　ナム
+</p>
+</td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_CURRENT_APPROVE_ADMIN">
+<p>
+None
+</p>
+</td>
+<td class="rejected" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_STATUS">
+<p>
+Reject
+</p>
+</td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_DATE"><p>2023/12/01 15:23</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_MESSAGE"><p>345678</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ADMIN_COMMENT"><p></p></td>
+</tr>
+<tr>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_DATE"><p>2023/12/01 15:22</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_USER"><p>le mai</p></td>
+<td class="htBlock-adjastableTableF_actionRow">
+<form name="form" method="post" action="https://s2.ta.kingoftime.jp/admin/NanTJL0P7ELgPrvFlcqqHSyPKRdKBA61">
+<p>
+</p>
+</form>
+</td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ORIGINAL_CONTENT"><p>--</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_CONTENT"><p>2023/11/01(Wed) 12:00 (Clock-out)</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_TARGET_DATE"><p>2023/11/01(Wed)</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_SECTION_NAME"><p>営業部</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_LAST_UPDATE_ADMIN">
+<p>
+チャンフォン　ナム
+</p>
+</td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_CURRENT_APPROVE_ADMIN">
+<p>
+None
+</p>
+</td>
+<td class="rejected" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_STATUS">
+<p>
+Reject
+</p>
+</td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_DATE"><p>2023/12/01 15:23</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_MESSAGE"><p>456</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ADMIN_COMMENT"><p></p></td>
+</tr>
+<tr>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_DATE"><p>2023/12/01 15:22</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_USER"><p>le mai</p></td>
+<td class="htBlock-adjastableTableF_actionRow">
+<form name="form" method="post" action="https://s2.ta.kingoftime.jp/admin/NanTJL0P7ELgPrvFlcqqHSyPKRdKBA61">
+<p>
+</p>
+</form>
+</td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ORIGINAL_CONTENT"><p>--</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_CONTENT"><p>2023/11/01(Wed) 13:00 (Start break)</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_TARGET_DATE"><p>2023/11/01(Wed)</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_SECTION_NAME"><p>営業部</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_LAST_UPDATE_ADMIN">
+<p>
+チャンフォン　ナム
+</p>
+</td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_CURRENT_APPROVE_ADMIN">
+<p>
+None
+</p>
+</td>
+<td class="approved" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_STATUS">
+<p>
+Approved
+</p>
+</td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_DATE"><p>2023/12/01 15:24</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_MESSAGE"><p>456</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ADMIN_COMMENT"><p></p></td>
+</tr>
+<tr>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_DATE"><p>2023/12/01 15:22</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_USER"><p>le mai</p></td>
+<td class="htBlock-adjastableTableF_actionRow">
+<form name="form" method="post" action="https://s2.ta.kingoftime.jp/admin/NanTJL0P7ELgPrvFlcqqHSyPKRdKBA61">
+<p>
+</p>
+</form>
+</td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ORIGINAL_CONTENT"><p>--</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_CONTENT"><p>2023/11/01(Wed) 13:00 (End break)</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_TARGET_DATE"><p>2023/11/01(Wed)</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_SECTION_NAME"><p>営業部</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_LAST_UPDATE_ADMIN">
+<p>
+チャンフォン　ナム
+</p>
+</td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_CURRENT_APPROVE_ADMIN">
+<p>
+None
+</p>
+</td>
+<td class="approved" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_STATUS">
+<p>
+Approved
+</p>
+</td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_DATE"><p>2023/12/01 15:24</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_MESSAGE"><p>3456</p></td>
+<td data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ADMIN_COMMENT"><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="htBlock-adjastableTableF_fixedHeader" style="width: 1261px; display: none;"><table style="margin-left: 0px;"><thead>
+<tr>
+<th class="htBlock-adjastableTableF_actionRow case specific_date htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_DATE" width="95" style="width: 95px;"><p>Request<br>date</p></th>
+<th class="htBlock-adjastableTableF_actionRow case specific_name htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_USER" width="63" style="width: 63px;"><p>Applicant</p></th>
+<th class="htBlock-adjastableTableF_actionRow case" width="44" style="width: 44px;"><p>Cancel</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ORIGINAL_CONTENT" width="79" style="width: 79px;"><p>Time-record<br>on file</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_CONTENT" width="194" style="width: 194px;"><p>Time-record<br>to be requested</p></th>
+<th class="case specific_date htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_TARGET_DATE" width="94" style="width: 94px;"><p>Applicable day</p></th>
+<th class="case specific_name htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_SECTION_NAME" width="97" style="width: 97px;"><p>Request<br>Time recording<br>location</p></th>
+<th class="case specific_name htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_LAST_UPDATE_ADMIN" width="81" style="width: 81px;"><p>Last<br>updated by</p></th>
+<th class="case specific_name htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_CURRENT_APPROVE_ADMIN" width="142" style="width: 142px;"><p>Current representative</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_STATUS" width="60" style="width: 60px;"><p>Approval<br>status</p></th>
+<th class="case specific_date htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_DATE" width="99" style="width: 99px;"><p>Approve/Reject<br>date</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_MESSAGE" width="56" style="width: 56px;"><p>Request<br>message</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ADMIN_COMMENT" width="62" style="width: 62px;"><p>Admin's<br>comment</p></th>
+</tr>
+</thead></table></div></div>
+<h4 class="htBlock-box_subTitle">Supplemental working record request list</h4>
+<div class="htBlock-adjastableTableF" style="display: block;">
+<div class="htBlock-adjastableTableF_inner">
+<table>
+<thead>
+<tr>
+<th class="htBlock-adjastableTableF_actionRow case specific_date htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_DATE"><p>Request<br>date</p></th>
+<th class="htBlock-adjastableTableF_actionRow case specific_name htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_USER"><p>Applicant</p></th>
+<th class="htBlock-adjastableTableF_actionRow case"><p>Cancel</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ORIGINAL_CONTENT"><p>Supplemental Item Requested</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_CONTENT"><p>Supplemental Working Records</p></th>
+<th class="case specific_date htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_TARGET_DATE"><p>Applicable day</p></th>
+<th class="case specific_name htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_LAST_UPDATE_ADMIN"><p>Last<br>updated by</p></th>
+<th class="case specific_name htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_CURRENT_APPROVE_ADMIN"><p>Current representative</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_STATUS"><p>Approval<br>status</p></th>
+<th class="case specific_date htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_DATE"><p>Approve/Reject<br>date</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_MESSAGE"><p>Request<br>message</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ADMIN_COMMENT"><p>Admin's<br>comment</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+</div>
+<div class="htBlock-adjastableTableF_fixedHeader" style="display: none; width: 1261px;"><table><thead>
+<tr>
+<th class="htBlock-adjastableTableF_actionRow case specific_date htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_DATE" width="52" style="width: 52px;"><p>Request<br>date</p></th>
+<th class="htBlock-adjastableTableF_actionRow case specific_name htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_USER" width="63" style="width: 63px;"><p>Applicant</p></th>
+<th class="htBlock-adjastableTableF_actionRow case" width="44" style="width: 44px;"><p>Cancel</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ORIGINAL_CONTENT" width="188" style="width: 188px;"><p>Supplemental Item Requested</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_CONTENT" width="197" style="width: 197px;"><p>Supplemental Working Records</p></th>
+<th class="case specific_date htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_TARGET_DATE" width="94" style="width: 94px;"><p>Applicable day</p></th>
+<th class="case specific_name htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_LAST_UPDATE_ADMIN" width="74" style="width: 74px;"><p>Last<br>updated by</p></th>
+<th class="case specific_name htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_CURRENT_APPROVE_ADMIN" width="142" style="width: 142px;"><p>Current representative</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_STATUS" width="60" style="width: 60px;"><p>Approval<br>status</p></th>
+<th class="case specific_date htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_DATE" width="99" style="width: 99px;"><p>Approve/Reject<br>date</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_MESSAGE" width="56" style="width: 56px;"><p>Request<br>message</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ADMIN_COMMENT" width="62" style="width: 62px;"><p>Admin's<br>comment</p></th>
+</tr>
+</thead></table></div></div>
+<h4 class="htBlock-box_subTitle">Overtime requests</h4>
+<div class="htBlock-adjastableTableF" style="display: block;">
+<div class="htBlock-adjastableTableF_inner">
+<table>
+<thead>
+<tr>
+<th class="htBlock-adjastableTableF_actionRow case specific_date htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_DATE"><p>Request<br>date</p></th>
+<th class="htBlock-adjastableTableF_actionRow case specific_name htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_USER"><p>Applicant</p></th>
+<th class="htBlock-adjastableTableF_actionRow case"><p>Cancel</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ORIGINAL_CONTENT"><p>Overtime at request time point</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_CONTENT"><p>Requested overtime</p></th>
+<th class="case specific_date htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_TARGET_DATE"><p>Applicable day</p></th>
+<th class="case specific_name htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_LAST_UPDATE_ADMIN"><p>Last<br>updated by</p></th>
+<th class="case specific_name htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_CURRENT_APPROVE_ADMIN"><p>Current representative</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_STATUS"><p>Approval<br>status</p></th>
+<th class="case specific_date htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_DATE"><p>Approve/Reject<br>date</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_MESSAGE"><p>Request<br>message</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ADMIN_COMMENT"><p>Admin's<br>comment</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+</div>
+<div class="htBlock-adjastableTableF_fixedHeader" style="display: none; width: 1261px;"><table><thead>
+<tr>
+<th class="htBlock-adjastableTableF_actionRow case specific_date htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_DATE" width="52" style="width: 52px;"><p>Request<br>date</p></th>
+<th class="htBlock-adjastableTableF_actionRow case specific_name htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_USER" width="63" style="width: 63px;"><p>Applicant</p></th>
+<th class="htBlock-adjastableTableF_actionRow case" width="44" style="width: 44px;"><p>Cancel</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ORIGINAL_CONTENT" width="194" style="width: 194px;"><p>Overtime at request time point</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_CONTENT" width="127" style="width: 127px;"><p>Requested overtime</p></th>
+<th class="case specific_date htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_TARGET_DATE" width="94" style="width: 94px;"><p>Applicable day</p></th>
+<th class="case specific_name htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_LAST_UPDATE_ADMIN" width="74" style="width: 74px;"><p>Last<br>updated by</p></th>
+<th class="case specific_name htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_CURRENT_APPROVE_ADMIN" width="142" style="width: 142px;"><p>Current representative</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_STATUS" width="60" style="width: 60px;"><p>Approval<br>status</p></th>
+<th class="case specific_date htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_APPROVE_DATE" width="99" style="width: 99px;"><p>Approve/Reject<br>date</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_REQUESTED_MESSAGE" width="56" style="width: 56px;"><p>Request<br>message</p></th>
+<th class="case htBlock-adjastableTableF_sortDisabled" data-ht-sort-type="string" data-ht-sort-index="EMPLOYEE_REQUEST_LIST_ADMIN_COMMENT" width="62" style="width: 62px;"><p>Admin's<br>comment</p></th>
+</tr>
+</thead></table></div></div>
+</div><!-- htBlock-box -->
+</div><!-- htBlock-mainContents -->
+<div class="htBlock-footer" id="footer_main_menu">
+
+<div class="htBlock-footer_logo">
+<img src="./KING OF TIME Attendance Management_files/footer.png">
 </div>
 </div>
+<script type="text/javascript">
+//名前空間を定義
+KOT_GLOBAL                           = KOT_GLOBAL || {};
+KOT_GLOBAL.Parts                     = KOT_GLOBAL.Parts || {};
+KOT_GLOBAL.Parts.VmFooter            = {};
+(function($, footer){
+})(jQuery, KOT_GLOBAL.Parts.VmFooter);
+</script>
 <script>
 jQuery(".htBlock-adjastableTableF").show();
 jQuery(".htBlock-hrCalendarTableA").show();
@@ -243,4 +798,4 @@ var t = document.getElementsByTagName("script")[0]; t.parentNode.insertBefore(e,
 </div><!-- end htBlock-body -->
 
 
-<div id="tudienjp"><div class="o-search-mobile" style="top: 0px; left: 0px; display: none;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 40 40" version="1.1"><g id="surface1"><path d="M 39.085938 34.664062 L 29.734375 25.3125 C 31.859375 22.15625 32.910156 18.210938 32.347656 14.007812 C 31.390625 6.859375 25.53125 1.039062 18.375 0.132812 C 7.734375 -1.210938 -1.210938 7.734375 0.132812 18.375 C 1.039062 25.535156 6.859375 31.398438 14.007812 32.351562 C 18.210938 32.914062 22.15625 31.863281 25.3125 29.738281 L 34.664062 39.089844 C 35.886719 40.308594 37.863281 40.308594 39.085938 39.089844 C 40.304688 37.867188 40.304688 35.882812 39.085938 34.664062 Z M 6.179688 16.25 C 6.179688 10.734375 10.664062 6.25 16.179688 6.25 C 21.695312 6.25 26.179688 10.734375 26.179688 16.25 C 26.179688 21.765625 21.695312 26.25 16.179688 26.25 C 10.664062 26.25 6.179688 21.765625 6.179688 16.25 Z M 6.179688 16.25 " style="stroke: none; fill-rule: nonzero; fill: rgb(0, 0, 0); fill-opacity: 1;"></path></g></svg></div><div class="o-popup-tag o-bg-white o-border o-rounded o-shadow" style="width: 400px; top: 0px; left: 0px; display: none;"><div><button type="button" aria-label="Close" class="btn-sm o-btn-close o-position-absolute o-top-0 o-end-0 o-mt-1 o-me-1"></button><ul role="tablist" class="o-nav o-nav-tabs o-pop-nav"><span><svg aria-hidden="true" focusable="false" data-icon="volume-high" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="o-pop-speak o-svg-inline--fa"><path fill="currentColor" d="M533.6 32.5C598.5 85.3 640 165.8 640 256s-41.5 170.8-106.4 223.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C557.5 398.2 592 331.2 592 256s-34.5-142.2-88.7-186.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM473.1 107c43.2 35.2 70.9 88.9 70.9 149s-27.7 113.8-70.9 149c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C475.3 341.3 496 301.1 496 256s-20.7-85.3-53.2-111.8c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zm-60.5 74.5C434.1 199.1 448 225.9 448 256s-13.9 56.9-35.4 74.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C393.1 284.4 400 271 400 256s-6.9-28.4-17.7-37.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM301.1 34.8C312.6 40 320 51.4 320 64V448c0 12.6-7.4 24-18.9 29.2s-25 3.1-34.4-5.3L131.8 352H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h67.8L266.7 40.1c9.4-8.4 22.9-10.4 34.4-5.3z"></path></svg></span><li role="presentation" class="o-nav-item"><div data-bs-toggle="tab" aria-selected="true" class="o-nav-link active">Từ vựng</div></li><li role="presentation" class="o-nav-item"><div data-bs-toggle="tab" aria-selected="false" class="o-nav-link">Hán tự</div></li><li role="presentation" class="o-nav-item"><div data-bs-toggle="tab" aria-selected="false" class="o-nav-link">Dịch</div></li></ul><div class="o-selected-result o-pt-1"><div> Đang tìm kiếm ... </div><div class="o-fs-6 o-mt-2" style="line-height: 1.7;"><div class="o-float-start"><div class="o-form-check"><input type="checkbox" id="flexCheckTudienjpLang" class="o-form-check-input"><label for="flexCheckTudienjpLang"> Tiếng Anh </label></div></div><div class="o-float-end o-me-1"><a href="https://tudienjp.com/" target="_blank" class="o-link-secondary o-text-decoration-none">Từ điển JP</a></div></div></div></div></div></div><div id="tudienjpOff"></div><div id="mttContainer" class="bootstrapiso notranslate" data-original-title="Trạng thái xác nhận tham dự" title="" dir="ltr" style="transform: translate(939px, 665px);"></div></body></html>
+<div id="tudienjp"><div class="o-search-mobile" style="top: 0px; left: 0px; display: none;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 40 40" version="1.1"><g id="surface1"><path d="M 39.085938 34.664062 L 29.734375 25.3125 C 31.859375 22.15625 32.910156 18.210938 32.347656 14.007812 C 31.390625 6.859375 25.53125 1.039062 18.375 0.132812 C 7.734375 -1.210938 -1.210938 7.734375 0.132812 18.375 C 1.039062 25.535156 6.859375 31.398438 14.007812 32.351562 C 18.210938 32.914062 22.15625 31.863281 25.3125 29.738281 L 34.664062 39.089844 C 35.886719 40.308594 37.863281 40.308594 39.085938 39.089844 C 40.304688 37.867188 40.304688 35.882812 39.085938 34.664062 Z M 6.179688 16.25 C 6.179688 10.734375 10.664062 6.25 16.179688 6.25 C 21.695312 6.25 26.179688 10.734375 26.179688 16.25 C 26.179688 21.765625 21.695312 26.25 16.179688 26.25 C 10.664062 26.25 6.179688 21.765625 6.179688 16.25 Z M 6.179688 16.25 " style="stroke: none; fill-rule: nonzero; fill: rgb(0, 0, 0); fill-opacity: 1;"></path></g></svg></div><div class="o-popup-tag o-bg-white o-border o-rounded o-shadow" style="width: 400px; top: 0px; left: 0px; display: none;"><div><button type="button" aria-label="Close" class="btn-sm o-btn-close o-position-absolute o-top-0 o-end-0 o-mt-1 o-me-1"></button><ul role="tablist" class="o-nav o-nav-tabs o-pop-nav"><span><svg aria-hidden="true" focusable="false" data-icon="volume-high" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="o-pop-speak o-svg-inline--fa"><path fill="currentColor" d="M533.6 32.5C598.5 85.3 640 165.8 640 256s-41.5 170.8-106.4 223.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C557.5 398.2 592 331.2 592 256s-34.5-142.2-88.7-186.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM473.1 107c43.2 35.2 70.9 88.9 70.9 149s-27.7 113.8-70.9 149c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C475.3 341.3 496 301.1 496 256s-20.7-85.3-53.2-111.8c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zm-60.5 74.5C434.1 199.1 448 225.9 448 256s-13.9 56.9-35.4 74.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C393.1 284.4 400 271 400 256s-6.9-28.4-17.7-37.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM301.1 34.8C312.6 40 320 51.4 320 64V448c0 12.6-7.4 24-18.9 29.2s-25 3.1-34.4-5.3L131.8 352H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h67.8L266.7 40.1c9.4-8.4 22.9-10.4 34.4-5.3z"></path></svg></span><li role="presentation" class="o-nav-item"><div data-bs-toggle="tab" aria-selected="true" class="o-nav-link active">Từ vựng</div></li><li role="presentation" class="o-nav-item"><div data-bs-toggle="tab" aria-selected="false" class="o-nav-link">Hán tự</div></li><li role="presentation" class="o-nav-item"><div data-bs-toggle="tab" aria-selected="false" class="o-nav-link">Dịch</div></li></ul><div class="o-selected-result o-pt-1"><div> Đang tìm kiếm ... </div><div class="o-fs-6 o-mt-2" style="line-height: 1.7;"><div class="o-float-start"><div class="o-form-check"><input type="checkbox" id="flexCheckTudienjpLang" class="o-form-check-input"><label for="flexCheckTudienjpLang"> Tiếng Anh </label></div></div><div class="o-float-end o-me-1"><a href="https://tudienjp.com/" target="_blank" class="o-link-secondary o-text-decoration-none">Từ điển JP</a></div></div></div></div></div></div><div id="tudienjpOff"></div><div id="mttContainer" class="bootstrapiso notranslate" data-original-title="" title="" style="transform: translate(951px, 92px);"></div></body></html>
