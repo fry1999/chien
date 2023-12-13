@@ -1,0 +1,470 @@
+/**
+ *  イメージのテーマ
+ *  COOL
+ * 
+ */
+
+/* Main Layout --------------------------------------------------------- start ---------- */
+
+body {
+    background-color : #2F3037;
+    color : #C8C8CB;
+}
+
+/* Main Layout --------------------------------------------------------- end ------------ */
+
+/* header -------------------------------------------------------------- start ---------- */
+
+header {
+    background-color : #FFF;
+    border-bottom-color : #E4E4E4;
+    color : #999;
+}
+
+header:before {
+    border-top-color : #E4E4E4;
+}
+
+header:after {
+    border-top-color : #FFF;
+}
+
+.menu-icon {
+    background-color : #FFF;
+    border-color : #D8D8DA;
+}
+
+.menu-icon:before {
+    background : #8C9195;
+    box-shadow : 0 0.75rem 0 #8C9195, 0 1.5rem 0 #8C9195;
+    -webkit-box-shadow : 0 0.75rem 0 #8C9195, 0 1.5rem 0 #8C9195;
+    -moz-box-shadow : 0 0.75rem 0 #8C9195, 0 1.5rem 0 #8C9195;
+    -ms-box-shadow : 0 0.75rem 0 #8C9195, 0 1.5rem 0 #8C9195;
+}
+
+/* For Old Android */
+.menu-icon-blur {
+    background : #8C9195;
+}
+
+.menu-icon-blur:before {
+    background : #8C9195;
+    box-shadow : 0 0.75rem 0 #8C9195, 0 1.5rem 0 #8C9195;
+    -webkit-box-shadow : 0 0.75rem 0  #8C9195, 0 1.5rem 0 #8C9195;
+    -moz-box-shadow : 0 0.75rem 0 #8C9195, 0 1.5rem 0 #8C9195;
+    -ms-box-shadow : 0 0.75rem 0 #8C9195, 0 1.5rem 0 #8C9195;
+}
+
+.menu-icon:active:before {
+    background : #251E1C;
+    box-shadow : 0 0.75rem 0 #251E1C, 0 1.5rem 0 #251E1C;
+    -webkit-box-shadow : 0 0.75rem 0 #251E1C, 0 1.5rem 0 #251E1C;
+    -moz-box-shadow : 0 0.75rem 0 #251E1C, 0 1.5rem 0 #251E1C;
+    -ms-box-shadow : 0 0.75rem 0 #251E1C, 0 1.5rem 0 #251E1C;
+}
+
+
+.menu-icon:hover:before {
+    background : #251E1C;
+    box-shadow : 0 0.75rem 0 #251E1C, 0 1.5rem 0  #251E1C;
+    -webkit-box-shadow : 0 0.75rem 0 #251E1C, 0 1.5rem 0 #251E1C;
+    -moz-box-shadow : 0 0.75rem 0 #251E1C, 0 1.5rem 0 #251E1C;
+    -ms-box-shadow : 0 0.75rem 0 #251E1C, 0 1.5rem 0 #251E1C;
+}
+
+.menu {
+    background : #FFF;
+    border-color : #D8D8DA;
+}
+
+.menu-item {
+    border-bottom-color : #D8D8DA;
+}
+
+.menu-item a {
+    color : #999;
+}
+
+.menu-item a:hover {
+    color : #251E1C;
+}
+
+
+/* header -------------------------------------------------------------- end ------------ */
+
+
+/* content ------------------------------------------------------------- start ---------- */
+
+
+    /* for recordButton -------------------------------------------------------------- start ---------- */
+   
+.record-btn-outer {
+    background : #20232D;
+}
+
+.record-btn-inner {
+    background-color : #A8A499;
+    color : #FFF;
+}
+
+.record-btn-inner:before {
+    background : #B4B0A6;
+}
+
+.record-clock-in {
+    background-color : #57BBCD;
+    color : #FFF;
+}
+
+.record-clock-in:before {
+    background : #77C6D5;
+}
+
+
+.record-clock-out {
+    background-color : #E4598D;
+    color : #FFF;
+}
+
+.record-clock-out:before {
+    background : #F3A5C2;
+}
+
+.record-btn-inner-hover {
+    background : #7F7C73;
+    color : #FFF;
+}
+
+.record-btn-inner-hover:before {
+    background : #918E86;
+}
+
+.record-clock-in-inner-hover {
+    background : #00A2BF;
+}
+
+.record-clock-in-inner-hover:before {
+    background : #31B2C9;
+}
+
+.record-clock-out-inner-hover {
+    background : #E4598D;
+}
+
+.record-clock-out-inner-hover:before {
+    background : #E878A1;
+}
+
+.record-btn-outer-active {
+    background : #6B675D;
+}
+
+.record-btn-inner-active {
+    color : #FFF;
+}
+
+.record-clock-in-outer-active {
+    background : #098BA7;
+}
+
+.record-clock-out-outer-active {
+    background : #CC4779;
+}
+
+.record-btn-message {
+    /*color : #FFF;*/
+}
+
+.btn-text-x-small {
+    font-size : .6rem;
+}
+
+.btn-text-small {
+    font-size : .8rem;
+}
+
+.btn-text-middle {
+    font-size : 1rem;
+}
+
+.btn-text-large {
+    font-size : 1.4rem;
+}
+
+.btn-text-x-large {
+    font-size : 2rem;
+}
+
+    /* for recordButton -------------------------------------------------------------- end ------------ */
+   
+    /* for attend and leave button icon ---------------------------------------------- start ---------- */
+   
+.door {
+    background : #FFF;
+}
+
+.door:before,
+.door:after {
+    background : #FFF;
+}
+
+.up-arrow {
+    border-bottom-color : #FFF; 
+}
+
+.up-arrow:after {
+    background : #FFF;
+}
+
+.down-arrow {
+    border-top-color : #FFF; 
+}
+
+.down-arrow:after {
+    background : #FFF;
+}
+
+.btn-door-icon-hover {
+    background : #FFF;
+}
+
+.btn-door-icon-hover:before,
+.btn-door-icon-hover:after {
+    background : #FFF;
+}
+
+.btn-door-icon-active {
+    background : #FFF;
+}
+
+.btn-door-icon-active:before,
+.btn-door-icon-active:after {
+    background : #FFF;
+}
+
+.btn-up-arrow-icon-hover {
+    border-bottom-color : #FFF; 
+}
+
+.btn-up-arrow-icon-hover:after {
+    background : #FFF;
+}
+
+.btn-down-arrow-icon-hover {
+    border-top-color : #FFF;
+}
+
+.btn-down-arrow-icon-hover:after {
+    background : #FFF;
+}
+
+.btn-up-arrow-icon-active {
+    border-bottom-color : #FFF; 
+}
+
+.btn-up-arrow-icon-active:after {
+    background : #FFF;
+}
+
+.btn-down-arrow-icon-active {
+    border-top-color : #FFF;
+}
+
+.btn-down-arrow-icon-active:after {
+    background : #FFF;
+}
+
+    /* for attend and leave button icon ---------------------------------------------- end ------------ */
+
+
+/* content ------------------------------------------------------------- end ------------ */
+
+
+/* footer -------------------------------------------------------------- start ---------- */
+
+footer {
+    background-color : #464A52;
+    color : #C8C8CB;
+}
+
+/* footer -------------------------------------------------------------- end ------------ */
+
+
+/* modal --------------------------------------------------------------- start ---------- */
+
+.modal-window {
+    background-color : #FFF;
+    border-color : #D5D5D3;
+    color : #2F3037;
+}
+
+.close-icon {
+    background : #FFF;
+    border-color : #D5D5D3;
+}
+
+.close-icon:before,
+.close-icon:after {
+    background : #D5D5D3;
+}
+
+.input-text {
+    border-color : #B6B6B6;
+}
+
+@media only screen and (min-width : 480px) {
+    .modal-window-announce-message {
+        border-color : #D5D5D3;
+    }
+}
+
+.btn-control-outer {
+    background : #E0DFDC;
+}
+
+.btn-control-inner {
+    background : #57BBCD;
+    color : #FFF;
+}
+
+.btn-control-inner:before {
+    background : #84CDDB;
+}
+
+.btn-control-message {
+
+}
+
+.btn-control-inner-hover {
+    background : #00A2BF;
+    color : #FFF;
+}
+
+.btn-control-inner-hover:before {
+    background : #45BBD0;
+}
+
+.btn-control-outer-active {
+    background : #098BA7;
+}
+
+.btn-control-inner-active {
+    background : #00A2BF;
+    color : #FFF;
+}
+
+.btn-media-outer {
+    background : #DFDFDF;
+}
+
+.btn-media-inner {
+    background : #7F878F;
+    color : #E3E5E8;
+}
+
+.btn-media-inner:before {
+    background : #91979E;
+}
+
+.btn-media-inner-hover {
+    background : #5F666E;
+    color : #E3E5E8;
+}
+
+.btn-media-inner-hover:before {
+    background : #6D737A;
+}
+
+.btn-media-outer-active {
+    background : #52585F;
+}
+
+.btn-media-innsr-active {
+    background : #5F666E;
+    color : #E3E5E8;
+}
+
+/* modal --------------------------------------------------------------- end ------------ */
+
+/* history log --------------------------------------------------------- start ---------- */
+
+.history-tab-group li {
+    background : #45BBD0;
+    color : #FFF;
+}
+
+li.history-tab-active, li.history-tab-hover {
+    background : #00A2BF;
+}
+
+.history-content {
+    border-color : #888;
+}
+
+.historys tr th {
+    background : #EEE;
+    border-color : #888;
+}
+.historys tr td {
+    background : #DEF;
+    border-color : #888;
+}
+
+.historys tr:nth-child(2n) td {
+    background : #FFF;
+}
+
+/* history log --------------------------------------------------------- end ------------ */
+
+/* loading animation --------------------------------------------------- start ---------- */
+
+.loading div {
+    background : #464A52;
+}
+
+/* loading animation --------------------------------------------------- end ------------ */
+
+/* local record area --------------------------------------------------- start ---------- */
+
+.local-info {
+    background : #888;
+    color : #FFF;
+}
+
+.local-info-hover {
+    background : #999;
+}
+
+.local-info-active {
+    background : #999;
+}
+
+/* local record area --------------------------------------------------- end ------------ */
+
+/* dikyoCustomize-area---------------------------------------------------- start-------------*/
+.history-button {
+    background-color : #FFF;
+    border-color : #D8D8DA;
+}
+/* dikyoCustomize-area---------------------------------------------------- end-------------*/
+
+/* openId Connect user selection table -------------------- start -------------------------*/
+.user-selection-content {
+    border-color : #888;
+}
+
+.user-selection tr th {
+    background : #EEE;
+    border-color : #888;
+}
+
+.user-selection tr td {
+    background : #DEF;
+    border-color : #888;
+}
+
+.user-selection tr:nth-child(2n) td {
+    background : #FFF;
+}
+
+/* openId Connect user selection table --------------------- end --------------------------*/

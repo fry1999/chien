@@ -1,0 +1,30 @@
+function get_ie11_nonsupport_link() {
+    var hostname = window.location.host.toLowerCase();
+    if (hostname.indexOf('touch') >= 0 || hostname.indexOf('tot') >= 0) {
+        return "https://help.touchontime.com/totfaq/s/information/a0R5h000000xJo5EAE/internet-explorer-2022%E5%B9%B46%E6%9C%8815%E6%97%A5-%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E7%B5%82%E4%BA%86%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B";
+    } else if (hostname.indexOf('cckintai') >= 0) {
+        return "http://help.cckintai.com/shift/kinkyu/Detail.aspx?id=3051";
+    } else if (hostname.indexOf('nec') >= 0 || hostname.indexOf('kinkakuji') >= 0) {
+        return "https://n_help.kingtime.jp/h-t/web5/Detail.aspx?id=4334";
+    } else if (hostname.indexOf('secom') >= 0) {
+        return "https://help.secomtime.secomtrust.net/h-t/scm/Detail.aspx?id=4335";
+    } else if (hostname.indexOf('ntt') >= 0) {
+        return "https://help.kt.hataraku-ntt-east.jp/h-t/ntt-east/Detail.aspx?id=4336";
+    } else if (hostname.indexOf('freee') >= 0) {
+        return "";
+    } else if (hostname.indexOf('kingtime') >= 0 || hostname.indexOf('kingoftime') >= 0 || hostname=='ta.dev-time.net' || hostname=='test.h-t.co.jp') {
+        return "https://support.ta.kingoftime.jp/hc/ja/articles/4404916089625";
+    }
+    return ""
+}
+
+function get_activex_nonsupport_link() {
+    var link = get_ie11_nonsupport_link()
+    if (link == "https://support.ta.kingoftime.jp/hc/ja/articles/4404916089625") {
+       link = "https://support.ta.kingoftime.jp/hc/ja/articles/4404916208409";
+    }
+    return link
+}
+
+var ie11_nonsupport_link_global = get_ie11_nonsupport_link();
+var activex_nonsupport_link_global = get_activex_nonsupport_link();

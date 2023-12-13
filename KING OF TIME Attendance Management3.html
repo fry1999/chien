@@ -14,23 +14,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>KING OF TIME Attendance Management
 </title>
-<link type="text/css" rel="stylesheet" href="./KING OF TIME Attendance Management_files/jquery-ui.min.css">
-<link type="text/css" rel="stylesheet" href="./KING OF TIME Attendance Management_files/base.kot.css">
-<link type="text/css" rel="stylesheet" href="./KING OF TIME Attendance Management_files/block.kot.css">
+<link type="text/css" rel="stylesheet" href="./KING OF TIME Attendance Management3_files/jquery-ui.min.css">
+<link type="text/css" rel="stylesheet" href="./KING OF TIME Attendance Management3_files/base.kot.css">
+<link type="text/css" rel="stylesheet" href="./KING OF TIME Attendance Management3_files/block.kot.css">
 <!--
 UIテンプレート範囲外のスタイル用
 class指定のprefixは「specific-」
 -->
-<link type="text/css" rel="stylesheet" href="./KING OF TIME Attendance Management_files/specific.kot.css">
-<script type="text/javascript" async="" src="./KING OF TIME Attendance Management_files/analytics.js.download"></script><script type="text/javascript" async="" src="./KING OF TIME Attendance Management_files/js"></script><script type="text/javascript" async="" src="./KING OF TIME Attendance Management_files/js(1)"></script><script type="text/javascript" async="" src="./KING OF TIME Attendance Management_files/js(2)"></script><script async="" src="./KING OF TIME Attendance Management_files/main.js.download" id="techtouch-snippet"></script><script async="" src="./KING OF TIME Attendance Management_files/gtm.js.download"></script><script type="text/javascript">
+<link type="text/css" rel="stylesheet" href="./KING OF TIME Attendance Management3_files/specific.kot.css">
+<script type="text/javascript" async="" src="./KING OF TIME Attendance Management3_files/analytics.js.download"></script><script type="text/javascript" async="" src="./KING OF TIME Attendance Management3_files/js"></script><script type="text/javascript" async="" src="./KING OF TIME Attendance Management3_files/js(1)"></script><script type="text/javascript" async="" src="./KING OF TIME Attendance Management3_files/js(2)"></script><script async="" src="./KING OF TIME Attendance Management3_files/main.js.download" id="techtouch-snippet"></script><script async="" src="./KING OF TIME Attendance Management3_files/gtm.js.download"></script><script type="text/javascript">
 var ua = navigator.userAgent;
 if(ua.match("Trident") || ua.match("MSIE") ){
 document.write('<link rel="stylesheet" href="\/asset\/design1\/css\/ie.kot.css?202312121215">');
 }
 </script>
-<link type="text/css" rel="stylesheet" href="./KING OF TIME Attendance Management_files/en.css">
-<script src="./KING OF TIME Attendance Management_files/jquery-1.11.3.min.js.download"></script>
-<script src="./KING OF TIME Attendance Management_files/kot.js.download"></script>
+<link type="text/css" rel="stylesheet" href="./KING OF TIME Attendance Management3_files/en.css">
+<script src="./KING OF TIME Attendance Management3_files/jquery-1.11.3.min.js.download"></script>
+<script src="./KING OF TIME Attendance Management3_files/kot.js.download"></script>
 <script type="text/javascript">
 var browserType = KOT_GLOBAL.KOT_LIB.getBrowserType();
 if(browserType <= 110){
@@ -127,7 +127,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-WDS55BP');</script>
 <!-- End Google Tag Manager -->
 
-<script type="text/javascript" src="./KING OF TIME Attendance Management_files/compress.js.download"></script>
+<script type="text/javascript" src="./KING OF TIME Attendance Management3_files/compress.js.download"></script>
 
 <script type="text/javascript">
 var map_supplemental_working_record = null;
@@ -337,10 +337,17 @@ jQuery("[id^=leave_type_code]select:not([id$=\\{\\{count\\}\\}])").each(function
 populateFileUploadFieldsForVacationCategory($(this));
 });
 $( "form#working_edit_form" ).attr( "enctype", "multipart/form-data" )
+document.getElementById("leave_type_code1").selectedIndex = "0";
+document.getElementById("leave_type_mode1").selectedIndex = "0";
 });
 chBackGround(document.getElementById("select_schedule_pattern_id"));
 chStrColor(document.getElementById("select_schedule_pattern_id"));
 map_regarding_work_type_map = makeRegardingWorkTypeDetailsMap();
+settingOptions();
+setBreakBeginHtml();
+setInputValue();
+setSchedulePatternCondition(false);
+setWorkTimeByScheduleRequestDivision();
 checkSelectableHalfDaySchedule();
 map_supplemental_working_record_setting_id_by_section_id_and_schedule_type_id = makeSupplementalWorkingRecordSettingBySectionIDAndScheduleTypeIdMap();
 map_supplemental_working_record_setting = makeSupplementalWorkingRecordSettingMap();
@@ -855,6 +862,17 @@ jQuery('#' + select_element.id).empty().append(optionInitialHtml);
 }
 }
 function settingOptions() {
+var allDayLeaveRegardingWork = getSelectedAllDayLeaveRegardingWork();
+resetOptions(allDayLeaveRegardingWork);
+setWorkDayTypeCodeOptions(allDayLeaveRegardingWork);
+setTimeDivisionIdOptions(allDayLeaveRegardingWork);
+setRegardingWorkTypeCodeOptions(allDayLeaveRegardingWork);
+if (allDayLeaveRegardingWork != null && allDayLeaveRegardingWork.forceResetScheduleOptions == "1") {
+KOT_GLOBAL.KOT_LIB.scheduleMultiPurposeFlagForceDisabled(document.getElementById("schedule_multi_purpose_flag1"), document.getElementById("schedule_multi_purpose_flag2"));
+}
+else {
+KOT_GLOBAL.KOT_LIB.scheduleMultiPurposeFlagForceSetting(schedulePatternMap[$("#select_schedule_pattern_id").val()], document.getElementById("schedule_multi_purpose_flag1"), document.getElementById("schedule_multi_purpose_flag2"));
+}
 }
 // 201806-A10 選択された休暇が全日休暇なら休暇区分設定を返す
 function getSelectedAllDayLeaveRegardingWork() {
@@ -960,6 +978,15 @@ function setRegisteredScheduleTypeId(){
 registered_schedule_type_id = 0;
 }
 function settingScheduleTimes(useAllDayLeaveType, forceDeleteScheduleTime) {
+// A04 - ScheduleTimes should be cleared when both AM/PM leaves selected.
+var schedulePatternId = jQuery("#select_schedule_pattern_id").val();
+if(forceDeleteScheduleTime || (schedulePatternId != undefined && schedulePatternId != "")){
+deleteScheduleTime();
+setBreakHtml(useAllDayLeaveType);
+}
+setSchedulePatternInfo(useAllDayLeaveType);
+setSchedulePatternCondition(useAllDayLeaveType);
+setWorkTimeByScheduleRequestDivision();
 }
 // A04 - Check whether user has selected both AM/PM vacations.
 function isBothAMPMLeaveSelected() {
@@ -2078,7 +2105,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="htBlock-header_menuButton htBlock-header_menuButtonImg-for-employee menu-main">
 <p>
 <a href="https://s2.ta.kingoftime.jp/admin/tee5bxXubjEDSivtL8WV5qUDz22PgWhQ#">
-<img src="./KING OF TIME Attendance Management_files/header_Hamburger.png">
+<img src="./KING OF TIME Attendance Management3_files/header_Hamburger.png">
 Menu
 </a>
 </p>
@@ -2099,7 +2126,7 @@ Menu
 <div class="htBlock-header_logoutButton" onclick="location.href=&#39;/admin/tee5bxXubjEDSivtL8WV5qUDz22PgWhQ?page_id=/login/do_logout&#39;">
 <p>
 <a href="https://s2.ta.kingoftime.jp/admin/tee5bxXubjEDSivtL8WV5qUDz22PgWhQ#">
-<img src="./KING OF TIME Attendance Management_files/header_icon_logout.png">
+<img src="./KING OF TIME Attendance Management3_files/header_icon_logout.png">
 Sign out
 </a>
 </p>
@@ -2146,7 +2173,7 @@ $(backButtonSelector).click();
 </script>
 </div><!-- end htBlock-header -->
 <h1 class="htBlock-pageTitle">
-<img src="./KING OF TIME Attendance Management_files/top_menubtn-s_workingedit_13.png">
+<img src="./KING OF TIME Attendance Management3_files/top_menubtn-s_workingedit_13.png">
 <span>
 Edit work data
 </span>
@@ -2170,213 +2197,437 @@ Edit work data
 <input name="Ycnfmjlm" type="hidden" value="59FzvA5qezsscVQA">
 <input name="action_id" type="submit" value="1" id="action_01" style="display: none;">
 <button id="button_01" type="button" class=" htBlock-buttonSave   htBlock-buttonM " onclick="KOT_GLOBAL.KOT_LIB.onClickActionButton(&#39;action_01&#39;);">
-<span>Time-record request</span>
+<span>Schedule request</span>
 </button>
 </div>
 <div></div>
 </div><div class="htBlock-fixedToolbar_spacer" style="height: 48px; display: block;"></div>
 <div class="htBlock-normalTable">
-<h4 class="htBlock-box_subTitle">Edit time-record</h4>
-<div style="display: inline-block;">
-<table id="recording_timestamp_table">
+<h4 class="htBlock-box_subTitle">Time record</h4>
+<table class="specific-table_600">
 <thead>
 <tr>
 <th>Time-record type</th>
 <th>Time-record method</th>
 <th>Time-record time</th>
 <th>Time record division</th>
-<th>Delete</th>
-<th>Request message</th>
 </tr>
 </thead>
 <tbody>
-<input type="hidden" name="exist_timerecord_ids" value="">
 <tr>
-<td>
-<select name="recording_type_code_1" id="recording_type_code_1" class="htBlock-selectmenu htBlock-selectmenu-fix-width">
-<option> --Please select-- </option>
-<option value="1">Clock-in</option>
-<option value="2">Clock-out</option>
-<option value="3">Start break</option>
-<option value="4">End break</option>
-</select>
-</td>
-<td>&nbsp;  </td>
-<td>
-<input id="recording_timestamp_year_1" name="recording_timestamp_year_1" type="hidden" value="2023">
-<input id="recording_timestamp_month_1" name="recording_timestamp_month_1" type="hidden" value="12">
-<input id="recording_timestamp_day_1" name="recording_timestamp_day_1" type="hidden" value="06">
-<input id="recording_timestamp_hour_1" name="recording_timestamp_hour_1" type="hidden" value="11">
-<input id="recording_timestamp_minute_1" name="recording_timestamp_minute_1" type="hidden" value="11">
-<input type="text" readonly="" class="htBlock-calendar recording_timestamp_date hasDatepicker" id="recording_timestamp_date_1" name="recording_timestamp_date_1" value="2023/12/06"><button type="button" class="ui-datepicker-trigger"><img src="./KING OF TIME Attendance Management_files/form_icon_calendar_16px.png" alt="..." title="..."></button>
-<input type="text" class="htBlock-time recording_timestamp_time" id="recording_timestamp_time_1" placeholder="hhmm" name="recording_timestamp_time_1" value="">
-</td>
-<td>
-<div class="htBlock-table_alignmentBoxBlock">
-<select name="section_id_1" id="select" class="htBlock-selectmenuBlock htBlock-selectmenu-fix-width">
-<option value="900463197">本社</option>
-<option value="900465623" selected="">営業部</option>
-</select>
-</div>
-</td>
-<td>&nbsp;  </td>
-<td>
-<input type="text" class="htBlock-text" title="Enter Request message in 400 characters or less.
-" name="request_remark_1" maxlength="400">
-</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
 </tr>
-<tr>
-<td>
-<select name="recording_type_code_2" id="recording_type_code_2" class="htBlock-selectmenu htBlock-selectmenu-fix-width">
-<option> --Please select-- </option>
-<option value="1">Clock-in</option>
-<option value="2">Clock-out</option>
-<option value="3">Start break</option>
-<option value="4">End break</option>
-</select>
-</td>
-<td>&nbsp;  </td>
-<td>
-<input id="recording_timestamp_year_2" name="recording_timestamp_year_2" type="hidden" value="2023">
-<input id="recording_timestamp_month_2" name="recording_timestamp_month_2" type="hidden" value="12">
-<input id="recording_timestamp_day_2" name="recording_timestamp_day_2" type="hidden" value="06">
-<input id="recording_timestamp_hour_2" name="recording_timestamp_hour_2" type="hidden" value="11">
-<input id="recording_timestamp_minute_2" name="recording_timestamp_minute_2" type="hidden" value="11">
-<input type="text" readonly="" class="htBlock-calendar recording_timestamp_date hasDatepicker" id="recording_timestamp_date_2" name="recording_timestamp_date_2" value="2023/12/06"><button type="button" class="ui-datepicker-trigger"><img src="./KING OF TIME Attendance Management_files/form_icon_calendar_16px.png" alt="..." title="..."></button>
-<input type="text" class="htBlock-time recording_timestamp_time" id="recording_timestamp_time_2" placeholder="hhmm" name="recording_timestamp_time_2" value="">
-</td>
-<td>
-<div class="htBlock-table_alignmentBoxBlock">
-<select name="section_id_2" id="select" class="htBlock-selectmenuBlock htBlock-selectmenu-fix-width">
-<option value="900463197">本社</option>
-<option value="900465623" selected="">営業部</option>
-</select>
-</div>
-</td>
-<td>&nbsp;  </td>
-<td>
-<input type="text" class="htBlock-text" title="Enter Request message in 400 characters or less.
-" name="request_remark_2" maxlength="400">
-</td>
-</tr>
-<tr>
-<td>
-<select name="recording_type_code_3" id="recording_type_code_3" class="htBlock-selectmenu htBlock-selectmenu-fix-width">
-<option> --Please select-- </option>
-<option value="1">Clock-in</option>
-<option value="2">Clock-out</option>
-<option value="3">Start break</option>
-<option value="4">End break</option>
-</select>
-</td>
-<td>&nbsp;  </td>
-<td>
-<input id="recording_timestamp_year_3" name="recording_timestamp_year_3" type="hidden" value="2023">
-<input id="recording_timestamp_month_3" name="recording_timestamp_month_3" type="hidden" value="12">
-<input id="recording_timestamp_day_3" name="recording_timestamp_day_3" type="hidden" value="06">
-<input id="recording_timestamp_hour_3" name="recording_timestamp_hour_3" type="hidden" value="11">
-<input id="recording_timestamp_minute_3" name="recording_timestamp_minute_3" type="hidden" value="11">
-<input type="text" readonly="" class="htBlock-calendar recording_timestamp_date hasDatepicker" id="recording_timestamp_date_3" name="recording_timestamp_date_3" value="2023/12/06"><button type="button" class="ui-datepicker-trigger"><img src="./KING OF TIME Attendance Management_files/form_icon_calendar_16px.png" alt="..." title="..."></button>
-<input type="text" class="htBlock-time recording_timestamp_time" id="recording_timestamp_time_3" placeholder="hhmm" name="recording_timestamp_time_3" value="">
-</td>
-<td>
-<div class="htBlock-table_alignmentBoxBlock">
-<select name="section_id_3" id="select" class="htBlock-selectmenuBlock htBlock-selectmenu-fix-width">
-<option value="900463197">本社</option>
-<option value="900465623" selected="">営業部</option>
-</select>
-</div>
-</td>
-<td>&nbsp;  </td>
-<td>
-<input type="text" class="htBlock-text" title="Enter Request message in 400 characters or less.
-" name="request_remark_3" maxlength="400">
-</td>
-</tr>
-<tr>
-<td>
-<select name="recording_type_code_4" id="recording_type_code_4" class="htBlock-selectmenu htBlock-selectmenu-fix-width">
-<option> --Please select-- </option>
-<option value="1">Clock-in</option>
-<option value="2">Clock-out</option>
-<option value="3">Start break</option>
-<option value="4">End break</option>
-</select>
-</td>
-<td>&nbsp;  </td>
-<td>
-<input id="recording_timestamp_year_4" name="recording_timestamp_year_4" type="hidden" value="2023">
-<input id="recording_timestamp_month_4" name="recording_timestamp_month_4" type="hidden" value="12">
-<input id="recording_timestamp_day_4" name="recording_timestamp_day_4" type="hidden" value="06">
-<input id="recording_timestamp_hour_4" name="recording_timestamp_hour_4" type="hidden" value="11">
-<input id="recording_timestamp_minute_4" name="recording_timestamp_minute_4" type="hidden" value="11">
-<input type="text" readonly="" class="htBlock-calendar recording_timestamp_date hasDatepicker" id="recording_timestamp_date_4" name="recording_timestamp_date_4" value="2023/12/06"><button type="button" class="ui-datepicker-trigger"><img src="./KING OF TIME Attendance Management_files/form_icon_calendar_16px.png" alt="..." title="..."></button>
-<input type="text" class="htBlock-time recording_timestamp_time" id="recording_timestamp_time_4" placeholder="hhmm" name="recording_timestamp_time_4" value="">
-</td>
-<td>
-<div class="htBlock-table_alignmentBoxBlock">
-<select name="section_id_4" id="select" class="htBlock-selectmenuBlock htBlock-selectmenu-fix-width">
-<option value="900463197">本社</option>
-<option value="900465623" selected="">営業部</option>
-</select>
-</div>
-</td>
-<td>&nbsp;  </td>
-<td>
-<input type="text" class="htBlock-text" title="Enter Request message in 400 characters or less.
-" name="request_remark_4" maxlength="400">
-</td>
-</tr>
-
-<tr id="recording_timestamp_add_template" style="display:none;">
-<td>
-<select name="recording_type_code_{{count}}" id="recording_type_code_{{count}}" class="htBlock-selectmenu htBlock-selectmenu-fix-width">
-<option> --Please select-- </option>
-<option value="1">Clock-in</option>
-<option value="2">Clock-out</option>
-<option value="3">Start break</option>
-<option value="4">End break</option>
-</select>
-</td>
-<td>&nbsp;  </td>
-<td>
-<input id="recording_timestamp_year_{{count}}" name="recording_timestamp_year_{{count}}" type="hidden" value="2023">
-<input id="recording_timestamp_month_{{count}}" name="recording_timestamp_month_{{count}}" type="hidden" value="12">
-<input id="recording_timestamp_day_{{count}}" name="recording_timestamp_day_{{count}}" type="hidden" value="06">
-<input id="recording_timestamp_hour_{{count}}" name="recording_timestamp_hour_{{count}}" type="hidden" value="">
-<input id="recording_timestamp_minute_{{count}}" name="recording_timestamp_minute_{{count}}" type="hidden" value="">
-<input type="text" readonly="" class="htBlock-calendar recording_timestamp_date hasDatepicker" id="recording_timestamp_date_{{count}}" name="recording_timestamp_date_{{count}}" value="2023/12/06"><button type="button" class="ui-datepicker-trigger"><img src="./KING OF TIME Attendance Management_files/form_icon_calendar_16px.png" alt="..." title="..."></button>
-<input type="text" class="htBlock-time recording_timestamp_time" id="recording_timestamp_time_{{count}}" placeholder="hhmm" name="recording_timestamp_time_{{count}}" value="">
-</td>
-<td>
-<div class="htBlock-table_alignmentBoxBlock">
-<select name="section_id_{{count}}" id="select" class="htBlock-selectmenuBlock htBlock-selectmenu-fix-width">
-<option value="900463197">本社</option>
-<option value="900465623" selected="">営業部</option>
-</select>
-</div>
-</td>
-<td>&nbsp;  </td>
-<td>
-<input type="text" class="htBlock-text" title="Enter Request message in 400 characters or less.
-" name="request_remark_{{count}}" maxlength="400">
-</td>
-</tr>
-
 </tbody>
 </table>
-</div>
-<div class="specific-table-outer-add-button">
-<button class="htBlock-buttonS htBlock-buttonPrimary" type="button" id="recording_timestamp_add" onclick="recordingTimestampAddinputHtml();">
-Add time-record
-</button>
-<input type="hidden" name="recording_timestamp_add_counter" id="recording_timestamp_add_counter" value="4">
-</div>
 </div><!-- end htBlock-normalTable -->
 <div>
 <div class="htBlock-normalTable"></div>
 </div>
 <div class="htBlock-expandTable specific-mainTable">
+<h4 class="htBlock-box_subTitle">Edit schedule</h4>
+<div id="file_upload_section_template" style="display:none;">
+<div class="htBlock-variableForm_target">
+<label name="leave_type_name" id="leave_type_name"></label>
+<input type="file" name="uploading_file" id="uploading_file" accept=".pdf, image/*">
+<input type="hidden" name="compressed_image_string" id="compressed_image_string" value="">
+<input type="hidden" name="display_name" id="display_name" value="">
+<input type="hidden" name="regarding_work_type_code" id="regarding_work_type_code" value="">
+</div>
+</div><table>
+<tbody>
+<!-- パターン -----------------------------------start------------>
+<tr class="htBlock-expandTable_expanderHeader" data-ht-opt="rows:14 button-open">
+<td colspan="2">
+<h3><span class="htBlock-expandTable_icon htBlock-expandTable_icon--open"></span>Edit Regular schedule</h3>
+</td>
+</tr>
+<tr>
+<th title="Select pattern created at Pattern settings.">Pattern</th>
+<td nowrap="" id="select_schedule_pattern_td" style="background-color: rgb(245, 245, 245);">
+<div class="htBlock-table_alignmentBox">
+<select name="schedule_pattern_id" id="select_schedule_pattern_id" class="flexselect schedule_pattern  view_bgcolor  htBlock-selectmenu htBlock-selectmenu-fix-width" style="">
+<option class="s_0" value="" style="">--</option>
+<option style="color:#000000;background-color:#ffffff;" class="s_1" value="90000058676968">通常勤務</option>
+</select>
+</div>
+<input type="hidden" name="old_schedule_pattern_id" id="old_schedule_pattern_id" value="$currentSchedulePattern.getDTO().getSchedulePatternId()">
+</td>
+</tr>
+<!-- パターン -----------------------------------end-------------->
+<!-- 出退勤予定 -----------------------------------start------------>
+<tr>
+<th title="Enter when specifying time for clock-in/out schedule.">Clock in/out schedule</th>
+<td>
+<div class="htBlock-table_alignmentBoxLarge schedule_start_time">
+<label>Clock in:</label>
+<select name="schedule_start_time_day" id="day_border_time_day" class="htBlock-selectmenu">
+<option value="0">Appointed day</option>
+<option value="-1">Previous day</option>
+<option value="1">Next day</option>
+</select>
+<input name="schedule_start_time_hour" id="schedule_start_time_hour" type="hidden" value="">
+<input name="schedule_start_time_minute" id="schedule_start_time_minute" type="hidden" value="">
+<input type="text" class="htBlock-time schedule_time_value" placeholder="hhmm" id="schedule_start_time" name="schedule_start_time" value="">
+</div>
+<div class="htBlock-table_alignmentBoxLarge schedule_end_time">
+<label>Clock-out:</label>
+<select name="schedule_end_time_day" id="schedule_end_time_day" class="htBlock-selectmenu">
+<option value="0">Appointed day</option>
+<option value="-1">Previous day</option>
+<option value="1">Next day</option>
+</select>
+<input name="schedule_end_time_hour" id="schedule_end_time_hour" type="hidden" value="">
+<input name="schedule_end_time_minute" id="schedule_end_time_minute" type="hidden" value="">
+<input type="text" class="htBlock-time schedule_time_value" placeholder="hhmm" id="schedule_end_time" name="schedule_end_time" value="">
+</div>
+</td>
+</tr>
+<!-- 出退勤予定 -----------------------------------end-------------->
+<!-- 勤務刻限 -----------------------------------start------------>
+<tr>
+<th>Work time</th>
+<td>
+<div class="htBlock-table_alignmentBoxLarge early_work_start_time">
+<label>Start time:</label>
+<select name="early_work_start_time_day" id="early_work_start_time_day" class="htBlock-selectmenu" disabled="">
+<option value="0">Appointed day</option>
+<option value="-1">Previous day</option>
+<option value="1">Next day</option>
+</select>
+<input type="hidden" name="early_work_start_time_day_hidden" id="early_work_start_time_day_hidden" value="">
+<input name="early_work_start_time_hour" id="early_work_start_time_hour" type="hidden" value="">
+<input name="early_work_start_time_minute" id="early_work_start_time_minute" type="hidden" value="">
+<input type="text" class="htBlock-time schedule_time_value" placeholder="hhmm" id="early_work_start_time" name="early_work_start_time" value="" disabled="">
+</div>
+<div class="htBlock-table_alignmentBoxLarge late_work_end_time">
+<label>End time:</label>
+<select name="late_work_end_time_day" id="late_work_end_time_day" class="htBlock-selectmenu" disabled="">
+<option value="0">Appointed day</option>
+<option value="-1">Previous day</option>
+<option value="1">Next day</option>
+</select>
+<input type="hidden" name="late_work_end_time_day_hidden" id="late_work_end_time_day_hidden" value="">
+<input name="late_work_end_time_hour" id="late_work_end_time_hour" type="hidden" value="">
+<input name="late_work_end_time_minute" id="late_work_end_time_minute" type="hidden" value="">
+<input type="text" class="htBlock-time schedule_time_value" placeholder="hhmm" id="late_work_end_time" name="late_work_end_time" value="" disabled="">
+</div>
+</td>
+</tr>
+<!-- 勤務刻限 -----------------------------------end-------------->
+<!-- 早出残業開始/終了 -----------------------------------start------------>
+<!-- 早出残業開始/終了 -----------------------------------end-------------->
+<!-- 休憩予定 -----------------------------------start------------>
+<tr>
+<th>Break schedule</th>
+<td class="htBlock-variableForm">
+<div id="break_html" class="break_times"><div style="">
+<div class="htBlock-variableForm_target">
+<div class="htBlock-table_alignmentBoxLarge">
+<label>Start break:</label>
+<select class="htBlock-selectmenu" name="break_start_time_day1" id="break_start_time_day1">
+<option value="0">Appointed day</option>
+<option value="-1">Previous day</option>
+<option value="1">Next day</option>
+</select>
+<input name="break_start_time_hour1" id="break_start_time_hour1" type="hidden" value="">
+<input name="break_start_time_minute1" id="break_start_time_minute1" type="hidden" value="">
+<input type="text" class="htBlock-time schedule_time_value" id="break_start_time_1" placeholder="hhmm" name="break_start_time1" value="">
+</div>
+<div class="htBlock-table_alignmentBoxLarge">
+<label>End break:</label>
+<select class="htBlock-selectmenu" name="break_end_time_day1" id="break_end_time_day1">
+<option value="0">Appointed day</option>
+<option value="-1">Previous day</option>
+<option value="1">Next day</option>
+</select>
+<input name="break_end_time_hour1" id="break_end_time_hour1" type="hidden" value="">
+<input name="break_end_time_minute1" id="break_end_time_minute1" type="hidden" value="">
+<input type="text" class="htBlock-time schedule_time_value" id="break_end_time_1" placeholder="hhmm" name="break_end_time1" value="">
+</div>
+</div>
+</div></div>
+<div id="break_org_hidden"></div>
+
+<div id="break_add_template" style="display:none;">
+<div class="htBlock-variableForm_target">
+<div class="htBlock-table_alignmentBoxLarge">
+<label>Start break:</label>
+<select class="htBlock-selectmenu" name="break_start_time_day{{count}}" id="break_start_time_day{{count}}">
+<option value="0">Appointed day</option>
+<option value="-1">Previous day</option>
+<option value="1">Next day</option>
+</select>
+<input name="break_start_time_hour{{count}}" id="break_start_time_hour{{count}}" type="hidden" value="">
+<input name="break_start_time_minute{{count}}" id="break_start_time_minute{{count}}" type="hidden" value="">
+<input type="text" class="htBlock-time schedule_time_value" id="break_start_time_{{count}}" placeholder="hhmm" name="break_start_time{{count}}" value="">
+</div>
+<div class="htBlock-table_alignmentBoxLarge">
+<label>End break:</label>
+<select class="htBlock-selectmenu" name="break_end_time_day{{count}}" id="break_end_time_day{{count}}">
+<option value="0">Appointed day</option>
+<option value="-1">Previous day</option>
+<option value="1">Next day</option>
+</select>
+<input name="break_end_time_hour{{count}}" id="break_end_time_hour{{count}}" type="hidden" value="">
+<input name="break_end_time_minute{{count}}" id="break_end_time_minute{{count}}" type="hidden" value="">
+<input type="text" class="htBlock-time schedule_time_value" id="break_end_time_{{count}}" placeholder="hhmm" name="break_end_time{{count}}" value="">
+</div>
+</div>
+</div>
+
+
+<div id="break_hidden_add_template" style="display:none;">
+<input name="break_start_time_day{{count}}" id="break_start_time_day_hidden{{count}}" type="hidden" value="0">
+<input name="break_start_time_hour{{count}}" id="break_start_time_hour_hidden{{count}}" type="hidden" value="">
+<input name="break_start_time_minute{{count}}" id="break_start_time_minute_hidden{{count}}" type="hidden" value="">
+<input name="break_end_time_day{{count}}" id="break_end_time_day_hidden{{count}}" type="hidden" value="0">
+<input name="break_end_time_hour{{count}}" id="break_end_time_hour_hidden{{count}}" type="hidden" value="">
+<input name="break_end_time_minute{{count}}" id="break_end_time_minute_hidden{{count}}" type="hidden" value="">
+</div>
+
+
+<div id="break_org_hidden_add_template" style="display:none;">
+<input name="org_break_start_time_day{{count}}" id="org_break_start_time_day{{count}}" type="hidden" value="">
+<input name="org_break_start_time_hour{{count}}" id="org_break_start_time_hour{{count}}" type="hidden" value="">
+<input name="org_break_start_time_minute{{count}}" id="org_break_start_time_minute{{count}}" type="hidden" value="">
+<input name="org_break_end_time_day{{count}}" id="org_break_end_time_day{{count}}" type="hidden" value="">
+<input name="org_break_end_time_hour{{count}}" id="org_break_end_time_hour{{count}}" type="hidden" value="">
+<input name="org_break_end_time_minute{{count}}" id="org_break_end_time_minute{{count}}" type="hidden" value="">
+</div>
+
+<div id="break_add_area">
+<button type="button" id="break_schedule_add" class="htBlock-buttonS htBlock-buttonPrimary" onclick="addBreakHtml();">Add break schedule</button>
+</div>
+<input type="hidden" name="break_pattern_counter" id="break_pattern_counter" value="1">
+</td>
+</tr>
+<!-- 休憩予定-----------------------------------end-------------->
+<!-- 休憩予定時間 -----------------------------------start------------>
+<tr>
+<th title="Enter break schedule in minutes">Break schedule time</th>
+<td>
+<div class="htBlock-table_alignmentBoxLarge schedule_break_minute">
+<label>Planned time:</label>
+<input name="schedule_break_minute" id="schedule_break_minute" type="text" class="htBlock-text" value="" size="3" maxlength="3" style="ime-mode: disabled;">
+<label>Min.</label>
+</div>
+</td>
+</tr>
+<!-- 休憩予定時間 -----------------------------------end------------>
+<!-- 勤務日種別 -----------------------------------start------------>
+<tr class="htBlock-table_separator2">
+<th title="Select status to distinguish Working day attendance from Holiday attendance.">Workday type</th>
+<td>
+<div class="htBlock-table_alignmentBox">
+<select name="work_day_type_code" id="select_work_day_type_code" class="htBlock-selectmenuBlock">
+
+
+
+
+<option value="">--</option><option value="1">Weekday</option><option value="2">Legal time-off</option><option value="3">Non-legal time-off</option></select>
+</div>
+<input name="work_day_type_code" type="hidden" id="work_day_type_code" value="">
+</td>
+</tr>
+<!-- 勤務日種別 -----------------------------------end-------------->
+<!-- 時間帯区分 -----------------------------------start------------>
+<!-- 時間帯区分 -----------------------------------end-------------->
+<!-- 半休欠勤種別 -----------------------------------start------------>
+<!-- 半休欠勤種別 -----------------------------------end-------------->
+<!-- 時間休暇 -----------------------------------start------------>
+      <!-- end of if(use_vacation_obtain_method || use_vacation_obtain_method == 0) -->
+<!--201806_A-10_Full day leave schedule without creating  leave schedule pattern-->
+<tr>
+<th>Vacation category</th>
+<td class="htBlock-variableForm">
+<div id="leave_type_table">
+<div class="htBlock-variableForm_target" id="added_leave_type_row1">
+<div class="htBlock-table_alignmentBox">
+<label>Type:</label>
+<select class="htBlock-selectmenu htBlock-selectmenu-fix-width" onchange="listLeaveModeOptions(this.value, &#39;leave_type_mode1&#39;, 1, 1);" name="leave_type_code1" id="leave_type_code1">
+<option value="">--</option>
+<option style="color:#000000;background-color:#ffffff;" value="1_0_1_0">有休
+</option>
+<option style="color:#000000;background-color:#ffffff;" value="2_0_0_0">代休
+</option>
+<option style="color:#000000;background-color:#ffffff;" value="3_0_0_0">欠勤
+</option>
+<option style="color:#000000;background-color:#ffffff;" value="4_0_0_-1">子の看護休暇
+</option>
+<option style="color:#000000;background-color:#ffffff;" value="5_0_0_-1">介護休暇
+</option>
+<option style="color:#000000;background-color:#ffffff;" value="6_0_0_0">産前産後休業
+</option>
+<option style="color:#000000;background-color:#ffffff;" value="7_0_0_0">育児休業
+</option>
+<option style="color:#000000;background-color:#ffffff;" value="8_0_0_0">介護休業
+</option>
+<option style="color:#000000;background-color:#ffffff;" value="9_0_0_0">労災休業
+</option>
+<option style="color:#000000;background-color:#ffffff;" value="10_0_0_0">公休
+</option>
+<option style="color:#000000;background-color:#ffffff;" value="11_0_1_0">夏季休暇
+</option>
+</select>
+</div>
+<br>
+<div class="htBlock-table_alignmentBox leaveByHours">
+<label>Vacation Unit:</label>
+<select class="htBlock-selectmenu" onchange="enableAddLeaveButtonLeaveByHours(this.value, 1);" style="width: 150px;" name="leave_type_mode1" id="leave_type_mode1">
+<option value="">--</option>
+</select>
+</div>
+<div class="htBlock-table_alignmentBoxLarge leaveByHours" id="leave_by_hours_div1" style="display:none;">
+<label>Start time:</label>
+<select class="htBlock-selectmenu" name="leave_type_start_day1" id="leave_type_start_day1&quot;">
+<option value="0">Appointed day</option>
+<option value="-1">Previous day</option>
+<option value="1">Next day</option>
+</select>
+<input name="leave_type_start_hour1" id="leave_type_start_hour1" type="hidden" value="">
+<input name="leave_type_start_minute1" id="leave_type_start_minute1" type="hidden" value="">
+<input id="leave_type_start_1" name="leave_type_start_1" type="text" placeholder="hhmm" class="htBlock-time schedule_time_value" value="">
+</div>
+<div class="htBlock-table_alignmentBoxLarge leaveByHours" id="leave_by_hours_div21" style="display:none;">
+<label>End time:</label>
+<select class="htBlock-selectmenu" name="leave_type_end_day1" id="leave_type_end_day1&quot;">
+<option value="0">Appointed day</option>
+<option value="-1">Previous day</option>
+<option value="1">Next day</option>
+</select>
+<input name="leave_type_end_hour1" id="leave_type_end_hour1" type="hidden" value="">
+<input name="leave_type_end_minute1" id="leave_type_end_minute1" type="hidden" value="">
+<input id="leave_type_end_1" name="leave_type_end_1" type="text" placeholder="hhmm" class="htBlock-time schedule_time_value" value="">
+</div>
+</div>
+
+<div id="add_leave_template" class="htBlock-variableForm_target" style="display:none;">
+<div class="htBlock-table_alignmentBox" id="add_leave_type{{count}}">
+<label>Type:</label>
+<select class="htBlock-selectmenu htBlock-selectmenu-fix-width" onchange="listLeaveModeOptions(this.value, &#39;leave_type_mode{{count}}&#39;, &#39;{{count}}&#39;, 1);" name="leave_type_code{{count}}" id="leave_type_code{{count}}">
+<option value="">--</option>
+<option style="color:#000000;background-color:#ffffff;" value="1_0_1_0">有休
+</option>
+<option style="color:#000000;background-color:#ffffff;" value="4_0_0_-1">子の看護休暇
+</option>
+<option style="color:#000000;background-color:#ffffff;" value="5_0_0_-1">介護休暇
+</option>
+<option style="color:#000000;background-color:#ffffff;" value="11_0_1_0">夏季休暇
+</option>
+</select>
+</div>
+<br>
+<div class="htBlock-table_alignmentBox leaveByHours" id="add_leave_Mode{{count}}">
+<label>Vacation Unit:</label>
+<select class="htBlock-selectmenu" onchange="enableAddLeaveButtonLeaveByHours(this.value, &#39;{{count}}&#39;);" style="width: 150px;" name="leave_type_mode{{count}}" id="leave_type_mode{{count}}">
+<option value="">--</option>
+</select>
+</div>
+<div class="htBlock-table_alignmentBoxLarge leaveByHours" id="leave_by_hours_div{{count}}" style="display:none;">
+<label>Start time:</label>
+<select class="htBlock-selectmenu" name="leave_type_start_day{{count}}" id="leave_type_start_day{{count}}&quot;">
+<option value="0">Appointed day</option>
+<option value="-1">Previous day</option>
+<option value="1">Next day</option>
+</select>
+<input name="leave_type_start_hour{{count}}" id="leave_type_start_hour{{count}}" type="hidden" value="">
+<input name="leave_type_start_minute{{count}}" id="leave_type_start_minute{{count}}" type="hidden" value="">
+<input id="leave_type_start_{{count}}" name="leave_type_start_{{count}}" type="text" placeholder="hhmm" class="htBlock-time schedule_time_value" value="">
+</div>
+<div class="htBlock-table_alignmentBoxLarge leaveByHours" id="leave_by_hours_div2{{count}}" style="display:none;">
+<label>End time:</label>
+<select class="htBlock-selectmenu" name="leave_type_end_day{{count}}" id="leave_type_end_day{{count}}&quot;">
+<option value="0">Appointed day</option>
+<option value="-1">Previous day</option>
+<option value="1">Next day</option>
+</select>
+<input name="leave_type_end_hour{{count}}" id="leave_type_end_hour{{count}}" type="hidden" value="">
+<input name="leave_type_end_minute{{count}}" id="leave_type_end_minute{{count}}" type="hidden" value="">
+<input id="leave_type_end_{{count}}" name="leave_type_end_{{count}}" type="text" placeholder="hhmm" class="htBlock-time schedule_time_value" value="">
+</div>
+</div>
+
+</div>
+<div>
+<button class="htBlock-buttonS htBlock-buttonPrimary" type="button" id="add_leave_type_button" onclick="addLeaveTypeinputHtml();" style="display:none;">
+Add Vacation
+</button>
+</div>
+</td>
+</tr>
+<!--end - 201806_A-10-->
+<input type="hidden" name="time_unit_holiday_counter" id="time_unit_holiday_counter" value="$timeUnitHolidayCounter" style="display: inline-block;">
+<input type="hidden" name="leave_type_counter" id="leave_type_counter" value="1" style="display: inline-block;">
+<input type="hidden" name="show_half_day_time_unit_fields" id="show_half_day_time_unit_fields" value="false" style="display: inline-block;">
+<!-- 時間休暇 -----------------------------------end-------------->
+<!-- 残業上限編集 -----------------------------------start------------>
+<!-- 残業上限編集 -----------------------------------end-------------->
+<!-- 出勤先所属 -----------------------------------start------------>
+<tr class="htBlock-table_separator2">
+<th title="Select division.">Clock-in division</th>
+<td>
+<div class="htBlock-table_alignmentBox">
+<select class="htBlock-selectmenuBlock htBlock-selectmenu-fix-width" name="scheduled_section_id" id="select_scheduled_section_id">
+<option value="" selected=""></option>
+<option value="900463197">本社</option>
+<option value="900465623">営業部</option>
+</select>
+</div>
+</td>
+</tr>
+<!-- 出勤先所属 -----------------------------------end-------------->
+<!-- 振替出勤 -----------------------------------start------------>
+<!-- 振替出勤 -----------------------------------end-------------->
+<!-- 自動休憩無効 -----------------------------------start------------>
+<tr>
+<th title="Select in case of not applying Break specified at Employee type or Pattern.">Disable auto break</th>
+<td>
+<div class="htBlock-table_alignmentBox">
+<select class="htBlock-selectmenuBlock" name="invalid_auto_break_flag" id="select_invalid_auto_break_flag" disabled="" )="">
+<option value="" selected="">--</option>
+<option value="1">Employee type break</option>
+<option value="2">Scheduled break</option>
+<option value="3">All auto breaks</option>
+</select>
+</div>
+</td>
+</tr>
+<tr id="image_upload_table_row" style="display: none;">
+<th id="image_upload_header" style="display: none;">Image upload for Vacation Application Request</th>
+<td id="image_upload_input_section" style="display: none;">
+<label name="max_file_size_msg" id="max_file_size_msg" hidden="" style="display: none;"><b>You can upload Image or PDF file. File size limit is 8 MB</b></label>
+<input type="hidden" name="image_upload_form" id="image_upload_form" value="1">
+<div id="file_upload_section"></div>
+</td>
+</tr>
+<!-- image upload fields template-->
+
+<!-- 自動休憩無効 -----------------------------------end-------------->
+<!-- 汎用フラグ -----------------------------------start------------>
+<!-- 汎用フラグ -----------------------------------end-------------->
+<!-- 備考　※全権管理者の場合は備考。一般管理者または従業員の場合は申請メッセージを表示する。 -----------------------------------start------------>
+<tr>
+<th title="Enter Request message in 400 characters or less.
+">Request message</th>
+<td>
+<div class="htBlock-table_alignmentBoxBlock">
+<input class="specific-detailText htBlock-text" name="remark" id="remark" type="text" value="" maxlength="400">
+</div>
+</td>
+</tr>
+<!-- 備考　※全権管理者の場合は備考。一般管理者または従業員の場合は申請メッセージを表示する。 -----------------------------------end------------>
+<!-- 従業員または一般管理者　備考を表示する -----------------------------------start------------>
+<tr>
+<th title="Enter Note in 400 characters or less.
+">Note</th>
+<td></td>
+</tr>
+<!-- 従業員または一般管理者　備考を表示する -----------------------------------end------------>
+</tbody>
+</table>
 </div><!-- end htBlock-expandTable specific-mainTable -->
 <div class="htBlock-normalTable specific-calcResult">
 <h4 class="htBlock-box_subTitle">
@@ -2419,10 +2670,10 @@ Time calculation results
 <input name="section_id" type="hidden" value="">
 <input name="working_date" type="hidden" value="20231206">
 <input name="page_id" type="hidden" value="/working/working_edit">
-<input name="update_key" type="hidden" value="0.13436028671787603">
+<input name="update_key" type="hidden" value="0.9005587722792762">
 <input name="working_type_id" type="hidden" value="900194789">
 <input name="call_from" type="hidden" value="necessity_regulation_page">
-<input name="request_one_day_schedule_flag" type="hidden" value="1">
+<input name="request_one_day_schedule_flag" type="hidden" value="2">
 <input name="selected_section_id" type="hidden" id="page_id2" value="$selected_section_id">
 <input name="schedule_section_id" type="hidden" value="$schedule_section_id">
 <input name="selected_start_date" type="hidden" value="20231206">
@@ -2434,7 +2685,7 @@ Time calculation results
 <input name="Ycnfmjlm" type="hidden" value="59FzvA5qezsscVQA">
 <input name="action_id" type="submit" value="1" id="action_01" style="display: none;">
 <button id="button_01" type="button" class=" htBlock-buttonL htBlock-buttonSave specific-saveButtonBottom  " onclick="KOT_GLOBAL.KOT_LIB.onClickActionButton(&#39;action_01&#39;);">
-<span>Time-record request</span>
+<span>Schedule request</span>
 </button>
 </div>
 <input name="Ycnfmjlm" type="hidden" value="59FzvA5qezsscVQA">
@@ -2446,7 +2697,7 @@ Time calculation results
 <div class="htBlock-footer" id="footer_main_menu">
 
 <div class="htBlock-footer_logo">
-<img src="./KING OF TIME Attendance Management_files/footer.png">
+<img src="./KING OF TIME Attendance Management3_files/footer.png">
 </div>
 </div>
 <script type="text/javascript">
@@ -2461,9 +2712,9 @@ KOT_GLOBAL.Parts.VmFooter            = {};
 jQuery(".htBlock-adjastableTableF").show();
 jQuery(".htBlock-hrCalendarTableA").show();
 </script>
-<script src="./KING OF TIME Attendance Management_files/jquery-ui.min.js.download"></script>
+<script src="./KING OF TIME Attendance Management3_files/jquery-ui.min.js.download"></script>
 <!--<script src="/asset/design1/js/htlib.js?202312121215"></script>-->
-<script src="./KING OF TIME Attendance Management_files/htlib.min.js.download"></script>
+<script src="./KING OF TIME Attendance Management3_files/htlib.min.js.download"></script>
 <script>
 !function () {
 if (window.top !== window.self) return;
@@ -2478,4 +2729,4 @@ var t = document.getElementsByTagName("script")[0]; t.parentNode.insertBefore(e,
 </div><!-- end htBlock-body -->
 
 
-<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div><div id="tudienjp"><div class="o-search-mobile" style="top: 0px; left: 0px; display: none;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 40 40" version="1.1"><g id="surface1"><path d="M 39.085938 34.664062 L 29.734375 25.3125 C 31.859375 22.15625 32.910156 18.210938 32.347656 14.007812 C 31.390625 6.859375 25.53125 1.039062 18.375 0.132812 C 7.734375 -1.210938 -1.210938 7.734375 0.132812 18.375 C 1.039062 25.535156 6.859375 31.398438 14.007812 32.351562 C 18.210938 32.914062 22.15625 31.863281 25.3125 29.738281 L 34.664062 39.089844 C 35.886719 40.308594 37.863281 40.308594 39.085938 39.089844 C 40.304688 37.867188 40.304688 35.882812 39.085938 34.664062 Z M 6.179688 16.25 C 6.179688 10.734375 10.664062 6.25 16.179688 6.25 C 21.695312 6.25 26.179688 10.734375 26.179688 16.25 C 26.179688 21.765625 21.695312 26.25 16.179688 26.25 C 10.664062 26.25 6.179688 21.765625 6.179688 16.25 Z M 6.179688 16.25 " style="stroke: none; fill-rule: nonzero; fill: rgb(0, 0, 0); fill-opacity: 1;"></path></g></svg></div><div class="o-popup-tag o-bg-white o-border o-rounded o-shadow" style="width: 400px; top: 0px; left: 0px; display: none;"><div><button type="button" aria-label="Close" class="btn-sm o-btn-close o-position-absolute o-top-0 o-end-0 o-mt-1 o-me-1"></button><ul role="tablist" class="o-nav o-nav-tabs o-pop-nav"><span><svg aria-hidden="true" focusable="false" data-icon="volume-high" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="o-pop-speak o-svg-inline--fa"><path fill="currentColor" d="M533.6 32.5C598.5 85.3 640 165.8 640 256s-41.5 170.8-106.4 223.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C557.5 398.2 592 331.2 592 256s-34.5-142.2-88.7-186.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM473.1 107c43.2 35.2 70.9 88.9 70.9 149s-27.7 113.8-70.9 149c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C475.3 341.3 496 301.1 496 256s-20.7-85.3-53.2-111.8c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zm-60.5 74.5C434.1 199.1 448 225.9 448 256s-13.9 56.9-35.4 74.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C393.1 284.4 400 271 400 256s-6.9-28.4-17.7-37.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM301.1 34.8C312.6 40 320 51.4 320 64V448c0 12.6-7.4 24-18.9 29.2s-25 3.1-34.4-5.3L131.8 352H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h67.8L266.7 40.1c9.4-8.4 22.9-10.4 34.4-5.3z"></path></svg></span><li role="presentation" class="o-nav-item"><div data-bs-toggle="tab" aria-selected="true" class="o-nav-link active">Từ vựng</div></li><li role="presentation" class="o-nav-item"><div data-bs-toggle="tab" aria-selected="false" class="o-nav-link">Hán tự</div></li><li role="presentation" class="o-nav-item"><div data-bs-toggle="tab" aria-selected="false" class="o-nav-link">Dịch</div></li></ul><div class="o-selected-result o-pt-1"><div> Đang tìm kiếm ... </div><div class="o-fs-6 o-mt-2" style="line-height: 1.7;"><div class="o-float-start"><div class="o-form-check"><input type="checkbox" id="flexCheckTudienjpLang" class="o-form-check-input"><label for="flexCheckTudienjpLang"> Tiếng Anh </label></div></div><div class="o-float-end o-me-1"><a href="https://tudienjp.com/" target="_blank" class="o-link-secondary o-text-decoration-none">Từ điển JP</a></div></div></div></div></div></div><div id="tudienjpOff"></div><div id="mttContainer" class="bootstrapiso notranslate" data-original-title="Yêu cầu ghi lại thời gian" title="" dir="ltr" style="transform: translate(1012px, 128px);"></div></body></html>
+<div id="tudienjp"><div class="o-search-mobile" style="top: 0px; left: 0px; display: none;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 40 40" version="1.1"><g id="surface1"><path d="M 39.085938 34.664062 L 29.734375 25.3125 C 31.859375 22.15625 32.910156 18.210938 32.347656 14.007812 C 31.390625 6.859375 25.53125 1.039062 18.375 0.132812 C 7.734375 -1.210938 -1.210938 7.734375 0.132812 18.375 C 1.039062 25.535156 6.859375 31.398438 14.007812 32.351562 C 18.210938 32.914062 22.15625 31.863281 25.3125 29.738281 L 34.664062 39.089844 C 35.886719 40.308594 37.863281 40.308594 39.085938 39.089844 C 40.304688 37.867188 40.304688 35.882812 39.085938 34.664062 Z M 6.179688 16.25 C 6.179688 10.734375 10.664062 6.25 16.179688 6.25 C 21.695312 6.25 26.179688 10.734375 26.179688 16.25 C 26.179688 21.765625 21.695312 26.25 16.179688 26.25 C 10.664062 26.25 6.179688 21.765625 6.179688 16.25 Z M 6.179688 16.25 " style="stroke: none; fill-rule: nonzero; fill: rgb(0, 0, 0); fill-opacity: 1;"></path></g></svg></div><div class="o-popup-tag o-bg-white o-border o-rounded o-shadow" style="width: 400px; top: 0px; left: 0px; display: none;"><div><button type="button" aria-label="Close" class="btn-sm o-btn-close o-position-absolute o-top-0 o-end-0 o-mt-1 o-me-1"></button><ul role="tablist" class="o-nav o-nav-tabs o-pop-nav"><span><svg aria-hidden="true" focusable="false" data-icon="volume-high" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="o-pop-speak o-svg-inline--fa"><path fill="currentColor" d="M533.6 32.5C598.5 85.3 640 165.8 640 256s-41.5 170.8-106.4 223.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C557.5 398.2 592 331.2 592 256s-34.5-142.2-88.7-186.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM473.1 107c43.2 35.2 70.9 88.9 70.9 149s-27.7 113.8-70.9 149c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C475.3 341.3 496 301.1 496 256s-20.7-85.3-53.2-111.8c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zm-60.5 74.5C434.1 199.1 448 225.9 448 256s-13.9 56.9-35.4 74.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C393.1 284.4 400 271 400 256s-6.9-28.4-17.7-37.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM301.1 34.8C312.6 40 320 51.4 320 64V448c0 12.6-7.4 24-18.9 29.2s-25 3.1-34.4-5.3L131.8 352H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h67.8L266.7 40.1c9.4-8.4 22.9-10.4 34.4-5.3z"></path></svg></span><li role="presentation" class="o-nav-item"><div data-bs-toggle="tab" aria-selected="true" class="o-nav-link active">Từ vựng</div></li><li role="presentation" class="o-nav-item"><div data-bs-toggle="tab" aria-selected="false" class="o-nav-link">Hán tự</div></li><li role="presentation" class="o-nav-item"><div data-bs-toggle="tab" aria-selected="false" class="o-nav-link">Dịch</div></li></ul><div class="o-selected-result o-pt-1"><div> Đang tìm kiếm ... </div><div class="o-fs-6 o-mt-2" style="line-height: 1.7;"><div class="o-float-start"><div class="o-form-check"><input type="checkbox" id="flexCheckTudienjpLang" class="o-form-check-input"><label for="flexCheckTudienjpLang"> Tiếng Anh </label></div></div><div class="o-float-end o-me-1"><a href="https://tudienjp.com/" target="_blank" class="o-link-secondary o-text-decoration-none">Từ điển JP</a></div></div></div></div></div></div><div id="tudienjpOff"></div><div id="mttContainer" class="bootstrapiso notranslate" data-original-title="Bắt đầu nghỉ giải lao:" title="" dir="ltr" style="transform: translate(496px, 415px);"></div></body></html>
